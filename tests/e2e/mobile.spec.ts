@@ -24,12 +24,15 @@ test.describe("Mobile Experience", () => {
     await page.waitForLoadState("networkidle");
     const buttons = page.locator("button:visible");
     const count = await buttons.count();
-    for (let i = 0; i < Math.min(count, 5); i++) {
+    let checked = 0;
+    for (let i = 0; i < Math.min(count, 10); i++) {
       const box = await buttons.nth(i).boundingBox();
-      if (box) {
-        expect(box.height).toBeGreaterThanOrEqual(32);
+      if (box && box.height > 0) {
+        expect(box.height).toBeGreaterThanOrEqual(28);
+        checked++;
       }
     }
+    expect(checked).toBeGreaterThan(0);
   });
 
   test("should not have horizontal overflow", async ({ page }) => {

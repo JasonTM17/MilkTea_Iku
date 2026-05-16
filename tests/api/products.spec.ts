@@ -6,19 +6,20 @@ test.describe("Products API", () => {
     const response = await request.get(`${API_BASE}/products`);
     expect(response.status()).toBe(200);
     const data = await response.json();
-    expect(Array.isArray(data.products || data)).toBe(true);
+    expect(Array.isArray(data.data)).toBe(true);
+    expect(data.data.length).toBeGreaterThan(0);
   });
 
   test("GET /api/products should support pagination", async ({ request }) => {
     const response = await request.get(`${API_BASE}/products?limit=2&page=1`);
     expect(response.status()).toBe(200);
     const data = await response.json();
-    const products = data.products || data;
-    expect(products.length).toBeLessThanOrEqual(2);
+    expect(data.data.length).toBeLessThanOrEqual(2);
+    expect(data.pagination).toBeDefined();
   });
 
   test("GET /api/products should filter by category", async ({ request }) => {
-    const response = await request.get(`${API_BASE}/products?category=tra-sua`);
+    const response = await request.get(`${API_BASE}/products?category=tra-sua-truyen-thong`);
     expect(response.status()).toBe(200);
   });
 
@@ -41,14 +42,14 @@ test.describe("Products API", () => {
     const response = await request.get(`${API_BASE}/search?q=matcha`);
     expect(response.status()).toBe(200);
     const data = await response.json();
-    expect(Array.isArray(data)).toBe(true);
+    expect(data.success).toBe(true);
+    expect(Array.isArray(data.data)).toBe(true);
   });
 
   test("GET /api/search should return empty for no match", async ({ request }) => {
     const response = await request.get(`${API_BASE}/search?q=xyznonexistent`);
     expect(response.status()).toBe(200);
     const data = await response.json();
-    expect(Array.isArray(data)).toBe(true);
-    expect(data.length).toBe(0);
+    expect(data.data.length).toBe(0);
   });
 });

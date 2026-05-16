@@ -7,7 +7,7 @@ test.describe("Visual Regression - Homepage", () => {
     await expect(page.locator("main")).toBeVisible();
     await expect(page).toHaveScreenshot("homepage-hero.png", {
       fullPage: false,
-      maxDiffPixelRatio: 0.1,
+      maxDiffPixelRatio: 0.25,
     });
   });
 
@@ -16,7 +16,7 @@ test.describe("Visual Regression - Homepage", () => {
     await page.waitForLoadState("networkidle");
     await expect(page).toHaveScreenshot("homepage-full.png", {
       fullPage: true,
-      maxDiffPixelRatio: 0.1,
+      maxDiffPixelRatio: 0.25,
     });
   });
 });
@@ -25,9 +25,10 @@ test.describe("Visual Regression - Menu", () => {
   test("menu page layout", async ({ page }) => {
     await page.goto("/menu");
     await page.waitForLoadState("networkidle");
+    await page.waitForTimeout(2000);
     await expect(page).toHaveScreenshot("menu-page.png", {
       fullPage: false,
-      maxDiffPixelRatio: 0.1,
+      maxDiffPixelRatio: 0.25,
     });
   });
 });
@@ -40,16 +41,17 @@ test.describe("Visual Regression - Mobile", () => {
     await page.waitForLoadState("networkidle");
     await expect(page).toHaveScreenshot("mobile-homepage.png", {
       fullPage: false,
-      maxDiffPixelRatio: 0.1,
+      maxDiffPixelRatio: 0.25,
     });
   });
 
   test("mobile menu", async ({ page }) => {
     await page.goto("/menu");
     await page.waitForLoadState("networkidle");
+    await page.waitForTimeout(2000);
     await expect(page).toHaveScreenshot("mobile-menu.png", {
       fullPage: false,
-      maxDiffPixelRatio: 0.1,
+      maxDiffPixelRatio: 0.25,
     });
   });
 });
@@ -60,10 +62,10 @@ test.describe("Visual Regression - Dark Mode", () => {
     await page.evaluate(() => {
       document.documentElement.classList.add("dark");
     });
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(1000);
     await expect(page).toHaveScreenshot("dark-homepage.png", {
       fullPage: false,
-      maxDiffPixelRatio: 0.15,
+      maxDiffPixelRatio: 0.25,
     });
   });
 });

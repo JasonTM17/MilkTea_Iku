@@ -1,9 +1,11 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("Search API", () => {
-  test("GET /api/search should require query param", async ({ request }) => {
+  test("GET /api/search should return empty without query", async ({ request }) => {
     const response = await request.get("/api/search");
-    expect(response.status()).toBeGreaterThanOrEqual(400);
+    expect(response.status()).toBe(200);
+    const data = await response.json();
+    expect(data.data).toHaveLength(0);
   });
 
   test("GET /api/search?q=tra should return results", async ({ request }) => {

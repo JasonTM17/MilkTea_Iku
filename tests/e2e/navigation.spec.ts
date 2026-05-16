@@ -7,8 +7,8 @@ test.describe("Navigation", () => {
     await page.locator('header a:has-text("Menu")').first().click();
     await expect(page).toHaveURL(/\/menu/);
 
-    await page.locator('header a:has-text("Khuyến mãi")').first().click();
-    await expect(page).toHaveURL(/\/promotions/);
+    await page.locator('header a:has-text("Về chúng tôi")').first().click();
+    await expect(page).toHaveURL(/\/about/);
   });
 
   test("should navigate via footer links", async ({ page }) => {
