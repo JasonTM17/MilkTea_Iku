@@ -46,7 +46,7 @@ export default function Recommendations({ products, title = "Có thể bạn s�
           >
             <Link href={`/menu/${product.slug}`} className="block group">
               <div className="aspect-square rounded-xl bg-gradient-to-br from-brand-100 to-cream-200 flex items-center justify-center mb-2 group-hover:shadow-md transition-shadow">
-                <span className="text-3xl">🧋</span>
+                <svg className="w-8 h-8 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 8H7l1.5 12h7L17 8z"/><path d="M6 8h12l-.5-2H6.5L6 8z"/><circle cx="12" cy="14" r="1.5" fill="currentColor" stroke="none"/><circle cx="10" cy="17" r="1" fill="currentColor" stroke="none"/><circle cx="14" cy="16" r="1.2" fill="currentColor" stroke="none"/></svg>
               </div>
               <h4 className="text-sm font-medium text-gray-900 group-hover:text-brand-600 transition-colors line-clamp-2">
                 {product.name}

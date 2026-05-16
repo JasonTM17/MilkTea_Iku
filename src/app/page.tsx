@@ -129,7 +129,7 @@ export default async function Home() {
               href="/menu"
               className="inline-flex items-center px-8 py-4 bg-white text-brand-700 rounded-full font-semibold hover:bg-cream-100 transition-colors shadow-lg"
             >
-              Đặt hàng ngay 🧋
+              Đặt hàng ngay
             </Link>
           </div>
         </section>

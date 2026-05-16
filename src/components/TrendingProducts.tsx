@@ -58,7 +58,7 @@ export default function TrendingProducts() {
                   {item.orders} đơn tuần này
                 </p>
               </div>
-              <span className="text-2xl">🧋</span>
+              <svg className="w-7 h-7 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 8H7l1.5 12h7L17 8z"/><path d="M6 8h12l-.5-2H6.5L6 8z"/><circle cx="12" cy="14" r="1.5" fill="currentColor" stroke="none"/><circle cx="10" cy="17" r="1" fill="currentColor" stroke="none"/></svg>
             </Link>
           </motion.div>
         ))}
