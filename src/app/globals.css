@@ -68,4 +68,75 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+  .glass {
+    @apply bg-white/70 backdrop-blur-lg border border-white/20;
+  }
+  .dark .glass {
+    @apply bg-gray-900/70 border-gray-700/30;
+  }
+  .gradient-brand {
+    @apply bg-gradient-to-r from-brand-500 to-brand-700;
+  }
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-brand-800;
+  }
+  .dark .gradient-text {
+    @apply from-brand-400 to-brand-600;
+  }
+  .shadow-brand {
+    box-shadow: 0 4px 14px 0 rgba(212, 121, 42, 0.15);
+  }
+  .dark .shadow-brand {
+    box-shadow: 0 4px 14px 0 rgba(212, 121, 42, 0.08);
+  }
+  .animate-shimmer {
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%);
+    background-size: 200% 100%;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Dark mode overrides for brand colors */
+.dark {
+  --brand-50: 20 14% 12%;
+  --cream-50: 20 14% 8%;
+}
+
+.dark .bg-cream-50 {
+  background-color: hsl(20 14.3% 6%);
+}
+.dark .bg-cream-100 {
+  background-color: hsl(20 14.3% 10%);
+}
+.dark .bg-white {
+  background-color: hsl(20 14.3% 8%);
+}
+.dark .border-gray-100 {
+  border-color: hsl(20 14.3% 14%);
+}
+.dark .text-gray-900 {
+  color: hsl(60 9.1% 97.8%);
+}
+.dark .text-gray-500 {
+  color: hsl(24 5.4% 63.9%);
+}
+.dark .text-gray-400 {
+  color: hsl(24 5.4% 50%);
+}
+.dark .bg-brand-50 {
+  background-color: hsl(24 70% 12%);
+}
+.dark .bg-brand-100 {
+  background-color: hsl(24 70% 16%);
+}
+.dark .text-brand-600 {
+  color: hsl(24 70% 60%);
+}
+.dark .text-brand-700 {
+  color: hsl(24 70% 55%);
 }
