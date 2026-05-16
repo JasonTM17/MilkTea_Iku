@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import ToastProvider from "@/components/ToastProvider";
 import PromoBanner from "@/components/PromoBanner";
+import ScrollToTop from "@/components/ScrollToTop";
 import "./globals.css";
 
 const inter = Inter({
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body className="antialiased">
         <PromoBanner />
         {children}
+        <ScrollToTop />
         <ToastProvider />
       </body>
     </html>
