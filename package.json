@@ -2,6 +2,35 @@
   "name": "milktea-iku",
   "version": "1.0.0",
   "private": true,
+  "description": "Premium Milk Tea E-Commerce Platform - Trà Sữa Cao Cấp - プレミアムミルクティー",
+  "author": {
+    "name": "Nguyễn Sơn",
+    "email": "jasonbmt06@gmail.com",
+    "url": "https://github.com/JasonTM17"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JasonTM17/MilkTea_Iku.git"
+  },
+  "homepage": "https://milktea-iku.vercel.app",
+  "bugs": {
+    "url": "https://github.com/JasonTM17/MilkTea_Iku/issues"
+  },
+  "keywords": [
+    "milktea",
+    "boba",
+    "ecommerce",
+    "nextjs",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "prisma"
+  ],
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
