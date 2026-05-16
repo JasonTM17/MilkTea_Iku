@@ -1,6 +1,11 @@
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
+  ...(process.env.DOCKER_BUILD === '1' ? { output: 'standalone' } : {}),
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'images.unsplash.com' },
@@ -24,6 +29,14 @@ const nextConfig = {
       ],
     },
   ],
+  outputFileTracingRoot: __dirname,
+  outputFileTracingIncludes: {
+    '/api/**/*': ['./prisma/dev.db'],
+    '/menu/**/*': ['./prisma/dev.db'],
+    '/checkout/**/*': ['./prisma/dev.db'],
+    '/admin/**/*': ['./prisma/dev.db'],
+    '/orders/**/*': ['./prisma/dev.db'],
+  },
   experimental: {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
   },

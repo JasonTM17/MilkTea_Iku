@@ -29,6 +29,9 @@
   ],
   "rewrites": [],
   "env": {
-    "DATABASE_URL": "file:./prisma/dev.db"
+    "DATABASE_URL": "file:./prisma/dev.db",
+    "ADMIN_USERNAME": "admin",
+    "ADMIN_PASSWORD": "milktea-iku-2026",
+    "ADMIN_API_TOKEN": "milktea-iku-admin-token-2026"
   }
 }
