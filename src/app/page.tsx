@@ -8,6 +8,9 @@ import FeaturedSection from "@/components/FeaturedSection";
 import Features from "@/components/Features";
 import Testimonials from "@/components/Testimonials";
 import LoyaltySection from "@/components/LoyaltySection";
+import FlashSale from "@/components/FlashSale";
+import QualityPromise from "@/components/QualityPromise";
+import AppPromo from "@/components/AppPromo";
 import Link from "next/link";
 
 export default async function Home() {
@@ -67,6 +70,8 @@ export default async function Home() {
           </div>
         </section>
 
+        <FlashSale />
+
         <Features />
 
         <FeaturedSection products={newProducts} />
@@ -105,7 +110,11 @@ export default async function Home() {
 
         <Testimonials />
 
+        <QualityPromise />
+
         <LoyaltySection />
+
+        <AppPromo />
 
         {/* CTA Section */}
         <section className="py-20 bg-gradient-to-r from-brand-600 to-brand-800 text-white">
