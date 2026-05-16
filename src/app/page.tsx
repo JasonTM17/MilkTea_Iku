@@ -3,6 +3,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 import Hero from "@/components/Hero";
+
+export const dynamic = "force-dynamic";
 import ProductCard from "@/components/ProductCard";
 import FeaturedSection from "@/components/FeaturedSection";
 import Features from "@/components/Features";

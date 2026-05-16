@@ -4,6 +4,8 @@ import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 import MenuClient from "./MenuClient";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Menu | MilkTea Iku",
   description: "Khám phá menu trà sữa đa dạng với hơn 20 hương vị độc đáo",
