@@ -118,7 +118,7 @@ export default function BlogPage() {
                   className={`aspect-[16/9] bg-gradient-to-br ${post.gradient} flex items-center justify-center relative overflow-hidden`}
                 >
                   <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_30%_40%,white,transparent_60%)]" />
-                  <span className="relative text-4xl select-none">🧋</span>
+                  <svg className="relative w-10 h-10 text-white/80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 8H7l1.5 12h7L17 8z"/><path d="M6 8h12l-.5-2H6.5L6 8z"/><circle cx="12" cy="14" r="1.5" fill="currentColor" stroke="none"/></svg>
                 </div>
 
                 <div className="p-5">

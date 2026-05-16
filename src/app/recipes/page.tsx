@@ -27,7 +27,7 @@ const recipes: Recipe[] = [
     time: "45 phút",
     ingredients: 8,
     gradient: "from-amber-200 to-orange-300",
-    emoji: "🧋",
+    emoji: "cup",
   },
   {
     id: 2,
@@ -38,7 +38,7 @@ const recipes: Recipe[] = [
     time: "10 phút",
     ingredients: 5,
     gradient: "from-green-200 to-emerald-300",
-    emoji: "🍵",
+    emoji: "leaf",
   },
   {
     id: 3,
@@ -49,7 +49,7 @@ const recipes: Recipe[] = [
     time: "60 phút",
     ingredients: 7,
     gradient: "from-purple-200 to-violet-300",
-    emoji: "🫐",
+    emoji: "berry",
   },
 ];
 
@@ -116,9 +116,7 @@ export default function RecipesPage() {
                   className={`aspect-[4/3] bg-gradient-to-br ${recipe.gradient} flex items-center justify-center relative overflow-hidden`}
                 >
                   <div className="absolute inset-0 opacity-25 bg-[radial-gradient(circle_at_25%_35%,white,transparent_55%)]" />
-                  <span className="relative text-5xl select-none group-hover:scale-110 transition-transform duration-300">
-                    {recipe.emoji}
-                  </span>
+                  <svg className="relative w-12 h-12 text-white/80 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 8H7l1.5 12h7L17 8z"/><path d="M6 8h12l-.5-2H6.5L6 8z"/><circle cx="12" cy="14" r="1.5" fill="currentColor" stroke="none"/></svg>
                 </div>
 
                 <div className="p-5">
