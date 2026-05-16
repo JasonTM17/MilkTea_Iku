@@ -1,10 +1,12 @@
 "use client";
 
+import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { useRef } from "react";
 import { buttonVariants } from "@/components/ui/button";
+import { ShoppingBag, Leaf, Zap } from "lucide-react";
 
 // Boba pearl data — positions, sizes, colors
 const bobaPearls = [
@@ -19,10 +21,10 @@ const bobaPearls = [
   { id: 9, cx: "70%", cy: "88%", r: 9,  color: "#c25f20", delay: 0.2,  duration: 4.8 },
 ];
 
-const trustItems = [
-  { icon: "🧋", value: "1000+", label: "đơn hàng mỗi ngày" },
-  { icon: "🌿", value: "100%", label: "Nguyên liệu tươi" },
-  { icon: "⚡", value: "30 phút", label: "Giao hàng nhanh" },
+const trustItems: { icon: React.ReactNode; value: string; label: string }[] = [
+  { icon: <ShoppingBag className="w-5 h-5 text-brand-600" />, value: "1000+", label: "đơn hàng mỗi ngày" },
+  { icon: <Leaf className="w-5 h-5 text-brand-600" />, value: "100%", label: "Nguyên liệu tươi" },
+  { icon: <Zap className="w-5 h-5 text-brand-600" />, value: "30 phút", label: "Giao hàng nhanh" },
 ];
 
 const containerVariants = {
