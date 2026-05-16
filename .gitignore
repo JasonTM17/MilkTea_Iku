@@ -49,3 +49,9 @@ Thumbs.db
 
 # OMC state
 .omc/
+
+# Playwright MCP
+.playwright-mcp/
+
+# Screenshots
+*.png

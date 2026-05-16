@@ -4,10 +4,11 @@ import ToastProvider from "@/components/ToastProvider";
 import PromoBanner from "@/components/PromoBanner";
 import ScrollToTop from "@/components/ScrollToTop";
 import "./globals.css";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({
   subsets: ["latin", "vietnamese"],
-  variable: "--font-inter",
+  variable: "--font-sans",
 });
 
 const playfair = Playfair_Display({
@@ -28,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="vi" className={cn(inter.variable, playfair.variable, "font-sans")}>
       <body className="antialiased">
         <PromoBanner />
         {children}

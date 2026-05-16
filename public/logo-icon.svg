@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <!-- Cup body -->
+  <path d="M20 25h40l-4 45c-.5 5-4 8-9 8H33c-5 0-8.5-3-9-8L20 25z" fill="#d4792a"/>
+  <!-- Cup lid -->
+  <rect x="17" y="20" width="46" height="7" rx="3.5" fill="#3a170c"/>
+  <!-- Straw -->
+  <rect x="48" y="5" width="4" height="40" rx="2" fill="#c25f20" transform="rotate(8 50 25)"/>
+  <!-- Cream swirl -->
+  <path d="M22 25c0-4 6-8 18-8s18 4 18 8" fill="#fdf9f0" opacity="0.9"/>
+  <!-- Boba pearls -->
+  <circle cx="30" cy="58" r="4.5" fill="#3a170c" opacity="0.8"/>
+  <circle cx="40" cy="63" r="4" fill="#3a170c" opacity="0.7"/>
+  <circle cx="50" cy="57" r="4.5" fill="#3a170c" opacity="0.8"/>
+  <circle cx="35" cy="52" r="3.5" fill="#3a170c" opacity="0.6"/>
+  <circle cx="45" cy="54" r="3" fill="#3a170c" opacity="0.6"/>
+  <!-- Sparkle -->
+  <path d="M60 12l2 4 4 2-4 2-2 4-2-4-4-2 4-2z" fill="#e9bc7d" opacity="0.7"/>
+</svg>
