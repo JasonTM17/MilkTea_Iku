@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { z } from "zod";
+import { limiter } from "@/lib/rate-limit";
 
 const reviewSchema = z.object({
   productId: z.string(),
@@ -50,6 +51,16 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
+    const ip = request.headers.get("x-forwarded-for") || "anonymous";
+    try {
+      await limiter.check(5, ip);
+    } catch {
+      return NextResponse.json(
+        { error: "Quá nhiều yêu cầu, vui lòng thử lại sau" },
+        { status: 429 }
+      );
+    }
+
     const body = await request.json();
     const data = reviewSchema.parse(body);
 
