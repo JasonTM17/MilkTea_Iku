@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma";
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest } from "next/server";
+import { successResponse, errorResponse } from "@/lib/api-response";
 
 export async function GET(request: NextRequest) {
   try {
@@ -7,17 +8,27 @@ export async function GET(request: NextRequest) {
     const q = searchParams.get("q")?.trim();
 
     if (!q || q.length < 1) {
-      return NextResponse.json({ data: [] });
+      return successResponse([]);
     }
 
     const products = await prisma.product.findMany({
       where: {
         isAvailable: true,
-        name: { contains: q },
+        OR: [
+          { name: { contains: q } },
+          { description: { contains: q } },
+        ],
       },
-      include: { category: true },
+      select: {
+        id: true,
+        name: true,
+        slug: true,
+        basePrice: true,
+        image: true,
+        category: { select: { name: true } },
+      },
       orderBy: { createdAt: "desc" },
-      take: 8,
+      take: 10,
     });
 
     const data = products.map((p) => ({
@@ -25,15 +36,13 @@ export async function GET(request: NextRequest) {
       name: p.name,
       slug: p.slug,
       price: p.basePrice,
+      image: p.image,
       category: p.category?.name ?? null,
     }));
 
-    return NextResponse.json({ data });
+    return successResponse(data);
   } catch (error) {
     console.error("[GET /api/search]", error);
-    return NextResponse.json(
-      { error: "Không thể tìm kiếm sản phẩm" },
-      { status: 500 }
-    );
+    return errorResponse("Không thể tìm kiếm sản phẩm", 500);
   }
 }
