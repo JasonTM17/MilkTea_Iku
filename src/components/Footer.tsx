@@ -20,6 +20,13 @@ const aboutLinks = [
   { href: "/order", label: "Tra cứu đơn hàng" },
 ];
 
+const policyLinks = [
+  { href: "/privacy", label: "Chính sách bảo mật" },
+  { href: "/terms", label: "Điều khoản sử dụng" },
+  { href: "/delivery", label: "Chính sách giao hàng" },
+  { href: "/faq", label: "Câu hỏi thường gặp" },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-brand-950 text-white relative overflow-hidden">
@@ -29,7 +36,7 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-5 group">
               <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-400 to-brand-600 flex items-center justify-center shadow-lg shadow-brand-600/20 group-hover:scale-105 transition-transform">
@@ -83,6 +90,23 @@ export default function Footer() {
             <h4 className="font-semibold mb-5 text-white">Về Iku</h4>
             <ul className="space-y-3">
               {aboutLinks.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-gray-400 hover:text-brand-300 transition-colors inline-flex items-center gap-1.5"
+                  >
+                    <span className="w-1 h-1 rounded-full bg-brand-500" />
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-5 text-white">Chính sách</h4>
+            <ul className="space-y-3">
+              {policyLinks.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
