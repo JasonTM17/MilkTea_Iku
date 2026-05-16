@@ -8,6 +8,7 @@ import MobileNav from "@/components/MobileNav";
 import ThemeProvider from "@/components/ThemeProvider";
 import CookieConsent from "@/components/CookieConsent";
 import SkipLink from "@/components/SkipLink";
+import JsonLd from "@/components/JsonLd";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -37,6 +38,7 @@ export default function RootLayout({
     <html lang="vi" className={cn(inter.variable, playfair.variable, "font-sans")}>
       <body className="antialiased">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          <JsonLd />
           <SkipLink />
           <PromoBanner />
           {children}
