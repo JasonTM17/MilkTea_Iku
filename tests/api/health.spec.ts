@@ -6,7 +6,8 @@ test.describe("Health Check API", () => {
     expect(response.status()).toBe(200);
 
     const data = await response.json();
-    expect(data).toHaveProperty("status", "ok");
+    expect(data).toHaveProperty("status", "healthy");
+    expect(data).toHaveProperty("database", "connected");
   });
 
   test("GET /api/health should include timestamp", async ({ request }) => {
