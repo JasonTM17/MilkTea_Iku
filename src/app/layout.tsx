@@ -3,6 +3,8 @@ import { Inter, Playfair_Display } from "next/font/google";
 import ToastProvider from "@/components/ToastProvider";
 import PromoBanner from "@/components/PromoBanner";
 import ScrollToTop from "@/components/ScrollToTop";
+import MobileNav from "@/components/MobileNav";
+import ThemeProvider from "@/components/ThemeProvider";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -31,10 +33,13 @@ export default function RootLayout({
   return (
     <html lang="vi" className={cn(inter.variable, playfair.variable, "font-sans")}>
       <body className="antialiased">
-        <PromoBanner />
-        {children}
-        <ScrollToTop />
-        <ToastProvider />
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          <PromoBanner />
+          {children}
+          <MobileNav />
+          <ScrollToTop />
+          <ToastProvider />
+        </ThemeProvider>
       </body>
     </html>
   );
