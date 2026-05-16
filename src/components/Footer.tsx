@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Facebook, Instagram, Clock, Heart } from "lucide-react";
+import Newsletter from "@/components/Newsletter";
 
 const menuLinks = [
   { href: "/menu?category=tra-sua-truyen-thong", label: "Trà Sữa Truyền Thống" },
@@ -118,7 +119,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="border-t border-white/10 mt-12 pt-10">
+          <Newsletter />
+        </div>
+
+        <div className="border-t border-white/10 mt-10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-gray-500">
             © 2024 MilkTea Iku. All rights reserved.
           </p>
