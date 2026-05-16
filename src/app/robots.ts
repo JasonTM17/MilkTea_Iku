@@ -1,14 +1,21 @@
 import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
+  const baseUrl = "https://milktea-iku.vercel.app";
+
   return {
     rules: [
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/admin", "/api"],
+        disallow: ["/api/", "/admin/", "/checkout/", "/order/"],
+      },
+      {
+        userAgent: "Googlebot",
+        allow: "/",
+        disallow: ["/api/", "/admin/"],
       },
     ],
-    sitemap: "https://milkteaiku.com/sitemap.xml",
+    sitemap: `${baseUrl}/sitemap.xml`,
   };
 }
