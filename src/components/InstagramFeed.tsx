@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Instagram } from "lucide-react";
+import { BobaCupIcon } from "@/components/icons";
 
 const posts = [
   { id: 1, color: "from-brand-300 to-brand-500" },
@@ -14,17 +15,17 @@ const posts = [
 
 export default function InstagramFeed() {
   return (
-    <section className="py-16 bg-cream-50">
+    <section className="py-16 bg-cream-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <div className="flex items-center justify-center gap-2 mb-3">
             <Instagram className="w-5 h-5 text-brand-600" />
             <span className="text-sm font-medium text-brand-600">@milkteaiku</span>
           </div>
-          <h2 className="text-3xl font-display font-bold text-gray-900">
+          <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-gray-50">
             Theo dõi chúng tôi
           </h2>
-          <p className="text-gray-500 mt-2">
+          <p className="text-gray-500 dark:text-gray-400 mt-2">
             Cập nhật hình ảnh mới nhất từ Iku
           </p>
         </div>
@@ -44,7 +45,7 @@ export default function InstagramFeed() {
               className="aspect-square rounded-xl overflow-hidden relative group"
             >
               <div className={`w-full h-full bg-gradient-to-br ${post.color} flex items-center justify-center`}>
-                <span className="text-3xl">🧋</span>
+                <BobaCupIcon className="w-8 h-8 text-white/80" />
               </div>
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
                 <Instagram className="w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
