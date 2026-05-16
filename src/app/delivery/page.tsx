@@ -1,21 +1,27 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, Clock, Star, Phone } from "lucide-react";
+import { Truck, Clock, MapPin, BadgeCheck } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 
-const partners = [
-  { name: "GrabFood", description: "Đặt qua Grab, giao nhanh 20 phút", available: true },
-  { name: "ShopeeFood", description: "Ưu đãi độc quyền trên Shopee", available: true },
-  { name: "Baemin", description: "Freeship cho đơn từ 50K", available: true },
-  { name: "GoFood", description: "Tích điểm GoRewards", available: false },
+const deliveryZones = [
+  {
+    city: "TP. Hồ Chí Minh",
+    districts: ["Quận 1", "Quận 3", "Quận 7", "Bình Thạnh", "Phú Nhuận", "Tân Bình", "Gò Vấp"],
+  },
+  {
+    city: "Hà Nội",
+    districts: ["Cầu Giấy", "Thanh Xuân", "Đống Đa", "Ba Đình", "Hoàn Kiếm", "Hai Bà Trưng"],
+  },
 ];
 
-const deliveryZones = [
-  { city: "TP.HCM", districts: ["Quận 1", "Quận 3", "Quận 7", "Bình Thạnh", "Phú Nhuận", "Tân Bình", "Gò Vấp"] },
-  { city: "Hà Nội", districts: ["Cầu Giấy", "Thanh Xuân", "Đống Đa", "Ba Đình", "Hoàn Kiếm", "Hai Bà Trưng"] },
+const feeTable = [
+  { range: "0 – 2 km", fee: "Miễn phí (đơn từ 100.000đ)", time: "15 – 20 phút" },
+  { range: "2 – 5 km", fee: "Miễn phí (đơn từ 100.000đ)", time: "25 – 35 phút" },
+  { range: "5 – 10 km", fee: "15.000đ", time: "35 – 50 phút" },
+  { range: "Trên 10 km", fee: "Liên hệ hotline", time: "Thoả thuận" },
 ];
 
 export default function DeliveryPage() {
@@ -23,99 +29,134 @@ export default function DeliveryPage() {
     <>
       <Header />
       <CartDrawer />
-      <main className="pt-20 min-h-screen bg-cream-50">
-        <section className="bg-gradient-to-b from-cream-100 to-cream-50 py-16">
+      <main className="pt-20 min-h-screen bg-cream-50 dark:bg-gray-900">
+        {/* Hero */}
+        <section className="bg-gradient-to-b from-cream-100 to-cream-50 dark:from-gray-800 dark:to-gray-900 py-16">
           <div className="max-w-4xl mx-auto px-4 text-center">
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="inline-block px-4 py-1.5 bg-brand-100 dark:bg-brand-900/40 text-brand-700 dark:text-brand-300 rounded-full text-sm font-medium mb-5"
+            >
+              Giao hàng
+            </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-4xl font-display font-bold text-gray-900 mb-4"
+              transition={{ delay: 0.1 }}
+              className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-gray-50 mb-4"
             >
-              Giao hàng <span className="text-brand-600">tận nơi</span>
+              Thông tin{" "}
+              <span className="text-brand-600 dark:text-brand-400">giao hàng</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-gray-500 text-lg"
+              transition={{ delay: 0.2 }}
+              className="text-gray-500 dark:text-gray-400 text-lg"
             >
-              Nhận trà sữa tươi ngon trong 30 phút tại khu vực nội thành
+              Nhận trà sữa tươi ngon tận nơi – nhanh chóng, an toàn và tiện lợi
             </motion.p>
           </div>
         </section>
 
-        <div className="max-w-6xl mx-auto px-4 py-12 space-y-12">
+        <div className="max-w-5xl mx-auto px-4 py-12 space-y-14">
+          {/* Key stats */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            transition={{ delay: 0.3 }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
           >
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 text-center">
-              <Clock className="w-8 h-8 text-brand-600 mx-auto mb-3" />
-              <h3 className="font-semibold text-gray-900 mb-1">30 phút</h3>
-              <p className="text-sm text-gray-500">Thời gian giao trung bình</p>
-            </div>
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 text-center">
-              <MapPin className="w-8 h-8 text-brand-600 mx-auto mb-3" />
-              <h3 className="font-semibold text-gray-900 mb-1">5km</h3>
-              <p className="text-sm text-gray-500">Bán kính freeship</p>
-            </div>
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 text-center">
-              <Star className="w-8 h-8 text-brand-600 mx-auto mb-3" />
-              <h3 className="font-semibold text-gray-900 mb-1">100.000đ</h3>
-              <p className="text-sm text-gray-500">Đơn tối thiểu freeship</p>
-            </div>
+            {[
+              { icon: Truck, label: "Giao hàng tận nơi", value: "Toàn quốc" },
+              { icon: Clock, label: "Thời gian trung bình", value: "30 phút" },
+              { icon: MapPin, label: "Bán kính freeship", value: "5 km" },
+              { icon: BadgeCheck, label: "Đơn tối thiểu freeship", value: "100.000đ" },
+            ].map(({ icon: Icon, label, value }, i) => (
+              <motion.div
+                key={label}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 + i * 0.08 }}
+                className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm p-6 text-center"
+              >
+                <Icon className="w-8 h-8 text-brand-600 dark:text-brand-400 mx-auto mb-3" />
+                <p className="text-xl font-bold text-gray-900 dark:text-gray-50 mb-1">{value}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">{label}</p>
+              </motion.div>
+            ))}
           </motion.div>
 
+          {/* Fee table */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl font-display font-bold text-gray-900 mb-6">
-              Đối tác giao hàng
+            <h2 className="text-2xl font-display font-bold text-gray-900 dark:text-gray-50 mb-6">
+              Phí giao hàng
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {partners.map((partner) => (
-                <div
-                  key={partner.name}
-                  className={`bg-white rounded-2xl border shadow-sm p-5 ${
-                    partner.available ? "border-gray-100" : "border-gray-100 opacity-60"
-                  }`}
-                >
-                  <h3 className="font-semibold text-gray-900 mb-1">{partner.name}</h3>
-                  <p className="text-xs text-gray-500 mb-2">{partner.description}</p>
-                  <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${
-                    partner.available
-                      ? "bg-green-50 text-green-600"
-                      : "bg-gray-100 text-gray-400"
-                  }`}>
-                    {partner.available ? "Đang hoạt động" : "Sắp ra mắt"}
-                  </span>
-                </div>
-              ))}
+            <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm overflow-hidden">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-cream-50 dark:bg-gray-700/50 border-b border-gray-100 dark:border-gray-700">
+                    <th className="text-left px-6 py-3 font-semibold text-gray-700 dark:text-gray-300">
+                      Khoảng cách
+                    </th>
+                    <th className="text-left px-6 py-3 font-semibold text-gray-700 dark:text-gray-300">
+                      Phí giao hàng
+                    </th>
+                    <th className="text-left px-6 py-3 font-semibold text-gray-700 dark:text-gray-300">
+                      Thời gian dự kiến
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {feeTable.map((row, i) => (
+                    <tr
+                      key={row.range}
+                      className={`border-b border-gray-50 dark:border-gray-700/50 last:border-0 ${
+                        i % 2 === 0 ? "" : "bg-gray-50/50 dark:bg-gray-700/20"
+                      }`}
+                    >
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300 font-medium">
+                        {row.range}
+                      </td>
+                      <td className="px-6 py-4 text-gray-600 dark:text-gray-400">{row.fee}</td>
+                      <td className="px-6 py-4 text-gray-600 dark:text-gray-400">{row.time}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </motion.div>
 
+          {/* Delivery zones */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl font-display font-bold text-gray-900 mb-6">
+            <h2 className="text-2xl font-display font-bold text-gray-900 dark:text-gray-50 mb-6">
               Khu vực giao hàng
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {deliveryZones.map((zone) => (
-                <div key={zone.city} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
-                  <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-brand-500" />
+                <div
+                  key={zone.city}
+                  className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm p-6"
+                >
+                  <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+                    <MapPin className="w-4 h-4 text-brand-500 dark:text-brand-400" />
                     {zone.city}
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {zone.districts.map((district) => (
-                      <span key={district} className="px-3 py-1 bg-cream-100 text-gray-700 text-sm rounded-full">
+                      <span
+                        key={district}
+                        className="px-3 py-1 bg-cream-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm rounded-full"
+                      >
                         {district}
                       </span>
                     ))}
@@ -125,24 +166,24 @@ export default function DeliveryPage() {
             </div>
           </motion.div>
 
+          {/* Free delivery highlight */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white rounded-3xl border border-gray-100 shadow-sm p-8 text-center"
+            className="bg-brand-50 dark:bg-brand-900/20 border border-brand-100 dark:border-brand-800/40 rounded-3xl p-8 flex flex-col sm:flex-row items-center gap-6"
           >
-            <Phone className="w-10 h-10 text-brand-400 mx-auto mb-4" />
-            <h3 className="text-xl font-display font-bold text-gray-900 mb-2">
-              Đặt hàng qua hotline
-            </h3>
-            <p className="text-gray-500 mb-4">Gọi ngay để đặt hàng nhanh nhất</p>
-            <a
-              href="tel:19001234"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-medium transition-colors"
-            >
-              <Phone className="w-4 h-4" />
-              1900 1234
-            </a>
+            <BadgeCheck className="w-12 h-12 text-brand-600 dark:text-brand-400 shrink-0" />
+            <div>
+              <h3 className="text-xl font-display font-bold text-gray-900 dark:text-gray-50 mb-1">
+                Miễn phí giao hàng
+              </h3>
+              <p className="text-gray-600 dark:text-gray-400">
+                Đơn hàng từ <strong>100.000đ</strong> trong bán kính <strong>5km</strong> được
+                miễn phí giao hàng hoàn toàn. Áp dụng cho tất cả các chi nhánh Iku trên toàn
+                quốc.
+              </p>
+            </div>
           </motion.div>
         </div>
       </main>
