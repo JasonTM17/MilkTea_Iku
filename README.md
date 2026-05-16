@@ -1,171 +1,188 @@
 <p align="center">
-  <img src="public/logo-cute.svg" width="120" alt="MilkTea Iku"/>
+  🌐 <strong>English</strong> | <a href="docs/README.vi.md">Tiếng Việt</a> | <a href="docs/README.ja.md">日本語</a>
+</p>
+
+---
+
+<p align="center">
+  <img src="public/logo-cute.svg" width="80" alt="MilkTea Iku Logo" />
 </p>
 
 <h1 align="center">MilkTea Iku</h1>
 
 <p align="center">
   <strong>Premium Milk Tea E-Commerce Platform</strong><br/>
-  <em>Trà Sữa Cao Cấp &bull; プレミアムミルクティー</em>
+  Nền tảng thương mại điện tử trà sữa cao cấp
 </p>
 
 <p align="center">
-  <a href="https://milktea-iku.vercel.app">
-    <img src="https://img.shields.io/badge/Live_Demo-milktea--iku.vercel.app-FF6B9D?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo"/>
-  </a>
+  <a href="#features">Features</a> •
+  <a href="#tech-stack">Tech Stack</a> •
+  <a href="#screenshots">Screenshots</a> •
+  <a href="#getting-started">Getting Started</a> •
+  <a href="#deployment">Deployment</a> •
+  <a href="#contributing">Contributing</a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/JasonTM17/MilkTea_Iku/releases/tag/v1.0.0">
-    <img src="https://img.shields.io/github/v/release/JasonTM17/MilkTea_Iku?style=flat-square&color=E8923A" alt="Release"/>
-  </a>
-  <a href="https://github.com/JasonTM17/MilkTea_Iku/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/JasonTM17/MilkTea_Iku?style=flat-square&color=3a170c" alt="License"/>
-  </a>
-  <a href="https://github.com/JasonTM17/MilkTea_Iku/commits/main">
-    <img src="https://img.shields.io/github/commit-activity/m/JasonTM17/MilkTea_Iku?style=flat-square&color=FF6B9D" alt="Commits"/>
-  </a>
-  <a href="https://hub.docker.com/r/nguyenson1710/milktea-iku-backend">
-    <img src="https://img.shields.io/badge/Docker-Backend-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker Backend"/>
-  </a>
-  <a href="https://hub.docker.com/r/nguyenson1710/milktea-iku-frontend">
-    <img src="https://img.shields.io/badge/Docker-Frontend-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker Frontend"/>
-  </a>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Next.js-14-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js"/>
-  <img src="https://img.shields.io/badge/TypeScript-5.4-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript"/>
-  <img src="https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind"/>
-  <img src="https://img.shields.io/badge/Prisma-5.14-2D3748?style=flat-square&logo=prisma&logoColor=white" alt="Prisma"/>
-  <img src="https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React"/>
-  <img src="https://img.shields.io/badge/Playwright-Testing-2EAD33?style=flat-square&logo=playwright&logoColor=white" alt="Playwright"/>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="MIT License" /></a>
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome" />
+  <img src="https://img.shields.io/badge/Next.js-14-black?logo=next.js" alt="Next.js 14" />
+  <img src="https://img.shields.io/badge/TypeScript-5.4-blue?logo=typescript" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-3.4-38bdf8?logo=tailwindcss" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker" alt="Docker" />
+  <img src="https://github.com/JasonTM17/MilkTea_Iku/actions/workflows/ci.yml/badge.svg" alt="CI" />
+  <a href="https://milktea-iku.vercel.app"><img src="https://img.shields.io/badge/Vercel-Live-000?logo=vercel" alt="Vercel" /></a>
 </p>
 
 ---
 
-<p align="center"><img src="public/logo-icon.svg" width="24"/></p>
+## Screenshots
 
-## Screenshots & Demo
+<p align="center">
+  <img src="docs/screenshots/homepage.png" alt="Homepage" width="720"/>
+  <br/><em>Homepage with hero section and bestsellers</em>
+</p>
 
 <table>
   <tr>
-    <td align="center"><strong>Homepage</strong></td>
-    <td align="center"><strong>Menu</strong></td>
-    <td align="center"><strong>Dark Mode</strong></td>
+    <td><img src="docs/screenshots/homepage.png" alt="Homepage" width="400"/></td>
+    <td><img src="docs/screenshots/menu.png" alt="Menu" width="400"/></td>
   </tr>
   <tr>
-    <td><img src="docs/screenshots/homepage.png" width="300" alt="Homepage"/></td>
-    <td><img src="docs/screenshots/menu.png" width="300" alt="Menu Page"/></td>
-    <td><img src="docs/screenshots/dark-mode.png" width="300" alt="Dark Mode"/></td>
+    <td align="center"><em>Homepage with promotions</em></td>
+    <td align="center"><em>Product catalog with category filter</em></td>
   </tr>
   <tr>
-    <td align="center" colspan="3"><strong>Mobile</strong></td>
+    <td><img src="docs/screenshots/dark-mode.png" alt="Dark Mode" width="400"/></td>
+    <td><img src="docs/screenshots/mobile.png" alt="Mobile View" width="400"/></td>
   </tr>
   <tr>
-    <td align="center" colspan="3"><img src="docs/screenshots/mobile.png" width="200" alt="Mobile View"/></td>
+    <td align="center"><em>Dark mode support</em></td>
+    <td align="center"><em>Responsive mobile design</em></td>
   </tr>
 </table>
 
-<details>
-<summary><strong>Demo GIF</strong> (click to expand)</summary>
-<br/>
-<p align="center">
-  <em>Full ordering flow: Browse → Customize → Cart → Checkout</em>
-</p>
-
-> Record a screen capture of the ordering flow and replace this section with the GIF.
-> Recommended tool: [LICEcap](https://www.cockos.com/licecap/) or [Kap](https://getkap.co/)
-
-</details>
-
 ---
 
-<p align="center"><img src="public/logo-icon.svg" width="24"/></p>
+## Overview
+
+MilkTea Iku is a full-featured milk tea e-commerce platform with drink customization, order tracking, and admin management. Built with modern web technologies for performance, accessibility, and a premium ordering experience.
+
+### Key Highlights
+
+| Metric | Value |
+|--------|-------|
+| Pages | 20+ |
+| Components | 40+ |
+| API Endpoints | 12+ |
+| Test Suites | 20+ |
+| Lighthouse Score | 90+ |
+
+---
 
 ## Features
 
-<table>
-  <tr>
-    <td>
-      <img src="https://img.shields.io/badge/E--Commerce-Full_Flow-FF6B9D?style=flat-square" alt=""/>
-      <br/><br/>
-      <strong>Product Catalog</strong> — Browse by category, search, filter<br/>
-      <strong>Drink Builder</strong> — Size, sugar, ice, toppings customization<br/>
-      <strong>Cart & Checkout</strong> — Persistent cart, form validation, order confirmation<br/>
-      <strong>Order Tracking</strong> — Real-time delivery progress steps
-    </td>
-    <td>
-      <img src="https://img.shields.io/badge/Admin-Dashboard-E8923A?style=flat-square" alt=""/>
-      <br/><br/>
-      <strong>Revenue Stats</strong> — Charts and analytics<br/>
-      <strong>Order Management</strong> — Status updates, filtering<br/>
-      <strong>Product CRUD</strong> — Add, edit, remove products<br/>
-      <strong>Coupon System</strong> — Create and manage promotions
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <img src="https://img.shields.io/badge/UI%2FUX-Premium-9B59B6?style=flat-square" alt=""/>
-      <br/><br/>
-      <strong>Dark Mode</strong> — Full theme support<br/>
-      <strong>Responsive</strong> — Mobile-first with bottom nav<br/>
-      <strong>Animations</strong> — Framer Motion throughout<br/>
-      <strong>40+ Components</strong> — Reusable design system
-    </td>
-    <td>
-      <img src="https://img.shields.io/badge/Performance-Optimized-2ECC71?style=flat-square" alt=""/>
-      <br/><br/>
-      <strong>PWA</strong> — Offline support, installable<br/>
-      <strong>SEO</strong> — JSON-LD, sitemap, OG images<br/>
-      <strong>Image Optimization</strong> — AVIF/WebP, lazy loading<br/>
-      <strong>Code Splitting</strong> — Dynamic imports
-    </td>
-  </tr>
-</table>
+### Customer Experience
+- **Product Catalog** — Browse by category, search, filter by price/popularity
+- **Drink Customization** — Size, sugar level, ice level, toppings selection
+- **Shopping Cart** — Persistent state with Zustand, quantity management
+- **Checkout Flow** — Multi-step form with Zod validation
+- **Order Tracking** — Real-time delivery progress with status updates
+- **Wishlist & Reviews** — Save favorites, read customer reviews
+
+### Admin Dashboard
+- **Revenue Analytics** — Charts, daily/weekly/monthly stats
+- **Order Management** — Status updates, filtering, search
+- **Product CRUD** — Add, edit, remove products and categories
+- **Coupon System** — Create and manage promotional codes
+
+### Technical Features
+- **Dark Mode** — Full theme support across all pages
+- **PWA** — Offline support, installable on mobile
+- **SEO** — JSON-LD structured data, dynamic sitemap, OG images
+- **Accessibility** — Skip links, ARIA labels, keyboard navigation
+- **Rate Limiting** — IP-based sliding window on sensitive endpoints
+- **Security Headers** — HSTS, CSP, X-Frame-Options, XSS protection
 
 ---
 
-<p align="center"><img src="public/logo-icon.svg" width="24"/></p>
+## Tech Stack
 
-## Quick Start
+| Layer | Technology |
+|-------|-----------|
+| Framework | Next.js 14 (App Router) |
+| Language | TypeScript 5.4 |
+| Styling | Tailwind CSS 3.4 |
+| Database | Prisma 5.14 + SQLite |
+| State | Zustand 4.5 |
+| Animation | Framer Motion 11 |
+| Validation | Zod 3.23 |
+| Icons | Lucide React |
+| Testing | Playwright |
+| Deployment | Vercel + Docker |
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+| Tool | Version |
+|------|---------|
+| Node.js | >= 18.0.0 |
+| npm | >= 9.0.0 |
+
+### Installation
 
 ```bash
-# Clone
+# Clone the repository
 git clone https://github.com/JasonTM17/MilkTea_Iku.git
 cd MilkTea_Iku
 
-# Install
+# Install dependencies
 npm ci --legacy-peer-deps
 
-# Database
+# Set up environment
 cp .env.example .env
+
+# Set up database
 npx prisma generate
 npx prisma db push
 npm run db:seed
 
-# Run
+# Start development server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
+Open [http://localhost:3000](http://localhost:3000) to view the application.
+
+### Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Production build |
+| `npm run start` | Start production server |
+| `npm run lint` | Run ESLint |
+| `npm run db:push` | Push schema to database |
+| `npm run db:seed` | Seed sample data |
+| `npm run db:studio` | Open Prisma Studio |
 
 ---
 
-<p align="center"><img src="public/logo-icon.svg" width="24"/></p>
-
-## Architecture
+## Project Structure
 
 ```
 src/
-├── app/                    # Next.js App Router pages
-│   ├── api/               # RESTful API routes (12+)
+├── app/                    # Next.js App Router
+│   ├── api/               # RESTful API routes
 │   ├── admin/             # Admin dashboard
 │   ├── menu/              # Product catalog
 │   ├── checkout/          # Checkout flow
 │   └── ...                # 20+ pages
 ├── components/            # 40+ React components
-├── lib/                   # Utilities, validators, Prisma client
+├── lib/                   # Utilities, validators, Prisma
 └── store/                 # Zustand state management
 prisma/
 ├── schema.prisma          # Database schema
@@ -178,28 +195,6 @@ tests/
 ```
 
 ---
-
-<p align="center"><img src="public/logo-icon.svg" width="24"/></p>
-
-## Docker Deployment
-
-```bash
-# Using Docker Compose (recommended)
-docker compose up -d
-
-# Or pull from Docker Hub
-docker pull nguyenson1710/milktea-iku-backend:v1.0.0
-docker pull nguyenson1710/milktea-iku-frontend:v1.0.0
-```
-
-| Service | Image | Port | Size |
-|---------|-------|------|------|
-| Backend (Node.js + API) | `nguyenson1710/milktea-iku-backend` | 3000 | 349 MB |
-| Frontend (Nginx + Static) | `nguyenson1710/milktea-iku-frontend` | 80 | 96 MB |
-
----
-
-<p align="center"><img src="public/logo-icon.svg" width="24"/></p>
 
 ## API Reference
 
@@ -220,7 +215,31 @@ docker pull nguyenson1710/milktea-iku-frontend:v1.0.0
 
 ---
 
-<p align="center"><img src="public/logo-icon.svg" width="24"/></p>
+## Deployment
+
+### Vercel (Recommended)
+
+The project auto-deploys to Vercel on push to `main`.
+
+**Live:** [milktea-iku.vercel.app](https://milktea-iku.vercel.app)
+
+### Docker
+
+```bash
+# Using Docker Compose
+docker compose up -d
+
+# Or pull from Docker Hub
+docker pull nguyenson1710/milktea-iku-backend:v1.0.0
+docker pull nguyenson1710/milktea-iku-frontend:v1.0.0
+```
+
+| Service | Image | Port | Size |
+|---------|-------|------|------|
+| Backend | `nguyenson1710/milktea-iku-backend` | 3000 | 349 MB |
+| Frontend | `nguyenson1710/milktea-iku-frontend` | 80 | 96 MB |
+
+---
 
 ## Testing
 
@@ -228,158 +247,28 @@ docker pull nguyenson1710/milktea-iku-frontend:v1.0.0
 # Run all tests
 npx playwright test
 
-# Specific suites
+# Run specific suites
 npx playwright test tests/e2e/
 npx playwright test tests/api/
-npx playwright test tests/visual/
-npx playwright test tests/accessibility/
 
-# With UI
+# Run with UI mode
 npx playwright test --ui
 ```
 
 ---
 
-<p align="center"><img src="public/logo-icon.svg" width="24"/></p>
-
-## Scripts
-
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Production build |
-| `npm run start` | Start production server |
-| `npm run lint` | Run ESLint |
-| `npm run db:push` | Push schema to database |
-| `npm run db:seed` | Seed sample data |
-| `npm run db:studio` | Open Prisma Studio |
-
----
-
-<p align="center"><img src="public/logo-icon.svg" width="24"/></p>
-
 ## Contributing
 
-Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-FF6B9D?style=flat-square)](https://github.com/JasonTM17/MilkTea_Iku/pulls)
-[![Issues](https://img.shields.io/github/issues/JasonTM17/MilkTea_Iku?style=flat-square&color=E8923A)](https://github.com/JasonTM17/MilkTea_Iku/issues)
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ---
-
-<p align="center"><img src="public/logo-icon.svg" width="24"/></p>
 
 ## License
 
-[MIT](LICENSE) &copy; 2026 [Nguyễn Sơn](https://github.com/JasonTM17)
+[MIT](LICENSE) © 2026 [Nguyễn Sơn](https://github.com/JasonTM17)
 
 ---
 
 <p align="center">
-  <a href="https://github.com/JasonTM17">
-    <img src="https://github.com/JasonTM17.png" width="60" style="border-radius:50%" alt="Nguyễn Sơn"/>
-  </a>
-  <br/>
-  <strong>Nguyễn Sơn</strong><br/>
-  <em>Full-stack Developer</em>
-  <br/><br/>
-  <a href="https://github.com/JasonTM17">
-    <img src="https://img.shields.io/badge/GitHub-JasonTM17-181717?style=flat-square&logo=github" alt="GitHub"/>
-  </a>
+  Made with ☕ by <a href="https://github.com/JasonTM17">Nguyễn Sơn</a>
 </p>
-
-<p align="center">
-  <sub>Made with ☕ and lots of 🧋</sub>
-</p>
-
----
-
-<details>
-<summary><strong>Tiếng Việt</strong> 🇻🇳</summary>
-
-## Giới Thiệu
-
-**MilkTea Iku** là nền tảng thương mại điện tử trà sữa cao cấp, được xây dựng với công nghệ hiện đại nhất.
-
-### Tính Năng Chính
-
-- Danh mục sản phẩm với bộ lọc và tìm kiếm
-- Tùy chỉnh đồ uống (size, đường, đá, topping)
-- Giỏ hàng và thanh toán đầy đủ
-- Theo dõi đơn hàng theo thời gian thực
-- Bảng điều khiển quản trị
-- Chế độ tối
-- PWA hỗ trợ offline
-- 20+ trang, 40+ component
-
-### Cài Đặt Nhanh
-
-```bash
-git clone https://github.com/JasonTM17/MilkTea_Iku.git
-cd MilkTea_Iku
-npm ci --legacy-peer-deps
-cp .env.example .env
-npx prisma generate && npx prisma db push
-npm run db:seed
-npm run dev
-```
-
-### Docker
-
-```bash
-docker compose up -d
-# Hoặc pull từ Docker Hub
-docker pull nguyenson1710/milktea-iku-backend:v1.0.0
-docker pull nguyenson1710/milktea-iku-frontend:v1.0.0
-```
-
-### Demo Trực Tuyến
-
-[milktea-iku.vercel.app](https://milktea-iku.vercel.app)
-
-</details>
-
-<details>
-<summary><strong>日本語</strong> 🇯🇵</summary>
-
-## 概要
-
-**MilkTea Iku** は、最新技術で構築されたプレミアムミルクティーECプラットフォームです。
-
-### 主な機能
-
-- カテゴリフィルターと検索付き商品カタログ
-- ドリンクカスタマイズ（サイズ、甘さ、氷、トッピング）
-- カートとチェックアウト
-- リアルタイム注文追跡
-- 管理ダッシュボード
-- ダークモード対応
-- PWAオフラインサポート
-- 20以上のページ、40以上のコンポーネント
-
-### クイックスタート
-
-```bash
-git clone https://github.com/JasonTM17/MilkTea_Iku.git
-cd MilkTea_Iku
-npm ci --legacy-peer-deps
-cp .env.example .env
-npx prisma generate && npx prisma db push
-npm run db:seed
-npm run dev
-```
-
-### Docker
-
-```bash
-docker compose up -d
-# Docker Hubからプル
-docker pull nguyenson1710/milktea-iku-backend:v1.0.0
-docker pull nguyenson1710/milktea-iku-frontend:v1.0.0
-```
-
-### ライブデモ
-
-[milktea-iku.vercel.app](https://milktea-iku.vercel.app)
-
-</details>
