@@ -9,14 +9,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
-// Note: metadata exports are ignored in client components by Next.js 14.
-// To activate SEO metadata, move this export to a server wrapper page.tsx.
-export const metadata = {
-  title: "Hệ thống cửa hàng | MilkTea Iku",
-  description:
-    "Tìm cửa hàng Iku gần bạn nhất tại TP.HCM và Hà Nội. Mở cửa từ 8:00 đến 22:00 mỗi ngày.",
-};
-
 type City = "Tất cả" | "TP.HCM" | "Hà Nội";
 
 interface Store {
@@ -333,19 +325,15 @@ export default function StoresPage() {
 
                     {/* CTA */}
                     <div className="pt-1 mt-auto">
-                      <Button
-                        asChild
-                        className="w-full bg-brand-600 hover:bg-brand-700 text-white rounded-xl gap-2"
+                      <a
+                        href={store.mapsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full bg-brand-600 hover:bg-brand-700 text-white rounded-xl gap-2 inline-flex items-center justify-center h-10 px-4 font-medium transition-colors"
                       >
-                        <a
-                          href={store.mapsUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <DirectionsIcon />
-                          Chỉ đường
-                        </a>
-                      </Button>
+                        <DirectionsIcon />
+                        Chỉ đường
+                      </a>
                     </div>
                   </CardContent>
                 </Card>
@@ -425,13 +413,12 @@ export default function StoresPage() {
               Đặt hàng online và nhận giao tận nơi trong vòng 30 phút tại khu
               vực nội thành.
             </p>
-            <Button
-              asChild
-              size="lg"
-              className="bg-brand-600 hover:bg-brand-700 text-white rounded-xl px-8"
+            <a
+              href="/menu"
+              className="inline-flex items-center justify-center h-11 px-8 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-medium transition-colors"
             >
-              <a href="/menu">Đặt hàng ngay</a>
-            </Button>
+              Đặt hàng ngay
+            </a>
           </motion.div>
         </div>
       </main>
