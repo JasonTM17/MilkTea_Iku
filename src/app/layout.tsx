@@ -6,6 +6,7 @@ import PromoBanner from "@/components/PromoBanner";
 import ScrollToTop from "@/components/ScrollToTop";
 import MobileNav from "@/components/MobileNav";
 import ThemeProvider from "@/components/ThemeProvider";
+import CookieConsent from "@/components/CookieConsent";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -41,6 +42,7 @@ export default function RootLayout({
           <ScrollToTop />
           <ToastProvider />
           <SearchModal />
+          <CookieConsent />
         </ThemeProvider>
       </body>
     </html>
