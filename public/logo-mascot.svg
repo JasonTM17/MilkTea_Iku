@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Soft background -->
+  <circle cx="60" cy="60" r="58" fill="#FFF5EB"/>
+  <circle cx="60" cy="60" r="55" fill="none" stroke="#d4792a" stroke-width="2" stroke-dasharray="4 3" opacity="0.4"/>
+
+  <!-- Mini cup -->
+  <path d="M40 45 L44 95 C44 102 50 107 60 107 C70 107 76 102 76 95 L80 45 Z" fill="#FFFFFF" stroke="#d4792a" stroke-width="2"/>
+
+  <!-- Tea fill -->
+  <path d="M42 52 L45 92 C45 98 51 102 60 102 C69 102 75 98 75 92 L78 52 Z" fill="#E8A855" opacity="0.7"/>
+
+  <!-- Boba -->
+  <circle cx="50" cy="92" r="4.5" fill="#3a170c"/>
+  <circle cx="60" cy="95" r="4.5" fill="#3a170c"/>
+  <circle cx="70" cy="91" r="4.5" fill="#3a170c"/>
+  <circle cx="55" cy="85" r="4" fill="#4a2010"/>
+  <circle cx="65" cy="87" r="4" fill="#4a2010"/>
+
+  <!-- Lid -->
+  <rect x="36" y="42" width="48" height="7" rx="3.5" fill="#d4792a"/>
+
+  <!-- Straw -->
+  <rect x="65" y="20" width="5" height="30" rx="2.5" fill="#FF6B9D" transform="rotate(5, 67, 35)"/>
+
+  <!-- Kawaii face -->
+  <circle cx="52" cy="68" r="3" fill="#3a170c"/>
+  <circle cx="68" cy="68" r="3" fill="#3a170c"/>
+  <circle cx="51" cy="66.5" r="1.2" fill="#FFF"/>
+  <circle cx="67" cy="66.5" r="1.2" fill="#FFF"/>
+  <path d="M55 76 Q60 82 65 76" fill="none" stroke="#3a170c" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Blush -->
+  <ellipse cx="47" cy="75" rx="4" ry="3" fill="#FFB5B5" opacity="0.5"/>
+  <ellipse cx="73" cy="75" rx="4" ry="3" fill="#FFB5B5" opacity="0.5"/>
+
+  <!-- Sparkles -->
+  <circle cx="28" cy="30" r="2.5" fill="#FFD700" opacity="0.7"/>
+  <circle cx="92" cy="25" r="2" fill="#FFD700" opacity="0.6"/>
+  <circle cx="95" cy="90" r="1.5" fill="#FFD700" opacity="0.5"/>
+</svg>

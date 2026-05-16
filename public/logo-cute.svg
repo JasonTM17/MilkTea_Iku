@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="#FFF8F0" stroke="#d4792a" stroke-width="3"/>
+
+  <!-- Cup body -->
+  <path d="M65 75 L72 160 C72 170 85 178 100 178 C115 178 128 170 128 160 L135 75 Z" fill="#FFFFFF" stroke="#d4792a" stroke-width="2.5"/>
+
+  <!-- Tea liquid -->
+  <path d="M68 85 L73 155 C73 163 86 170 100 170 C114 170 127 163 127 155 L132 85 Z" fill="#E8A855" opacity="0.8"/>
+
+  <!-- Milk swirl -->
+  <path d="M80 100 Q90 110 100 100 Q110 90 120 100" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+  <path d="M85 115 Q95 125 105 115 Q115 105 125 115" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Boba pearls -->
+  <circle cx="82" cy="155" r="6" fill="#3a170c"/>
+  <circle cx="95" cy="160" r="6" fill="#3a170c"/>
+  <circle cx="108" cy="158" r="6" fill="#3a170c"/>
+  <circle cx="120" cy="153" r="6" fill="#3a170c"/>
+  <circle cx="88" cy="145" r="5" fill="#4a2010"/>
+  <circle cx="100" cy="148" r="5.5" fill="#4a2010"/>
+  <circle cx="113" cy="146" r="5" fill="#4a2010"/>
+
+  <!-- Pearl highlights -->
+  <circle cx="80" cy="153" r="2" fill="#FFFFFF" opacity="0.4"/>
+  <circle cx="93" cy="158" r="2" fill="#FFFFFF" opacity="0.4"/>
+  <circle cx="106" cy="156" r="2" fill="#FFFFFF" opacity="0.4"/>
+
+  <!-- Cup lid -->
+  <rect x="60" y="70" width="80" height="10" rx="5" fill="#d4792a"/>
+  <rect x="55" y="67" width="90" height="8" rx="4" fill="#E8923A"/>
+
+  <!-- Straw -->
+  <rect x="110" y="30" width="6" height="50" rx="3" fill="#FF6B9D" transform="rotate(8, 113, 55)"/>
+
+  <!-- Cute face -->
+  <circle cx="87" cy="115" r="4" fill="#3a170c"/>
+  <circle cx="113" cy="115" r="4" fill="#3a170c"/>
+  <circle cx="86" cy="113" r="1.5" fill="#FFFFFF"/>
+  <circle cx="112" cy="113" r="1.5" fill="#FFFFFF"/>
+
+  <!-- Blush -->
+  <ellipse cx="80" cy="125" rx="6" ry="4" fill="#FFB5B5" opacity="0.5"/>
+  <ellipse cx="120" cy="125" rx="6" ry="4" fill="#FFB5B5" opacity="0.5"/>
+
+  <!-- Smile -->
+  <path d="M92 128 Q100 136 108 128" fill="none" stroke="#3a170c" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Stars decoration -->
+  <path d="M45 50 L47 45 L49 50 L54 50 L50 53 L52 58 L47 55 L42 58 L44 53 L40 50 Z" fill="#FFD700" opacity="0.8"/>
+  <path d="M150 45 L151.5 41 L153 45 L157 45 L154 47.5 L155.5 51.5 L151.5 49 L147.5 51.5 L149 47.5 L146 45 Z" fill="#FFD700" opacity="0.6"/>
+  <path d="M155 155 L156 152 L157 155 L160 155 L158 157 L159 160 L156 158 L153 160 L154 157 L151 155 Z" fill="#FFD700" opacity="0.5"/>
+
+  <!-- Heart -->
+  <path d="M42 140 C42 135 48 132 50 136 C52 132 58 135 58 140 C58 146 50 152 50 152 C50 152 42 146 42 140 Z" fill="#FF6B9D" opacity="0.7"/>
+</svg>
