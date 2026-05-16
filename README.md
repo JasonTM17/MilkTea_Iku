@@ -73,10 +73,10 @@ MilkTea Iku is a full-featured milk tea e-commerce platform with drink customiza
 
 | Metric | Value |
 |--------|-------|
-| Pages | 20+ |
-| Components | 40+ |
-| API Endpoints | 12+ |
-| Test Suites | 20+ |
+| Pages | 35+ |
+| Components | 75+ |
+| API Endpoints | 26 |
+| Test Suites | 148 |
 | Lighthouse Score | 90+ |
 
 ---
@@ -147,8 +147,8 @@ npm ci --legacy-peer-deps
 cp .env.example .env
 
 # Set up database
-npx prisma generate
-npx prisma db push
+npx prisma generate --schema=backend/prisma/schema.prisma
+npm run db:push
 npm run db:seed
 
 # Start development server
@@ -174,24 +174,33 @@ Open [http://localhost:3000](http://localhost:3000) to view the application.
 ## Project Structure
 
 ```
-src/
-├── app/                    # Next.js App Router
-│   ├── api/               # RESTful API routes
-│   ├── admin/             # Admin dashboard
-│   ├── menu/              # Product catalog
-│   ├── checkout/          # Checkout flow
-│   └── ...                # 20+ pages
-├── components/            # 40+ React components
-├── lib/                   # Utilities, validators, Prisma
-└── store/                 # Zustand state management
-prisma/
-├── schema.prisma          # Database schema
-└── seed.ts               # Sample data
-tests/
-├── e2e/                  # End-to-end tests
-├── api/                  # API integration tests
-├── visual/               # Visual regression
-└── accessibility/        # a11y tests
+├── backend/
+│   ├── lib/                   # Backend utilities (Prisma, rate-limit, validators)
+│   ├── prisma/                # Database schema, seed, SQLite
+│   └── n8n/                   # Chatbot automation config
+├── frontend/
+│   ├── components/            # 75+ React components
+│   │   └── ui/               # shadcn/ui primitives
+│   ├── hooks/                 # Custom React hooks
+│   └── store/                 # Zustand state management
+├── shared/
+│   └── types/                 # Shared TypeScript interfaces
+├── src/
+│   ├── app/                   # Next.js App Router
+│   │   ├── api/              # 26 RESTful API routes
+│   │   ├── admin/            # Admin dashboard
+│   │   ├── menu/             # Product catalog
+│   │   ├── checkout/         # Checkout flow
+│   │   └── ...               # 35+ pages
+│   └── middleware.ts          # Security headers & auth
+├── tests/
+│   ├── e2e/                  # End-to-end tests
+│   ├── api/                  # API integration tests
+│   ├── visual/               # Visual regression
+│   ├── accessibility/        # a11y tests
+│   ├── performance/          # Lighthouse checks
+│   └── seo/                  # Meta tag validation
+└── docker-compose.yml         # Backend + Frontend + n8n
 ```
 
 ---
