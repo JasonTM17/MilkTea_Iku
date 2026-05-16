@@ -11,8 +11,8 @@ WORKDIR /app
 COPY package.json package-lock.json* ./
 RUN npm ci --legacy-peer-deps
 
-COPY prisma ./prisma
-RUN npx prisma generate
+COPY backend/prisma ./backend/prisma
+RUN npx prisma generate --schema=backend/prisma/schema.prisma
 
 COPY . .
 RUN npm run build
