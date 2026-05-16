@@ -23,6 +23,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://milktea-iku.vercel.app"),
   title: "MilkTea Iku | Trà Sữa Premium",
   description:
     "Thưởng thức trà sữa cao cấp với nguyên liệu tươi ngon nhất. Đặt hàng online, giao tận nơi.",
