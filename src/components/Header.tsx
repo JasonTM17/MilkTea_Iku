@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { ShoppingBag, Menu } from "lucide-react";
 import { useCartStore } from "@/store/cart";
 import { Badge } from "@/components/ui/badge";
+import ThemeToggle from "@/components/ThemeToggle";
 import {
   Sheet,
   SheetContent,
@@ -122,6 +123,7 @@ export default function Header() {
 
           {/* ── Actions ── */}
           <div className="flex items-center gap-2">
+            <ThemeToggle />
 
             {/* Cart button */}
             <motion.button
