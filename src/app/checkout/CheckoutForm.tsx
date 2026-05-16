@@ -142,7 +142,7 @@ export default function CheckoutForm() {
           <CheckCircle2 className="w-12 h-12 text-green-600" />
         </motion.div>
         <h2 className="text-2xl font-display font-bold text-gray-900 mb-3">
-          Đặt hàng thành công! 🎉
+          Đặt hàng thành công!
         </h2>
         <p className="text-gray-500 mb-2">
           Đơn hàng của bạn đang được chuẩn bị

@@ -243,8 +243,8 @@ export default function Hero() {
                   className="absolute -bottom-5 -left-5 sm:-bottom-6 sm:-left-6 bg-white dark:bg-gray-800 rounded-2xl shadow-xl shadow-brand-900/15 p-3.5 sm:p-4"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-11 h-11 bg-brand-100 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">
-                      🧋
+                    <div className="w-11 h-11 bg-brand-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 8H7l1.5 12h7L17 8z"/><path d="M6 8h12l-.5-2H6.5L6 8z"/><circle cx="12" cy="14" r="1.5" fill="currentColor" stroke="none"/></svg>
                     </div>
                     <div>
                       <div className="text-xs text-brand-500 font-semibold uppercase tracking-wide">
@@ -283,7 +283,7 @@ export default function Hero() {
                   className="absolute top-1/2 -right-8 sm:-right-10 -translate-y-1/2 bg-brand-600 text-white rounded-2xl shadow-xl shadow-brand-700/40 px-3.5 py-2.5"
                 >
                   <div className="text-xs font-semibold leading-tight text-center">
-                    <div className="text-lg mb-0.5">🌿</div>
+                    <div className="text-lg mb-0.5"><svg className="w-5 h-5 text-white inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 3v7a6 6 0 0 0 6 6 6 6 0 0 0 6-6V3"/><path d="M4 3h16"/><path d="M12 16v5"/><path d="M8 21h8"/></svg></div>
                     <div>Tươi mỗi ngày</div>
                   </div>
                 </motion.div>

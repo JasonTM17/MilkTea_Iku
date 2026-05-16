@@ -65,7 +65,7 @@ export default async function Image() {
             boxShadow: "0 12px 40px rgba(212,121,42,0.35)",
           }}
         >
-          <span style={{ fontSize: 52, color: "#fdf9f0" }}>🧋</span>
+          <span style={{ fontSize: 52, color: "#fdf9f0" }}>IKU</span>
         </div>
 
         {/* Brand name */}

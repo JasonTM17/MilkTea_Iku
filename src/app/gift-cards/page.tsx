@@ -144,7 +144,7 @@ export default function GiftCardPage() {
                   onChange={(e) => setMessage(e.target.value)}
                   rows={3}
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-sm resize-none"
-                  placeholder="Chúc bạn ngày mới vui vẻ! Thưởng thức trà sữa nhé 🧋"
+                  placeholder="Chúc bạn ngày mới vui vẻ! Thưởng thức trà sữa nhé"
                 />
               </div>
 

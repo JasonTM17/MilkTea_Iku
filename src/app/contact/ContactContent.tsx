@@ -503,7 +503,7 @@ export default function ContactContent() {
                 transition={{ duration: 0.4, delay: 0.5 }}
                 className="bg-brand-50 rounded-2xl p-5 flex gap-4 items-start"
               >
-                <span className="text-2xl">⚡</span>
+                <svg className="w-6 h-6 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                 <div>
                   <p className="font-semibold text-gray-800 text-sm mb-1">
                     Phản hồi nhanh

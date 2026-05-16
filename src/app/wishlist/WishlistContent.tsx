@@ -72,7 +72,7 @@ export default function WishlistContent() {
                 className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-md transition-shadow"
               >
                 <div className="aspect-[4/3] bg-gradient-to-br from-brand-100 to-cream-200 flex items-center justify-center relative">
-                  <span className="text-5xl">🧋</span>
+                  <svg className="w-12 h-12 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 8H7l1.5 12h7L17 8z"/><path d="M6 8h12l-.5-2H6.5L6 8z"/><circle cx="12" cy="14" r="1.5" fill="currentColor" stroke="none"/></svg>
                   <button
                     onClick={() => removeItem(item.id)}
                     className="absolute top-3 right-3 p-2 rounded-full bg-white/90 text-red-500 hover:bg-red-50 transition-colors"
