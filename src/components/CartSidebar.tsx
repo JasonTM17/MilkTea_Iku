@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ShoppingBag, Minus, Plus, Trash2 } from "lucide-react";
+import { BobaCupIcon } from "@/components/icons";
 import { useCartStore } from "@/store/cart";
 import Link from "next/link";
 
@@ -61,7 +62,7 @@ export default function CartSidebar() {
                       className="flex gap-3 p-3 rounded-xl bg-cream-50 border border-cream-100"
                     >
                       <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-brand-100 to-cream-200 flex items-center justify-center shrink-0">
-                        <span className="text-2xl">🧋</span>
+                        <BobaCupIcon className="w-8 h-8 text-brand-500" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <h4 className="text-sm font-medium text-gray-900 truncate">{item.name}</h4>

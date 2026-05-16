@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Coffee, Leaf, Sparkles } from "lucide-react";
+import { BobaCupIcon } from "@/components/icons";
 
 export default function BrandStory() {
   return (
@@ -56,18 +58,18 @@ export default function BrandStory() {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <div className="aspect-[3/4] rounded-2xl bg-gradient-to-br from-brand-100 to-cream-200 flex items-center justify-center">
-                  <span className="text-5xl">🍵</span>
+                  <Coffee className="w-14 h-14 text-brand-600 opacity-60" />
                 </div>
                 <div className="aspect-square rounded-2xl bg-gradient-to-br from-cream-100 to-brand-50 flex items-center justify-center">
-                  <span className="text-4xl">🧋</span>
+                  <BobaCupIcon className="w-10 h-10 text-brand-600 opacity-60" />
                 </div>
               </div>
               <div className="space-y-4 pt-8">
                 <div className="aspect-square rounded-2xl bg-gradient-to-br from-green-50 to-brand-50 flex items-center justify-center">
-                  <span className="text-4xl">🌿</span>
+                  <Leaf className="w-10 h-10 text-green-600 opacity-60" />
                 </div>
                 <div className="aspect-[3/4] rounded-2xl bg-gradient-to-br from-brand-50 to-cream-100 flex items-center justify-center">
-                  <span className="text-5xl">✨</span>
+                  <Sparkles className="w-14 h-14 text-brand-500 opacity-60" />
                 </div>
               </div>
             </div>
