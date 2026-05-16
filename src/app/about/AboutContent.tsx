@@ -4,9 +4,16 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
+import { Leaf, Palette, Heart } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+
+const iconMap: Record<string, React.ReactNode> = {
+  leaf: <Leaf className="w-8 h-8 text-green-600" />,
+  palette: <Palette className="w-8 h-8 text-purple-600" />,
+  heart: <Heart className="w-8 h-8 text-pink-600" />,
+};
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -98,17 +105,17 @@ export default function AboutContent() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: "🌿",
+                icon: "leaf",
                 title: "Nguyên liệu tươi",
                 desc: "100% nguyên liệu tự nhiên, không chất bảo quản. Trà nhập khẩu trực tiếp từ vùng trồng.",
               },
               {
-                icon: "🎨",
+                icon: "palette",
                 title: "Sáng tạo không ngừng",
                 desc: "Menu được cập nhật theo mùa với những sáng tạo mới, kết hợp hương vị truyền thống và hiện đại.",
               },
               {
-                icon: "💚",
+                icon: "heart",
                 title: "Bền vững",
                 desc: "Sử dụng ly giấy và ống hút tre. Cam kết giảm thiểu rác thải nhựa trong mọi hoạt động.",
               },
@@ -121,7 +128,7 @@ export default function AboutContent() {
                 transition={{ duration: 0.5, delay: i * 0.15 }}
                 className="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className="text-4xl mb-4">{value.icon}</div>
+                <div className="mb-4 flex justify-center">{iconMap[value.icon]}</div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   {value.title}
                 </h3>
