@@ -1,0 +1,70 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Category {
+  id          String    @id @default(cuid())
+  name        String
+  slug        String    @unique
+  description String?
+  image       String?
+  order       Int       @default(0)
+  products    Product[]
+  createdAt   DateTime  @default(now())
+}
+
+model Product {
+  id           String      @id @default(cuid())
+  name         String
+  slug         String      @unique
+  description  String?
+  basePrice    Int
+  image        String?
+  categoryId   String
+  category     Category    @relation(fields: [categoryId], references: [id])
+  isNew        Boolean     @default(false)
+  isBestSeller Boolean     @default(false)
+  isAvailable  Boolean     @default(true)
+  orderItems   OrderItem[]
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+}
+
+model Topping {
+  id    String @id @default(cuid())
+  name  String
+  price Int
+  image String?
+}
+
+model Order {
+  id           String      @id @default(cuid())
+  customerName String
+  phone        String
+  address      String?
+  note         String?
+  total        Int
+  status       String      @default("pending")
+  items        OrderItem[]
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+}
+
+model OrderItem {
+  id         String  @id @default(cuid())
+  orderId    String
+  order      Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId  String
+  product    Product @relation(fields: [productId], references: [id])
+  size       String  @default("M")
+  quantity   Int     @default(1)
+  sugarLevel Int     @default(100)
+  iceLevel   Int     @default(100)
+  toppings   String  @default("[]")
+  subtotal   Int
+}
