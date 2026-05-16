@@ -10,13 +10,17 @@ export function middleware(request: NextRequest) {
   response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
   response.headers.set("X-DNS-Prefetch-Control", "on");
   response.headers.set(
+    "Strict-Transport-Security",
+    "max-age=31536000; includeSubDomains"
+  );
+  response.headers.set(
     "Permissions-Policy",
     "camera=(), microphone=(), geolocation=()"
   );
 
-  if (request.nextUrl.pathname.startsWith("/admin")) {
+  if (request.nextUrl.pathname.startsWith("/admin") || request.nextUrl.pathname.startsWith("/api/admin")) {
     const authHeader = request.headers.get("authorization");
-    if (!authHeader) {
+    if (!authHeader || !isValidAdminAuth(authHeader)) {
       return NextResponse.json(
         { error: "Unauthorized" },
         { status: 401, headers: { "WWW-Authenticate": "Basic realm=\"Admin\"" } }
@@ -25,6 +29,25 @@ export function middleware(request: NextRequest) {
   }
 
   return response;
+}
+
+function isValidAdminAuth(header: string): boolean {
+  const adminUser = process.env.ADMIN_USERNAME || "admin";
+  const adminPass = process.env.ADMIN_PASSWORD || "iku-admin-2026";
+
+  if (header.startsWith("Basic ")) {
+    const decoded = Buffer.from(header.slice(6), "base64").toString();
+    const [user, pass] = decoded.split(":");
+    return user === adminUser && pass === adminPass;
+  }
+
+  if (header.startsWith("Bearer ")) {
+    const token = header.slice(7);
+    const expectedToken = process.env.ADMIN_API_TOKEN;
+    return !!expectedToken && token === expectedToken;
+  }
+
+  return false;
 }
 
 export const config = {
