@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Minus, Plus, ShoppingBag, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { useCartStore } from "@/store/cart";
-import toast from "react-hot-toast";
+import { useToast } from "@/store/toast";
 
 interface Topping {
   id: string;
@@ -47,6 +47,7 @@ export default function ProductDetail({ product, toppings }: ProductDetailProps)
   const [selectedToppings, setSelectedToppings] = useState<string[]>([]);
   const [quantity, setQuantity] = useState(1);
   const { addItem, openCart } = useCartStore();
+  const toast = useToast();
 
   const sizeModifier = sizes.find((s) => s.value === size)!.modifier;
   const toppingTotal = selectedToppings.reduce((sum, id) => {

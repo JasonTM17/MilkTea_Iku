@@ -18,7 +18,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { useCartStore } from "@/store/cart";
-import toast from "react-hot-toast";
+import { useToast } from "@/store/toast";
 
 const paymentMethods = [
   {
@@ -65,6 +65,7 @@ const paymentMethods = [
 
 export default function CheckoutForm() {
   const { items, total, clearCart } = useCartStore();
+  const toast = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [orderSuccess, setOrderSuccess] = useState(false);
   const [step, setStep] = useState(1);
