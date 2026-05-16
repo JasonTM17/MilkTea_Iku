@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Newspaper, Calendar, ArrowRight, Tag } from "lucide-react";
+import { BobaCupIcon } from "@/components/icons";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
@@ -114,7 +115,7 @@ export default function BlogPage() {
               >
                 <div className="flex items-start gap-4">
                   <div className="w-20 h-20 shrink-0 rounded-xl bg-gradient-to-br from-brand-100 to-cream-200 flex items-center justify-center">
-                    <span className="text-3xl">🧋</span>
+                    <BobaCupIcon className="w-8 h-8 text-brand-500" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-2">

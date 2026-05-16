@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Heart, Share2, Clock, Users } from "lucide-react";
+import { BobaCupIcon } from "@/components/icons";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
@@ -66,7 +67,7 @@ export default function RecipesPage() {
                 className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-md transition-shadow group"
               >
                 <div className="aspect-[16/9] bg-gradient-to-br from-brand-100 to-cream-200 flex items-center justify-center">
-                  <span className="text-5xl group-hover:scale-110 transition-transform">🧋</span>
+                  <BobaCupIcon className="w-14 h-14 text-brand-600 group-hover:scale-110 transition-transform" />
                 </div>
                 <div className="p-5">
                   <div className="flex items-center gap-2 mb-2">
