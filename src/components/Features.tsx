@@ -63,7 +63,7 @@ const item = {
 
 export default function Features() {
   return (
-    <section className="py-20 bg-gradient-to-b from-cream-50 to-white relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-b from-cream-50 to-white dark:from-gray-900 dark:to-gray-900 relative overflow-hidden">
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-10 left-10 w-32 h-32 bg-brand-100 rounded-full blur-3xl" />
         <div className="absolute bottom-10 right-10 w-40 h-40 bg-cream-200 rounded-full blur-3xl" />
@@ -76,10 +76,10 @@ export default function Features() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-gray-50">
             Tại sao chọn <span className="text-brand-500">Iku</span>?
           </h2>
-          <p className="text-gray-500 mt-3 max-w-lg mx-auto">
+          <p className="text-gray-500 dark:text-gray-400 mt-3 max-w-lg mx-auto">
             Chúng tôi cam kết mang đến trải nghiệm trà sữa tốt nhất cho bạn
           </p>
         </motion.div>
@@ -96,15 +96,15 @@ export default function Features() {
               key={f.title}
               variants={item}
               whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="group relative bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100/50"
+              className="group relative bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100/50 dark:border-gray-700"
             >
               <div
                 className={`w-14 h-14 mb-4 bg-gradient-to-br ${f.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
               >
                 <f.icon className={`w-6 h-6 ${f.iconColor}`} />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-1">{f.title}</h3>
-              <p className="text-sm text-gray-500 leading-relaxed">{f.desc}</p>
+              <h3 className="font-semibold text-gray-900 dark:text-gray-50 mb-1">{f.title}</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{f.desc}</p>
             </motion.div>
           ))}
         </motion.div>

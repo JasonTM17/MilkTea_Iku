@@ -57,7 +57,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-cream-50 overflow-hidden">
+    <section className="py-20 bg-gradient-to-b from-white to-cream-50 dark:from-gray-900 dark:to-gray-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -65,10 +65,10 @@ export default function Testimonials() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-gray-50">
             Khách hàng yêu thích <span className="text-brand-500">Iku</span>
           </h2>
-          <p className="text-gray-500 mt-3">
+          <p className="text-gray-500 dark:text-gray-400 mt-3">
             Hơn 10,000+ khách hàng hài lòng và quay lại mỗi tuần
           </p>
         </motion.div>
@@ -82,7 +82,7 @@ export default function Testimonials() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-gray-100/80 bg-white/80 backdrop-blur-sm">
+              <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-gray-100/80 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-1">
@@ -96,20 +96,20 @@ export default function Testimonials() {
                     <Quote className="w-5 h-5 text-brand-200" />
                   </div>
 
-                  <p className="text-gray-600 text-sm leading-relaxed mb-5">
+                  <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-5">
                     &ldquo;{t.text}&rdquo;
                   </p>
 
-                  <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
+                  <div className="flex items-center gap-3 pt-4 border-t border-gray-100 dark:border-gray-700">
                     <div
                       className={`w-10 h-10 rounded-full ${t.color} flex items-center justify-center`}
                     >
-                      <span className="text-gray-700 font-semibold text-xs">
+                      <span className="text-gray-700 dark:text-gray-200 font-semibold text-xs">
                         {t.avatar}
                       </span>
                     </div>
                     <div>
-                      <div className="font-medium text-sm text-gray-900">
+                      <div className="font-medium text-sm text-gray-900 dark:text-gray-50">
                         {t.name}
                       </div>
                       <div className="text-xs text-brand-500 font-medium">

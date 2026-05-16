@@ -68,7 +68,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
         whileTap={{ scale: 0.975 }}
         transition={{ type: "spring", stiffness: 320, damping: 22 }}
       >
-        <Card className="gap-0 overflow-hidden rounded-2xl border-0 bg-white py-0 ring-1 ring-brand-100">
+        <Card className="gap-0 overflow-hidden rounded-2xl border-0 bg-white dark:bg-gray-800 py-0 ring-1 ring-brand-100 dark:ring-gray-700">
           {/* ── Image ── */}
           <div className="relative aspect-square overflow-hidden bg-cream-100">
             {/* Zoom on hover */}
@@ -137,7 +137,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
 
           {/* ── Body ── */}
           <CardContent className="px-4 pb-0 pt-3">
-            <h3 className="line-clamp-1 text-sm font-semibold leading-snug text-gray-900">
+            <h3 className="line-clamp-1 text-sm font-semibold leading-snug text-gray-900 dark:text-gray-50">
               {product.name}
             </h3>
             {product.description && (

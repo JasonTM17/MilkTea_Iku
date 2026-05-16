@@ -58,7 +58,7 @@ export default function Hero() {
       {/* ── Background gradient ── */}
       <motion.div
         style={{ y: bgY }}
-        className="absolute inset-0 bg-gradient-to-br from-cream-100 via-cream-200 to-brand-100"
+        className="absolute inset-0 bg-gradient-to-br from-cream-100 via-cream-200 to-brand-100 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800"
       />
 
       {/* Soft radial glow blobs */}
@@ -121,7 +121,7 @@ export default function Hero() {
               {/* Headline */}
               <motion.h1
                 variants={itemVariants}
-                className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 leading-[1.08] tracking-tight mb-6"
+                className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-gray-50 leading-[1.08] tracking-tight mb-6"
               >
                 Trà Sữa Tươi{" "}
                 <span className="relative inline-block">
@@ -153,7 +153,7 @@ export default function Hero() {
               {/* Subheadline */}
               <motion.p
                 variants={itemVariants}
-                className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-10 max-w-md"
+                className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-10 max-w-md"
               >
                 Được pha chế từ nguyên liệu tươi ngon nhất, mỗi ly trà sữa Iku
                 là một hành trình hương vị — đậm đà, thơm ngát, và luôn mới mẻ
@@ -191,7 +191,7 @@ export default function Hero() {
                       <div className="text-sm font-bold text-brand-700 leading-tight">
                         {item.value}
                       </div>
-                      <div className="text-xs text-gray-500 leading-tight">
+                      <div className="text-xs text-gray-500 dark:text-gray-400 leading-tight">
                         {item.label}
                       </div>
                     </div>
@@ -238,7 +238,7 @@ export default function Hero() {
                 <motion.div
                   animate={{ y: [-6, 6, -6] }}
                   transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -bottom-5 -left-5 sm:-bottom-6 sm:-left-6 bg-white rounded-2xl shadow-xl shadow-brand-900/15 p-3.5 sm:p-4"
+                  className="absolute -bottom-5 -left-5 sm:-bottom-6 sm:-left-6 bg-white dark:bg-gray-800 rounded-2xl shadow-xl shadow-brand-900/15 p-3.5 sm:p-4"
                 >
                   <div className="flex items-center gap-3">
                     <div className="w-11 h-11 bg-brand-100 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">
@@ -248,7 +248,7 @@ export default function Hero() {
                       <div className="text-xs text-brand-500 font-semibold uppercase tracking-wide">
                         Best Seller
                       </div>
-                      <div className="text-sm font-bold text-gray-800 leading-tight">
+                      <div className="text-sm font-bold text-gray-800 dark:text-gray-50 leading-tight">
                         Brown Sugar Boba
                       </div>
                     </div>
@@ -259,7 +259,7 @@ export default function Hero() {
                 <motion.div
                   animate={{ y: [6, -6, 6] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -top-5 -right-5 sm:-top-6 sm:-right-6 bg-white rounded-2xl shadow-xl shadow-brand-900/15 px-4 py-3"
+                  className="absolute -top-5 -right-5 sm:-top-6 sm:-right-6 bg-white dark:bg-gray-800 rounded-2xl shadow-xl shadow-brand-900/15 px-4 py-3"
                 >
                   <div className="flex items-center gap-1.5">
                     <div className="flex">
@@ -269,7 +269,7 @@ export default function Hero() {
                         </svg>
                       ))}
                     </div>
-                    <span className="text-sm font-bold text-gray-800">4.9</span>
+                    <span className="text-sm font-bold text-gray-800 dark:text-gray-50">4.9</span>
                   </div>
                   <div className="text-xs text-gray-400 mt-0.5 text-center">10K+ đánh giá</div>
                 </motion.div>
@@ -301,7 +301,7 @@ export default function Hero() {
         >
           <path
             d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z"
-            fill="white"
+            className="fill-white dark:fill-gray-900"
             fillOpacity="0.9"
           />
         </svg>

@@ -207,7 +207,7 @@ function TierCard({
           <div className="flex items-start justify-between mb-5">
             <div>
               <div className="text-3xl mb-1">{tier.emoji}</div>
-              <h3 className="text-xl font-display font-bold text-gray-900">
+              <h3 className="text-xl font-display font-bold text-gray-900 dark:text-gray-50">
                 Hạng {tier.name}
               </h3>
               <p className={`text-sm font-medium mt-0.5 ${tier.color.accent}`}>
@@ -242,14 +242,14 @@ function TierCard({
                 >
                   <Check className="w-3 h-3" strokeWidth={3} />
                 </span>
-                <span className="text-sm text-gray-700">{benefit.text}</span>
+                <span className="text-sm text-gray-700 dark:text-gray-300">{benefit.text}</span>
               </li>
             ))}
           </ul>
 
           {/* Point requirement footer */}
-          <div className="mt-5 pt-4 border-t border-gray-200/60">
-            <p className="text-xs text-gray-500 text-center">
+          <div className="mt-5 pt-4 border-t border-gray-200/60 dark:border-gray-700/60">
+            <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
               {tier.maxPoints
                 ? `Đạt ${tier.minPoints.toLocaleString("vi-VN")} – ${tier.maxPoints.toLocaleString("vi-VN")} điểm`
                 : `Từ ${tier.minPoints.toLocaleString("vi-VN")} điểm trở lên`}
@@ -272,7 +272,7 @@ function StepItem({
     <motion.div variants={stepVariants} className="flex flex-col items-center">
       <div className="relative flex flex-col items-center">
         {/* Step number */}
-        <span className="text-xs font-bold text-gray-400 mb-1.5">
+        <span className="text-xs font-bold text-gray-400 dark:text-gray-500 mb-1.5">
           {step.num}
         </span>
 
@@ -291,10 +291,10 @@ function StepItem({
         )}
       </div>
 
-      <h4 className="font-semibold text-gray-900 text-sm text-center">
+      <h4 className="font-semibold text-gray-900 dark:text-gray-50 text-sm text-center">
         {step.label}
       </h4>
-      <p className="text-xs text-gray-500 text-center mt-0.5 max-w-[90px]">
+      <p className="text-xs text-gray-500 dark:text-gray-400 text-center mt-0.5 max-w-[90px]">
         {step.desc}
       </p>
     </motion.div>

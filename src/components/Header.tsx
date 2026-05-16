@@ -76,8 +76,8 @@ export default function Header() {
       transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-cream-100/95 backdrop-blur-md shadow-[0_2px_24px_rgba(212,121,42,0.13)]"
-          : "bg-gradient-to-b from-cream-100/85 to-cream-100/0 backdrop-blur-[2px]"
+          ? "bg-cream-100/95 dark:bg-gray-900/95 backdrop-blur-md shadow-[0_2px_24px_rgba(212,121,42,0.13)]"
+          : "bg-gradient-to-b from-cream-100/85 dark:from-gray-900/85 to-cream-100/0 dark:to-gray-900/0 backdrop-blur-[2px]"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -160,7 +160,7 @@ export default function Header() {
 
               <SheetContent
                 side="right"
-                className="bg-cream-100 border-l border-brand-100 w-[280px] p-0 flex flex-col"
+                className="bg-cream-100 dark:bg-gray-900 border-l border-brand-100 dark:border-gray-800 w-[280px] p-0 flex flex-col"
               >
                 {/* Sheet header / logo */}
                 <SheetHeader className="px-6 pt-6 pb-4">
