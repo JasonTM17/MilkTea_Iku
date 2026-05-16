@@ -55,9 +55,15 @@
     <td align="center"><strong>Dark Mode</strong></td>
   </tr>
   <tr>
-    <td><img src="https://milktea-iku.vercel.app/api/og" width="300" alt="Homepage"/></td>
-    <td><img src="https://milktea-iku.vercel.app/api/og" width="300" alt="Menu Page"/></td>
-    <td><img src="https://milktea-iku.vercel.app/api/og" width="300" alt="Dark Mode"/></td>
+    <td><img src="docs/screenshots/homepage.png" width="300" alt="Homepage"/></td>
+    <td><img src="docs/screenshots/menu.png" width="300" alt="Menu Page"/></td>
+    <td><img src="docs/screenshots/dark-mode.png" width="300" alt="Dark Mode"/></td>
+  </tr>
+  <tr>
+    <td align="center" colspan="3"><strong>Mobile</strong></td>
+  </tr>
+  <tr>
+    <td align="center" colspan="3"><img src="docs/screenshots/mobile.png" width="200" alt="Mobile View"/></td>
   </tr>
 </table>
 
