@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
+import { limiter } from "@/lib/rate-limit";
 
 const orderItemSchema = z.object({
   productId: z.string().min(1, "ID sản phẩm không hợp lệ"),
@@ -24,6 +25,16 @@ const orderSchema = z.object({
 
 export async function POST(request: NextRequest) {
   try {
+    const ip = request.headers.get("x-forwarded-for") || "anonymous";
+    try {
+      await limiter.check(5, ip);
+    } catch {
+      return NextResponse.json(
+        { error: "Quá nhiều yêu cầu, vui lòng thử lại sau" },
+        { status: 429 }
+      );
+    }
+
     let body: unknown;
     try {
       body = await request.json();
