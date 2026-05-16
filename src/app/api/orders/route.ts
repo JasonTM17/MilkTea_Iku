@@ -57,8 +57,17 @@ export async function POST(request: NextRequest) {
   return NextResponse.json(order, { status: 201 });
 }
 
-export async function GET() {
+export async function GET(request: NextRequest) {
+  const { searchParams } = new URL(request.url);
+  const phone = searchParams.get("phone");
+
+  const where: Record<string, unknown> = {};
+  if (phone) {
+    where.phone = { contains: phone };
+  }
+
   const orders = await prisma.order.findMany({
+    where,
     include: { items: { include: { product: true } } },
     orderBy: { createdAt: "desc" },
   });
