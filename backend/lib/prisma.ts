@@ -4,19 +4,21 @@ import fs from "fs";
 
 function getDatabaseUrl(): string {
   if (!process.env.VERCEL) {
-    return process.env.DATABASE_URL || "file:./prisma/dev.db";
+    return process.env.DATABASE_URL || "file:./backend/prisma/dev.db";
   }
 
   const tmpDb = "/tmp/dev.db";
 
   if (!fs.existsSync(tmpDb)) {
     const possibleSources = [
+      path.join(process.cwd(), "backend", "prisma", "dev.db"),
       path.join(process.cwd(), "prisma", "dev.db"),
       path.join(process.cwd(), "dev.db"),
       path.join(process.cwd(), ".next", "server", "prisma-dev.db"),
       path.join(__dirname, "prisma-dev.db"),
       path.join(__dirname, "..", "prisma-dev.db"),
       path.join(__dirname, "..", "..", "prisma", "dev.db"),
+      path.join(__dirname, "..", "..", "backend", "prisma", "dev.db"),
     ];
 
     for (const src of possibleSources) {
@@ -31,7 +33,7 @@ function getDatabaseUrl(): string {
     return `file:${tmpDb}`;
   }
 
-  return process.env.DATABASE_URL || "file:./prisma/dev.db";
+  return process.env.DATABASE_URL || "file:./backend/prisma/dev.db";
 }
 
 const globalForPrisma = globalThis as unknown as {

@@ -36,9 +36,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "db:push": "prisma db push",
-    "db:seed": "npx tsx prisma/seed.ts",
-    "db:studio": "prisma studio"
+    "db:push": "prisma db push --schema=backend/prisma/schema.prisma",
+    "db:seed": "npx tsx backend/prisma/seed.ts",
+    "db:studio": "prisma studio --schema=backend/prisma/schema.prisma"
   },
   "dependencies": {
     "@base-ui/react": "^1.4.1",

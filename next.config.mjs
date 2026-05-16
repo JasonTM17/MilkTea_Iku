@@ -32,7 +32,7 @@ const nextConfig = {
   outputFileTracingRoot: __dirname,
   experimental: {
     outputFileTracingIncludes: {
-      '/**/*': ['./prisma/dev.db'],
+      '/**/*': ['./backend/prisma/dev.db'],
     },
     optimizePackageImports: ['lucide-react', 'framer-motion'],
   },

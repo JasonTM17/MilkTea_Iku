@@ -6,13 +6,13 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - DATABASE_URL=file:./prisma/dev.db
+      - DATABASE_URL=file:./backend/prisma/dev.db
       - NODE_ENV=production
       - ADMIN_USERNAME=${ADMIN_USERNAME:-admin}
       - ADMIN_PASSWORD=${ADMIN_PASSWORD:-iku-admin-2026}
       - ADMIN_API_TOKEN=${ADMIN_API_TOKEN:-}
     volumes:
-      - db-data:/app/prisma
+      - db-data:/app/backend/prisma
     restart: unless-stopped
     networks:
       - milktea-net
