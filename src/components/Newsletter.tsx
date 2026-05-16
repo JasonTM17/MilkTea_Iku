@@ -199,7 +199,7 @@ export default function Newsletter() {
                     Cảm ơn bạn đã đăng ký!
                   </p>
                   <p className="text-sm text-gray-500 mt-1">
-                    Kiểm tra hộp thư để nhận ưu đãi đầu tiên của bạn 🧋
+                    Kiểm tra hộp thư để nhận ưu đãi đầu tiên của bạn
                   </p>
                 </div>
               </motion.div>

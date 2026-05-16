@@ -42,7 +42,7 @@ export default function ImageGallery({ images, productName }: ImageGalleryProps)
             <div className="w-full h-full bg-gradient-to-br from-brand-100 to-cream-200 flex items-center justify-center">
               <div className="text-center">
                 <div className="w-32 h-32 mx-auto rounded-full bg-brand-200/50 flex items-center justify-center mb-3">
-                  <span className="text-5xl">🧋</span>
+                  <svg className="w-12 h-12 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 8H7l1.5 12h7L17 8z"/><path d="M6 8h12l-.5-2H6.5L6 8z"/><circle cx="12" cy="14" r="1.5" fill="currentColor" stroke="none"/></svg>
                 </div>
                 <p className="text-sm text-brand-600 font-medium">{productName}</p>
               </div>
@@ -108,7 +108,7 @@ export default function ImageGallery({ images, productName }: ImageGalleryProps)
               }`}
             >
               <div className="w-full h-full bg-gradient-to-br from-brand-100 to-cream-200 flex items-center justify-center">
-                <span className="text-lg">🧋</span>
+                <svg className="w-5 h-5 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 8H7l1.5 12h7L17 8z"/><path d="M6 8h12l-.5-2H6.5L6 8z"/><circle cx="12" cy="14" r="1.5" fill="currentColor" stroke="none"/></svg>
               </div>
             </button>
           ))}
@@ -133,7 +133,7 @@ export default function ImageGallery({ images, productName }: ImageGalleryProps)
               <div className="w-full h-full bg-gradient-to-br from-brand-100 to-cream-200 flex items-center justify-center">
                 <div className="text-center">
                   <div className="w-48 h-48 mx-auto rounded-full bg-brand-200/50 flex items-center justify-center mb-4">
-                    <span className="text-8xl">🧋</span>
+                    <svg className="w-20 h-20 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 8H7l1.5 12h7L17 8z"/><path d="M6 8h12l-.5-2H6.5L6 8z"/><circle cx="12" cy="14" r="1.5" fill="currentColor" stroke="none"/><circle cx="10" cy="17" r="1" fill="currentColor" stroke="none"/></svg>
                   </div>
                   <p className="text-lg text-brand-600 font-medium">{productName}</p>
                 </div>
