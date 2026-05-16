@@ -7,6 +7,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import MobileNav from "@/components/MobileNav";
 import ThemeProvider from "@/components/ThemeProvider";
 import CookieConsent from "@/components/CookieConsent";
+import SkipLink from "@/components/SkipLink";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -36,6 +37,7 @@ export default function RootLayout({
     <html lang="vi" className={cn(inter.variable, playfair.variable, "font-sans")}>
       <body className="antialiased">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          <SkipLink />
           <PromoBanner />
           {children}
           <MobileNav />
