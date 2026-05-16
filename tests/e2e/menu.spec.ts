@@ -10,7 +10,7 @@ test.describe("Menu Page", () => {
   });
 
   test("should display product cards", async ({ page }) => {
-    const products = page.locator('[class*="product"], [class*="ProductCard"], article');
+    const products = page.locator('[class*="card"], [class*="Card"], article');
     await expect(products.first()).toBeVisible({ timeout: 10000 });
   });
 

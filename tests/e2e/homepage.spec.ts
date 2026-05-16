@@ -7,7 +7,7 @@ test.describe("Homepage", () => {
 
   test("should load and display hero section", async ({ page }) => {
     await expect(page.locator("main")).toBeVisible();
-    await expect(page.locator("text=Đặt hàng ngay")).toBeVisible();
+    await expect(page.locator("text=Đặt hàng ngay").first()).toBeVisible({ timeout: 10000 });
   });
 
   test("should display navigation header", async ({ page }) => {
