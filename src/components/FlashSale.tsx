@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Ticket, ArrowRight, Clock } from "lucide-react";
+import { BobaCupIcon } from "@/components/icons";
 import Link from "next/link";
 
 interface FlashDeal {
@@ -57,7 +58,7 @@ export default function FlashSale() {
             >
               <Link href={`/menu/${deal.slug}`} className="block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-md transition-shadow">
                 <div className="aspect-[4/3] bg-gradient-to-br from-brand-100 to-cream-200 flex items-center justify-center relative">
-                  <span className="text-4xl">🧋</span>
+                  <BobaCupIcon className="w-10 h-10 text-brand-600" />
                   <span className="absolute top-2 left-2 px-2 py-0.5 bg-red-500 text-white text-[10px] font-bold rounded-full">
                     -{Math.round((1 - deal.salePrice / deal.originalPrice) * 100)}%
                   </span>

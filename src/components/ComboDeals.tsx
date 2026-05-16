@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Sparkles, ArrowRight } from "lucide-react";
+import { BobaCupIcon } from "@/components/icons";
 import Link from "next/link";
 
 const combos = [
@@ -41,7 +42,7 @@ export default function ComboDeals() {
               className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 hover:shadow-md transition-shadow group"
             >
               <div className="w-full aspect-[3/2] rounded-xl bg-gradient-to-br from-brand-100 to-cream-200 flex items-center justify-center mb-4">
-                <span className="text-5xl group-hover:scale-110 transition-transform">🧋</span>
+                <BobaCupIcon className="w-14 h-14 text-brand-600 group-hover:scale-110 transition-transform" />
               </div>
               <h3 className="font-semibold text-gray-900 text-lg">{combo.name}</h3>
               <p className="text-sm text-gray-500 mt-1">{combo.items}</p>
