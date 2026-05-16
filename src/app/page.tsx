@@ -5,6 +5,8 @@ import CartDrawer from "@/components/CartDrawer";
 import Hero from "@/components/Hero";
 import ProductCard from "@/components/ProductCard";
 import FeaturedSection from "@/components/FeaturedSection";
+import Features from "@/components/Features";
+import Testimonials from "@/components/Testimonials";
 import Link from "next/link";
 
 export default async function Home() {
@@ -64,6 +66,8 @@ export default async function Home() {
           </div>
         </section>
 
+        <Features />
+
         <FeaturedSection products={newProducts} />
 
         {/* Best Sellers */}
@@ -97,6 +101,8 @@ export default async function Home() {
             </div>
           </div>
         </section>
+
+        <Testimonials />
 
         {/* CTA Section */}
         <section className="py-20 bg-gradient-to-r from-brand-600 to-brand-800 text-white">
