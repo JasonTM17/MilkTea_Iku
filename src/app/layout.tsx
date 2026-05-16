@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import ToastProvider from "@/components/ToastProvider";
+import SearchModal from "@/components/SearchModal";
 import PromoBanner from "@/components/PromoBanner";
 import ScrollToTop from "@/components/ScrollToTop";
 import MobileNav from "@/components/MobileNav";
@@ -39,6 +40,7 @@ export default function RootLayout({
           <MobileNav />
           <ScrollToTop />
           <ToastProvider />
+          <SearchModal />
         </ThemeProvider>
       </body>
     </html>
