@@ -66,8 +66,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Code splitting and package optimization
 
 #### DevOps
-- Docker containerization with multi-stage build
-- Docker Compose for local deployment
+- Separate Docker containers (backend + frontend)
+- Nginx reverse proxy with gzip and static asset caching
+- Docker Compose with health checks and networking
+- CI/CD pipeline (lint, build, Docker push)
+- GitHub Actions release workflow with auto-generated notes
+- Issue templates (bug report, feature request)
+- CODEOWNERS and FUNDING configuration
 - CI-specific Playwright config
 - Vercel deployment ready
 
