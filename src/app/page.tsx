@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 import Hero from "@/components/Hero";
 import ProductCard from "@/components/ProductCard";
+import FeaturedSection from "@/components/FeaturedSection";
 import Link from "next/link";
 
 export default async function Home() {
@@ -11,6 +12,12 @@ export default async function Home() {
     where: { isBestSeller: true, isAvailable: true },
     include: { category: true },
     take: 6,
+  });
+
+  const newProducts = await prisma.product.findMany({
+    where: { isNew: true, isAvailable: true },
+    include: { category: true },
+    take: 4,
   });
 
   const categories = await prisma.category.findMany({
@@ -56,6 +63,8 @@ export default async function Home() {
             </div>
           </div>
         </section>
+
+        <FeaturedSection products={newProducts} />
 
         {/* Best Sellers */}
         <section className="py-20 bg-cream-50">

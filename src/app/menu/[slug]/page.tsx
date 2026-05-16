@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
+import ProductCard from "@/components/ProductCard";
 import ProductDetail from "./ProductDetail";
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
@@ -48,7 +49,6 @@ export default async function ProductPage({
       <main className="pt-20 min-h-screen bg-white">
         <ProductDetail product={product} toppings={toppings} />
 
-        {/* Related products */}
         {relatedProducts.length > 0 && (
           <section className="py-16 bg-cream-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,10 +56,9 @@ export default async function ProductPage({
                 Có thể bạn cũng thích
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {relatedProducts.map((p, i) => {
-                  const ProductCard = require("@/components/ProductCard").default;
-                  return <ProductCard key={p.id} product={p} index={i} />;
-                })}
+                {relatedProducts.map((p, i) => (
+                  <ProductCard key={p.id} product={p} index={i} />
+                ))}
               </div>
             </div>
           </section>
