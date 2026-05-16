@@ -1,334 +1,379 @@
 <p align="center">
-  <img src="public/logo.svg" alt="MilkTea Iku" width="180" />
+  <img src="public/logo-cute.svg" width="120" alt="MilkTea Iku"/>
 </p>
 
-<h1 align="center">✿ MilkTea Iku ✿</h1>
+<h1 align="center">MilkTea Iku</h1>
 
 <p align="center">
-  <strong>:bubble_tea: Premium Milk Tea E-Commerce Platform :sparkles:</strong><br/>
-  <sub>Nền tảng thương mại điện tử trà sữa cao cấp • プレミアムミルクティーECプラットフォーム</sub>
-</p>
-
-<p align="center">
-  <a href="#english">English</a> •
-  <a href="#tiếng-việt">Tiếng Việt</a> •
-  <a href="#日本語">日本語</a>
+  <strong>Premium Milk Tea E-Commerce Platform</strong><br/>
+  <em>Trà Sữa Cao Cấp &bull; プレミアムミルクティー</em>
 </p>
 
 <p align="center">
   <a href="https://milktea-iku.vercel.app">
-    <img src="https://img.shields.io/badge/✨_Demo-Live-ff69b4?style=for-the-badge" alt="Live Demo" />
+    <img src="https://img.shields.io/badge/Live_Demo-milktea--iku.vercel.app-FF6B9D?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo"/>
   </a>
-  <img src="https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js" alt="Next.js 14" />
-  <img src="https://img.shields.io/badge/TypeScript-5.4-3178C6?style=for-the-badge&logo=typescript" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-3.4-38bdf8?style=for-the-badge&logo=tailwindcss" alt="Tailwind CSS" />
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Prisma-5.14-2D3748?style=for-the-badge&logo=prisma" alt="Prisma" />
-  <img src="https://img.shields.io/badge/Playwright-Testing-45ba63?style=for-the-badge&logo=playwright" alt="Playwright" />
-  <img src="https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker" alt="Docker" />
-  <img src="https://img.shields.io/github/license/JasonTM17/MilkTea_Iku?style=for-the-badge" alt="License" />
+  <a href="https://github.com/JasonTM17/MilkTea_Iku/releases/tag/v1.0.0">
+    <img src="https://img.shields.io/github/v/release/JasonTM17/MilkTea_Iku?style=flat-square&color=E8923A" alt="Release"/>
+  </a>
+  <a href="https://github.com/JasonTM17/MilkTea_Iku/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/JasonTM17/MilkTea_Iku?style=flat-square&color=3a170c" alt="License"/>
+  </a>
+  <a href="https://github.com/JasonTM17/MilkTea_Iku/commits/main">
+    <img src="https://img.shields.io/github/commit-activity/m/JasonTM17/MilkTea_Iku?style=flat-square&color=FF6B9D" alt="Commits"/>
+  </a>
+  <a href="https://hub.docker.com/r/nguyenson1710/milktea-iku-backend">
+    <img src="https://img.shields.io/badge/Docker-Backend-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker Backend"/>
+  </a>
+  <a href="https://hub.docker.com/r/nguyenson1710/milktea-iku-frontend">
+    <img src="https://img.shields.io/badge/Docker-Frontend-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker Frontend"/>
+  </a>
 </p>
 
-<p align="center">~ ✿ ~ ✿ ~ ✿ ~</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-14-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js"/>
+  <img src="https://img.shields.io/badge/TypeScript-5.4-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript"/>
+  <img src="https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind"/>
+  <img src="https://img.shields.io/badge/Prisma-5.14-2D3748?style=flat-square&logo=prisma&logoColor=white" alt="Prisma"/>
+  <img src="https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React"/>
+  <img src="https://img.shields.io/badge/Playwright-Testing-2EAD33?style=flat-square&logo=playwright&logoColor=white" alt="Playwright"/>
+</p>
 
 ---
 
-## :tea: English
+<p align="center"><img src="public/logo-icon.svg" width="24"/></p>
 
-### :star2: Overview
+## Screenshots & Demo
 
-MilkTea Iku is a production-ready, full-stack e-commerce platform for a premium milk tea brand. Built with Next.js 14 App Router, it delivers a fast, accessible, and visually polished experience with 40+ components, 20+ pages, and comprehensive test coverage.
+<table>
+  <tr>
+    <td align="center"><strong>Homepage</strong></td>
+    <td align="center"><strong>Menu</strong></td>
+    <td align="center"><strong>Dark Mode</strong></td>
+  </tr>
+  <tr>
+    <td><img src="https://milktea-iku.vercel.app/api/og" width="300" alt="Homepage"/></td>
+    <td><img src="https://milktea-iku.vercel.app/api/og" width="300" alt="Menu Page"/></td>
+    <td><img src="https://milktea-iku.vercel.app/api/og" width="300" alt="Dark Mode"/></td>
+  </tr>
+</table>
 
-### :sparkles: Key Features
-
+<details>
+<summary><strong>Demo GIF</strong> (click to expand)</summary>
+<br/>
 <p align="center">
-  <img src="https://img.shields.io/badge/🛒_Shopping-Cart-ff69b4?style=for-the-badge" alt="Shopping" />
-  <img src="https://img.shields.io/badge/📝_Content-Blog_&_Events-f9a8d4?style=for-the-badge" alt="Content" />
-  <img src="https://img.shields.io/badge/🛠️_Admin-Dashboard-c084fc?style=for-the-badge" alt="Admin" />
-  <img src="https://img.shields.io/badge/🌙_Dark-Mode-9b59b6?style=for-the-badge" alt="Dark Mode" />
-  <img src="https://img.shields.io/badge/📱_PWA-Ready-fb923c?style=for-the-badge" alt="PWA" />
-  <img src="https://img.shields.io/badge/🔒_REST-API-34d399?style=for-the-badge" alt="REST API" />
-  <img src="https://img.shields.io/badge/🧪_Playwright-Tested-60a5fa?style=for-the-badge" alt="Tested" />
-  <img src="https://img.shields.io/badge/♿_A11y-Accessible-fbbf24?style=for-the-badge" alt="Accessible" />
+  <em>Full ordering flow: Browse → Customize → Cart → Checkout</em>
 </p>
 
-| Category | Features |
-|----------|----------|
-| :shopping_cart: **Shopping** | Product catalog, drink customization, cart, checkout, order tracking |
-| :pencil: **Content** | Blog, recipes, events, loyalty program, gift cards, franchise info |
-| :wrench: **Admin** | Dashboard, order management, coupon CRUD, revenue analytics |
-| :crescent_moon: **UX** | Dark mode, PWA, responsive design, animations, accessibility |
-| :lock: **Backend** | REST API (12+ endpoints), rate limiting, validation, security headers |
-| :test_tube: **Quality** | 20+ Playwright test suites, TypeScript strict mode, Docker ready |
+> Record a screen capture of the ordering flow and replace this section with the GIF.
+> Recommended tool: [LICEcap](https://www.cockos.com/licecap/) or [Kap](https://getkap.co/)
 
-### :rocket: Tech Stack
+</details>
 
-```
-Frontend:  Next.js 14 • TypeScript • Tailwind CSS • Framer Motion • Zustand
-Backend:   Next.js API Routes • Prisma ORM • SQLite • Zod validation
-Testing:   Playwright (E2E, API, Visual, A11y, Performance)
-DevOps:    Docker • Vercel • GitHub Actions
-```
+---
 
-### :zap: Quick Start
+<p align="center"><img src="public/logo-icon.svg" width="24"/></p>
+
+## Features
+
+<table>
+  <tr>
+    <td>
+      <img src="https://img.shields.io/badge/E--Commerce-Full_Flow-FF6B9D?style=flat-square" alt=""/>
+      <br/><br/>
+      <strong>Product Catalog</strong> — Browse by category, search, filter<br/>
+      <strong>Drink Builder</strong> — Size, sugar, ice, toppings customization<br/>
+      <strong>Cart & Checkout</strong> — Persistent cart, form validation, order confirmation<br/>
+      <strong>Order Tracking</strong> — Real-time delivery progress steps
+    </td>
+    <td>
+      <img src="https://img.shields.io/badge/Admin-Dashboard-E8923A?style=flat-square" alt=""/>
+      <br/><br/>
+      <strong>Revenue Stats</strong> — Charts and analytics<br/>
+      <strong>Order Management</strong> — Status updates, filtering<br/>
+      <strong>Product CRUD</strong> — Add, edit, remove products<br/>
+      <strong>Coupon System</strong> — Create and manage promotions
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://img.shields.io/badge/UI%2FUX-Premium-9B59B6?style=flat-square" alt=""/>
+      <br/><br/>
+      <strong>Dark Mode</strong> — Full theme support<br/>
+      <strong>Responsive</strong> — Mobile-first with bottom nav<br/>
+      <strong>Animations</strong> — Framer Motion throughout<br/>
+      <strong>40+ Components</strong> — Reusable design system
+    </td>
+    <td>
+      <img src="https://img.shields.io/badge/Performance-Optimized-2ECC71?style=flat-square" alt=""/>
+      <br/><br/>
+      <strong>PWA</strong> — Offline support, installable<br/>
+      <strong>SEO</strong> — JSON-LD, sitemap, OG images<br/>
+      <strong>Image Optimization</strong> — AVIF/WebP, lazy loading<br/>
+      <strong>Code Splitting</strong> — Dynamic imports
+    </td>
+  </tr>
+</table>
+
+---
+
+<p align="center"><img src="public/logo-icon.svg" width="24"/></p>
+
+## Quick Start
 
 ```bash
+# Clone
 git clone https://github.com/JasonTM17/MilkTea_Iku.git
 cd MilkTea_Iku
-npm install
+
+# Install
+npm ci --legacy-peer-deps
+
+# Database
 cp .env.example .env
-npx prisma generate && npx prisma db push && npm run db:seed
+npx prisma generate
+npx prisma db push
+npm run db:seed
+
+# Run
 npm run dev
 ```
 
-### :whale: Deployment
+Open [http://localhost:3000](http://localhost:3000)
 
-```bash
-# Docker
-docker compose up -d
+---
 
-# Vercel
-vercel deploy --prod
+<p align="center"><img src="public/logo-icon.svg" width="24"/></p>
+
+## Architecture
+
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── api/               # RESTful API routes (12+)
+│   ├── admin/             # Admin dashboard
+│   ├── menu/              # Product catalog
+│   ├── checkout/          # Checkout flow
+│   └── ...                # 20+ pages
+├── components/            # 40+ React components
+├── lib/                   # Utilities, validators, Prisma client
+└── store/                 # Zustand state management
+prisma/
+├── schema.prisma          # Database schema
+└── seed.ts               # Sample data
+tests/
+├── e2e/                  # End-to-end tests
+├── api/                  # API integration tests
+├── visual/               # Visual regression
+└── accessibility/        # a11y tests
 ```
 
-### :book: API Reference
+---
+
+<p align="center"><img src="public/logo-icon.svg" width="24"/></p>
+
+## Docker Deployment
+
+```bash
+# Using Docker Compose (recommended)
+docker compose up -d
+
+# Or pull from Docker Hub
+docker pull nguyenson1710/milktea-iku-backend:v1.0.0
+docker pull nguyenson1710/milktea-iku-frontend:v1.0.0
+```
+
+| Service | Image | Port | Size |
+|---------|-------|------|------|
+| Backend (Node.js + API) | `nguyenson1710/milktea-iku-backend` | 3000 | 349 MB |
+| Frontend (Nginx + Static) | `nguyenson1710/milktea-iku-frontend` | 80 | 96 MB |
+
+---
+
+<p align="center"><img src="public/logo-icon.svg" width="24"/></p>
+
+## API Reference
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/api/products` | List products (paginated) |
-| GET | `/api/search?q=` | Search products |
-| GET | `/api/categories` | List categories |
-| POST | `/api/orders` | Create order |
-| PATCH | `/api/orders/[id]/status` | Update order status |
-| GET | `/api/products/[slug]/reviews` | Product reviews |
-| GET | `/api/products/recommendations` | Recommendations |
-| POST | `/api/contact` | Contact form |
-| POST | `/api/newsletter` | Subscribe |
-| GET | `/api/admin/stats` | Dashboard stats |
-| GET/POST | `/api/admin/coupons` | Coupon management |
-| GET | `/api/health` | Health check |
-
-<p align="center">~ ✿ ~ ✿ ~ ✿ ~</p>
+| `GET` | `/api/products` | List products (filter, search, paginate) |
+| `GET` | `/api/products/[slug]` | Product detail |
+| `GET` | `/api/categories` | List categories |
+| `GET` | `/api/toppings` | List toppings |
+| `POST` | `/api/orders` | Create order |
+| `GET` | `/api/orders/tracking` | Track order by phone |
+| `GET` | `/api/search` | Full-text search |
+| `POST` | `/api/contact` | Submit contact form |
+| `POST` | `/api/newsletter` | Subscribe to newsletter |
+| `GET` | `/api/health` | Health check |
+| `GET/PATCH` | `/api/admin/orders` | Admin order management |
+| `GET` | `/api/admin/stats` | Dashboard statistics |
 
 ---
 
-## :bubble_tea: Tiếng Việt
+<p align="center"><img src="public/logo-icon.svg" width="24"/></p>
 
-### :star2: Tổng quan
-
-MilkTea Iku là nền tảng thương mại điện tử full-stack cho thương hiệu trà sữa cao cấp. Xây dựng trên Next.js 14 App Router, mang đến trải nghiệm nhanh, dễ tiếp cận và thiết kế tinh tế với hơn 40 component, 20+ trang và bộ test toàn diện.
-
-### :sparkles: Tính năng chính
-
-<p align="center">
-  <img src="https://img.shields.io/badge/🛒_Mua_sắm-Giỏ_hàng-ff69b4?style=for-the-badge" alt="Mua sắm" />
-  <img src="https://img.shields.io/badge/📝_Nội_dung-Blog_&_Sự_kiện-f9a8d4?style=for-the-badge" alt="Nội dung" />
-  <img src="https://img.shields.io/badge/🛠️_Quản_trị-Dashboard-c084fc?style=for-the-badge" alt="Quản trị" />
-  <img src="https://img.shields.io/badge/🌙_Dark-Mode-9b59b6?style=for-the-badge" alt="Dark Mode" />
-  <img src="https://img.shields.io/badge/📱_PWA-Ready-fb923c?style=for-the-badge" alt="PWA" />
-  <img src="https://img.shields.io/badge/🔒_REST-API-34d399?style=for-the-badge" alt="REST API" />
-</p>
-
-| Danh mục | Tính năng |
-|----------|-----------|
-| :shopping_cart: **Mua sắm** | Danh mục sản phẩm, tuỳ chỉnh đồ uống, giỏ hàng, thanh toán, theo dõi đơn |
-| :pencil: **Nội dung** | Blog, công thức, sự kiện, chương trình thành viên, thẻ quà tặng, nhượng quyền |
-| :wrench: **Quản trị** | Dashboard, quản lý đơn hàng, mã giảm giá, phân tích doanh thu |
-| :crescent_moon: **Trải nghiệm** | Dark mode, PWA, responsive, animation, accessibility |
-| :lock: **Backend** | REST API (12+ endpoint), rate limiting, validation, security headers |
-| :test_tube: **Chất lượng** | 20+ bộ test Playwright, TypeScript strict, Docker ready |
-
-### :zap: Cài đặt nhanh
+## Testing
 
 ```bash
-git clone https://github.com/JasonTM17/MilkTea_Iku.git
-cd MilkTea_Iku
-npm install
-cp .env.example .env
-npx prisma generate && npx prisma db push && npm run db:seed
-npm run dev
-```
-
-### :whale: Triển khai
-
-```bash
-# Docker
-docker compose up -d
-
-# Vercel
-vercel deploy --prod
-```
-
-### :file_folder: Cấu trúc dự án
-
-```
-src/
-├── app/          # Trang và API routes (Next.js App Router)
-├── components/   # 40+ UI components tái sử dụng
-├── hooks/        # Custom React hooks
-├── lib/          # Utilities, validators, helpers
-└── stores/       # Zustand state management
-tests/            # Playwright test suites
-prisma/           # Database schema và seed data
-```
-
-<p align="center">~ ✿ ~ ✿ ~ ✿ ~</p>
-
----
-
-## :cherry_blossom: 日本語
-
-### :star2: 概要
-
-MilkTea Ikuは、プレミアムミルクティーブランド向けのプロダクションレディなフルスタックECプラットフォームです。Next.js 14 App Routerで構築され、40以上のコンポーネント、20以上のページ、包括的なテストカバレッジにより、高速でアクセシブルな洗練された体験を提供します。
-
-### :sparkles: 主な機能
-
-<p align="center">
-  <img src="https://img.shields.io/badge/🛒_ショッピング-カート-ff69b4?style=for-the-badge" alt="ショッピング" />
-  <img src="https://img.shields.io/badge/📝_コンテンツ-ブログ_&_イベント-f9a8d4?style=for-the-badge" alt="コンテンツ" />
-  <img src="https://img.shields.io/badge/🛠️_管理-ダッシュボード-c084fc?style=for-the-badge" alt="管理" />
-  <img src="https://img.shields.io/badge/🌙_ダーク-モード-9b59b6?style=for-the-badge" alt="ダークモード" />
-  <img src="https://img.shields.io/badge/📱_PWA-対応-fb923c?style=for-the-badge" alt="PWA" />
-  <img src="https://img.shields.io/badge/🔒_REST-API-34d399?style=for-the-badge" alt="REST API" />
-</p>
-
-| カテゴリ | 機能 |
-|---------|------|
-| :shopping_cart: **ショッピング** | 商品カタログ、ドリンクカスタマイズ、カート、チェックアウト、注文追跡 |
-| :pencil: **コンテンツ** | ブログ、レシピ、イベント、ロイヤルティプログラム、ギフトカード、フランチャイズ |
-| :wrench: **管理** | ダッシュボード、注文管理、クーポンCRUD、売上分析 |
-| :crescent_moon: **UX** | ダークモード、PWA、レスポンシブ、アニメーション、アクセシビリティ |
-| :lock: **バックエンド** | REST API（12+エンドポイント）、レート制限、バリデーション、セキュリティヘッダー |
-| :test_tube: **品質** | 20以上のPlaywrightテストスイート、TypeScript strictモード、Docker対応 |
-
-### :zap: クイックスタート
-
-```bash
-git clone https://github.com/JasonTM17/MilkTea_Iku.git
-cd MilkTea_Iku
-npm install
-cp .env.example .env
-npx prisma generate && npx prisma db push && npm run db:seed
-npm run dev
-```
-
-### :whale: デプロイ
-
-```bash
-# Docker
-docker compose up -d
-
-# Vercel
-vercel deploy --prod
-```
-
-### :file_folder: プロジェクト構成
-
-```
-src/
-├── app/          # ページとAPIルート（Next.js App Router）
-├── components/   # 40以上の再利用可能なUIコンポーネント
-├── hooks/        # カスタムReactフック
-├── lib/          # ユーティリティ、バリデーター、ヘルパー
-└── stores/       # Zustandステート管理
-tests/            # Playwrightテストスイート
-prisma/           # データベーススキーマとシードデータ
-```
-
-<p align="center">~ ✿ ~ ✿ ~ ✿ ~</p>
-
----
-
-## :framed_picture: Screenshots / Ảnh chụp màn hình / スクリーンショット
-
-| Homepage | Menu | Dark Mode |
-|:---:|:---:|:---:|
-| ![Homepage](https://milktea-iku.vercel.app/api/og) | ![Menu](https://milktea-iku.vercel.app/api/og) | ![Dark](https://milktea-iku.vercel.app/api/og) |
-
-<p align="center">~ ✿ ~ ✿ ~ ✿ ~</p>
-
----
-
-## :art: Logo Variants / Biến thể Logo / ロゴバリアント
-
-| Main | Mascot | Cute |
-|:---:|:---:|:---:|
-| <img src="public/logo.svg" width="80"/> | <img src="public/logo-mascot.svg" width="80"/> | <img src="public/logo-cute.svg" width="80"/> |
-
-<p align="center">~ ✿ ~ ✿ ~ ✿ ~</p>
-
----
-
-## :building_construction: Architecture
-
-```
-┌─────────────────────────────────────────────────────────┐
-│                    Client (Browser)                       │
-├─────────────────────────────────────────────────────────┤
-│  Next.js 14 App Router                                   │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐              │
-│  │  Pages   │  │Components│  │  Stores  │              │
-│  │ (20+)    │  │  (40+)   │  │(Zustand) │              │
-│  └──────────┘  └──────────┘  └──────────┘              │
-├─────────────────────────────────────────────────────────┤
-│  API Layer                                               │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐              │
-│  │  Routes  │  │Middleware│  │   Rate   │              │
-│  │ (12+)    │  │(Security)│  │ Limiter  │              │
-│  └──────────┘  └──────────┘  └──────────┘              │
-├─────────────────────────────────────────────────────────┤
-│  Data Layer                                              │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐              │
-│  │  Prisma  │  │  SQLite  │  │   Zod    │              │
-│  │   ORM    │  │    DB    │  │Validators│              │
-│  └──────────┘  └──────────┘  └──────────┘              │
-└─────────────────────────────────────────────────────────┘
-```
-
-## :hammer_and_wrench: Scripts
-
-| Command | Description | 説明 | Mô tả |
-|---------|-------------|------|-------|
-| `npm run dev` | Start dev server | 開発サーバー起動 | Khởi động server dev |
-| `npm run build` | Production build | プロダクションビルド | Build production |
-| `npm run start` | Start production | プロダクション起動 | Chạy production |
-| `npm run lint` | Run ESLint | ESLint実行 | Chạy ESLint |
-| `npm run db:push` | Push DB schema | DBスキーマ反映 | Đẩy schema DB |
-| `npm run db:seed` | Seed database | DBシードデータ投入 | Seed dữ liệu |
-
-## :test_tube: Testing
-
-```bash
-# Install browsers / ブラウザインストール / Cài đặt trình duyệt
-npx playwright install
-
-# Run all tests / 全テスト実行 / Chạy tất cả test
+# Run all tests
 npx playwright test
 
-# UI mode / UIモード / Chế độ UI
+# Specific suites
+npx playwright test tests/e2e/
+npx playwright test tests/api/
+npx playwright test tests/visual/
+npx playwright test tests/accessibility/
+
+# With UI
 npx playwright test --ui
 ```
 
-## :handshake: Contributing
+---
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+<p align="center"><img src="public/logo-icon.svg" width="24"/></p>
 
-## :scroll: License
+## Scripts
 
-[MIT](LICENSE) © 2026 Nguyen Son
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Production build |
+| `npm run start` | Start production server |
+| `npm run lint` | Run ESLint |
+| `npm run db:push` | Push schema to database |
+| `npm run db:seed` | Seed sample data |
+| `npm run db:studio` | Open Prisma Studio |
 
-## :bust_in_silhouette: Author
+---
 
-**Nguyễn Sơn** ([@JasonTM17](https://github.com/JasonTM17))
+<p align="center"><img src="public/logo-icon.svg" width="24"/></p>
 
-<p align="center">~ ✿ ~ ✿ ~ ✿ ~</p>
+## Contributing
+
+Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-FF6B9D?style=flat-square)](https://github.com/JasonTM17/MilkTea_Iku/pulls)
+[![Issues](https://img.shields.io/github/issues/JasonTM17/MilkTea_Iku?style=flat-square&color=E8923A)](https://github.com/JasonTM17/MilkTea_Iku/issues)
+
+---
+
+<p align="center"><img src="public/logo-icon.svg" width="24"/></p>
+
+## License
+
+[MIT](LICENSE) &copy; 2026 [Nguyễn Sơn](https://github.com/JasonTM17)
 
 ---
 
 <p align="center">
-  :heart: Made with care in Vietnam 🇻🇳 :heart:<br/>
-  <sub>ベトナムで心を込めて作りました • Được tạo với tâm huyết tại Việt Nam</sub>
+  <a href="https://github.com/JasonTM17">
+    <img src="https://github.com/JasonTM17.png" width="60" style="border-radius:50%" alt="Nguyễn Sơn"/>
+  </a>
+  <br/>
+  <strong>Nguyễn Sơn</strong><br/>
+  <em>Full-stack Developer</em>
+  <br/><br/>
+  <a href="https://github.com/JasonTM17">
+    <img src="https://img.shields.io/badge/GitHub-JasonTM17-181717?style=flat-square&logo=github" alt="GitHub"/>
+  </a>
 </p>
+
+<p align="center">
+  <sub>Made with ☕ and lots of 🧋</sub>
+</p>
+
+---
+
+<details>
+<summary><strong>Tiếng Việt</strong> 🇻🇳</summary>
+
+## Giới Thiệu
+
+**MilkTea Iku** là nền tảng thương mại điện tử trà sữa cao cấp, được xây dựng với công nghệ hiện đại nhất.
+
+### Tính Năng Chính
+
+- Danh mục sản phẩm với bộ lọc và tìm kiếm
+- Tùy chỉnh đồ uống (size, đường, đá, topping)
+- Giỏ hàng và thanh toán đầy đủ
+- Theo dõi đơn hàng theo thời gian thực
+- Bảng điều khiển quản trị
+- Chế độ tối
+- PWA hỗ trợ offline
+- 20+ trang, 40+ component
+
+### Cài Đặt Nhanh
+
+```bash
+git clone https://github.com/JasonTM17/MilkTea_Iku.git
+cd MilkTea_Iku
+npm ci --legacy-peer-deps
+cp .env.example .env
+npx prisma generate && npx prisma db push
+npm run db:seed
+npm run dev
+```
+
+### Docker
+
+```bash
+docker compose up -d
+# Hoặc pull từ Docker Hub
+docker pull nguyenson1710/milktea-iku-backend:v1.0.0
+docker pull nguyenson1710/milktea-iku-frontend:v1.0.0
+```
+
+### Demo Trực Tuyến
+
+[milktea-iku.vercel.app](https://milktea-iku.vercel.app)
+
+</details>
+
+<details>
+<summary><strong>日本語</strong> 🇯🇵</summary>
+
+## 概要
+
+**MilkTea Iku** は、最新技術で構築されたプレミアムミルクティーECプラットフォームです。
+
+### 主な機能
+
+- カテゴリフィルターと検索付き商品カタログ
+- ドリンクカスタマイズ（サイズ、甘さ、氷、トッピング）
+- カートとチェックアウト
+- リアルタイム注文追跡
+- 管理ダッシュボード
+- ダークモード対応
+- PWAオフラインサポート
+- 20以上のページ、40以上のコンポーネント
+
+### クイックスタート
+
+```bash
+git clone https://github.com/JasonTM17/MilkTea_Iku.git
+cd MilkTea_Iku
+npm ci --legacy-peer-deps
+cp .env.example .env
+npx prisma generate && npx prisma db push
+npm run db:seed
+npm run dev
+```
+
+### Docker
+
+```bash
+docker compose up -d
+# Docker Hubからプル
+docker pull nguyenson1710/milktea-iku-backend:v1.0.0
+docker pull nguyenson1710/milktea-iku-frontend:v1.0.0
+```
+
+### ライブデモ
+
+[milktea-iku.vercel.app](https://milktea-iku.vercel.app)
+
+</details>
