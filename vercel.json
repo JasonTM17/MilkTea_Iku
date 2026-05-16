@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
-  "buildCommand": "DATABASE_URL=file:./prisma/dev.db npx prisma generate && DATABASE_URL=file:./prisma/dev.db npx prisma db push && DATABASE_URL=file:./prisma/dev.db npx tsx prisma/seed.ts && npm run build && cp prisma/dev.db .next/server/prisma-dev.db",
+  "buildCommand": "DATABASE_URL=file:./dev.db npx prisma generate && DATABASE_URL=file:./dev.db npx prisma db push && DATABASE_URL=file:./dev.db npx tsx prisma/seed.ts && npm run build && cp prisma/dev.db .next/server/prisma-dev.db",
   "installCommand": "npm ci --legacy-peer-deps",
   "regions": ["sin1"],
   "headers": [
@@ -29,7 +29,7 @@
   ],
   "rewrites": [],
   "env": {
-    "DATABASE_URL": "file:./prisma/dev.db",
+    "DATABASE_URL": "file:./dev.db",
     "ADMIN_USERNAME": "admin",
     "ADMIN_PASSWORD": "milktea-iku-2026",
     "ADMIN_API_TOKEN": "milktea-iku-admin-token-2026"
