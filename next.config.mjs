@@ -30,14 +30,10 @@ const nextConfig = {
     },
   ],
   outputFileTracingRoot: __dirname,
-  outputFileTracingIncludes: {
-    '/api/**/*': ['./prisma/dev.db'],
-    '/menu/**/*': ['./prisma/dev.db'],
-    '/checkout/**/*': ['./prisma/dev.db'],
-    '/admin/**/*': ['./prisma/dev.db'],
-    '/orders/**/*': ['./prisma/dev.db'],
-  },
   experimental: {
+    outputFileTracingIncludes: {
+      '/**/*': ['./prisma/dev.db'],
+    },
     optimizePackageImports: ['lucide-react', 'framer-motion'],
   },
 };

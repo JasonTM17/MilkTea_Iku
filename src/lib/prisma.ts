@@ -3,20 +3,27 @@ import path from "path";
 import fs from "fs";
 
 function getDatabaseUrl(): string {
-  if (process.env.DATABASE_URL && !process.env.VERCEL) {
-    return process.env.DATABASE_URL;
-  }
+  if (process.env.VERCEL) {
+    const tmpDb = "/tmp/dev.db";
 
-  const possiblePaths = [
-    path.join(process.cwd(), "prisma", "dev.db"),
-    path.join(process.cwd(), "dev.db"),
-    path.join(__dirname, "..", "..", "prisma", "dev.db"),
-    path.join(__dirname, "..", "..", "..", "prisma", "dev.db"),
-  ];
+    if (!fs.existsSync(tmpDb)) {
+      const possibleSources = [
+        path.join(process.cwd(), "prisma", "dev.db"),
+        path.join(process.cwd(), "dev.db"),
+        path.join(__dirname, "..", "..", "prisma", "dev.db"),
+        path.join(__dirname, "..", "..", "..", "prisma", "dev.db"),
+      ];
 
-  for (const dbPath of possiblePaths) {
-    if (fs.existsSync(dbPath)) {
-      return `file:${dbPath}`;
+      for (const src of possibleSources) {
+        if (fs.existsSync(src)) {
+          fs.copyFileSync(src, tmpDb);
+          break;
+        }
+      }
+    }
+
+    if (fs.existsSync(tmpDb)) {
+      return `file:${tmpDb}`;
     }
   }
 
