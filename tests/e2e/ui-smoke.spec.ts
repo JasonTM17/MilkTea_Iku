@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-const BASE = process.env.E2E_BASE_URL || "http://localhost:3003";
+const BASE = process.env.E2E_BASE_URL || "http://localhost:3000";
 const MOBILE_VIEWPORT = { width: 390, height: 844 };
 
 test.describe("MilkTea Iku — UI smoke", () => {
