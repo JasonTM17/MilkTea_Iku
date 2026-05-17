@@ -1,0 +1,158 @@
+// ----------------------------------------------------------------------------
+//  PostgreSQL-ready Prisma schema for MilkTea Iku
+// ----------------------------------------------------------------------------
+//  Use this schema in production (Vercel Postgres, Neon, Supabase, RDS).
+//  Differences from the SQLite dev schema:
+//    - provider switched to "postgresql"
+//    - indexes on hot lookup paths (Order.phone, Review.productId, Order.status)
+//    - text columns sized appropriately (Postgres TEXT is unbounded but indexed)
+//    - createdAt indexed for descending sort on /admin dashboards
+//
+//  Activation:
+//    1. Provision a managed Postgres (e.g. Vercel Postgres, Neon, Supabase).
+//    2. Set DATABASE_URL to the postgres:// connection string.
+//    3. Replace `backend/prisma/schema.prisma` with this file (or symlink it),
+//       OR run: scripts/migrate-to-postgres.sh
+//    4. `npx prisma migrate deploy --schema=backend/prisma/schema.prisma`
+// ----------------------------------------------------------------------------
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "rhel-openssl-3.0.x", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id          String    @id @default(cuid())
+  name        String
+  slug        String    @unique
+  description String?
+  image       String?
+  order       Int       @default(0)
+  products    Product[]
+  createdAt   DateTime  @default(now())
+
+  @@index([order])
+}
+
+model Product {
+  id           String      @id @default(cuid())
+  name         String
+  slug         String      @unique
+  description  String?
+  basePrice    Int
+  image        String?
+  categoryId   String
+  category     Category    @relation(fields: [categoryId], references: [id])
+  isNew        Boolean     @default(false)
+  isBestSeller Boolean     @default(false)
+  isAvailable  Boolean     @default(true)
+  orderItems   OrderItem[]
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+
+  @@index([categoryId, isAvailable])
+  @@index([isBestSeller, isAvailable])
+  @@index([isNew, isAvailable])
+}
+
+model Topping {
+  id    String  @id @default(cuid())
+  name  String  @unique
+  price Int
+  image String?
+}
+
+model Order {
+  id           String      @id @default(cuid())
+  customerName String
+  phone        String
+  address      String?
+  note         String?
+  total        Int
+  status       String      @default("pending")
+  items        OrderItem[]
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+
+  @@index([phone])
+  @@index([status, createdAt(sort: Desc)])
+  @@index([createdAt(sort: Desc)])
+}
+
+model OrderItem {
+  id         String  @id @default(cuid())
+  orderId    String
+  order      Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId  String
+  product    Product @relation(fields: [productId], references: [id])
+  size       String  @default("M")
+  quantity   Int     @default(1)
+  sugarLevel Int     @default(100)
+  iceLevel   Int     @default(100)
+  toppings   String  @default("[]")
+  subtotal   Int
+
+  @@index([orderId])
+  @@index([productId])
+}
+
+model Review {
+  id           String   @id @default(cuid())
+  productId    String
+  customerName String
+  rating       Int
+  comment      String
+  createdAt    DateTime @default(now())
+
+  @@index([productId, createdAt(sort: Desc)])
+}
+
+model Contact {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String
+  message   String
+  createdAt DateTime @default(now())
+
+  @@index([email])
+  @@index([createdAt(sort: Desc)])
+}
+
+model Newsletter {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  createdAt DateTime @default(now())
+}
+
+model Coupon {
+  id             String    @id @default(cuid())
+  code           String    @unique
+  description    String?
+  discountType   String    @default("percentage")
+  discountValue  Int
+  minOrderAmount Int       @default(0)
+  usageLimit     Int?
+  usageCount     Int       @default(0)
+  isActive       Boolean   @default(true)
+  expiresAt      DateTime?
+  createdAt      DateTime  @default(now())
+
+  @@index([isActive, expiresAt])
+}
+
+model Wishlist {
+  id        String   @id @default(cuid())
+  userId    String
+  productId String
+  createdAt DateTime @default(now())
+
+  @@unique([userId, productId])
+  @@index([userId])
+}

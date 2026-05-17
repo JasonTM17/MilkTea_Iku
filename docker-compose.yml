@@ -8,9 +8,9 @@ services:
     environment:
       - DATABASE_URL=file:./backend/prisma/dev.db
       - NODE_ENV=production
-      - ADMIN_USERNAME=${ADMIN_USERNAME:-admin}
-      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-iku-admin-2026}
-      - ADMIN_API_TOKEN=${ADMIN_API_TOKEN:-}
+      - ADMIN_USERNAME=${ADMIN_USERNAME:?ADMIN_USERNAME must be set}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:?ADMIN_PASSWORD must be set}
+      - ADMIN_API_TOKEN=${ADMIN_API_TOKEN:?ADMIN_API_TOKEN must be set}
     volumes:
       - db-data:/app/backend/prisma
     restart: unless-stopped
@@ -37,8 +37,8 @@ services:
       - "5678:5678"
     environment:
       - N8N_BASIC_AUTH_ACTIVE=true
-      - N8N_BASIC_AUTH_USER=${N8N_USER:-admin}
-      - N8N_BASIC_AUTH_PASSWORD=${N8N_PASSWORD:-milktea-n8n-2026}
+      - N8N_BASIC_AUTH_USER=${N8N_USER:?N8N_USER must be set}
+      - N8N_BASIC_AUTH_PASSWORD=${N8N_PASSWORD:?N8N_PASSWORD must be set}
       - WEBHOOK_URL=http://n8n:5678/
     volumes:
       - n8n-data:/home/node/.n8n
