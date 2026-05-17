@@ -174,7 +174,7 @@ export default function ContactContent() {
       </section>
 
       {/* Main content */}
-      <section className="py-16">
+      <section className="py-16 overflow-x-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-12">
             {/* Form column */}

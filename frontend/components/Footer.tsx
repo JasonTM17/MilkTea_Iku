@@ -76,7 +76,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-400 hover:text-brand-300 transition-colors inline-flex items-center gap-1.5"
+                    className="text-sm text-gray-400 hover:text-brand-300 transition-colors inline-flex items-center gap-1.5 py-1.5"
                   >
                     <span className="w-1 h-1 rounded-full bg-brand-500" />
                     {link.label}
@@ -93,7 +93,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-400 hover:text-brand-300 transition-colors inline-flex items-center gap-1.5"
+                    className="text-sm text-gray-400 hover:text-brand-300 transition-colors inline-flex items-center gap-1.5 py-1.5"
                   >
                     <span className="w-1 h-1 rounded-full bg-brand-500" />
                     {link.label}
@@ -110,7 +110,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-400 hover:text-brand-300 transition-colors inline-flex items-center gap-1.5"
+                    className="text-sm text-gray-400 hover:text-brand-300 transition-colors inline-flex items-center gap-1.5 py-1.5"
                   >
                     <span className="w-1 h-1 rounded-full bg-brand-500" />
                     {link.label}

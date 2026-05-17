@@ -68,7 +68,7 @@ export default function MobileNav() {
                     )}
                   </div>
                   <span
-                    className={`text-[10px] font-medium transition-colors ${
+                    className={`text-xs font-medium transition-colors ${
                       active ? "text-brand-600" : "text-gray-400"
                     }`}
                   >
