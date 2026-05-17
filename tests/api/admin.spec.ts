@@ -2,7 +2,9 @@ import { test, expect } from "@playwright/test";
 import { API_BASE } from "../helpers/test-utils";
 
 test.describe("Admin API - Authenticated", () => {
-  const adminAuth = Buffer.from("admin:milktea-iku-2026").toString("base64");
+  const adminUsername = process.env.ADMIN_USERNAME ?? "admin";
+  const adminPassword = process.env.ADMIN_PASSWORD ?? "change-me-in-production";
+  const adminAuth = Buffer.from(`${adminUsername}:${adminPassword}`).toString("base64");
 
   test("GET /api/admin/stats should return dashboard data with valid auth", async ({ request }) => {
     const response = await request.get(`${API_BASE}/admin/stats`, {

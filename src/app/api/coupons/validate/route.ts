@@ -1,7 +1,24 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { limiter } from "@/lib/rate-limit";
+
+export const dynamic = "force-dynamic";
 
 export async function GET(request: NextRequest) {
+  const ip =
+    request.headers.get("x-real-ip") ||
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+    "anonymous";
+
+  try {
+    await limiter.check(15, ip);
+  } catch {
+    return NextResponse.json(
+      { error: "Quá nhiều yêu cầu, vui lòng thử lại sau." },
+      { status: 429 }
+    );
+  }
+
   const { searchParams } = new URL(request.url);
   const code = searchParams.get("code");
 

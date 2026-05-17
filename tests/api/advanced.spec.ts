@@ -23,7 +23,9 @@ test.describe("Product Recommendations API", () => {
 });
 
 test.describe("Stats API", () => {
-  const adminAuth = Buffer.from("admin:milktea-iku-2026").toString("base64");
+  const adminUsername = process.env.ADMIN_USERNAME ?? "admin";
+  const adminPassword = process.env.ADMIN_PASSWORD ?? "change-me-in-production";
+  const adminAuth = Buffer.from(`${adminUsername}:${adminPassword}`).toString("base64");
 
   test("GET /api/stats should require auth or return stats", async ({ request }) => {
     const response = await request.get(`${API_BASE}/stats`);

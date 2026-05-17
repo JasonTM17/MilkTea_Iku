@@ -1,10 +1,25 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { phoneSchema } from "@/lib/validators";
+import { limiter } from "@/lib/rate-limit";
 
 export const dynamic = "force-dynamic";
 
 export async function GET(request: NextRequest) {
+  const ip =
+    request.headers.get("x-real-ip") ||
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+    "anonymous";
+
+  try {
+    await limiter.check(10, ip);
+  } catch {
+    return NextResponse.json(
+      { error: "Quá nhiều yêu cầu, vui lòng thử lại sau." },
+      { status: 429 }
+    );
+  }
+
   const { searchParams } = new URL(request.url);
   const orderId = searchParams.get("orderId");
   const phone = searchParams.get("phone");
@@ -16,7 +31,7 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  if (phone && !orderId) {
+  if (phone) {
     const result = phoneSchema.safeParse(phone);
     if (!result.success) {
       return NextResponse.json(
@@ -28,7 +43,9 @@ export async function GET(request: NextRequest) {
 
   try {
     const where = orderId
-      ? { id: orderId }
+      ? phone
+        ? { id: orderId, phone }
+        : { id: orderId }
       : { phone: phone! };
 
     const orders = await prisma.order.findMany({
@@ -49,7 +66,12 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    return NextResponse.json({ orders });
+    const redacted = orders.map((o) => ({
+      ...o,
+      address: "***",
+    }));
+
+    return NextResponse.json({ orders: redacted });
   } catch {
     return NextResponse.json(
       { error: "Không thể tra cứu đơn hàng" },

@@ -1,10 +1,20 @@
 import { prisma } from "@/lib/prisma";
+import { isAuthorized, UNAUTHORIZED_HEADERS } from "@/lib/auth";
 import { NextRequest, NextResponse } from "next/server";
+
+export const dynamic = "force-dynamic";
 
 export async function PATCH(
   request: NextRequest,
   { params }: { params: { id: string } }
 ) {
+  if (!isAuthorized(request)) {
+    return NextResponse.json(
+      { error: "Unauthorized" },
+      { status: 401, headers: UNAUTHORIZED_HEADERS }
+    );
+  }
+
   try {
     const body = await request.json();
     const { status } = body;
@@ -20,8 +30,8 @@ export async function PATCH(
     });
 
     return NextResponse.json(order);
-  } catch (error) {
-    console.error("[PATCH /api/admin/orders/:id]", error);
+  } catch {
+    console.error("[PATCH /api/admin/orders/:id]", { id: params.id });
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }

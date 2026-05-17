@@ -2,6 +2,9 @@ import { prisma } from "@/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { limiter } from "@/lib/rate-limit";
+import { isAuthorized, UNAUTHORIZED_HEADERS } from "@/lib/auth";
+
+export const dynamic = "force-dynamic";
 
 const orderItemSchema = z.object({
   productId: z.string().min(1, "ID sản phẩm không hợp lệ"),
@@ -137,6 +140,13 @@ export async function POST(request: NextRequest) {
 }
 
 export async function GET(request: NextRequest) {
+  if (!isAuthorized(request)) {
+    return NextResponse.json(
+      { error: "Unauthorized" },
+      { status: 401, headers: UNAUTHORIZED_HEADERS }
+    );
+  }
+
   try {
     const { searchParams } = new URL(request.url);
     const phone = searchParams.get("phone");
