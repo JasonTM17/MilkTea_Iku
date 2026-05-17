@@ -12,13 +12,16 @@ export default defineConfig({
     exclude: ["node_modules", ".next", "tests/**"],
   },
   resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-      "@/lib": path.resolve(__dirname, "./backend/lib"),
-      "@/components": path.resolve(__dirname, "./frontend/components"),
-      "@/hooks": path.resolve(__dirname, "./frontend/hooks"),
-      "@/store": path.resolve(__dirname, "./frontend/store"),
-      "@/shared": path.resolve(__dirname, "./shared"),
-    },
+    alias: [
+      // More-specific aliases must come before the broad "@" catch-all so
+      // that Vite resolves "@/lib/foo" to backend/lib before falling back
+      // to src/lib/foo via the "@" → src mapping.
+      { find: "@/lib", replacement: path.resolve(__dirname, "./backend/lib") },
+      { find: "@/components", replacement: path.resolve(__dirname, "./frontend/components") },
+      { find: "@/hooks", replacement: path.resolve(__dirname, "./frontend/hooks") },
+      { find: "@/store", replacement: path.resolve(__dirname, "./frontend/store") },
+      { find: "@/shared", replacement: path.resolve(__dirname, "./shared") },
+      { find: "@", replacement: path.resolve(__dirname, "./src") },
+    ],
   },
 });

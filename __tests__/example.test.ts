@@ -1,71 +1,55 @@
 /**
- * Example unit test — verifies the Vitest setup is working correctly.
- * Replace or extend with real utility tests as the project grows.
+ * Smoke tests that verify the Vitest setup works and the most-used
+ * utilities from backend/lib/format.ts are importable and correct.
+ * Detailed coverage lives in __tests__/lib/*.test.ts.
  */
 
 import { describe, it, expect } from "vitest";
+import { formatPrice, slugify, calculateDiscount } from "@/lib/format";
+import { sanitizeHtml } from "@/lib/sanitize";
 
-// --- simple pure-function helpers used across the app ---
-
-function formatPrice(amount: number, currency = "VND"): string {
-  return new Intl.NumberFormat("vi-VN", {
-    style: "currency",
-    currency,
-    maximumFractionDigits: 0,
-  }).format(amount);
-}
-
-function clamp(value: number, min: number, max: number): number {
-  return Math.min(Math.max(value, min), max);
-}
-
-function slugify(text: string): string {
-  return text
-    .toLowerCase()
-    .trim()
-    .replace(/\s+/g, "-")
-    .replace(/[^\w-]/g, "");
-}
-
-// --- tests ---
-
-describe("formatPrice", () => {
-  it("formats a VND amount with currency symbol", () => {
-    const result = formatPrice(55000);
-    expect(result).toContain("55.000");
-    expect(result).toContain("₫");
+describe("formatPrice (smoke)", () => {
+  it("formats a VND amount with đ suffix", () => {
+    expect(formatPrice(55000)).toBe("55.000đ");
   });
 
-  it("formats zero correctly", () => {
-    const result = formatPrice(0);
-    expect(result).toContain("0");
+  it("formats zero as 0đ", () => {
+    expect(formatPrice(0)).toBe("0đ");
   });
 });
 
-describe("clamp", () => {
-  it("returns value when within range", () => {
-    expect(clamp(5, 1, 10)).toBe(5);
+describe("slugify (smoke)", () => {
+  it("converts spaces to hyphens and lowercases", () => {
+    expect(slugify("Matcha Latte")).toBe("matcha-latte");
   });
 
-  it("clamps to min when below range", () => {
-    expect(clamp(0, 1, 10)).toBe(1);
+  it("strips Vietnamese diacritics", () => {
+    expect(slugify("Trà Sữa Taro")).toBe("tra-sua-taro");
   });
 
-  it("clamps to max when above range", () => {
-    expect(clamp(15, 1, 10)).toBe(10);
+  it("converts đ to d", () => {
+    expect(slugify("Trà Đen")).toBe("tra-den");
   });
 });
 
-describe("slugify", () => {
-  it("converts spaces to hyphens", () => {
-    expect(slugify("Trà Sữa Taro")).toBe("tr-sa-taro");
+describe("calculateDiscount (smoke)", () => {
+  it("applies a percentage discount", () => {
+    expect(calculateDiscount(100000, "percentage", 20)).toBe(80000);
   });
 
-  it("lowercases the result", () => {
-    expect(slugify("MATCHA LATTE")).toBe("matcha-latte");
+  it("applies a fixed discount", () => {
+    expect(calculateDiscount(100000, "fixed", 15000)).toBe(85000);
   });
 
-  it("trims leading and trailing whitespace", () => {
-    expect(slugify("  brown sugar  ")).toBe("brown-sugar");
+  it("clamps fixed discount to 0 when it exceeds the price", () => {
+    expect(calculateDiscount(10000, "fixed", 20000)).toBe(0);
+  });
+});
+
+describe("sanitizeHtml (smoke)", () => {
+  it("escapes a basic XSS script tag", () => {
+    expect(sanitizeHtml("<script>alert(1)</script>")).toBe(
+      "&lt;script&gt;alert(1)&lt;/script&gt;"
+    );
   });
 });
