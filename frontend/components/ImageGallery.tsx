@@ -13,7 +13,7 @@ export default function ImageGallery({ images, productName }: ImageGalleryProps)
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
 
-  const displayImages = images.length > 0 ? images : ["/placeholder-product.jpg"];
+  const displayImages = images.length > 0 ? images : ["https://images.unsplash.com/photo-1558857563-b371033873b8?w=800&auto=format,compress"];
 
   const goTo = (index: number) => {
     setCurrentIndex(index);

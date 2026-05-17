@@ -112,7 +112,7 @@ export default function FeaturedSection({ products }: FeaturedSectionProps) {
                       <h4 className="font-semibold text-gray-900 dark:text-gray-50 mt-0.5 group-hover:text-brand-600 dark:group-hover:text-brand-300 transition-colors">
                         {product.name}
                       </h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mt-1 line-clamp-1">
+                      <p className="text-sm text-gray-600 dark:text-gray-300 mt-1 line-clamp-1">
                         {product.description}
                       </p>
                       <span className="text-brand-600 dark:text-brand-400 font-bold mt-2 inline-block">

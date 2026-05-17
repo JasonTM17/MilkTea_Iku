@@ -98,7 +98,7 @@ export default function CartDrawer() {
                 <BobaCupIllustration />
               </div>
               <div className="space-y-1">
-                <p className="font-semibold text-gray-700 text-lg">Giỏ hàng trống</p>
+                <p className="font-semibold text-gray-700 dark:text-gray-300 text-lg">Giỏ hàng trống</p>
                 <p className="text-sm text-gray-400">
                   Hãy thêm món yêu thích vào giỏ hàng nhé!
                 </p>

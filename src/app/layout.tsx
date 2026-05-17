@@ -28,6 +28,10 @@ export const metadata: Metadata = {
   description:
     "Thưởng thức trà sữa cao cấp với nguyên liệu tươi ngon nhất. Đặt hàng online, giao tận nơi.",
   keywords: ["trà sữa", "milk tea", "boba", "topping", "đặt hàng online"],
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+  },
   openGraph: {
     type: "website",
     locale: "vi_VN",
@@ -38,7 +42,7 @@ export const metadata: Metadata = {
       "Thưởng thức trà sữa cao cấp với nguyên liệu tươi ngon nhất. Đặt hàng online, giao tận nơi.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://images.unsplash.com/photo-1558857563-b371033873b8?w=1200&h=630&fit=crop&auto=format,compress",
         width: 1200,
         height: 630,
         alt: "MilkTea Iku - Trà Sữa Premium",
@@ -50,7 +54,7 @@ export const metadata: Metadata = {
     title: "MilkTea Iku | Trà Sữa Premium",
     description:
       "Thưởng thức trà sữa cao cấp với nguyên liệu tươi ngon nhất. Đặt hàng online, giao tận nơi.",
-    images: ["/og-image.jpg"],
+    images: ["https://images.unsplash.com/photo-1558857563-b371033873b8?w=1200&h=630&fit=crop&auto=format,compress"],
   },
 };
 

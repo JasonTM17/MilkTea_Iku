@@ -178,10 +178,10 @@ export default function MenuClient({
                 exit={{ opacity: 0, scale: 0.7 }}
                 transition={{ duration: 0.15 }}
                 onClick={() => setSearchQuery("")}
-                className="absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-gray-100 hover:bg-brand-100 flex items-center justify-center transition-colors"
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-brand-100 dark:hover:bg-brand-900/40 flex items-center justify-center transition-colors"
                 aria-label="Xóa tìm kiếm"
               >
-                <X className="w-3.5 h-3.5 text-gray-500" />
+                <X className="w-3.5 h-3.5 text-gray-500 dark:text-gray-400" />
               </motion.button>
             )}
           </AnimatePresence>

@@ -155,7 +155,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
               {product.name}
             </h3>
             {product.description && (
-              <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-gray-400">
+              <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-gray-500 dark:text-gray-400">
                 {product.description}
               </p>
             )}
@@ -163,12 +163,12 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
 
           {/* ── Footer ── */}
           <CardFooter className="flex items-center justify-between border-t-0 bg-transparent px-4 py-3">
-            <span className="text-base font-bold text-brand-600">
+            <span className="text-base font-bold text-brand-600 dark:text-brand-400">
               {formatPrice(product.basePrice)}
             </span>
             <Link
               href={`/menu/${product.slug}`}
-              className="flex items-center gap-1 text-xs font-medium text-gray-400 transition-colors hover:text-brand-600"
+              className="flex items-center gap-1 text-xs font-medium text-gray-400 dark:text-gray-500 transition-colors hover:text-brand-600 dark:hover:text-brand-400"
             >
               Xem chi tiết
               <ArrowRight className="size-3" />

@@ -123,7 +123,7 @@ export default function Hero() {
               {/* Headline */}
               <motion.h1
                 variants={itemVariants}
-                className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-gray-50 leading-[1.08] tracking-tight mb-6"
+                className="font-display text-3xl sm:text-5xl lg:text-7xl font-bold text-gray-900 dark:text-gray-50 leading-[1.08] tracking-tight mb-6"
               >
                 Trà Sữa Tươi{" "}
                 <span className="relative inline-block">

@@ -14,6 +14,7 @@ import FlashSale from "@/components/FlashSale";
 import QualityPromise from "@/components/QualityPromise";
 import AppPromo from "@/components/AppPromo";
 import Link from "next/link";
+import Image from "next/image";
 
 export default async function Home() {
   const bestSellers = await prisma.product.findMany({
@@ -60,6 +61,15 @@ export default async function Home() {
                   href={`/menu?category=${cat.slug}`}
                   className="group relative rounded-2xl overflow-hidden aspect-square bg-cream-100 hover:shadow-lg transition-all"
                 >
+                  {cat.image && (
+                    <Image
+                      src={cat.image}
+                      alt={cat.name}
+                      fill
+                      sizes="(max-width: 768px) 50vw, (max-width: 1280px) 33vw, 20vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
                   <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
                     <h3 className="text-white font-semibold text-sm md:text-base">
@@ -92,7 +102,7 @@ export default async function Home() {
               </div>
               <Link
                 href="/menu"
-                className="text-brand-600 font-medium hover:text-brand-700 transition-colors"
+                className="text-brand-600 dark:text-brand-400 font-medium hover:text-brand-700 dark:hover:text-brand-300 transition-colors"
               >
                 Xem tất cả →
               </Link>
@@ -129,7 +139,7 @@ export default async function Home() {
             </p>
             <Link
               href="/menu"
-              className="inline-flex items-center px-8 py-4 bg-white dark:bg-gray-800 text-brand-700 rounded-full font-semibold hover:bg-cream-100 transition-colors shadow-lg"
+              className="inline-flex items-center px-8 py-4 bg-white text-brand-700 rounded-full font-semibold hover:bg-cream-100 transition-colors shadow-lg"
             >
               Đặt hàng ngay
             </Link>

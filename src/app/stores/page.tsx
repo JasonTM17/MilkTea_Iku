@@ -388,10 +388,10 @@ export default function StoresPage() {
                   <MapPinIcon />
                 </div>
                 <p className="text-gray-600 dark:text-gray-300 font-medium text-base">
-                  Bản đồ sẽ hiển thị ở đây
+                  {stores.length} cửa hàng tại TP.HCM &amp; Hà Nội
                 </p>
                 <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
-                  Tích hợp Google Maps / Mapbox sẽ được thêm vào sau
+                  Nhấn &ldquo;Chỉ đường&rdquo; trên từng thẻ để mở Google Maps
                 </p>
               </div>
             </div>
