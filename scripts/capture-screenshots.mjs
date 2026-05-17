@@ -13,7 +13,27 @@ mkdirSync(OUTPUT_DIR, { recursive: true });
 
 async function waitForPage(page, url, waitUntil = "networkidle") {
   await page.goto(url, { waitUntil, timeout: 60000 });
-  await page.waitForTimeout(1500);
+  // Wait for Tailwind/hydration: a styled element should have brand color
+  try {
+    await page.waitForFunction(
+      () => {
+        const body = document.body;
+        const style = window.getComputedStyle(body);
+        return style.backgroundColor !== "rgba(0, 0, 0, 0)" &&
+               style.backgroundColor !== "rgb(255, 255, 255)" ||
+               document.querySelector("[class*='bg-cream'], [class*='bg-brand'], [class*='from-brand']");
+      },
+      { timeout: 20000 },
+    );
+  } catch {
+    // Continue even if check times out
+  }
+  // Pre-dismiss cookie banner so it doesn't appear in screenshots
+  await page.evaluate(() => {
+    try { localStorage.setItem("iku-cookie-consent", "accepted"); } catch {}
+  });
+  await page.keyboard.press("Escape").catch(() => {});
+  await page.waitForTimeout(2500);
 }
 
 async function applyDarkMode(page) {
@@ -32,7 +52,12 @@ async function applyDarkMode(page) {
 
 async function capture(page, filename, fullPage = false) {
   const outPath = join(OUTPUT_DIR, filename);
-  await page.screenshot({ path: outPath, fullPage });
+  const opts = { path: outPath, fullPage };
+  if (filename.endsWith(".jpg") || filename.endsWith(".jpeg")) {
+    opts.type = "jpeg";
+    opts.quality = 85;
+  }
+  await page.screenshot(opts);
   const size = statSync(outPath).size;
   console.log(`  captured ${filename} (${(size / 1024).toFixed(0)} KB)`);
 }
@@ -43,7 +68,11 @@ async function main() {
   // ── Desktop context ──────────────────────────────────────────────────────
   const desktop = await browser.newContext({
     viewport: { width: 1440, height: 900 },
-    deviceScaleFactor: 2,
+    deviceScaleFactor: 1,
+  });
+  // Inject before any page script runs so cookie banner is suppressed
+  await desktop.addInitScript(() => {
+    try { localStorage.setItem("iku-cookie-consent", "accepted"); } catch {}
   });
 
   // homepage.png
@@ -89,9 +118,12 @@ async function main() {
   // ── Mobile context ───────────────────────────────────────────────────────
   const mobile = await browser.newContext({
     viewport: { width: 375, height: 812 },
-    deviceScaleFactor: 2,
+    deviceScaleFactor: 1,
     isMobile: true,
     hasTouch: true,
+  });
+  await mobile.addInitScript(() => {
+    try { localStorage.setItem("iku-cookie-consent", "accepted"); } catch {}
   });
 
   // mobile.png
