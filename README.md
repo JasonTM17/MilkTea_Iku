@@ -1,302 +1,256 @@
 <p align="center">
-  🌐 <strong>English</strong> | <a href="docs/README.vi.md">Tiếng Việt</a> | <a href="docs/README.ja.md">日本語</a>
+  <strong>English</strong>
+  &nbsp;·&nbsp;
+  <a href="docs/README.vi.md">Tiếng Việt</a>
+  &nbsp;·&nbsp;
+  <a href="docs/README.ja.md">日本語</a>
 </p>
 
----
-
 <p align="center">
-  <img src="public/logo-cute.svg" width="80" alt="MilkTea Iku Logo" />
+  <img src="public/logo-cute.svg" width="80" alt="MilkTea Iku logo" />
 </p>
 
 <h1 align="center">MilkTea Iku</h1>
 
 <p align="center">
-  <strong>Premium Milk Tea E-Commerce Platform</strong><br/>
-  Nền tảng thương mại điện tử trà sữa cao cấp
+  <strong>Full-stack milk tea e-commerce — Next.js 14 · TypeScript · Prisma · Docker</strong>
 </p>
 
 <p align="center">
-  <a href="#features">Features</a> •
-  <a href="#tech-stack">Tech Stack</a> •
-  <a href="#screenshots">Screenshots</a> •
-  <a href="#getting-started">Getting Started</a> •
-  <a href="#deployment">Deployment</a> •
-  <a href="#contributing">Contributing</a>
+  <a href="https://github.com/JasonTM17/MilkTea_Iku/actions/workflows/ci.yml">
+    <img src="https://github.com/JasonTM17/MilkTea_Iku/actions/workflows/ci.yml/badge.svg" alt="CI" />
+  </a>
+  <a href="https://github.com/JasonTM17/MilkTea_Iku/actions/workflows/codeql.yml">
+    <img src="https://github.com/JasonTM17/MilkTea_Iku/actions/workflows/codeql.yml/badge.svg" alt="CodeQL" />
+  </a>
+  <a href="https://github.com/JasonTM17/MilkTea_Iku/actions/workflows/security.yml">
+    <img src="https://github.com/JasonTM17/MilkTea_Iku/actions/workflows/security.yml/badge.svg" alt="Security" />
+  </a>
+  <a href="https://github.com/JasonTM17/MilkTea_Iku/actions/workflows/deploy.yml">
+    <img src="https://github.com/JasonTM17/MilkTea_Iku/actions/workflows/deploy.yml/badge.svg" alt="Deploy" />
+  </a>
 </p>
 
 <p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="MIT License" /></a>
-  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome" />
-  <img src="https://img.shields.io/badge/Next.js-14-black?logo=next.js" alt="Next.js 14" />
-  <img src="https://img.shields.io/badge/TypeScript-5.4-blue?logo=typescript" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-3.4-38bdf8?logo=tailwindcss" alt="Tailwind CSS" />
-  <img src="https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker" alt="Docker" />
-  <img src="https://github.com/JasonTM17/MilkTea_Iku/actions/workflows/ci.yml/badge.svg" alt="CI" />
-  <a href="https://milktea-iku.vercel.app"><img src="https://img.shields.io/badge/Vercel-Live-000?logo=vercel" alt="Vercel" /></a>
+  <img src="https://img.shields.io/badge/Next.js-14.2-000000?logo=next.js&logoColor=white" alt="Next.js" />
+  <img src="https://img.shields.io/badge/TypeScript-5.4-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-3.4-38bdf8?logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/Prisma-5.14-2D3748?logo=prisma&logoColor=white" alt="Prisma" />
+  <img src="https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white" alt="Docker" />
+  <a href="https://milktea-iku.vercel.app">
+    <img src="https://img.shields.io/badge/Vercel-Live-000000?logo=vercel&logoColor=white" alt="Vercel" />
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License" />
+  </a>
 </p>
+
+---
+
+## 30-Second Brief
+
+MilkTea Iku is a production-shaped e-commerce storefront for a premium milk tea brand. It covers the full customer journey — browsing, customising drinks, checkout, and order tracking — plus an admin dashboard for order and coupon management.
+
+| | |
+|---|---|
+| **Live URL** | [milktea-iku.vercel.app](https://milktea-iku.vercel.app) |
+| **Status** | Deployed on Vercel · portfolio / reference implementation |
+| **Stack** | Next.js 14 App Router, TypeScript, Prisma, SQLite (dev) / Postgres (prod) |
+| **Tests** | 35 Playwright spec files — e2e, API, accessibility, visual, performance, SEO |
+| **CI/CD** | 6 GitHub Actions workflows (ci, deploy, docker-publish, codeql, security, release) |
 
 ---
 
 ## Screenshots
 
 <p align="center">
-  <img src="docs/screenshots/homepage.png" alt="Homepage" width="720"/>
-  <br/><em>Homepage with hero section and bestsellers</em>
+  <img src="docs/screenshots/homepage.png" alt="Homepage" width="900" />
 </p>
 
 <table>
   <tr>
-    <td><img src="docs/screenshots/homepage.png" alt="Homepage" width="400"/></td>
-    <td><img src="docs/screenshots/menu.png" alt="Menu" width="400"/></td>
+    <td><img src="docs/screenshots/homepage.png" alt="Homepage — light mode" width="430"/></td>
+    <td><img src="docs/screenshots/dark-mode.png" alt="Homepage — dark mode" width="430"/></td>
   </tr>
   <tr>
-    <td align="center"><em>Homepage with hero section</em></td>
-    <td align="center"><em>Product catalog with category filter</em></td>
+    <td align="center"><em>Light mode</em></td>
+    <td align="center"><em>Dark mode (WCAG AA contrast)</em></td>
   </tr>
   <tr>
-    <td><img src="docs/screenshots/dark-mode.png" alt="Dark Mode" width="400"/></td>
-    <td><img src="docs/screenshots/stores.png" alt="Stores" width="400"/></td>
+    <td><img src="docs/screenshots/menu.png" alt="Menu catalogue" width="430"/></td>
+    <td><img src="docs/screenshots/stores.png" alt="Store locator" width="430"/></td>
   </tr>
   <tr>
-    <td align="center"><em>Dark mode support</em></td>
+    <td align="center"><em>Menu — search, filter, sort</em></td>
     <td align="center"><em>Store locator</em></td>
-  </tr>
-  <tr>
-    <td><img src="docs/screenshots/mobile.png" alt="Mobile View" width="400"/></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td align="center"><em>Responsive mobile design</em></td>
-    <td></td>
   </tr>
 </table>
 
----
-
-## Overview
-
-MilkTea Iku is a full-featured milk tea e-commerce platform with drink customization, order tracking, and admin management. Built with modern web technologies for performance, accessibility, and a premium ordering experience.
-
-### Key Highlights
-
-| Metric | Value |
-|--------|-------|
-| Pages | 35+ |
-| Components | 75+ |
-| API Endpoints | 26 |
-| Test Suites | 597 |
-| Lighthouse Score | 90+ |
+<p align="center">
+  <img src="docs/screenshots/mobile.png" alt="Mobile view" width="300"/>
+</p>
+<p align="center"><em>Mobile — no horizontal overflow, all touch targets ≥ 44 px</em></p>
 
 ---
 
 ## Features
 
-### Customer Experience
-- **Product Catalog** — Browse by category, search, filter by price/popularity
-- **Drink Customization** — Size, sugar level, ice level, toppings selection
-- **Shopping Cart** — Persistent state with Zustand, quantity management
-- **Checkout Flow** — Multi-step form with Zod validation
-- **Order Tracking** — Real-time delivery progress with status updates
-- **Wishlist & Reviews** — Save favorites, read customer reviews
+**Customer**
+- Menu browsing with category filter, full-text search, and sort
+- Drink customiser — size, sugar level, ice level, multi-topping selection
+- Cart with persistent state (Zustand + localStorage)
+- Multi-step checkout with Zod validation and server-side price recompute
+- Coupon application with rate-limited validation
+- Order tracking by phone number and order ID
+- Loyalty tiers and rewards programme
+- Wishlist
 
-### Admin Dashboard
-- **Revenue Analytics** — Charts, daily/weekly/monthly stats
-- **Order Management** — Status updates, filtering, search
-- **Product CRUD** — Add, edit, remove products and categories
-- **Coupon System** — Create and manage promotional codes
-
-### Technical Features
-- **Dark Mode** — Full theme support across all pages
-- **PWA** — Offline support, installable on mobile
-- **SEO** — JSON-LD structured data, dynamic sitemap, OG images
-- **Accessibility** — Skip links, ARIA labels, keyboard navigation
-- **Rate Limiting** — IP-based sliding window on sensitive endpoints
-- **Security Headers** — HSTS, CSP, X-Frame-Options, XSS protection
+**Platform**
+- Admin dashboard — order management, status transitions, coupon CRUD, aggregate stats
+- Light / dark theme via `next-themes` (WCAG AA contrast)
+- Fully responsive, mobile-first design
+- Multi-language support (English · Tiếng Việt · 日本語)
+- OpenAPI 3.0 spec at `/api/docs`
+- PWA manifest and service-worker scaffold
 
 ---
 
 ## Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| Framework | Next.js 14 (App Router) |
+| Layer | Choice |
+|---|---|
+| Framework | Next.js 14.2 (App Router, Server Components, streaming) |
 | Language | TypeScript 5.4 |
-| Styling | Tailwind CSS 3.4 |
-| Database | Prisma 5.14 + SQLite |
-| State | Zustand 4.5 |
-| Animation | Framer Motion 11 |
+| Styling | Tailwind CSS 3.4 + shadcn/ui |
+| Animations | Framer Motion 11 |
+| Theming | next-themes |
 | Validation | Zod 3.23 |
-| Icons | Lucide React |
-| Testing | Playwright |
-| Deployment | Vercel + Docker |
+| State | Zustand 4.5 |
+| ORM / DB | Prisma 5.14 — SQLite (dev) · Postgres (prod) |
+| Auth | HTTP Basic + Bearer token, scrypt-hashed passwords |
+| Rate limiting | Per-IP sliding window (in-memory) |
+| Icons | lucide-react |
+| Testing | Playwright 1.60 |
+| CI/CD | GitHub Actions |
+| Hosting | Vercel (primary) · Docker Hub |
 
 ---
 
-## Getting Started
+## Quick Start
 
-### Prerequisites
-
-| Tool | Version |
-|------|---------|
-| Node.js | >= 18.0.0 |
-| npm | >= 9.0.0 |
-
-### Installation
+### Local development
 
 ```bash
-# Clone the repository
 git clone https://github.com/JasonTM17/MilkTea_Iku.git
 cd MilkTea_Iku
 
-# Install dependencies
-npm ci --legacy-peer-deps
+npm install --legacy-peer-deps
 
-# Set up environment
-cp .env.example .env
+cp .env.example .env.local
+# Edit .env.local — see Environment Variables below
 
-# Set up database
 npx prisma generate --schema=backend/prisma/schema.prisma
 npm run db:push
 npm run db:seed
 
-# Start development server
 npm run dev
+# → http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the application.
+### Docker (self-hosted)
 
-### Available Scripts
+```bash
+cp .env.example .env.local
+# Edit .env.local with your values
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server |
+docker compose up -d
+# → http://localhost:3000
+```
+
+### Useful scripts
+
+| Command | Purpose |
+|---|---|
+| `npm run dev` | Start dev server |
 | `npm run build` | Production build |
-| `npm run start` | Start production server |
-| `npm run lint` | Run ESLint |
-| `npm run db:push` | Push schema to database |
-| `npm run db:seed` | Seed sample data |
+| `npm run lint` | ESLint + Next lint |
+| `npx tsc --noEmit` | Type check |
+| `npx playwright test` | Full test suite |
+| `npm run db:push` | Push schema to SQLite |
+| `npm run db:seed` | Seed reference data |
 | `npm run db:studio` | Open Prisma Studio |
+| `node scripts/generate-admin-hash.mjs` | Generate `ADMIN_PASSWORD_HASH` |
 
 ---
 
-## Project Structure
+## Environment Variables
 
-```
-├── backend/
-│   ├── lib/                   # Backend utilities (Prisma, rate-limit, validators)
-│   ├── prisma/                # Database schema, seed, SQLite
-│   └── n8n/                   # Chatbot automation config
-├── frontend/
-│   ├── components/            # 75+ React components
-│   │   └── ui/               # shadcn/ui primitives
-│   ├── hooks/                 # Custom React hooks
-│   └── store/                 # Zustand state management
-├── shared/
-│   └── types/                 # Shared TypeScript interfaces
-├── src/
-│   ├── app/                   # Next.js App Router
-│   │   ├── api/              # 26 RESTful API routes
-│   │   ├── admin/            # Admin dashboard
-│   │   ├── menu/             # Product catalog
-│   │   ├── checkout/         # Checkout flow
-│   │   └── ...               # 35+ pages
-│   └── middleware.ts          # Security headers & auth
-├── tests/
-│   ├── e2e/                  # End-to-end tests
-│   ├── api/                  # API integration tests
-│   ├── visual/               # Visual regression
-│   ├── accessibility/        # a11y tests
-│   ├── performance/          # Lighthouse checks
-│   └── seo/                  # Meta tag validation
-└── docker-compose.yml         # Backend + Frontend + n8n
-```
+Copy `.env.example` to `.env.local` and fill in the values.
+
+| Variable | Required | Description |
+|---|---|---|
+| `DATABASE_URL` | Yes | SQLite path for dev; Postgres URL for prod |
+| `ADMIN_USERNAME` | Yes | Username for `/admin` HTTP Basic Auth |
+| `ADMIN_PASSWORD` | Dev only | Plaintext password (ignored when hash is set) |
+| `ADMIN_PASSWORD_HASH` | Prod | scrypt hash — generate with `generate-admin-hash.mjs` |
+| `ADMIN_API_TOKEN` | Yes | Bearer token for programmatic admin access |
+| `N8N_WEBHOOK_URL` | Optional | n8n chatbot webhook URL |
+| `N8N_HOSTNAMES` | Optional | SSRF allowlist for n8n hostnames |
+| `N8N_USER` | Optional | n8n basic auth user (docker-compose only) |
+| `N8N_PASSWORD` | Optional | n8n basic auth password (docker-compose only) |
+| `E2E_BASE_URL` | CI only | Base URL for Playwright (default: `http://localhost:3000`) |
 
 ---
 
-## API Reference
+## Architecture
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/api/products` | List products (filter, search, paginate) |
-| `GET` | `/api/products/[slug]` | Product detail |
-| `GET` | `/api/categories` | List categories |
-| `GET` | `/api/toppings` | List toppings |
-| `POST` | `/api/orders` | Create order |
-| `GET` | `/api/orders/tracking` | Track order by phone |
-| `GET` | `/api/search` | Full-text search |
-| `POST` | `/api/contact` | Submit contact form |
-| `POST` | `/api/newsletter` | Subscribe to newsletter |
-| `GET` | `/api/health` | Health check |
-| `GET/PATCH` | `/api/admin/orders` | Admin order management |
-| `GET` | `/api/admin/stats` | Dashboard statistics |
+Full architecture overview, project layout, and data-flow diagrams: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
+
+Additional documentation:
+
+| Document | Link |
+|---|---|
+| API reference | [`docs/api.md`](docs/api.md) |
+| Deployment guide | [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) |
+| Testing strategy | [`docs/TESTING.md`](docs/TESTING.md) |
+| UI/UX guidelines | [`docs/UI_UX_GUIDELINES.md`](docs/UI_UX_GUIDELINES.md) |
+| Security posture | [`SECURITY.md`](SECURITY.md) |
+| Honest scope | [`docs/HONEST_SCOPE.md`](docs/HONEST_SCOPE.md) |
 
 ---
 
 ## Deployment
 
-### Vercel (Recommended)
+### Vercel (primary)
 
-The project auto-deploys to Vercel on push to `main`.
+Push to `main` — the [`deploy.yml`](.github/workflows/deploy.yml) workflow builds and deploys automatically.
 
-**Live:** [milktea-iku.vercel.app](https://milktea-iku.vercel.app)
+For production, set all environment variables in the Vercel dashboard and switch `DATABASE_URL` to a Postgres connection string.
 
 ### Docker
 
 ```bash
-# Using Docker Compose
-docker compose up -d
-
-# Or pull from Docker Hub
-docker pull nguyenson1710/milktea-iku-backend:v1.0.0
-docker pull nguyenson1710/milktea-iku-frontend:v1.0.0
+docker compose up -d          # start backend + frontend + n8n
+docker compose down           # stop
+docker compose logs -f        # stream logs
 ```
 
-| Service | Image | Port | Size |
-|---------|-------|------|------|
-| Backend | `nguyenson1710/milktea-iku-backend` | 3000 | 349 MB |
-| Frontend | `nguyenson1710/milktea-iku-frontend` | 80 | 96 MB |
+Tagged releases publish images to Docker Hub via [`docker-publish.yml`](.github/workflows/docker-publish.yml).
+
+Full reference: [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).
 
 ---
 
-## Testing
+## Author
 
-```bash
-# Run all tests
-npx playwright test
-
-# Run specific suites
-npx playwright test tests/e2e/
-npx playwright test tests/api/
-
-# Run with UI mode
-npx playwright test --ui
-```
-
----
-
-## Contributing
-
-Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+**Nguyễn Sơn** — [github.com/JasonTM17](https://github.com/JasonTM17) · [jasonbmt06@gmail.com](mailto:jasonbmt06@gmail.com)
 
 ---
 
 ## License
 
-[MIT](LICENSE) © 2026 [Nguyễn Sơn](https://github.com/JasonTM17)
+[MIT](LICENSE) © 2026 Nguyễn Sơn
 
 ---
 
-## Disclaimer
-
-> This is a **learning project** (dự án học tập) built for educational purposes.
-> All feedback, suggestions, and contributions are warmly welcomed!
->
-> **Author:** Nguyễn Sơn — [jasonbmt06@gmail.com](mailto:jasonbmt06@gmail.com)
->
-> If you have any ideas or feedback, please open an [issue](https://github.com/JasonTM17/MilkTea_Iku/issues) or reach out via email.
-
----
-
-<p align="center">
-  Made with ☕ by <a href="https://github.com/JasonTM17">Nguyễn Sơn</a>
-</p>
+<p align="center">Made with ☕ in Saigon</p>
