@@ -37,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi" className={cn(inter.variable, playfair.variable, "font-sans")}>
-      <body className="antialiased">
+      <body className="antialiased bg-cream-50 dark:bg-gray-900">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <JsonLd />
           <SkipLink />

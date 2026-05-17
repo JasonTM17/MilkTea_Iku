@@ -50,16 +50,24 @@
     <td><img src="docs/screenshots/menu.png" alt="Menu" width="400"/></td>
   </tr>
   <tr>
-    <td align="center"><em>Homepage with promotions</em></td>
+    <td align="center"><em>Homepage with hero section</em></td>
     <td align="center"><em>Product catalog with category filter</em></td>
   </tr>
   <tr>
     <td><img src="docs/screenshots/dark-mode.png" alt="Dark Mode" width="400"/></td>
-    <td><img src="docs/screenshots/mobile.png" alt="Mobile View" width="400"/></td>
+    <td><img src="docs/screenshots/stores.png" alt="Stores" width="400"/></td>
   </tr>
   <tr>
     <td align="center"><em>Dark mode support</em></td>
+    <td align="center"><em>Store locator</em></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/mobile.png" alt="Mobile View" width="400"/></td>
+    <td></td>
+  </tr>
+  <tr>
     <td align="center"><em>Responsive mobile design</em></td>
+    <td></td>
   </tr>
 </table>
 

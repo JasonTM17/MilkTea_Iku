@@ -42,13 +42,13 @@ export default async function Home() {
         <Hero />
 
         {/* Categories Section */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-white dark:bg-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-display font-bold text-gray-900">
+              <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-gray-50">
                 Khám phá danh mục
               </h2>
-              <p className="text-gray-500 mt-2">
+              <p className="text-gray-500 dark:text-gray-400 mt-2">
                 Đa dạng hương vị cho mọi sở thích
               </p>
             </div>
@@ -79,14 +79,14 @@ export default async function Home() {
         <FeaturedSection products={newProducts} />
 
         {/* Best Sellers */}
-        <section className="py-20 bg-cream-50">
+        <section className="py-20 bg-cream-50 dark:bg-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-end justify-between mb-12">
               <div>
-                <h2 className="text-3xl font-display font-bold text-gray-900">
+                <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-gray-50">
                   Best Sellers
                 </h2>
-                <p className="text-gray-500 mt-2">
+                <p className="text-gray-500 dark:text-gray-400 mt-2">
                   Những món được yêu thích nhất
                 </p>
               </div>
