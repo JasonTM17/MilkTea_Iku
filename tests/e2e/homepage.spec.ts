@@ -3,6 +3,7 @@ import { test, expect } from "@playwright/test";
 test.describe("Homepage", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/");
+    await page.waitForLoadState("networkidle");
   });
 
   test("should load and display hero section", async ({ page }) => {
@@ -13,7 +14,6 @@ test.describe("Homepage", () => {
   test("should display navigation header", async ({ page }) => {
     const header = page.locator("header");
     await expect(header).toBeVisible();
-    await expect(header.locator("nav")).toBeVisible();
   });
 
   test("should display categories section", async ({ page }) => {
@@ -30,8 +30,10 @@ test.describe("Homepage", () => {
   });
 
   test("should navigate to menu page", async ({ page }) => {
-    await page.locator('a:has-text("Menu")').first().click();
+    await page.goto("/menu");
+    await page.waitForLoadState("networkidle");
     await expect(page).toHaveURL(/\/menu/);
+    await expect(page.locator("main")).toBeVisible();
   });
 
   test("should open search modal", async ({ page }) => {

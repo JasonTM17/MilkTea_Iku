@@ -76,7 +76,7 @@ MilkTea Iku is a full-featured milk tea e-commerce platform with drink customiza
 | Pages | 35+ |
 | Components | 75+ |
 | API Endpoints | 26 |
-| Test Suites | 148 |
+| Test Suites | 597 |
 | Lighthouse Score | 90+ |
 
 ---
@@ -275,6 +275,17 @@ Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for gu
 ## License
 
 [MIT](LICENSE) © 2026 [Nguyễn Sơn](https://github.com/JasonTM17)
+
+---
+
+## Disclaimer
+
+> This is a **learning project** (dự án học tập) built for educational purposes.
+> All feedback, suggestions, and contributions are warmly welcomed!
+>
+> **Author:** Nguyễn Sơn — [jasonbmt06@gmail.com](mailto:jasonbmt06@gmail.com)
+>
+> If you have any ideas or feedback, please open an [issue](https://github.com/JasonTM17/MilkTea_Iku/issues) or reach out via email.
 
 ---
 

@@ -42,7 +42,9 @@ export default function RootLayout({
           <JsonLd />
           <SkipLink />
           <PromoBanner />
-          {children}
+          <div id="main-content">
+            {children}
+          </div>
           <MobileNav />
           <ScrollToTop />
           <ToastProvider />

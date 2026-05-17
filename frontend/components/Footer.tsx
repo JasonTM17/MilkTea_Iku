@@ -149,7 +149,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 mt-10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-gray-500">
-            © 2024 MilkTea Iku. All rights reserved.
+            © {new Date().getFullYear()} MilkTea Iku. All rights reserved.
           </p>
           <p className="text-sm text-gray-500 flex items-center gap-1">
             Made with <Heart className="w-3 h-3 text-brand-400 fill-brand-400" /> in Saigon

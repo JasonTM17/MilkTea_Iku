@@ -7,6 +7,7 @@ import { ShoppingCart, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { useCartStore } from "@/store/cart";
 
 interface ProductCardProps {
   product: {
@@ -127,7 +128,23 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
               <Button
                 className="h-9 w-full gap-2 rounded-xl border-0 bg-white text-sm font-semibold text-brand-700 shadow-lg hover:bg-brand-50"
                 variant="outline"
-                onClick={(e) => e.preventDefault()}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  const { addItem } = useCartStore.getState();
+                  addItem({
+                    productId: product.id,
+                    name: product.name,
+                    image: product.image || "/placeholder.webp",
+                    size: "M",
+                    quantity: 1,
+                    sugarLevel: 100,
+                    iceLevel: 100,
+                    toppings: [],
+                    basePrice: product.basePrice,
+                    toppingPrice: 0,
+                  });
+                }}
               >
                 <ShoppingCart className="size-4" />
                 Thêm vào giỏ

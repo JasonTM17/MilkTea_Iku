@@ -1,10 +1,40 @@
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { paginatedResponse, errorResponse } from "@/lib/api-response";
 
 export const dynamic = "force-dynamic";
 
+function isAuthorized(request: NextRequest): boolean {
+  const authHeader = request.headers.get("authorization");
+  if (!authHeader) return false;
+
+  const adminUser = process.env.ADMIN_USERNAME;
+  const adminPass = process.env.ADMIN_PASSWORD;
+  if (!adminUser || !adminPass) return false;
+
+  if (authHeader.startsWith("Basic ")) {
+    const decoded = Buffer.from(authHeader.slice(6), "base64").toString();
+    const [user, pass] = decoded.split(":");
+    return user === adminUser && pass === adminPass;
+  }
+
+  if (authHeader.startsWith("Bearer ")) {
+    const token = authHeader.slice(7);
+    const expectedToken = process.env.ADMIN_API_TOKEN;
+    return !!expectedToken && token === expectedToken;
+  }
+
+  return false;
+}
+
 export async function GET(request: NextRequest) {
+  if (!isAuthorized(request)) {
+    return NextResponse.json(
+      { error: "Unauthorized" },
+      { status: 401, headers: { "WWW-Authenticate": 'Basic realm="Admin"' } }
+    );
+  }
+
   try {
     const { searchParams } = new URL(request.url);
 

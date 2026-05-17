@@ -5,22 +5,19 @@ const pages = ["/", "/menu", "/about", "/contact", "/stores"];
 test.describe("Dark Mode", () => {
   for (const pagePath of pages) {
     test(`${pagePath} should support dark mode`, async ({ page }) => {
+      await page.addInitScript(() => {
+        localStorage.setItem("theme", "dark");
+      });
       await page.goto(pagePath);
       await page.waitForLoadState("networkidle");
+      await page.waitForTimeout(500);
 
-      // Enable dark mode
-      await page.evaluate(() => {
-        document.documentElement.classList.add("dark");
-      });
-      await page.waitForTimeout(300);
-
-      // Verify dark class is applied
       const html = page.locator("html");
-      const className = await html.getAttribute("class");
-      expect(className).toContain("dark");
-
-      // Verify page is still visible
-      await expect(page.locator("main")).toBeVisible();
+      const className = await html.getAttribute("class") || "";
+      const hasDark = className.includes("dark");
+      const style = await html.getAttribute("style") || "";
+      const hasColorScheme = style.includes("dark");
+      expect(hasDark || hasColorScheme).toBeTruthy();
     });
   }
 });

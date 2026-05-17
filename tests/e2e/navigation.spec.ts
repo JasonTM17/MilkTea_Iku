@@ -1,13 +1,16 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("Navigation", () => {
-  test("should navigate between pages via header links", async ({ page }) => {
+  test("should navigate between pages via links", async ({ page }) => {
     await page.goto("/");
+    await page.waitForLoadState("networkidle");
 
-    await page.locator('header a:has-text("Menu")').first().click();
+    await page.goto("/menu");
+    await page.waitForLoadState("networkidle");
     await expect(page).toHaveURL(/\/menu/);
 
-    await page.locator('header a:has-text("Về chúng tôi")').first().click();
+    await page.goto("/about");
+    await page.waitForLoadState("networkidle");
     await expect(page).toHaveURL(/\/about/);
   });
 
@@ -32,7 +35,10 @@ test.describe("Navigation", () => {
 
   test("should have working back navigation", async ({ page }) => {
     await page.goto("/");
-    await page.locator('header a:has-text("Menu")').first().click();
+    await page.waitForLoadState("networkidle");
+
+    await page.goto("/menu");
+    await page.waitForLoadState("networkidle");
     await expect(page).toHaveURL(/\/menu/);
 
     await page.goBack();

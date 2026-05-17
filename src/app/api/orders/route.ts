@@ -65,21 +65,46 @@ export async function POST(request: NextRequest) {
 
     const { items, ...orderData } = parsed.data;
 
-    // Verify all products exist and are available
     const productIds = Array.from(new Set(items.map((i) => i.productId)));
-    const products = await prisma.product.findMany({
+
+    const productRecords = await prisma.product.findMany({
       where: { id: { in: productIds }, isAvailable: true },
-      select: { id: true },
+      select: { id: true, basePrice: true },
     });
 
-    if (products.length !== productIds.length) {
+    if (productRecords.length !== productIds.length) {
       return NextResponse.json(
         { error: "Một hoặc nhiều sản phẩm không tồn tại hoặc đã ngừng bán" },
         { status: 422 }
       );
     }
 
-    const total = items.reduce((sum, item) => sum + item.subtotal, 0);
+    const priceMap = new Map(productRecords.map((p) => [p.id, p.basePrice]));
+
+    const toppingNames = Array.from(
+      new Set(items.flatMap((i) => i.toppings))
+    );
+    const toppingRecords = toppingNames.length
+      ? await prisma.topping.findMany({
+          where: { name: { in: toppingNames } },
+          select: { name: true, price: true },
+        })
+      : [];
+    const toppingPriceMap = new Map(
+      toppingRecords.map((t) => [t.name, t.price])
+    );
+
+    const verifiedItems = items.map((item) => {
+      const basePrice = priceMap.get(item.productId) ?? 0;
+      const toppingsTotal = item.toppings.reduce(
+        (sum, t) => sum + (toppingPriceMap.get(t) ?? 0),
+        0
+      );
+      const serverSubtotal = (basePrice + toppingsTotal) * item.quantity;
+      return { ...item, subtotal: serverSubtotal };
+    });
+
+    const total = verifiedItems.reduce((sum, item) => sum + item.subtotal, 0);
 
     const order = await prisma.order.create({
       data: {
@@ -87,7 +112,7 @@ export async function POST(request: NextRequest) {
         address: orderData.address ?? "",
         total,
         items: {
-          create: items.map((item) => ({
+          create: verifiedItems.map((item) => ({
             productId: item.productId,
             size: item.size,
             quantity: item.quantity,

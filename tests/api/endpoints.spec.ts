@@ -57,10 +57,19 @@ test.describe("Wishlist API", () => {
 });
 
 test.describe("Newsletter Subscribers API", () => {
-  test("GET /api/newsletter/subscribers should return data", async ({ request }) => {
-    const response = await request.get("/api/newsletter/subscribers");
+  const adminAuth = Buffer.from("admin:milktea-iku-2026").toString("base64");
+
+  test("GET /api/newsletter/subscribers should return data with auth", async ({ request }) => {
+    const response = await request.get("/api/newsletter/subscribers", {
+      headers: { Authorization: `Basic ${adminAuth}` },
+    });
     expect(response.status()).toBe(200);
     const data = await response.json();
     expect(data).toHaveProperty("data");
+  });
+
+  test("GET /api/newsletter/subscribers should reject without auth", async ({ request }) => {
+    const response = await request.get("/api/newsletter/subscribers");
+    expect(response.status()).toBe(401);
   });
 });

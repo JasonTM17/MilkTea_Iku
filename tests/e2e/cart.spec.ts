@@ -47,11 +47,15 @@ test.describe("Cart - Quantity Controls", () => {
   test("should navigate to product detail page", async ({ page }) => {
     await page.goto("/menu");
     await page.waitForLoadState("networkidle");
+    await page.waitForTimeout(2000);
 
     const productLink = page.locator('a[href*="/menu/"]').first();
-    if (await productLink.isVisible({ timeout: 10000 })) {
-      await productLink.click();
-      await expect(page).toHaveURL(/\/menu\//);
+    const count = await productLink.count();
+    if (count > 0) {
+      await productLink.click({ force: true, timeout: 15000 });
+      await page.waitForLoadState("networkidle");
+      const url = page.url();
+      expect(url).toMatch(/\/menu/);
     }
   });
 });

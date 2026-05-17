@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Home, Search, ShoppingBag, User, Grid3X3 } from "lucide-react";
+import { Home, ShoppingBag, ClipboardList, Grid3X3, MapPin } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCartStore } from "@/store/cart";
@@ -11,8 +11,8 @@ const navItems = [
   { href: "/", icon: Home, label: "Trang chủ" },
   { href: "/menu", icon: Grid3X3, label: "Menu" },
   { href: "/promotions", icon: ShoppingBag, label: "Ưu đãi" },
-  { href: "/order", icon: Search, label: "Đơn hàng" },
-  { href: "/stores", icon: User, label: "Cửa hàng" },
+  { href: "/tracking", icon: ClipboardList, label: "Đơn hàng" },
+  { href: "/stores", icon: MapPin, label: "Cửa hàng" },
 ];
 
 export default function MobileNav() {

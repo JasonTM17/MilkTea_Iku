@@ -136,6 +136,17 @@ docker pull nguyenson1710/milktea-iku-frontend:v1.0.0
 
 ---
 
+## Lưu Ý
+
+> Đây là **dự án học tập** được xây dựng với mục đích giáo dục.
+> Mọi ý kiến đóng góp, góp ý và phản hồi đều được hoan nghênh!
+>
+> **Tác giả:** Nguyễn Sơn — [jasonbmt06@gmail.com](mailto:jasonbmt06@gmail.com)
+>
+> Nếu bạn có ý tưởng hoặc phản hồi, vui lòng mở [issue](https://github.com/JasonTM17/MilkTea_Iku/issues) hoặc liên hệ qua email.
+
+---
+
 <p align="center">
   Made with ☕ by <a href="https://github.com/JasonTM17">Nguyễn Sơn</a>
 </p>

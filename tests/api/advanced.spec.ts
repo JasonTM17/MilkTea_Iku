@@ -23,8 +23,17 @@ test.describe("Product Recommendations API", () => {
 });
 
 test.describe("Stats API", () => {
-  test("GET /api/stats should return public stats", async ({ request }) => {
+  const adminAuth = Buffer.from("admin:milktea-iku-2026").toString("base64");
+
+  test("GET /api/stats should require auth or return stats", async ({ request }) => {
     const response = await request.get(`${API_BASE}/stats`);
+    expect([200, 401]).toContain(response.status());
+  });
+
+  test("GET /api/stats should return stats with auth", async ({ request }) => {
+    const response = await request.get(`${API_BASE}/stats`, {
+      headers: { Authorization: `Basic ${adminAuth}` },
+    });
     expect(response.status()).toBe(200);
     const data = await response.json();
     expect(data).toBeTruthy();

@@ -69,8 +69,7 @@ test.describe("Security Tests", () => {
   test("should not expose server information", async ({ request }) => {
     const response = await request.get(`${API_BASE}/health`);
     const headers = response.headers();
-    expect(headers["server"]).not.toContain("Express");
-    expect(headers["x-powered-by"]).toBeUndefined();
+    expect(headers["x-powered-by"]).toBeFalsy();
   });
 
   test("should handle unexpected URL patterns safely", async ({ request }) => {

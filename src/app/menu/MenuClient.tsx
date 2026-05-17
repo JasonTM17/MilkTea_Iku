@@ -131,13 +131,7 @@ export default function MenuClient({
   const [activeCategory, setActiveCategory] = useState(initialCategory);
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setSortBy] = useState<SortOption>("newest");
-  const [isLoading, setIsLoading] = useState(true);
-
-  // Brief skeleton on mount for a polished feel
-  useEffect(() => {
-    const t = setTimeout(() => setIsLoading(false), 600);
-    return () => clearTimeout(t);
-  }, []);
+  const [isLoading, setIsLoading] = useState(false);
 
   const allCategories = [{ id: "all", name: "Tất cả", slug: "all" }, ...categories];
 
