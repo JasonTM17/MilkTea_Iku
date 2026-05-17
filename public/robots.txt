@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /api/
+Disallow: /checkout/
+Disallow: /profile/
+Disallow: /orders/
+
+Sitemap: https://milktea-iku.vercel.app/sitemap.xml

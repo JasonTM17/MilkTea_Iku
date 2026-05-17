@@ -28,6 +28,30 @@ export const metadata: Metadata = {
   description:
     "Thưởng thức trà sữa cao cấp với nguyên liệu tươi ngon nhất. Đặt hàng online, giao tận nơi.",
   keywords: ["trà sữa", "milk tea", "boba", "topping", "đặt hàng online"],
+  openGraph: {
+    type: "website",
+    locale: "vi_VN",
+    url: "https://milktea-iku.vercel.app",
+    siteName: "MilkTea Iku",
+    title: "MilkTea Iku | Trà Sữa Premium",
+    description:
+      "Thưởng thức trà sữa cao cấp với nguyên liệu tươi ngon nhất. Đặt hàng online, giao tận nơi.",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "MilkTea Iku - Trà Sữa Premium",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MilkTea Iku | Trà Sữa Premium",
+    description:
+      "Thưởng thức trà sữa cao cấp với nguyên liệu tươi ngon nhất. Đặt hàng online, giao tận nơi.",
+    images: ["/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({
@@ -36,7 +60,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi" className={cn(inter.variable, playfair.variable, "font-sans")}>
+    <html lang="vi" className={cn(inter.variable, playfair.variable, "font-sans overflow-x-hidden")} suppressHydrationWarning>
       <body className="antialiased bg-cream-50 dark:bg-gray-900 overflow-x-hidden">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <JsonLd />
