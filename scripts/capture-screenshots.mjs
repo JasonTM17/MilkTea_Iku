@@ -11,137 +11,85 @@ const OUTPUT_DIR = join(__dirname, "..", "docs", "screenshots");
 
 mkdirSync(OUTPUT_DIR, { recursive: true });
 
-async function waitForPage(page, url, waitUntil = "networkidle") {
-  await page.goto(url, { waitUntil, timeout: 60000 });
-  // Wait for Tailwind/hydration: a styled element should have brand color
+const DESKTOP_VIEWPORT = { width: 1440, height: 900 };
+const MOBILE_VIEWPORT = { width: 375, height: 812 };
+
+async function captureScreen({ browser, url, filename, theme = "light", isMobile = false }) {
+  // Each shot gets its own context so localStorage doesn't bleed across captures
+  const context = await browser.newContext({
+    viewport: isMobile ? MOBILE_VIEWPORT : DESKTOP_VIEWPORT,
+    deviceScaleFactor: 1,
+    isMobile,
+    hasTouch: isMobile,
+  });
+
+  // Pre-seed localStorage so cookie banner is dismissed and theme is correct on first paint
+  await context.addInitScript((selectedTheme) => {
+    try {
+      localStorage.setItem("iku-cookie-consent", "accepted");
+      localStorage.setItem("theme", selectedTheme);
+    } catch {}
+  }, theme);
+
+  const page = await context.newPage();
+  await page.goto(url, { waitUntil: "networkidle", timeout: 60000 });
+
+  // Wait for Tailwind to apply by polling for a known brand class
   try {
     await page.waitForFunction(
-      () => {
-        const body = document.body;
-        const style = window.getComputedStyle(body);
-        return style.backgroundColor !== "rgba(0, 0, 0, 0)" &&
-               style.backgroundColor !== "rgb(255, 255, 255)" ||
-               document.querySelector("[class*='bg-cream'], [class*='bg-brand'], [class*='from-brand']");
-      },
+      () =>
+        document.querySelector(
+          "[class*='bg-cream'], [class*='bg-brand'], [class*='from-brand']",
+        ) !== null,
       { timeout: 20000 },
     );
   } catch {
-    // Continue even if check times out
+    // Continue anyway — page should still render with default styles
   }
-  // Pre-dismiss cookie banner so it doesn't appear in screenshots
-  await page.evaluate(() => {
-    try { localStorage.setItem("iku-cookie-consent", "accepted"); } catch {}
-  });
+
+  // Force the theme class in case next-themes hydration is delayed
+  await page.evaluate((selectedTheme) => {
+    const root = document.documentElement;
+    if (selectedTheme === "dark") {
+      root.classList.add("dark");
+      root.style.colorScheme = "dark";
+    } else {
+      root.classList.remove("dark");
+      root.style.colorScheme = "light";
+    }
+  }, theme);
+
   await page.keyboard.press("Escape").catch(() => {});
   await page.waitForTimeout(2500);
-}
 
-async function applyDarkMode(page) {
-  await page.evaluate(() => {
-    localStorage.setItem("theme", "dark");
-  });
-  await page.reload({ waitUntil: "networkidle", timeout: 60000 });
-  await page.waitForTimeout(1500);
-  // Force the class in case next-themes hydration is delayed
-  await page.evaluate(() => {
-    document.documentElement.classList.add("dark");
-    document.documentElement.style.colorScheme = "dark";
-  });
-  await page.waitForTimeout(500);
-}
-
-async function capture(page, filename, fullPage = false) {
   const outPath = join(OUTPUT_DIR, filename);
-  const opts = { path: outPath, fullPage };
-  if (filename.endsWith(".jpg") || filename.endsWith(".jpeg")) {
-    opts.type = "jpeg";
-    opts.quality = 85;
-  }
-  await page.screenshot(opts);
+  await page.screenshot({ path: outPath, fullPage: false });
   const size = statSync(outPath).size;
   console.log(`  captured ${filename} (${(size / 1024).toFixed(0)} KB)`);
+
+  await page.close();
+  await context.close();
 }
 
 async function main() {
   const browser = await chromium.launch({ headless: true });
 
-  // ── Desktop context ──────────────────────────────────────────────────────
-  const desktop = await browser.newContext({
-    viewport: { width: 1440, height: 900 },
-    deviceScaleFactor: 1,
-  });
-  // Inject before any page script runs so cookie banner is suppressed
-  await desktop.addInitScript(() => {
-    try { localStorage.setItem("iku-cookie-consent", "accepted"); } catch {}
-  });
+  const shots = [
+    { url: `${BASE_URL}/`, filename: "homepage.png", theme: "light" },
+    { url: `${BASE_URL}/`, filename: "dark-mode.png", theme: "dark" },
+    { url: `${BASE_URL}/menu`, filename: "menu.png", theme: "light" },
+    { url: `${BASE_URL}/menu`, filename: "menu-dark.png", theme: "dark" },
+    { url: `${BASE_URL}/stores`, filename: "stores.png", theme: "light" },
+    { url: `${BASE_URL}/checkout`, filename: "checkout.png", theme: "light" },
+    { url: `${BASE_URL}/`, filename: "mobile.png", theme: "light", isMobile: true },
+    { url: `${BASE_URL}/`, filename: "mobile-dark.png", theme: "dark", isMobile: true },
+  ];
 
-  // homepage.png
-  const homePage = await desktop.newPage();
-  await waitForPage(homePage, `${BASE_URL}/`);
-  await capture(homePage, "homepage.png", false);
-  await homePage.close();
+  for (const shot of shots) {
+    await captureScreen({ browser, ...shot });
+  }
 
-  // dark-mode.png
-  const darkHome = await desktop.newPage();
-  await waitForPage(darkHome, `${BASE_URL}/`);
-  await applyDarkMode(darkHome);
-  await capture(darkHome, "dark-mode.png", false);
-  await darkHome.close();
-
-  // menu.png
-  const menuPage = await desktop.newPage();
-  await waitForPage(menuPage, `${BASE_URL}/menu`);
-  await capture(menuPage, "menu.png", true);
-  await menuPage.close();
-
-  // menu-dark.png
-  const menuDark = await desktop.newPage();
-  await waitForPage(menuDark, `${BASE_URL}/menu`);
-  await applyDarkMode(menuDark);
-  await capture(menuDark, "menu-dark.png", true);
-  await menuDark.close();
-
-  // stores.png
-  const storesPage = await desktop.newPage();
-  await waitForPage(storesPage, `${BASE_URL}/stores`);
-  await capture(storesPage, "stores.png", false);
-  await storesPage.close();
-
-  // checkout.png
-  const checkoutPage = await desktop.newPage();
-  await waitForPage(checkoutPage, `${BASE_URL}/checkout`);
-  await capture(checkoutPage, "checkout.png", false);
-  await checkoutPage.close();
-
-  await desktop.close();
-
-  // ── Mobile context ───────────────────────────────────────────────────────
-  const mobile = await browser.newContext({
-    viewport: { width: 375, height: 812 },
-    deviceScaleFactor: 1,
-    isMobile: true,
-    hasTouch: true,
-  });
-  await mobile.addInitScript(() => {
-    try { localStorage.setItem("iku-cookie-consent", "accepted"); } catch {}
-  });
-
-  // mobile.png
-  const mobilePage = await mobile.newPage();
-  await waitForPage(mobilePage, `${BASE_URL}/`);
-  await capture(mobilePage, "mobile.png", false);
-  await mobilePage.close();
-
-  // mobile-dark.png
-  const mobileDark = await mobile.newPage();
-  await waitForPage(mobileDark, `${BASE_URL}/`);
-  await applyDarkMode(mobileDark);
-  await capture(mobileDark, "mobile-dark.png", false);
-  await mobileDark.close();
-
-  await mobile.close();
   await browser.close();
-
   console.log("\nAll screenshots saved to:", OUTPUT_DIR);
 }
 
