@@ -1,152 +1,256 @@
 <p align="center">
-  🌐 <a href="../README.md">English</a> | <a href="README.vi.md">Tiếng Việt</a> | <strong>日本語</strong>
+  <a href="../README.md">English</a>
+  &nbsp;·&nbsp;
+  <a href="README.vi.md">Tiếng Việt</a>
+  &nbsp;·&nbsp;
+  <strong>日本語</strong>
 </p>
 
----
-
 <p align="center">
-  <img src="../public/logo-cute.svg" width="80" alt="MilkTea Iku Logo" />
+  <img src="../public/logo-cute.svg" width="80" alt="MilkTea Iku ロゴ" />
 </p>
 
 <h1 align="center">MilkTea Iku</h1>
 
 <p align="center">
-  <strong>プレミアムミルクティーECプラットフォーム</strong>
+  <strong>フルスタック ミルクティー EC — Next.js 14 · TypeScript · Prisma · Docker</strong>
 </p>
 
 <p align="center">
-  <a href="#機能">機能</a> •
-  <a href="#技術スタック">技術スタック</a> •
-  <a href="#セットアップ">セットアップ</a> •
-  <a href="#デプロイ">デプロイ</a>
+  <a href="https://github.com/JasonTM17/MilkTea_Iku/actions/workflows/ci.yml">
+    <img src="https://github.com/JasonTM17/MilkTea_Iku/actions/workflows/ci.yml/badge.svg" alt="CI" />
+  </a>
+  <a href="https://github.com/JasonTM17/MilkTea_Iku/actions/workflows/codeql.yml">
+    <img src="https://github.com/JasonTM17/MilkTea_Iku/actions/workflows/codeql.yml/badge.svg" alt="CodeQL" />
+  </a>
+  <a href="https://github.com/JasonTM17/MilkTea_Iku/actions/workflows/security.yml">
+    <img src="https://github.com/JasonTM17/MilkTea_Iku/actions/workflows/security.yml/badge.svg" alt="Security" />
+  </a>
+  <a href="https://github.com/JasonTM17/MilkTea_Iku/actions/workflows/deploy.yml">
+    <img src="https://github.com/JasonTM17/MilkTea_Iku/actions/workflows/deploy.yml/badge.svg" alt="Deploy" />
+  </a>
 </p>
 
 <p align="center">
-  <a href="../LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="MIT License" /></a>
-  <img src="https://img.shields.io/badge/Next.js-14-black?logo=next.js" alt="Next.js 14" />
-  <img src="https://img.shields.io/badge/TypeScript-5.4-blue?logo=typescript" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker" alt="Docker" />
-  <a href="https://milktea-iku.vercel.app"><img src="https://img.shields.io/badge/Vercel-Live-000?logo=vercel" alt="Vercel" /></a>
+  <img src="https://img.shields.io/badge/Next.js-14.2-000000?logo=next.js&logoColor=white" alt="Next.js" />
+  <img src="https://img.shields.io/badge/TypeScript-5.4-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-3.4-38bdf8?logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/Prisma-5.14-2D3748?logo=prisma&logoColor=white" alt="Prisma" />
+  <img src="https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white" alt="Docker" />
+  <a href="https://milktea-iku.vercel.app">
+    <img src="https://img.shields.io/badge/Vercel-Live-000000?logo=vercel&logoColor=white" alt="Vercel" />
+  </a>
+  <a href="../LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License" />
+  </a>
 </p>
 
 ---
 
-## 概要
+## 30秒サマリー
 
-MilkTea Ikuは、ドリンクカスタマイズ、注文追跡、管理ダッシュボードを備えたフル機能のミルクティーECプラットフォームです。最新のWeb技術で構築され、パフォーマンスとプレミアムな注文体験を最適化しています。
+MilkTea Ikuは、プレミアムミルクティーブランド向けのECストアフロントです。メニュー閲覧、ドリンクカスタマイズ、チェックアウト、注文追跡まで顧客の全体験をカバーし、注文・クーポン管理のための管理ダッシュボードも備えています。
 
-**ライブデモ:** [milktea-iku.vercel.app](https://milktea-iku.vercel.app)
+| | |
+|---|---|
+| **ライブURL** | [milktea-iku.vercel.app](https://milktea-iku.vercel.app) |
+| **ステータス** | Vercelにデプロイ済み · ポートフォリオ / リファレンス実装 |
+| **スタック** | Next.js 14 App Router, TypeScript, Prisma, SQLite (dev) / Postgres (prod) |
+| **テスト** | 35件のPlaywright specファイル — e2e, API, アクセシビリティ, ビジュアル, パフォーマンス, SEO |
+| **CI/CD** | 6つのGitHub Actionsワークフロー (ci, deploy, docker-publish, codeql, security, release) |
+
+---
+
+## スクリーンショット
+
+<p align="center">
+  <img src="screenshots/homepage.png" alt="ホームページ" width="900" />
+</p>
+
+<table>
+  <tr>
+    <td><img src="screenshots/homepage.png" alt="ホームページ — ライトモード" width="430"/></td>
+    <td><img src="screenshots/dark-mode.png" alt="ホームページ — ダークモード" width="430"/></td>
+  </tr>
+  <tr>
+    <td align="center"><em>ライトモード</em></td>
+    <td align="center"><em>ダークモード (WCAG AAコントラスト)</em></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/menu.png" alt="メニューカタログ" width="430"/></td>
+    <td><img src="screenshots/stores.png" alt="店舗検索" width="430"/></td>
+  </tr>
+  <tr>
+    <td align="center"><em>メニュー — 検索・フィルター・並び替え</em></td>
+    <td align="center"><em>店舗検索</em></td>
+  </tr>
+</table>
+
+<p align="center">
+  <img src="screenshots/mobile.png" alt="モバイル表示" width="300"/>
+</p>
+<p align="center"><em>モバイル — 横スクロールなし、全タッチターゲット ≥ 44 px</em></p>
 
 ---
 
 ## 機能
 
-### カスタマー体験
-- **商品カタログ** — カテゴリ別閲覧、検索、価格フィルター
-- **ドリンクカスタマイズ** — サイズ、甘さ、氷、トッピング選択
-- **ショッピングカート** — Zustandによる永続的な状態管理
-- **チェックアウト** — Zodバリデーション付きマルチステップフォーム
-- **注文追跡** — リアルタイム配送状況更新
-- **ウィッシュリスト＆レビュー** — お気に入り保存、レビュー閲覧
+**カスタマー向け**
+- カテゴリフィルター・全文検索・並び替えによるメニュー閲覧
+- ドリンクカスタマイザー — サイズ、甘さ、氷、複数トッピング選択
+- 永続的な状態管理のカート (Zustand + localStorage)
+- Zodバリデーションとサーバーサイド価格再計算付きマルチステップチェックアウト
+- レート制限付きバリデーションによるクーポン適用
+- 電話番号と注文IDによる注文追跡
+- ロイヤルティティアと報酬プログラム
+- ウィッシュリスト
 
-### 管理ダッシュボード
-- **売上分析** — チャート、日次/週次/月次統計
-- **注文管理** — ステータス更新、フィルター、検索
-- **商品CRUD** — 商品とカテゴリの追加・編集・削除
-- **クーポンシステム** — プロモーションコードの作成と管理
-
-### 技術的特徴
-- **ダークモード** — 全ページ対応テーマサポート
-- **PWA** — オフラインサポート、モバイルインストール可能
-- **SEO** — JSON-LD構造化データ、動的サイトマップ、OG画像
-- **アクセシビリティ** — スキップリンク、ARIAラベル、キーボードナビゲーション
-- **レート制限** — IPベースのスライディングウィンドウ
-- **セキュリティヘッダー** — HSTS、CSP、X-Frame-Options
+**プラットフォーム**
+- 管理ダッシュボード — 注文管理、ステータス遷移、クーポンCRUD、集計統計
+- `next-themes`によるライト/ダークテーマ (WCAG AAコントラスト)
+- 完全レスポンシブ、モバイルファーストデザイン
+- 多言語対応 (English · Tiếng Việt · 日本語)
+- `/api/docs`でのOpenAPI 3.0仕様
+- PWAマニフェストとService Workerスキャフォールド
 
 ---
 
 ## 技術スタック
 
-| レイヤー | 技術 |
-|---------|------|
-| フレームワーク | Next.js 14 (App Router) |
+| レイヤー | 選択 |
+|---|---|
+| フレームワーク | Next.js 14.2 (App Router, Server Components, ストリーミング) |
 | 言語 | TypeScript 5.4 |
-| スタイリング | Tailwind CSS 3.4 |
-| データベース | Prisma 5.14 + SQLite |
-| 状態管理 | Zustand 4.5 |
+| スタイリング | Tailwind CSS 3.4 + shadcn/ui |
 | アニメーション | Framer Motion 11 |
-| テスト | Playwright |
-| デプロイ | Vercel + Docker |
+| テーマ | next-themes |
+| バリデーション | Zod 3.23 |
+| 状態管理 | Zustand 4.5 |
+| ORM / DB | Prisma 5.14 — SQLite (dev) · Postgres (prod) |
+| 認証 | HTTP Basic + Bearerトークン、scryptハッシュパスワード |
+| レート制限 | IP別スライディングウィンドウ (インメモリ) |
+| アイコン | lucide-react |
+| テスト | Playwright 1.60 |
+| CI/CD | GitHub Actions |
+| ホスティング | Vercel (メイン) · Docker Hub |
 
 ---
 
-## セットアップ
+## クイックスタート
+
+### ローカル開発
 
 ```bash
-# リポジトリをクローン
 git clone https://github.com/JasonTM17/MilkTea_Iku.git
 cd MilkTea_Iku
 
-# 依存関係をインストール
-npm ci --legacy-peer-deps
+npm install --legacy-peer-deps
 
-# 環境設定
-cp .env.example .env
+cp .env.example .env.local
+# .env.local を編集 — 下記「環境変数」を参照
 
-# データベースセットアップ
-npx prisma generate
-npx prisma db push
+npx prisma generate --schema=backend/prisma/schema.prisma
+npm run db:push
 npm run db:seed
 
-# 開発サーバーを起動
 npm run dev
+# → http://localhost:3000
 ```
 
-[http://localhost:3000](http://localhost:3000) を開いてアプリケーションを確認。
+### Docker (セルフホスト)
+
+```bash
+cp .env.example .env.local
+# 値を入力
+
+docker compose up -d
+# → http://localhost:3000
+```
+
+### 便利なスクリプト
+
+| コマンド | 用途 |
+|---|---|
+| `npm run dev` | 開発サーバー起動 |
+| `npm run build` | プロダクションビルド |
+| `npm run lint` | ESLint + Next lint |
+| `npx tsc --noEmit` | 型チェック |
+| `npx playwright test` | 全テストスイート実行 |
+| `npm run db:push` | スキーマをSQLiteに反映 |
+| `npm run db:seed` | 参照データのシード |
+| `npm run db:studio` | Prisma Studio起動 |
+| `node scripts/generate-admin-hash.mjs` | `ADMIN_PASSWORD_HASH`を生成 |
+
+---
+
+## 環境変数
+
+`.env.example`を`.env.local`にコピーして値を入力してください。
+
+| 変数 | 必須 | 説明 |
+|---|---|---|
+| `DATABASE_URL` | 必須 | dev用SQLiteパス; prod用PostgresURL |
+| `ADMIN_USERNAME` | 必須 | `/admin` HTTP Basic Auth用ユーザー名 |
+| `ADMIN_PASSWORD` | devのみ | 平文パスワード (ハッシュ設定時は無視) |
+| `ADMIN_PASSWORD_HASH` | prod | scryptハッシュ — `generate-admin-hash.mjs`で生成 |
+| `ADMIN_API_TOKEN` | 必須 | プログラムによる管理アクセス用Bearerトークン |
+| `N8N_WEBHOOK_URL` | 任意 | チャットボット用n8n webhook URL |
+| `N8N_HOSTNAMES` | 任意 | n8n用SSRFホワイトリスト |
+| `N8N_USER` | 任意 | n8n basic authユーザー (docker-composeのみ) |
+| `N8N_PASSWORD` | 任意 | n8n basic authパスワード (docker-composeのみ) |
+| `E2E_BASE_URL` | CIのみ | Playwright用ベースURL (デフォルト: `http://localhost:3000`) |
+
+---
+
+## アーキテクチャ
+
+完全なアーキテクチャ概要、プロジェクト構成、データフロー図: [`docs/ARCHITECTURE.md`](ARCHITECTURE.md)
+
+追加ドキュメント:
+
+| ドキュメント | リンク |
+|---|---|
+| APIリファレンス | [`docs/api.md`](api.md) |
+| デプロイガイド | [`docs/DEPLOYMENT.md`](DEPLOYMENT.md) |
+| テスト戦略 | [`docs/TESTING.md`](TESTING.md) |
+| UI/UXガイドライン | [`docs/UI_UX_GUIDELINES.md`](UI_UX_GUIDELINES.md) |
+| セキュリティ | [`SECURITY.md`](../SECURITY.md) |
+| 実際のスコープ | [`docs/HONEST_SCOPE.md`](HONEST_SCOPE.md) |
 
 ---
 
 ## デプロイ
 
-### Vercel
+### Vercel (メイン)
 
-`main`ブランチへのプッシュで自動デプロイされます。
+`main`にプッシュすると [`deploy.yml`](../.github/workflows/deploy.yml) ワークフローが自動的にビルド・デプロイします。
+
+本番環境では、Vercelダッシュボードで全環境変数を設定し、`DATABASE_URL`をPostgres接続文字列に切り替えてください。
 
 ### Docker
 
 ```bash
-# Docker Composeを使用
-docker compose up -d
-
-# Docker Hubからプル
-docker pull nguyenson1710/milktea-iku-backend:v1.0.0
-docker pull nguyenson1710/milktea-iku-frontend:v1.0.0
+docker compose up -d          # backend + frontend + n8n を起動
+docker compose down           # 停止
+docker compose logs -f        # ログをストリーミング
 ```
 
-| サービス | イメージ | ポート |
-|---------|---------|--------|
-| バックエンド | `nguyenson1710/milktea-iku-backend` | 3000 |
-| フロントエンド | `nguyenson1710/milktea-iku-frontend` | 80 |
+タグ付きリリースは [`docker-publish.yml`](../.github/workflows/docker-publish.yml) 経由でDocker Hubにイメージを自動公開します。
+
+詳細リファレンス: [`docs/DEPLOYMENT.md`](DEPLOYMENT.md)
+
+---
+
+## 著者
+
+**Nguyễn Sơn** — [github.com/JasonTM17](https://github.com/JasonTM17) · [jasonbmt06@gmail.com](mailto:jasonbmt06@gmail.com)
 
 ---
 
 ## ライセンス
 
-[MIT](../LICENSE) © 2026 [Nguyễn Sơn](https://github.com/JasonTM17)
+[MIT](../LICENSE) © 2026 Nguyễn Sơn
 
 ---
 
-## 注意事項
-
-> これは教育目的で構築された**学習プロジェクト**です。
-> フィードバック、提案、貢献を歓迎します！
->
-> **著者:** Nguyễn Sơn — [jasonbmt06@gmail.com](mailto:jasonbmt06@gmail.com)
->
-> アイデアやフィードバックがあれば、[issue](https://github.com/JasonTM17/MilkTea_Iku/issues)を作成するか、メールでご連絡ください。
-
----
-
-<p align="center">
-  Made with ☕ by <a href="https://github.com/JasonTM17">Nguyễn Sơn</a>
-</p>
+<p align="center">Made with ☕ in Saigon</p>

@@ -1,152 +1,256 @@
 <p align="center">
-  🌐 <a href="../README.md">English</a> | <strong>Tiếng Việt</strong> | <a href="README.ja.md">日本語</a>
+  <a href="../README.md">English</a>
+  &nbsp;·&nbsp;
+  <strong>Tiếng Việt</strong>
+  &nbsp;·&nbsp;
+  <a href="README.ja.md">日本語</a>
 </p>
 
----
-
 <p align="center">
-  <img src="../public/logo-cute.svg" width="80" alt="MilkTea Iku Logo" />
+  <img src="../public/logo-cute.svg" width="80" alt="MilkTea Iku logo" />
 </p>
 
 <h1 align="center">MilkTea Iku</h1>
 
 <p align="center">
-  <strong>Nền Tảng Thương Mại Điện Tử Trà Sữa Cao Cấp</strong>
+  <strong>Thương mại điện tử trà sữa full-stack — Next.js 14 · TypeScript · Prisma · Docker</strong>
 </p>
 
 <p align="center">
-  <a href="#tính-năng">Tính Năng</a> •
-  <a href="#công-nghệ">Công Nghệ</a> •
-  <a href="#cài-đặt">Cài Đặt</a> •
-  <a href="#triển-khai">Triển Khai</a>
+  <a href="https://github.com/JasonTM17/MilkTea_Iku/actions/workflows/ci.yml">
+    <img src="https://github.com/JasonTM17/MilkTea_Iku/actions/workflows/ci.yml/badge.svg" alt="CI" />
+  </a>
+  <a href="https://github.com/JasonTM17/MilkTea_Iku/actions/workflows/codeql.yml">
+    <img src="https://github.com/JasonTM17/MilkTea_Iku/actions/workflows/codeql.yml/badge.svg" alt="CodeQL" />
+  </a>
+  <a href="https://github.com/JasonTM17/MilkTea_Iku/actions/workflows/security.yml">
+    <img src="https://github.com/JasonTM17/MilkTea_Iku/actions/workflows/security.yml/badge.svg" alt="Security" />
+  </a>
+  <a href="https://github.com/JasonTM17/MilkTea_Iku/actions/workflows/deploy.yml">
+    <img src="https://github.com/JasonTM17/MilkTea_Iku/actions/workflows/deploy.yml/badge.svg" alt="Deploy" />
+  </a>
 </p>
 
 <p align="center">
-  <a href="../LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="MIT License" /></a>
-  <img src="https://img.shields.io/badge/Next.js-14-black?logo=next.js" alt="Next.js 14" />
-  <img src="https://img.shields.io/badge/TypeScript-5.4-blue?logo=typescript" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker" alt="Docker" />
-  <a href="https://milktea-iku.vercel.app"><img src="https://img.shields.io/badge/Vercel-Live-000?logo=vercel" alt="Vercel" /></a>
+  <img src="https://img.shields.io/badge/Next.js-14.2-000000?logo=next.js&logoColor=white" alt="Next.js" />
+  <img src="https://img.shields.io/badge/TypeScript-5.4-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-3.4-38bdf8?logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/Prisma-5.14-2D3748?logo=prisma&logoColor=white" alt="Prisma" />
+  <img src="https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white" alt="Docker" />
+  <a href="https://milktea-iku.vercel.app">
+    <img src="https://img.shields.io/badge/Vercel-Live-000000?logo=vercel&logoColor=white" alt="Vercel" />
+  </a>
+  <a href="../LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License" />
+  </a>
 </p>
 
 ---
 
-## Tổng Quan
+## Tóm tắt nhanh
 
-MilkTea Iku là nền tảng thương mại điện tử trà sữa đầy đủ tính năng với tùy chỉnh đồ uống, theo dõi đơn hàng và quản lý admin. Xây dựng bằng công nghệ web hiện đại, tối ưu hiệu suất và trải nghiệm đặt hàng cao cấp.
+MilkTea Iku là storefront thương mại điện tử cho thương hiệu trà sữa cao cấp, bao phủ toàn bộ hành trình khách hàng — từ duyệt menu, tùy chỉnh đồ uống, thanh toán đến theo dõi đơn hàng — cùng bảng điều khiển admin để quản lý đơn hàng và mã giảm giá.
 
-**Demo trực tuyến:** [milktea-iku.vercel.app](https://milktea-iku.vercel.app)
-
----
-
-## Tính Năng
-
-### Trải Nghiệm Khách Hàng
-- **Danh mục sản phẩm** — Duyệt theo danh mục, tìm kiếm, lọc theo giá
-- **Tùy chỉnh đồ uống** — Size, mức đường, mức đá, topping
-- **Giỏ hàng** — Lưu trữ persistent với Zustand
-- **Thanh toán** — Form nhiều bước với validation Zod
-- **Theo dõi đơn hàng** — Cập nhật trạng thái giao hàng real-time
-- **Wishlist & Đánh giá** — Lưu yêu thích, đọc review
-
-### Bảng Điều Khiển Admin
-- **Thống kê doanh thu** — Biểu đồ, thống kê ngày/tuần/tháng
-- **Quản lý đơn hàng** — Cập nhật trạng thái, lọc, tìm kiếm
-- **CRUD sản phẩm** — Thêm, sửa, xóa sản phẩm
-- **Hệ thống mã giảm giá** — Tạo và quản lý khuyến mãi
-
-### Tính Năng Kỹ Thuật
-- **Dark Mode** — Hỗ trợ theme tối toàn bộ trang
-- **PWA** — Hỗ trợ offline, cài đặt trên mobile
-- **SEO** — JSON-LD, sitemap động, OG images
-- **Accessibility** — Skip links, ARIA labels, keyboard navigation
-- **Rate Limiting** — Giới hạn request theo IP
-- **Security Headers** — HSTS, CSP, X-Frame-Options
+| | |
+|---|---|
+| **URL trực tiếp** | [milktea-iku.vercel.app](https://milktea-iku.vercel.app) |
+| **Trạng thái** | Đã deploy trên Vercel · dự án portfolio / tham khảo |
+| **Stack** | Next.js 14 App Router, TypeScript, Prisma, SQLite (dev) / Postgres (prod) |
+| **Tests** | 35 file Playwright spec — e2e, API, accessibility, visual, performance, SEO |
+| **CI/CD** | 6 GitHub Actions workflows (ci, deploy, docker-publish, codeql, security, release) |
 
 ---
 
-## Công Nghệ
+## Ảnh chụp màn hình
 
-| Lớp | Công Nghệ |
-|-----|-----------|
-| Framework | Next.js 14 (App Router) |
+<p align="center">
+  <img src="screenshots/homepage.png" alt="Trang chủ" width="900" />
+</p>
+
+<table>
+  <tr>
+    <td><img src="screenshots/homepage.png" alt="Trang chủ — giao diện sáng" width="430"/></td>
+    <td><img src="screenshots/dark-mode.png" alt="Trang chủ — giao diện tối" width="430"/></td>
+  </tr>
+  <tr>
+    <td align="center"><em>Giao diện sáng</em></td>
+    <td align="center"><em>Giao diện tối (độ tương phản WCAG AA)</em></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/menu.png" alt="Danh mục menu" width="430"/></td>
+    <td><img src="screenshots/stores.png" alt="Tìm cửa hàng" width="430"/></td>
+  </tr>
+  <tr>
+    <td align="center"><em>Menu — tìm kiếm, lọc, sắp xếp</em></td>
+    <td align="center"><em>Tìm cửa hàng</em></td>
+  </tr>
+</table>
+
+<p align="center">
+  <img src="screenshots/mobile.png" alt="Giao diện mobile" width="300"/>
+</p>
+<p align="center"><em>Mobile — không tràn ngang, tất cả vùng chạm ≥ 44 px</em></p>
+
+---
+
+## Tính năng
+
+**Khách hàng**
+- Duyệt menu với bộ lọc danh mục, tìm kiếm toàn văn và sắp xếp
+- Tùy chỉnh đồ uống — size, mức đường, mức đá, chọn nhiều topping
+- Giỏ hàng với trạng thái lưu trữ (Zustand + localStorage)
+- Thanh toán nhiều bước với validation Zod và tính lại giá phía server
+- Áp dụng mã giảm giá với validation có giới hạn tốc độ
+- Theo dõi đơn hàng bằng số điện thoại và mã đơn
+- Chương trình tích điểm và phần thưởng theo hạng thành viên
+- Danh sách yêu thích
+
+**Nền tảng**
+- Bảng điều khiển admin — quản lý đơn hàng, chuyển trạng thái, CRUD mã giảm giá, thống kê tổng hợp
+- Giao diện sáng/tối qua `next-themes` (độ tương phản WCAG AA)
+- Thiết kế responsive hoàn toàn, ưu tiên mobile
+- Hỗ trợ đa ngôn ngữ (English · Tiếng Việt · 日本語)
+- Đặc tả OpenAPI 3.0 tại `/api/docs`
+- PWA manifest và service-worker scaffold
+
+---
+
+## Công nghệ
+
+| Lớp | Lựa chọn |
+|---|---|
+| Framework | Next.js 14.2 (App Router, Server Components, streaming) |
 | Ngôn ngữ | TypeScript 5.4 |
-| Styling | Tailwind CSS 3.4 |
-| Database | Prisma 5.14 + SQLite |
-| State | Zustand 4.5 |
+| Styling | Tailwind CSS 3.4 + shadcn/ui |
 | Animation | Framer Motion 11 |
-| Testing | Playwright |
-| Deployment | Vercel + Docker |
+| Theming | next-themes |
+| Validation | Zod 3.23 |
+| State | Zustand 4.5 |
+| ORM / DB | Prisma 5.14 — SQLite (dev) · Postgres (prod) |
+| Auth | HTTP Basic + Bearer token, mật khẩu hash bằng scrypt |
+| Rate limiting | Sliding window theo IP (in-memory) |
+| Icons | lucide-react |
+| Testing | Playwright 1.60 |
+| CI/CD | GitHub Actions |
+| Hosting | Vercel (chính) · Docker Hub |
 
 ---
 
-## Cài Đặt
+## Bắt đầu nhanh
+
+### Phát triển local
 
 ```bash
-# Clone repository
 git clone https://github.com/JasonTM17/MilkTea_Iku.git
 cd MilkTea_Iku
 
-# Cài đặt dependencies
-npm ci --legacy-peer-deps
+npm install --legacy-peer-deps
 
-# Thiết lập môi trường
-cp .env.example .env
+cp .env.example .env.local
+# Chỉnh sửa .env.local — xem phần Biến môi trường bên dưới
 
-# Thiết lập database
-npx prisma generate
-npx prisma db push
+npx prisma generate --schema=backend/prisma/schema.prisma
+npm run db:push
 npm run db:seed
 
-# Chạy development server
 npm run dev
+# → http://localhost:3000
 ```
 
-Mở [http://localhost:3000](http://localhost:3000) để xem ứng dụng.
+### Docker (tự host)
+
+```bash
+cp .env.example .env.local
+# Điền các giá trị vào .env.local
+
+docker compose up -d
+# → http://localhost:3000
+```
+
+### Các lệnh hữu ích
+
+| Lệnh | Mục đích |
+|---|---|
+| `npm run dev` | Khởi động dev server |
+| `npm run build` | Build production |
+| `npm run lint` | ESLint + Next lint |
+| `npx tsc --noEmit` | Kiểm tra kiểu dữ liệu |
+| `npx playwright test` | Chạy toàn bộ test suite |
+| `npm run db:push` | Đẩy schema lên SQLite |
+| `npm run db:seed` | Seed dữ liệu mẫu |
+| `npm run db:studio` | Mở Prisma Studio |
+| `node scripts/generate-admin-hash.mjs` | Tạo `ADMIN_PASSWORD_HASH` |
 
 ---
 
-## Triển Khai
+## Biến môi trường
 
-### Vercel
+Sao chép `.env.example` thành `.env.local` và điền các giá trị.
 
-Dự án tự động deploy lên Vercel khi push vào `main`.
+| Biến | Bắt buộc | Mô tả |
+|---|---|---|
+| `DATABASE_URL` | Có | Đường dẫn SQLite cho dev; URL Postgres cho prod |
+| `ADMIN_USERNAME` | Có | Tên đăng nhập cho HTTP Basic Auth tại `/admin` |
+| `ADMIN_PASSWORD` | Chỉ dev | Mật khẩu plaintext (bỏ qua khi đã có hash) |
+| `ADMIN_PASSWORD_HASH` | Prod | Hash scrypt — tạo bằng `generate-admin-hash.mjs` |
+| `ADMIN_API_TOKEN` | Có | Bearer token cho truy cập admin qua API |
+| `N8N_WEBHOOK_URL` | Tùy chọn | URL webhook n8n cho chatbot |
+| `N8N_HOSTNAMES` | Tùy chọn | Danh sách hostname được phép cho n8n (chống SSRF) |
+| `N8N_USER` | Tùy chọn | Tên đăng nhập basic auth n8n (chỉ docker-compose) |
+| `N8N_PASSWORD` | Tùy chọn | Mật khẩu basic auth n8n (chỉ docker-compose) |
+| `E2E_BASE_URL` | Chỉ CI | Base URL cho Playwright (mặc định: `http://localhost:3000`) |
+
+---
+
+## Kiến trúc
+
+Tổng quan kiến trúc đầy đủ, cấu trúc dự án và sơ đồ luồng dữ liệu: [`docs/ARCHITECTURE.md`](ARCHITECTURE.md).
+
+Tài liệu bổ sung:
+
+| Tài liệu | Liên kết |
+|---|---|
+| Tham chiếu API | [`docs/api.md`](api.md) |
+| Hướng dẫn triển khai | [`docs/DEPLOYMENT.md`](DEPLOYMENT.md) |
+| Chiến lược testing | [`docs/TESTING.md`](TESTING.md) |
+| Hướng dẫn UI/UX | [`docs/UI_UX_GUIDELINES.md`](UI_UX_GUIDELINES.md) |
+| Bảo mật | [`SECURITY.md`](../SECURITY.md) |
+| Phạm vi thực tế | [`docs/HONEST_SCOPE.md`](HONEST_SCOPE.md) |
+
+---
+
+## Triển khai
+
+### Vercel (chính)
+
+Push lên `main` — workflow [`deploy.yml`](../.github/workflows/deploy.yml) sẽ tự động build và deploy.
+
+Với môi trường production, cấu hình tất cả biến môi trường trong Vercel dashboard và chuyển `DATABASE_URL` sang chuỗi kết nối Postgres.
 
 ### Docker
 
 ```bash
-# Sử dụng Docker Compose
-docker compose up -d
-
-# Hoặc pull từ Docker Hub
-docker pull nguyenson1710/milktea-iku-backend:v1.0.0
-docker pull nguyenson1710/milktea-iku-frontend:v1.0.0
+docker compose up -d          # khởi động backend + frontend + n8n
+docker compose down           # dừng
+docker compose logs -f        # xem log realtime
 ```
 
-| Service | Image | Port |
-|---------|-------|------|
-| Backend | `nguyenson1710/milktea-iku-backend` | 3000 |
-| Frontend | `nguyenson1710/milktea-iku-frontend` | 80 |
+Các bản release được tag sẽ tự động publish image lên Docker Hub qua [`docker-publish.yml`](../.github/workflows/docker-publish.yml).
+
+Tham khảo đầy đủ: [`docs/DEPLOYMENT.md`](DEPLOYMENT.md).
 
 ---
 
-## Giấy Phép
+## Tác giả
 
-[MIT](../LICENSE) © 2026 [Nguyễn Sơn](https://github.com/JasonTM17)
-
----
-
-## Lưu Ý
-
-> Đây là **dự án học tập** được xây dựng với mục đích giáo dục.
-> Mọi ý kiến đóng góp, góp ý và phản hồi đều được hoan nghênh!
->
-> **Tác giả:** Nguyễn Sơn — [jasonbmt06@gmail.com](mailto:jasonbmt06@gmail.com)
->
-> Nếu bạn có ý tưởng hoặc phản hồi, vui lòng mở [issue](https://github.com/JasonTM17/MilkTea_Iku/issues) hoặc liên hệ qua email.
+**Nguyễn Sơn** — [github.com/JasonTM17](https://github.com/JasonTM17) · [jasonbmt06@gmail.com](mailto:jasonbmt06@gmail.com)
 
 ---
 
-<p align="center">
-  Made with ☕ by <a href="https://github.com/JasonTM17">Nguyễn Sơn</a>
-</p>
+## Giấy phép
+
+[MIT](../LICENSE) © 2026 Nguyễn Sơn
+
+---
+
+<p align="center">Made with ☕ tại Sài Gòn</p>
