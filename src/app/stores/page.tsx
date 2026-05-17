@@ -6,7 +6,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 type City = "Tất cả" | "TP.HCM" | "Hà Nội";
@@ -200,9 +199,9 @@ export default function StoresPage() {
       <Header />
       <CartDrawer />
 
-      <main className="pt-20 min-h-screen bg-cream-50">
+      <main className="pt-20 min-h-screen bg-cream-50 dark:bg-gray-900">
         {/* Hero */}
-        <section className="bg-gradient-to-b from-cream-100 to-cream-50 py-16">
+        <section className="bg-gradient-to-b from-cream-100 to-cream-50 dark:from-gray-800 dark:to-gray-900 py-16">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <motion.span
               initial={{ opacity: 0, y: 20 }}
@@ -216,7 +215,7 @@ export default function StoresPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4"
+              className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-gray-50 mb-4"
             >
               Hệ thống{" "}
               <span className="text-brand-600">cửa hàng</span>
@@ -225,7 +224,7 @@ export default function StoresPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-gray-500 text-lg max-w-xl mx-auto"
+              className="text-gray-500 dark:text-gray-400 text-lg max-w-xl mx-auto"
             >
               {stores.length} cửa hàng tại TP.HCM và Hà Nội — mở cửa mỗi ngày
               từ 8:00 đến 22:00
@@ -248,7 +247,7 @@ export default function StoresPage() {
                 className={`px-5 py-2 rounded-full text-sm font-medium border transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 ${
                   activeCity === city
                     ? "bg-brand-600 text-white border-brand-600 shadow-sm"
-                    : "bg-white text-gray-600 border-gray-200 hover:border-brand-400 hover:text-brand-600"
+                    : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-600 hover:border-brand-400 hover:text-brand-600"
                 }`}
               >
                 {city}
@@ -257,7 +256,7 @@ export default function StoresPage() {
                     className={`ml-2 text-xs px-1.5 py-0.5 rounded-full ${
                       activeCity === city
                         ? "bg-brand-500 text-white"
-                        : "bg-gray-100 text-gray-500"
+                        : "bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400"
                     }`}
                   >
                     {stores.filter((s) => s.city === city).length}
@@ -277,7 +276,7 @@ export default function StoresPage() {
           >
             {filtered.map((store) => (
               <motion.div key={store.id} variants={cardVariants}>
-                <Card className="h-full bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300 rounded-2xl overflow-hidden">
+                <Card className="h-full bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow duration-300 rounded-2xl overflow-hidden">
                   {/* Card top accent */}
                   <div className="h-1.5 bg-gradient-to-r from-brand-400 to-brand-600" />
 
@@ -285,10 +284,10 @@ export default function StoresPage() {
                     {/* Header row */}
                     <div className="flex items-start justify-between gap-3">
                       <div>
-                        <h2 className="text-lg font-semibold text-gray-900 leading-snug">
+                        <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-50 leading-snug">
                           {store.name}
                         </h2>
-                        <p className="text-sm text-gray-400 mt-0.5">
+                        <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
                           {store.district}
                         </p>
                       </div>
@@ -301,7 +300,7 @@ export default function StoresPage() {
                     </div>
 
                     {/* Info rows */}
-                    <ul className="space-y-2.5 text-sm text-gray-600">
+                    <ul className="space-y-2.5 text-sm text-gray-600 dark:text-gray-300">
                       <li className="flex items-start gap-2.5">
                         <MapPinIcon />
                         <span>
@@ -347,19 +346,19 @@ export default function StoresPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="rounded-3xl overflow-hidden border border-gray-200 shadow-sm"
+            className="rounded-3xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm"
           >
-            <div className="bg-gray-100 px-6 py-4 border-b border-gray-200 flex items-center gap-3">
+            <div className="bg-gray-100 dark:bg-gray-800 px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex items-center gap-3">
               <div className="flex gap-1.5">
                 <span className="w-3 h-3 rounded-full bg-red-400" />
                 <span className="w-3 h-3 rounded-full bg-yellow-400" />
                 <span className="w-3 h-3 rounded-full bg-green-400" />
               </div>
-              <span className="text-sm text-gray-500 font-medium">
+              <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">
                 Bản đồ cửa hàng Iku
               </span>
             </div>
-            <div className="relative bg-gray-200 h-72 md:h-96 flex flex-col items-center justify-center gap-4">
+            <div className="relative bg-gray-200 dark:bg-gray-700 h-72 md:h-96 flex flex-col items-center justify-center gap-4">
               {/* Decorative grid lines */}
               <div
                 className="absolute inset-0 opacity-30"
@@ -388,10 +387,10 @@ export default function StoresPage() {
                 <div className="w-14 h-14 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center mx-auto mb-3 shadow">
                   <MapPinIcon />
                 </div>
-                <p className="text-gray-600 font-medium text-base">
+                <p className="text-gray-600 dark:text-gray-300 font-medium text-base">
                   Bản đồ sẽ hiển thị ở đây
                 </p>
-                <p className="text-gray-400 text-sm mt-1">
+                <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
                   Tích hợp Google Maps / Mapbox sẽ được thêm vào sau
                 </p>
               </div>
@@ -404,12 +403,12 @@ export default function StoresPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="mt-14 text-center bg-white rounded-3xl border border-gray-100 shadow-sm px-6 py-10"
+            className="mt-14 text-center bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-sm px-6 py-10"
           >
-            <p className="text-2xl font-display font-bold text-gray-900 mb-2">
+            <p className="text-2xl font-display font-bold text-gray-900 dark:text-gray-50 mb-2">
               Chưa có cửa hàng gần bạn?
             </p>
-            <p className="text-gray-500 mb-6 max-w-md mx-auto">
+            <p className="text-gray-500 dark:text-gray-400 mb-6 max-w-md mx-auto">
               Đặt hàng online và nhận giao tận nơi trong vòng 30 phút tại khu
               vực nội thành.
             </p>

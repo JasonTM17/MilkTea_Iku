@@ -38,8 +38,8 @@ export default function VouchersPage() {
     <>
       <Header />
       <CartDrawer />
-      <main className="pt-20 min-h-screen bg-cream-50">
-        <section className="bg-gradient-to-b from-cream-100 to-cream-50 py-16">
+      <main className="pt-20 min-h-screen bg-cream-50 dark:bg-gray-900">
+        <section className="bg-gradient-to-b from-cream-100 to-cream-50 dark:from-gray-800 dark:to-gray-900 py-16">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -52,7 +52,7 @@ export default function VouchersPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl font-display font-bold text-gray-900 mb-4"
+              className="text-4xl font-display font-bold text-gray-900 dark:text-gray-50 mb-4"
             >
               Voucher của tôi
             </motion.h1>
@@ -60,7 +60,7 @@ export default function VouchersPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-gray-500 text-lg"
+              className="text-gray-500 dark:text-gray-400 text-lg"
             >
               Sử dụng voucher để tiết kiệm hơn
             </motion.p>
@@ -75,24 +75,24 @@ export default function VouchersPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.08 }}
-                className={`bg-white rounded-2xl border shadow-sm overflow-hidden ${
-                  voucher.isUsed ? "border-gray-200 opacity-60" : "border-gray-100"
+                className={`bg-white dark:bg-gray-800 rounded-2xl border shadow-sm overflow-hidden ${
+                  voucher.isUsed ? "border-gray-200 dark:border-gray-600 opacity-60" : "border-gray-100 dark:border-gray-700"
                 }`}
               >
                 <div className="flex">
                   <div className={`w-24 flex items-center justify-center ${
-                    voucher.isUsed ? "bg-gray-100" : "bg-gradient-to-b from-brand-500 to-brand-600"
+                    voucher.isUsed ? "bg-gray-100 dark:bg-gray-700" : "bg-gradient-to-b from-brand-500 to-brand-600"
                   }`}>
-                    <span className={`text-sm font-bold ${voucher.isUsed ? "text-gray-400" : "text-white"}`}>
+                    <span className={`text-sm font-bold ${voucher.isUsed ? "text-gray-400 dark:text-gray-500" : "text-white"}`}>
                       {voucher.discount}
                     </span>
                   </div>
                   <div className="flex-1 p-4">
                     <div className="flex items-start justify-between">
                       <div>
-                        <h3 className="font-semibold text-gray-900 text-sm">{voucher.title}</h3>
-                        <p className="text-xs text-gray-500 mt-0.5">{voucher.description}</p>
-                        <p className="text-[10px] text-gray-400 mt-2">
+                        <h3 className="font-semibold text-gray-900 dark:text-gray-50 text-sm">{voucher.title}</h3>
+                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{voucher.description}</p>
+                        <p className="text-[10px] text-gray-500 dark:text-gray-400 mt-2">
                           Đơn tối thiểu: {voucher.minOrder} • HSD: {voucher.expiry}
                         </p>
                       </div>
@@ -115,7 +115,7 @@ export default function VouchersPage() {
                         </button>
                       )}
                       {voucher.isUsed && (
-                        <span className="text-xs text-gray-400 font-medium">Đã dùng</span>
+                        <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">Đã dùng</span>
                       )}
                     </div>
                   </div>

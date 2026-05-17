@@ -46,13 +46,13 @@ export default async function ProductPage({
       <Header />
       <CartDrawer />
 
-      <main className="pt-20 min-h-screen bg-white">
+      <main className="pt-20 min-h-screen bg-white dark:bg-gray-900">
         <ProductDetail product={product} toppings={toppings} />
 
         {relatedProducts.length > 0 && (
-          <section className="py-16 bg-cream-50">
+          <section className="py-16 bg-cream-50 dark:bg-gray-950">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-2xl font-display font-bold text-gray-900 mb-8">
+              <h2 className="text-2xl font-display font-bold text-gray-900 dark:text-gray-50 mb-8">
                 Có thể bạn cũng thích
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

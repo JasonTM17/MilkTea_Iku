@@ -90,7 +90,7 @@ export default function ProductDetail({ product, toppings }: ProductDetailProps)
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <Link
         href="/menu"
-        className="inline-flex items-center gap-2 text-gray-500 hover:text-brand-600 mb-8 transition-colors"
+        className="inline-flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-brand-600 mb-8 transition-colors"
       >
         <ArrowLeft className="w-4 h-4" />
         Quay lại menu
@@ -101,7 +101,7 @@ export default function ProductDetail({ product, toppings }: ProductDetailProps)
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
-          className="relative aspect-square rounded-3xl overflow-hidden bg-cream-100"
+          className="relative aspect-square rounded-3xl overflow-hidden bg-cream-100 dark:bg-gray-800"
         >
           <Image
             src={product.image || "https://images.unsplash.com/photo-1558857563-b371033873b8?w=600"}
@@ -134,15 +134,15 @@ export default function ProductDetail({ product, toppings }: ProductDetailProps)
             <span className="text-sm text-brand-600 font-medium">
               {product.category.name}
             </span>
-            <h1 className="text-3xl font-display font-bold text-gray-900 mt-1">
+            <h1 className="text-3xl font-display font-bold text-gray-900 dark:text-gray-50 mt-1">
               {product.name}
             </h1>
-            <p className="text-gray-500 mt-3">{product.description}</p>
+            <p className="text-gray-500 dark:text-gray-400 mt-3">{product.description}</p>
           </div>
 
           {/* Size */}
           <div>
-            <h3 className="font-semibold text-gray-900 mb-3">Kích cỡ</h3>
+            <h3 className="font-semibold text-gray-900 dark:text-gray-50 mb-3">Kích cỡ</h3>
             <div className="flex gap-3">
               {sizes.map((s) => (
                 <button
@@ -151,11 +151,11 @@ export default function ProductDetail({ product, toppings }: ProductDetailProps)
                   className={`flex-1 py-3 rounded-xl border-2 font-medium transition-all ${
                     size === s.value
                       ? "border-brand-500 bg-brand-50 text-brand-700"
-                      : "border-gray-200 hover:border-brand-200"
+                      : "border-gray-200 dark:border-gray-600 hover:border-brand-200"
                   }`}
                 >
                   <div className="text-lg">{s.value}</div>
-                  <div className="text-xs text-gray-500">{s.label}</div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400">{s.label}</div>
                 </button>
               ))}
             </div>
@@ -163,7 +163,7 @@ export default function ProductDetail({ product, toppings }: ProductDetailProps)
 
           {/* Sugar level */}
           <div>
-            <h3 className="font-semibold text-gray-900 mb-3">
+            <h3 className="font-semibold text-gray-900 dark:text-gray-50 mb-3">
               Độ ngọt: {sugar}%
             </h3>
             <div className="flex gap-2">
@@ -174,7 +174,7 @@ export default function ProductDetail({ product, toppings }: ProductDetailProps)
                   className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${
                     sugar === level
                       ? "bg-brand-500 text-white"
-                      : "bg-gray-100 text-gray-600 hover:bg-brand-50"
+                      : "bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-brand-50"
                   }`}
                 >
                   {level}%
@@ -185,7 +185,7 @@ export default function ProductDetail({ product, toppings }: ProductDetailProps)
 
           {/* Ice level */}
           <div>
-            <h3 className="font-semibold text-gray-900 mb-3">
+            <h3 className="font-semibold text-gray-900 dark:text-gray-50 mb-3">
               Đá: {ice}%
             </h3>
             <div className="flex gap-2">
@@ -196,7 +196,7 @@ export default function ProductDetail({ product, toppings }: ProductDetailProps)
                   className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${
                     ice === level
                       ? "bg-brand-500 text-white"
-                      : "bg-gray-100 text-gray-600 hover:bg-brand-50"
+                      : "bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-brand-50"
                   }`}
                 >
                   {level}%
@@ -207,7 +207,7 @@ export default function ProductDetail({ product, toppings }: ProductDetailProps)
 
           {/* Toppings */}
           <div>
-            <h3 className="font-semibold text-gray-900 mb-3">Topping</h3>
+            <h3 className="font-semibold text-gray-900 dark:text-gray-50 mb-3">Topping</h3>
             <div className="grid grid-cols-2 gap-2">
               {toppings.map((t) => (
                 <button
@@ -216,7 +216,7 @@ export default function ProductDetail({ product, toppings }: ProductDetailProps)
                   className={`flex items-center justify-between px-4 py-3 rounded-xl border-2 text-sm transition-all ${
                     selectedToppings.includes(t.id)
                       ? "border-brand-500 bg-brand-50"
-                      : "border-gray-200 hover:border-brand-200"
+                      : "border-gray-200 dark:border-gray-600 hover:border-brand-200"
                   }`}
                 >
                   <span>{t.name}</span>
@@ -230,17 +230,17 @@ export default function ProductDetail({ product, toppings }: ProductDetailProps)
 
           {/* Quantity & Add to cart */}
           <div className="flex items-center gap-4 pt-4 border-t">
-            <div className="flex items-center gap-3 bg-gray-100 rounded-full px-4 py-2">
+            <div className="flex items-center gap-3 bg-gray-100 dark:bg-gray-700 rounded-full px-4 py-2">
               <button
                 onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                className="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm"
+                className="w-8 h-8 rounded-full bg-white dark:bg-gray-600 flex items-center justify-center shadow-sm"
               >
                 <Minus className="w-4 h-4" />
               </button>
               <span className="font-semibold w-8 text-center">{quantity}</span>
               <button
                 onClick={() => setQuantity(quantity + 1)}
-                className="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm"
+                className="w-8 h-8 rounded-full bg-white dark:bg-gray-600 flex items-center justify-center shadow-sm"
               >
                 <Plus className="w-4 h-4" />
               </button>

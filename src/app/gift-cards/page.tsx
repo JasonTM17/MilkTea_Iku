@@ -26,7 +26,7 @@ export default function GiftCardPage() {
       <Header />
       <CartDrawer />
       <main className="pt-20 min-h-screen bg-cream-50 dark:bg-gray-900">
-        <section className="bg-gradient-to-b from-cream-100 to-cream-50 py-16">
+        <section className="bg-gradient-to-b from-cream-100 to-cream-50 dark:from-gray-800 dark:to-gray-900 py-16">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -39,7 +39,7 @@ export default function GiftCardPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl font-display font-bold text-gray-900 mb-4"
+              className="text-4xl font-display font-bold text-gray-900 dark:text-gray-50 mb-4"
             >
               Thẻ quà tặng Iku
             </motion.h1>
@@ -47,7 +47,7 @@ export default function GiftCardPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-gray-500 text-lg"
+              className="text-gray-500 dark:text-gray-400 text-lg"
             >
               Tặng người thân yêu niềm vui thưởng thức trà sữa premium
             </motion.p>
@@ -59,15 +59,15 @@ export default function GiftCardPage() {
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="text-center bg-white rounded-3xl border border-gray-100 shadow-sm p-10"
+              className="text-center bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-sm p-10"
             >
               <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-green-50 flex items-center justify-center">
                 <Send className="w-9 h-9 text-green-500" />
               </div>
-              <h2 className="text-2xl font-display font-bold text-gray-900 mb-2">
+              <h2 className="text-2xl font-display font-bold text-gray-900 dark:text-gray-50 mb-2">
                 Đã gửi thẻ quà tặng!
               </h2>
-              <p className="text-gray-500 mb-6">
+              <p className="text-gray-500 dark:text-gray-400 mb-6">
                 Thẻ quà tặng {selectedAmount.toLocaleString("vi-VN")}đ đã được gửi đến {recipientEmail}
               </p>
               <button
@@ -82,10 +82,10 @@ export default function GiftCardPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               onSubmit={handleSend}
-              className="bg-white rounded-3xl border border-gray-100 shadow-sm p-8 space-y-6"
+              className="bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-sm p-8 space-y-6"
             >
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-3">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-3">
                   Chọn mệnh giá
                 </label>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -97,7 +97,7 @@ export default function GiftCardPage() {
                       className={`py-3 rounded-xl text-sm font-semibold border-2 transition-all ${
                         selectedAmount === amount
                           ? "border-brand-500 bg-brand-50 text-brand-700"
-                          : "border-gray-200 text-gray-600 hover:border-brand-300"
+                          : "border-gray-200 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:border-brand-300"
                       }`}
                     >
                       {amount.toLocaleString("vi-VN")}đ
@@ -108,7 +108,7 @@ export default function GiftCardPage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1.5">
                     Tên người nhận
                   </label>
                   <input
@@ -116,12 +116,12 @@ export default function GiftCardPage() {
                     value={recipientName}
                     onChange={(e) => setRecipientName(e.target.value)}
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-sm"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-50 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-sm placeholder-gray-400 dark:placeholder-gray-500"
                     placeholder="Nguyễn Văn A"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1.5">
                     Email người nhận
                   </label>
                   <input
@@ -129,27 +129,27 @@ export default function GiftCardPage() {
                     value={recipientEmail}
                     onChange={(e) => setRecipientEmail(e.target.value)}
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-sm"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-50 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-sm placeholder-gray-400 dark:placeholder-gray-500"
                     placeholder="email@example.com"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1.5">
                   Lời nhắn (tùy chọn)
                 </label>
                 <textarea
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   rows={3}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-sm resize-none"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-50 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-sm resize-none placeholder-gray-400 dark:placeholder-gray-500"
                   placeholder="Chúc bạn ngày mới vui vẻ! Thưởng thức trà sữa nhé"
                 />
               </div>
 
               <div className="flex items-center justify-between pt-2">
-                <div className="flex items-center gap-2 text-sm text-gray-500">
+                <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
                   <CreditCard className="w-4 h-4" />
                   <span>Thanh toán qua MoMo, ZaloPay, VNPay</span>
                 </div>

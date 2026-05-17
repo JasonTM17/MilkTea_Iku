@@ -121,14 +121,14 @@ function FAQItem({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: index * 0.06 }}
-      className="border border-cream-200 rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow"
+      className="border border-cream-200 dark:border-gray-700 rounded-2xl overflow-hidden bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow"
     >
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between px-6 py-5 text-left gap-4 group"
         aria-expanded={open}
       >
-        <span className="font-semibold text-gray-800 group-hover:text-brand-600 transition-colors">
+        <span className="font-semibold text-gray-800 dark:text-gray-100 group-hover:text-brand-600 transition-colors">
           {faq.question}
         </span>
         <motion.span
@@ -150,7 +150,7 @@ function FAQItem({
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="px-6 pb-5 text-gray-600 leading-relaxed border-t border-cream-100 pt-4">
+            <div className="px-6 pb-5 text-gray-600 dark:text-gray-300 leading-relaxed border-t border-cream-100 dark:border-gray-700 pt-4">
               {faq.answer}
             </div>
           </motion.div>
@@ -180,7 +180,7 @@ export default function FAQContent() {
   return (
     <>
       {/* Hero */}
-      <section className="relative py-24 bg-gradient-to-b from-cream-100 to-cream-50 overflow-hidden">
+      <section className="relative py-24 bg-gradient-to-b from-cream-100 dark:from-gray-800 to-cream-50 dark:to-gray-900 overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.span
             initial={{ opacity: 0, y: 30 }}
@@ -194,7 +194,7 @@ export default function FAQContent() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6"
+            className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-gray-50 mb-6"
           >
             Câu hỏi{" "}
             <span className="text-brand-600">thường gặp</span>
@@ -203,7 +203,7 @@ export default function FAQContent() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg text-gray-600 max-w-2xl mx-auto mb-10"
+            className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-10"
           >
             Tìm câu trả lời nhanh cho mọi thắc mắc về đặt hàng, giao hàng,
             thanh toán và sản phẩm của chúng tôi.
@@ -225,7 +225,7 @@ export default function FAQContent() {
               placeholder="Tìm kiếm câu hỏi..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-11 pr-4 py-3.5 rounded-2xl border border-cream-200 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-300 text-gray-700 placeholder-gray-400"
+              className="w-full pl-11 pr-4 py-3.5 rounded-2xl border border-cream-200 dark:border-gray-600 bg-white dark:bg-gray-800 shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-300 text-gray-700 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500"
             />
           </motion.div>
         </div>
@@ -248,7 +248,7 @@ export default function FAQContent() {
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   activeCategory === cat
                     ? "bg-brand-600 text-white shadow-md"
-                    : "bg-cream-100 text-gray-600 hover:bg-cream-200"
+                    : "bg-cream-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-cream-200 dark:hover:bg-gray-600"
                 }`}
               >
                 {cat}
@@ -270,10 +270,10 @@ export default function FAQContent() {
               className="text-center py-20"
             >
               <HelpCircle size={48} className="mx-auto text-cream-300 mb-4" />
-              <p className="text-gray-500 text-lg">
+              <p className="text-gray-500 dark:text-gray-400 text-lg">
                 Không tìm thấy câu hỏi phù hợp.
               </p>
-              <p className="text-gray-400 mt-2">
+              <p className="text-gray-400 dark:text-gray-500 mt-2">
                 Hãy thử từ khóa khác hoặc{" "}
                 <a href="/contact" className="text-brand-600 hover:underline">
                   liên hệ với chúng tôi
@@ -292,10 +292,10 @@ export default function FAQContent() {
             className="mt-16 bg-gradient-to-br from-brand-50 to-cream-100 rounded-3xl p-10 text-center"
           >
             <div className="text-4xl mb-4">💬</div>
-            <h3 className="text-2xl font-display font-bold text-gray-900 mb-3">
+            <h3 className="text-2xl font-display font-bold text-gray-900 dark:text-gray-50 mb-3">
               Vẫn còn thắc mắc?
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 dark:text-gray-300 mb-6">
               Đội ngũ hỗ trợ của chúng tôi luôn sẵn sàng giải đáp mọi câu hỏi
               của bạn.
             </p>

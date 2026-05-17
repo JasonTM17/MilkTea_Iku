@@ -122,7 +122,7 @@ export default function Newsletter() {
           {/* Headline */}
           <h2
             id="newsletter-heading"
-            className="font-display text-4xl sm:text-5xl font-bold text-gray-900 leading-tight tracking-tight mb-4"
+            className="font-display text-4xl sm:text-5xl font-bold text-gray-900 dark:text-gray-50 leading-tight tracking-tight mb-4"
           >
             Nhận ưu đãi{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 via-brand-600 to-brand-700">
@@ -131,7 +131,7 @@ export default function Newsletter() {
           </h2>
 
           {/* Subtext */}
-          <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-10 max-w-md mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-10 max-w-md mx-auto">
             Đăng ký để nhận ưu đãi độc quyền, thông báo sản phẩm mới và bí quyết
             pha trà sữa ngay trong hộp thư của bạn.
           </p>
@@ -195,10 +195,10 @@ export default function Newsletter() {
                 </div>
 
                 <div>
-                  <p className="text-xl font-bold text-gray-900">
+                  <p className="text-xl font-bold text-gray-900 dark:text-gray-50">
                     Cảm ơn bạn đã đăng ký!
                   </p>
-                  <p className="text-sm text-gray-500 mt-1">
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
                     Kiểm tra hộp thư để nhận ưu đãi đầu tiên của bạn
                   </p>
                 </div>
@@ -285,7 +285,7 @@ export default function Newsletter() {
                   </Button>
                 </div>
 
-                <p className="mt-3 text-xs text-gray-400">
+                <p className="mt-3 text-xs text-gray-500 dark:text-gray-400">
                   Không spam. Hủy đăng ký bất cứ lúc nào.
                 </p>
               </motion.form>

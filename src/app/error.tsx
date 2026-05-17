@@ -86,7 +86,7 @@ export default function GlobalError({ error, reset }: ErrorProps) {
   }, [error]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-cream-50 to-white flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-b from-cream-50 to-white dark:from-gray-950 dark:to-gray-900 flex items-center justify-center px-4">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
@@ -107,10 +107,10 @@ export default function GlobalError({ error, reset }: ErrorProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, delay: 0.15, ease: "easeOut" }}
         >
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-2">
             Ôi không! Có lỗi xảy ra
           </h1>
-          <p className="text-gray-500 text-sm leading-relaxed mb-8">
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-8">
             Ly trà sữa của bạn bị đổ mất rồi. Đừng lo, hãy thử lại hoặc quay
             về trang chủ nhé!
           </p>

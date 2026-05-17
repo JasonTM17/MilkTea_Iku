@@ -28,13 +28,13 @@ const values = [
 
 export default function BrandValues() {
   return (
-    <section className="py-16">
+    <section className="py-16 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-display font-bold text-gray-900 mb-3">
+          <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-gray-50 mb-3">
             Giá trị cốt lõi
           </h2>
-          <p className="text-gray-500 max-w-md mx-auto">
+          <p className="text-gray-600 dark:text-gray-400 max-w-md mx-auto">
             Những giá trị định hình mọi quyết định của chúng tôi
           </p>
         </div>
@@ -49,11 +49,11 @@ export default function BrandValues() {
               transition={{ delay: i * 0.1, duration: 0.5 }}
               className="text-center p-6"
             >
-              <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-brand-50 flex items-center justify-center">
+              <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-brand-50 dark:bg-brand-900/30 flex items-center justify-center">
                 <value.icon className="w-7 h-7 text-brand-600" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">{value.title}</h3>
-              <p className="text-sm text-gray-500 leading-relaxed">{value.description}</p>
+              <h3 className="font-semibold text-gray-900 dark:text-gray-50 mb-2">{value.title}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{value.description}</p>
             </motion.div>
           ))}
         </div>

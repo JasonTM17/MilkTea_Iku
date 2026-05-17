@@ -6,7 +6,7 @@ import { BobaCupIcon } from "@/components/icons";
 
 export default function BrandStory() {
   return (
-    <section className="py-20 bg-white overflow-hidden">
+    <section className="py-20 bg-white dark:bg-gray-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -18,10 +18,10 @@ export default function BrandStory() {
             <span className="inline-block px-3 py-1 bg-brand-50 text-brand-600 rounded-full text-xs font-medium mb-4">
               Câu chuyện thương hiệu
             </span>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-gray-50 mb-6">
               Từ đam mê đến <span className="text-brand-600">hương vị</span>
             </h2>
-            <div className="space-y-4 text-gray-600 leading-relaxed">
+            <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
               <p>
                 Iku ra đời từ niềm đam mê mãnh liệt với trà sữa và mong muốn mang đến
                 những ly trà chất lượng nhất cho người Việt. Mỗi công thức đều được nghiên
@@ -42,7 +42,7 @@ export default function BrandStory() {
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
                   <div className="text-2xl font-bold text-brand-600">{stat.value}</div>
-                  <div className="text-xs text-gray-500 mt-1">{stat.label}</div>
+                  <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">{stat.label}</div>
                 </div>
               ))}
             </div>

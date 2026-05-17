@@ -22,10 +22,10 @@ export default function WishlistContent() {
           >
             <Heart className="w-10 h-10 text-red-300" />
           </motion.div>
-          <h2 className="text-2xl font-display font-bold text-gray-900 mb-2">
+          <h2 className="text-2xl font-display font-bold text-gray-900 dark:text-gray-50 mb-2">
             Chưa có sản phẩm yêu thích
           </h2>
-          <p className="text-gray-500 mb-8">
+          <p className="text-gray-600 dark:text-gray-400 mb-8">
             Hãy khám phá menu và thêm những món bạn thích vào danh sách nhé!
           </p>
           <Link
@@ -45,10 +45,10 @@ export default function WishlistContent() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h1 className="text-3xl font-display font-bold text-gray-900">
+            <h1 className="text-3xl font-display font-bold text-gray-900 dark:text-gray-50">
               Sản phẩm yêu thích
             </h1>
-            <p className="text-gray-500 mt-1">{items.length} sản phẩm</p>
+            <p className="text-gray-500 dark:text-gray-400 mt-1">{items.length} sản phẩm</p>
           </div>
           <button
             onClick={clearAll}
@@ -69,7 +69,7 @@ export default function WishlistContent() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-md transition-shadow"
+                className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm overflow-hidden hover:shadow-md transition-shadow"
               >
                 <div className="aspect-[4/3] bg-gradient-to-br from-brand-100 to-cream-200 flex items-center justify-center relative">
                   <svg className="w-12 h-12 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 8H7l1.5 12h7L17 8z"/><path d="M6 8h12l-.5-2H6.5L6 8z"/><circle cx="12" cy="14" r="1.5" fill="currentColor" stroke="none"/></svg>
@@ -83,7 +83,7 @@ export default function WishlistContent() {
                 </div>
                 <div className="p-4">
                   <Link href={`/menu/${item.slug}`} className="block">
-                    <h3 className="font-semibold text-gray-900 hover:text-brand-600 transition-colors">
+                    <h3 className="font-semibold text-gray-900 dark:text-gray-50 hover:text-brand-600 transition-colors">
                       {item.name}
                     </h3>
                   </Link>

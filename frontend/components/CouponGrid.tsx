@@ -80,25 +80,25 @@ export default function CouponGrid() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: i * 0.1, duration: 0.4 }}
-          className="relative bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-md transition-shadow"
+          className="relative bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm overflow-hidden hover:shadow-md transition-shadow"
         >
           <div className={`h-2 bg-gradient-to-r ${coupon.color}`} />
           <div className="p-5">
             <div className="flex items-start justify-between gap-3">
               <div className="flex items-center gap-3">
-                <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${coupon.color} flex items-center justify-center`}>
+                <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${coupon.color} flex items-center justify-center shrink-0`}>
                   <coupon.icon className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 text-sm">{coupon.title}</h3>
-                  <p className="text-xs text-gray-500 mt-0.5">{coupon.description}</p>
+                  <h3 className="font-semibold text-gray-900 dark:text-gray-50 text-sm line-clamp-1">{coupon.title}</h3>
+                  <p className="text-xs text-gray-600 dark:text-gray-400 mt-0.5 line-clamp-1">{coupon.description}</p>
                 </div>
               </div>
-              <span className="text-lg font-bold text-brand-600 shrink-0">{coupon.discount}</span>
+              <span className="text-lg font-bold text-brand-600 dark:text-brand-400 shrink-0">{coupon.discount}</span>
             </div>
 
             <div className="mt-4 flex items-center justify-between">
-              <div className="flex items-center gap-4 text-xs text-gray-400">
+              <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
                 <span>Tối thiểu: {coupon.minOrder}</span>
                 <span className="flex items-center gap-1">
                   <Clock className="w-3 h-3" />
@@ -108,15 +108,16 @@ export default function CouponGrid() {
             </div>
 
             <div className="mt-3 flex items-center gap-2">
-              <code className="flex-1 px-3 py-2 bg-gray-50 rounded-lg text-sm font-mono font-semibold text-gray-700 border border-dashed border-gray-200">
+              <code className="flex-1 px-3 py-2.5 bg-gray-50 dark:bg-gray-900 rounded-lg text-sm font-mono font-semibold text-gray-800 dark:text-gray-100 border border-dashed border-gray-200 dark:border-gray-700 truncate">
                 {coupon.code}
               </code>
               <button
                 onClick={() => copyCode(coupon.id, coupon.code)}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
+                aria-label={copiedId === coupon.id ? `Đã sao chép mã ${coupon.code}` : `Sao chép mã ${coupon.code}`}
+                className={`min-w-11 min-h-11 px-3 py-2 rounded-lg text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-800 ${
                   copiedId === coupon.id
-                    ? "bg-green-50 text-green-600 border border-green-200"
-                    : "bg-brand-50 text-brand-600 border border-brand-200 hover:bg-brand-100"
+                    ? "bg-green-50 text-green-700 border border-green-200 dark:bg-green-900/30 dark:text-green-300 dark:border-green-800"
+                    : "bg-brand-50 text-brand-700 border border-brand-200 hover:bg-brand-100 dark:bg-brand-900/30 dark:text-brand-300 dark:border-brand-800 dark:hover:bg-brand-800/50"
                 }`}
               >
                 {copiedId === coupon.id ? (

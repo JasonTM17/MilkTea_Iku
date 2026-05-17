@@ -41,13 +41,13 @@ function AccordionItem({ item }: { item: HelpItem }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border-b border-gray-100 last:border-0">
+    <div className="border-b border-gray-100 dark:border-gray-700 last:border-0">
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between py-4 text-left"
       >
-        <span className="text-sm font-medium text-gray-900">{item.question}</span>
-        <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform ${open ? "rotate-180" : ""}`} />
+        <span className="text-sm font-medium text-gray-900 dark:text-gray-50">{item.question}</span>
+        <ChevronDown className={`w-4 h-4 text-gray-400 dark:text-gray-500 transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
       {open && (
         <motion.div
@@ -55,7 +55,7 @@ function AccordionItem({ item }: { item: HelpItem }) {
           animate={{ opacity: 1, height: "auto" }}
           className="pb-4"
         >
-          <p className="text-sm text-gray-500 leading-relaxed">{item.answer}</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{item.answer}</p>
         </motion.div>
       )}
     </div>
@@ -67,8 +67,8 @@ export default function HelpCenterPage() {
     <>
       <Header />
       <CartDrawer />
-      <main className="pt-20 min-h-screen bg-cream-50">
-        <section className="bg-gradient-to-b from-cream-100 to-cream-50 py-16">
+      <main className="pt-20 min-h-screen bg-cream-50 dark:bg-gray-900">
+        <section className="bg-gradient-to-b from-cream-100 to-cream-50 dark:from-gray-800 dark:to-gray-900 py-16">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -81,7 +81,7 @@ export default function HelpCenterPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl font-display font-bold text-gray-900 mb-4"
+              className="text-4xl font-display font-bold text-gray-900 dark:text-gray-50 mb-4"
             >
               Trung tâm trợ giúp
             </motion.h1>
@@ -89,7 +89,7 @@ export default function HelpCenterPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-gray-500 text-lg"
+              className="text-gray-500 dark:text-gray-400 text-lg"
             >
               Tìm câu trả lời cho mọi thắc mắc
             </motion.p>
@@ -104,10 +104,10 @@ export default function HelpCenterPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden"
+                className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm overflow-hidden"
               >
-                <div className="px-6 py-4 bg-cream-50 border-b border-gray-100">
-                  <h2 className="font-semibold text-gray-900">{topic.title}</h2>
+                <div className="px-6 py-4 bg-cream-50 dark:bg-gray-700 border-b border-gray-100 dark:border-gray-600">
+                  <h2 className="font-semibold text-gray-900 dark:text-gray-50">{topic.title}</h2>
                 </div>
                 <div className="px-6">
                   {topic.items.map((item) => (

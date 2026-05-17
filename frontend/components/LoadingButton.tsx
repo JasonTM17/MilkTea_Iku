@@ -15,7 +15,7 @@ interface LoadingButtonProps {
 
 const variants = {
   primary: "bg-brand-600 hover:bg-brand-700 text-white shadow-sm",
-  secondary: "bg-white border border-gray-200 text-gray-700 hover:bg-gray-50",
+  secondary: "bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700",
   danger: "bg-red-600 hover:bg-red-700 text-white",
 };
 

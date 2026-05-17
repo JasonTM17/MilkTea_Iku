@@ -20,13 +20,13 @@ export default function EmptyState({ icon, title, description, action }: EmptySt
       className="text-center py-16 px-4"
     >
       {icon && (
-        <div className="w-20 h-20 mx-auto mb-5 rounded-full bg-cream-100 flex items-center justify-center">
+        <div className="w-20 h-20 mx-auto mb-5 rounded-full bg-cream-100 dark:bg-gray-800 flex items-center justify-center">
           {icon}
         </div>
       )}
-      <h3 className="text-xl font-display font-bold text-gray-900 mb-2">{title}</h3>
+      <h3 className="text-xl font-display font-bold text-gray-900 dark:text-gray-50 mb-2">{title}</h3>
       {description && (
-        <p className="text-gray-500 max-w-sm mx-auto mb-6">{description}</p>
+        <p className="text-gray-600 dark:text-gray-400 max-w-sm mx-auto mb-6">{description}</p>
       )}
       {action && (
         <a

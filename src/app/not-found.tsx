@@ -7,7 +7,7 @@ import { Home, ArrowLeft } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-cream-50 to-white flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-b from-cream-50 to-white dark:from-gray-950 dark:to-gray-900 flex items-center justify-center px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -32,9 +32,9 @@ export default function NotFound() {
           </svg>
         </motion.div>
 
-        <h1 className="text-6xl font-display font-bold text-brand-600 mb-3">404</h1>
-        <h2 className="text-xl font-semibold text-gray-900 mb-2">Oops! Trang không tồn tại</h2>
-        <p className="text-gray-500 mb-8">
+        <h1 className="text-6xl font-display font-bold text-brand-600 dark:text-brand-400 mb-3">404</h1>
+        <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-50 mb-2">Oops! Trang không tồn tại</h2>
+        <p className="text-gray-600 dark:text-gray-300 mb-8">
           Có vẻ ly trà sữa này đã bị uống hết rồi. Hãy quay lại trang chủ nhé!
         </p>
 

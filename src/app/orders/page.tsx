@@ -5,7 +5,6 @@ import { Package, Clock, CheckCircle, Truck, XCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
-import Link from "next/link";
 
 interface Order {
   id: string;
@@ -36,13 +35,13 @@ export default function OrderHistoryPage() {
     <>
       <Header />
       <CartDrawer />
-      <main className="pt-20 min-h-screen bg-cream-50">
-        <section className="bg-gradient-to-b from-cream-100 to-cream-50 py-16">
+      <main className="pt-20 min-h-screen bg-cream-50 dark:bg-gray-900">
+        <section className="bg-gradient-to-b from-cream-100 to-cream-50 dark:from-gray-800 dark:to-gray-900 py-16">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-4xl font-display font-bold text-gray-900 mb-4"
+              className="text-4xl font-display font-bold text-gray-900 dark:text-gray-50 mb-4"
             >
               Lịch sử đơn hàng
             </motion.h1>
@@ -50,7 +49,7 @@ export default function OrderHistoryPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-gray-500 text-lg"
+              className="text-gray-500 dark:text-gray-400 text-lg"
             >
               Theo dõi tất cả đơn hàng của bạn
             </motion.p>
@@ -68,7 +67,7 @@ export default function OrderHistoryPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.08 }}
-                  className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 hover:shadow-md transition-shadow"
+                  className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm p-5 hover:shadow-md transition-shadow"
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
@@ -76,12 +75,12 @@ export default function OrderHistoryPage() {
                         <Icon className="w-5 h-5" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-900 text-sm">{order.id}</h3>
-                        <p className="text-xs text-gray-400 mt-0.5">{order.date} • {order.items} món</p>
+                        <h3 className="font-semibold text-gray-900 dark:text-gray-50 text-sm">{order.id}</h3>
+                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{order.date} • {order.items} món</p>
                       </div>
                     </div>
                     <div className="text-right">
-                      <p className="font-semibold text-gray-900 text-sm">
+                      <p className="font-semibold text-gray-900 dark:text-gray-50 text-sm">
                         {order.total.toLocaleString("vi-VN")}đ
                       </p>
                       <span className={`inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-medium ${config.color}`}>

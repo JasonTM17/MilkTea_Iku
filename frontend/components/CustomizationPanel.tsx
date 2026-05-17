@@ -45,7 +45,7 @@ export default function CustomizationPanel({
   return (
     <div className="space-y-6">
       <div>
-        <h4 className="text-sm font-medium text-gray-700 mb-3 flex items-center gap-2">
+        <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3 flex items-center gap-2">
           <Timer className="w-4 h-4 text-brand-500" />
           Kích cỡ
         </h4>
@@ -56,8 +56,8 @@ export default function CustomizationPanel({
               onClick={size.onClick}
               className={`py-3 rounded-xl text-sm font-medium border-2 transition-all ${
                 size.active
-                  ? "border-brand-500 bg-brand-50 text-brand-700"
-                  : "border-gray-200 text-gray-600 hover:border-brand-300"
+                  ? "border-brand-500 bg-brand-50 dark:bg-brand-900/20 text-brand-700 dark:text-brand-300"
+                  : "border-gray-200 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:border-brand-300"
               }`}
             >
               <span className="block font-semibold">{size.label}</span>
@@ -68,7 +68,7 @@ export default function CustomizationPanel({
       </div>
 
       <div>
-        <h4 className="text-sm font-medium text-gray-700 mb-3 flex items-center gap-2">
+        <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3 flex items-center gap-2">
           <Droplets className="w-4 h-4 text-brand-500" />
           Độ ngọt
         </h4>
@@ -80,7 +80,7 @@ export default function CustomizationPanel({
               className={`flex-1 py-2 rounded-lg text-xs font-medium transition-all ${
                 sugarLevel === option.value
                   ? "bg-brand-500 text-white shadow-sm"
-                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                  : "bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600"
               }`}
             >
               {option.label}
@@ -90,7 +90,7 @@ export default function CustomizationPanel({
       </div>
 
       <div>
-        <h4 className="text-sm font-medium text-gray-700 mb-3 flex items-center gap-2">
+        <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3 flex items-center gap-2">
           <Snowflake className="w-4 h-4 text-brand-500" />
           Đá
         </h4>
@@ -102,7 +102,7 @@ export default function CustomizationPanel({
               className={`flex-1 py-2 rounded-lg text-xs font-medium transition-all ${
                 iceLevel === option.value
                   ? "bg-brand-500 text-white shadow-sm"
-                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                  : "bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600"
               }`}
             >
               {option.label}

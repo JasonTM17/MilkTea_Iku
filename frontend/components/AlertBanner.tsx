@@ -68,7 +68,8 @@ export default function AlertBanner({ type, title, message, onClose, show }: Ale
             {onClose && (
               <button
                 onClick={onClose}
-                className={`shrink-0 p-1 rounded-lg hover:bg-black/5 transition-colors ${config.text}`}
+                aria-label="Đóng thông báo"
+                className={`shrink-0 min-w-11 min-h-11 flex items-center justify-center p-1 rounded-lg hover:bg-black/5 transition-colors ${config.text}`}
               >
                 <X className="w-4 h-4" />
               </button>

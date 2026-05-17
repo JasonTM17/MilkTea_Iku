@@ -13,7 +13,7 @@ const combos = [
 
 export default function ComboDeals() {
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-cream-50">
+    <section className="py-16 bg-gradient-to-b from-white to-cream-50 dark:from-gray-900 dark:to-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-end justify-between mb-10">
           <div>
@@ -21,7 +21,7 @@ export default function ComboDeals() {
               <Sparkles className="w-5 h-5 text-brand-500" />
               <span className="text-sm font-medium text-brand-600">Tiết kiệm hơn</span>
             </div>
-            <h2 className="text-3xl font-display font-bold text-gray-900">
+            <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-gray-50">
               Combo ưu đãi
             </h2>
           </div>
@@ -39,18 +39,18 @@ export default function ComboDeals() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 hover:shadow-md transition-shadow group"
+              className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm p-6 hover:shadow-md transition-shadow group"
             >
               <div className="w-full aspect-[3/2] rounded-xl bg-gradient-to-br from-brand-100 to-cream-200 flex items-center justify-center mb-4">
                 <BobaCupIcon className="w-14 h-14 text-brand-600 group-hover:scale-110 transition-transform" />
               </div>
-              <h3 className="font-semibold text-gray-900 text-lg">{combo.name}</h3>
-              <p className="text-sm text-gray-500 mt-1">{combo.items}</p>
+              <h3 className="font-semibold text-gray-900 dark:text-gray-50 text-lg">{combo.name}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">{combo.items}</p>
               <div className="flex items-center gap-2 mt-3">
                 <span className="text-xl font-bold text-brand-600">
                   {combo.price.toLocaleString("vi-VN")}đ
                 </span>
-                <span className="text-sm text-gray-400 line-through">
+                <span className="text-sm text-gray-500 dark:text-gray-400 line-through">
                   {combo.originalPrice.toLocaleString("vi-VN")}đ
                 </span>
                 <span className="px-2 py-0.5 bg-red-50 text-red-600 text-[10px] font-bold rounded-full">

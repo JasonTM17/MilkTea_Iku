@@ -3,7 +3,7 @@
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
+import SafeImage from "@/components/SafeImage";
 import { useRef } from "react";
 import { buttonVariants } from "@/components/ui/button";
 import { ShoppingBag, Leaf, Zap } from "lucide-react";
@@ -55,7 +55,7 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex flex-col overflow-hidden"
+      className="relative min-h-screen flex flex-col overflow-x-clip overflow-y-hidden"
     >
       {/* ── Background gradient ── */}
       <motion.div
@@ -223,13 +223,13 @@ export default function Hero() {
               <div className="absolute inset-8 rounded-full bg-gradient-to-br from-brand-300/40 to-cream-400/40 blur-3xl" />
 
               {/* Main image container */}
-              <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg aspect-square">
-                <Image
+              <div className="relative w-full max-w-[260px] sm:max-w-md lg:max-w-lg aspect-square mx-auto">
+                <SafeImage
                   src="https://images.unsplash.com/photo-1558857563-b371033873b8?w=700&h=700&fit=crop"
                   alt="Ly trà sữa Iku thơm ngon"
-                  width={700}
-                  height={700}
-                  className="relative rounded-[2.5rem] object-cover shadow-2xl shadow-brand-900/20 w-full h-full"
+                  fill
+                  sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 33vw"
+                  className="rounded-[2.5rem] object-cover shadow-2xl shadow-brand-900/20"
                   priority
                 />
 
@@ -240,14 +240,14 @@ export default function Hero() {
                 <motion.div
                   animate={{ y: [-6, 6, -6] }}
                   transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -bottom-5 -left-5 sm:-bottom-6 sm:-left-6 bg-white dark:bg-gray-800 rounded-2xl shadow-xl shadow-brand-900/15 p-3.5 sm:p-4"
+                  className="hidden sm:block absolute -bottom-5 -left-5 sm:-bottom-6 sm:-left-6 bg-white dark:bg-gray-800 rounded-2xl shadow-xl shadow-brand-900/15 p-3.5 sm:p-4"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-11 h-11 bg-brand-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 8H7l1.5 12h7L17 8z"/><path d="M6 8h12l-.5-2H6.5L6 8z"/><circle cx="12" cy="14" r="1.5" fill="currentColor" stroke="none"/></svg>
+                    <div className="w-11 h-11 bg-brand-100 dark:bg-brand-900/40 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-brand-600 dark:text-brand-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 8H7l1.5 12h7L17 8z"/><path d="M6 8h12l-.5-2H6.5L6 8z"/><circle cx="12" cy="14" r="1.5" fill="currentColor" stroke="none"/></svg>
                     </div>
                     <div>
-                      <div className="text-xs text-brand-500 font-semibold uppercase tracking-wide">
+                      <div className="text-xs text-brand-600 dark:text-brand-300 font-semibold uppercase tracking-wide">
                         Best Seller
                       </div>
                       <div className="text-sm font-bold text-gray-800 dark:text-gray-50 leading-tight">
@@ -261,7 +261,7 @@ export default function Hero() {
                 <motion.div
                   animate={{ y: [6, -6, 6] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -top-5 -right-5 sm:-top-6 sm:-right-6 bg-white dark:bg-gray-800 rounded-2xl shadow-xl shadow-brand-900/15 px-4 py-3"
+                  className="hidden sm:block absolute -top-5 -right-5 sm:-top-6 sm:-right-6 bg-white dark:bg-gray-800 rounded-2xl shadow-xl shadow-brand-900/15 px-4 py-3"
                 >
                   <div className="flex items-center gap-1.5">
                     <div className="flex">
@@ -273,14 +273,14 @@ export default function Hero() {
                     </div>
                     <span className="text-sm font-bold text-gray-800 dark:text-gray-50">4.9</span>
                   </div>
-                  <div className="text-xs text-gray-400 mt-0.5 text-center">10K+ đánh giá</div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 text-center">10K+ đánh giá</div>
                 </motion.div>
 
                 {/* Floating badge — Fresh daily */}
                 <motion.div
                   animate={{ y: [-4, 4, -4] }}
                   transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                  className="absolute top-1/2 -right-8 sm:-right-10 -translate-y-1/2 bg-brand-600 text-white rounded-2xl shadow-xl shadow-brand-700/40 px-3.5 py-2.5"
+                  className="hidden sm:block absolute top-1/2 -right-8 sm:-right-10 -translate-y-1/2 bg-brand-600 text-white rounded-2xl shadow-xl shadow-brand-700/40 px-3.5 py-2.5"
                 >
                   <div className="text-xs font-semibold leading-tight text-center">
                     <div className="text-lg mb-0.5"><svg className="w-5 h-5 text-white inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 3v7a6 6 0 0 0 6 6 6 6 0 0 0 6-6V3"/><path d="M4 3h16"/><path d="M12 16v5"/><path d="M8 21h8"/></svg></div>

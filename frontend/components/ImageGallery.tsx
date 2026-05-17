@@ -54,41 +54,42 @@ export default function ImageGallery({ images, productName }: ImageGalleryProps)
           <>
             <button
               onClick={goPrev}
-              className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 backdrop-blur-sm shadow-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white"
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm shadow-md flex items-center justify-center md:opacity-0 md:group-hover:opacity-100 opacity-100 transition-opacity hover:bg-white dark:hover:bg-gray-700"
               aria-label="Ảnh trước"
             >
-              <ChevronLeft className="w-4 h-4 text-gray-700" />
+              <ChevronLeft className="w-5 h-5 text-gray-700 dark:text-gray-200" />
             </button>
             <button
               onClick={goNext}
-              className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 backdrop-blur-sm shadow-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white"
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm shadow-md flex items-center justify-center md:opacity-0 md:group-hover:opacity-100 opacity-100 transition-opacity hover:bg-white dark:hover:bg-gray-700"
               aria-label="Ảnh tiếp"
             >
-              <ChevronRight className="w-4 h-4 text-gray-700" />
+              <ChevronRight className="w-5 h-5 text-gray-700 dark:text-gray-200" />
             </button>
           </>
         )}
 
         <button
           onClick={() => setIsZoomed(true)}
-          className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 backdrop-blur-sm shadow-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white"
-          aria-label="Phóng to"
+          className="absolute top-3 right-3 w-11 h-11 rounded-full bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm shadow-md flex items-center justify-center md:opacity-0 md:group-hover:opacity-100 opacity-100 transition-opacity hover:bg-white dark:hover:bg-gray-700"
+          aria-label="Phóng to ảnh"
         >
-          <ZoomIn className="w-4 h-4 text-gray-700" />
+          <ZoomIn className="w-5 h-5 text-gray-700 dark:text-gray-200" />
         </button>
 
         {displayImages.length > 1 && (
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 bg-black/30 dark:bg-black/50 backdrop-blur-sm px-2 py-1.5 rounded-full">
             {displayImages.map((_, i) => (
               <button
                 key={i}
                 onClick={() => goTo(i)}
-                className={`w-2 h-2 rounded-full transition-all ${
+                className={`h-2 rounded-full transition-all ${
                   i === currentIndex
-                    ? "bg-brand-500 w-5"
-                    : "bg-white/70 hover:bg-white"
+                    ? "bg-white w-5"
+                    : "bg-white/60 hover:bg-white/90 w-2"
                 }`}
-                aria-label={`Ảnh ${i + 1}`}
+                aria-label={`Đi tới ảnh ${i + 1} của ${displayImages.length}`}
+                aria-current={i === currentIndex ? "true" : undefined}
               />
             ))}
           </div>

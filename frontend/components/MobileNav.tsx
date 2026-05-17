@@ -44,7 +44,7 @@ export default function MobileNav() {
           animate={{ y: 0 }}
           exit={{ y: 100 }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white/95 backdrop-blur-lg border-t border-gray-100 shadow-[0_-4px_20px_rgba(0,0,0,0.06)]"
+          className="fixed bottom-0 left-0 right-0 z-30 md:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg border-t border-gray-100 dark:border-gray-800 shadow-[0_-4px_20px_rgba(0,0,0,0.06)] dark:shadow-[0_-4px_20px_rgba(0,0,0,0.4)]"
         >
           <div className="flex items-center justify-around px-2 py-2 safe-area-bottom">
             {navItems.map((item) => {
@@ -53,12 +53,14 @@ export default function MobileNav() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="relative flex flex-col items-center gap-0.5 py-1.5 px-3 rounded-xl transition-colors"
+                  aria-label={item.label}
+                  aria-current={active ? "page" : undefined}
+                  className="relative flex flex-col items-center gap-0.5 py-2 px-3 min-h-11 min-w-11 rounded-xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
                 >
                   <div className="relative">
                     <item.icon
                       className={`w-5 h-5 transition-colors ${
-                        active ? "text-brand-600" : "text-gray-400"
+                        active ? "text-brand-600 dark:text-brand-300" : "text-gray-500 dark:text-gray-400"
                       }`}
                     />
                     {item.href === "/promotions" && items.length > 0 && (
@@ -68,8 +70,8 @@ export default function MobileNav() {
                     )}
                   </div>
                   <span
-                    className={`text-xs font-medium transition-colors ${
-                      active ? "text-brand-600" : "text-gray-400"
+                    className={`text-[11px] font-medium transition-colors ${
+                      active ? "text-brand-600 dark:text-brand-300" : "text-gray-600 dark:text-gray-400"
                     }`}
                   >
                     {item.label}

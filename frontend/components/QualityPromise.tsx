@@ -14,13 +14,13 @@ const promises = [
 
 export default function QualityPromise() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-display font-bold text-gray-900 mb-3">
+          <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-gray-50 mb-3">
             Cam kết của Iku
           </h2>
-          <p className="text-gray-500 max-w-md mx-auto">
+          <p className="text-gray-600 dark:text-gray-400 max-w-md mx-auto">
             6 cam kết vàng mà chúng tôi luôn giữ vững
           </p>
         </div>
@@ -33,14 +33,14 @@ export default function QualityPromise() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08, duration: 0.4 }}
-              className="flex items-start gap-4 p-5 rounded-2xl border border-gray-100 hover:border-brand-200 hover:bg-brand-50/30 transition-all"
+              className="flex items-start gap-4 p-5 rounded-2xl border border-gray-100 dark:border-gray-700 hover:border-brand-200 hover:bg-brand-50/30 transition-all"
             >
-              <div className="w-11 h-11 rounded-xl bg-brand-50 flex items-center justify-center shrink-0">
+              <div className="w-11 h-11 rounded-xl bg-brand-50 dark:bg-brand-900/30 flex items-center justify-center shrink-0">
                 <promise.icon className="w-5 h-5 text-brand-600" />
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900 text-sm mb-1">{promise.title}</h4>
-                <p className="text-xs text-gray-500 leading-relaxed">{promise.description}</p>
+                <h4 className="font-semibold text-gray-900 dark:text-gray-100 text-sm mb-1">{promise.title}</h4>
+                <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">{promise.description}</p>
               </div>
             </motion.div>
           ))}

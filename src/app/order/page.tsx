@@ -56,20 +56,20 @@ export default function OrderPage() {
     <>
       <Header />
       <CartDrawer />
-      <main className="pt-20 min-h-screen bg-gradient-to-b from-cream-50 to-white">
+      <main className="pt-20 min-h-screen bg-gradient-to-b from-cream-50 to-white dark:from-gray-950 dark:to-gray-900">
         <div className="max-w-3xl mx-auto px-4 py-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-10"
           >
-            <div className="w-16 h-16 mx-auto mb-4 bg-brand-100 rounded-2xl flex items-center justify-center">
-              <Package className="w-8 h-8 text-brand-600" />
+            <div className="w-16 h-16 mx-auto mb-4 bg-brand-100 dark:bg-brand-900/40 rounded-2xl flex items-center justify-center">
+              <Package className="w-8 h-8 text-brand-600 dark:text-brand-300" />
             </div>
-            <h1 className="text-3xl md:text-4xl font-display font-bold text-gray-900">
+            <h1 className="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-gray-50">
               Tra cứu đơn hàng
             </h1>
-            <p className="text-gray-500 mt-2">
+            <p className="text-gray-600 dark:text-gray-300 mt-2">
               Nhập số điện thoại để theo dõi trạng thái đơn hàng của bạn
             </p>
           </motion.div>
@@ -82,13 +82,14 @@ export default function OrderPage() {
             className="flex gap-3 mb-10"
           >
             <div className="relative flex-1">
-              <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 dark:text-gray-400" />
               <input
                 type="tel"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="Nhập số điện thoại..."
-                className="w-full pl-12 pr-4 py-4 rounded-2xl border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 shadow-sm transition-shadow hover:shadow-md"
+                aria-label="Số điện thoại"
+                className="w-full pl-12 pr-4 py-4 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-50 placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 shadow-sm transition-shadow hover:shadow-md"
               />
             </div>
             <Button
@@ -121,13 +122,13 @@ export default function OrderPage() {
                 className="space-y-6"
               >
                 {orders.length === 0 ? (
-                  <Card className="border-dashed border-2">
+                  <Card className="border-dashed border-2 dark:border-gray-700 dark:bg-gray-800">
                     <CardContent className="py-16 text-center">
-                      <div className="w-20 h-20 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center">
-                        <Package className="w-10 h-10 text-gray-300" />
+                      <div className="w-20 h-20 mx-auto mb-4 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center">
+                        <Package className="w-10 h-10 text-gray-400 dark:text-gray-500" />
                       </div>
-                      <p className="text-gray-500 text-lg font-medium">Không tìm thấy đơn hàng nào</p>
-                      <p className="text-gray-400 text-sm mt-1">Vui lòng kiểm tra lại số điện thoại</p>
+                      <p className="text-gray-700 dark:text-gray-200 text-lg font-medium">Không tìm thấy đơn hàng nào</p>
+                      <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">Vui lòng kiểm tra lại số điện thoại</p>
                     </CardContent>
                   </Card>
                 ) : (
@@ -142,11 +143,11 @@ export default function OrderPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.1 }}
                       >
-                        <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+                        <Card className="overflow-hidden hover:shadow-lg transition-shadow dark:bg-gray-800 dark:border-gray-700">
                           <CardContent className="p-6">
                             <div className="flex items-center justify-between mb-5">
                               <div>
-                                <p className="text-sm text-gray-400">
+                                <p className="text-sm text-gray-500 dark:text-gray-400">
                                   {new Date(order.createdAt).toLocaleDateString("vi-VN", {
                                     day: "2-digit",
                                     month: "2-digit",
@@ -155,7 +156,7 @@ export default function OrderPage() {
                                     minute: "2-digit",
                                   })}
                                 </p>
-                                <h3 className="font-semibold text-lg text-gray-900">{order.customerName}</h3>
+                                <h3 className="font-semibold text-lg text-gray-900 dark:text-gray-50">{order.customerName}</h3>
                               </div>
                               <Badge className={`${status.bgColor} ${status.color} border-0 gap-1.5 px-3 py-1.5`}>
                                 {status.icon}
@@ -166,7 +167,7 @@ export default function OrderPage() {
                             {/* Progress stepper */}
                             <div className="mb-5">
                               <div className="flex items-center justify-between relative">
-                                <div className="absolute top-1/2 left-0 right-0 h-1 bg-gray-100 -translate-y-1/2 rounded-full" />
+                                <div className="absolute top-1/2 left-0 right-0 h-1 bg-gray-100 dark:bg-gray-700 -translate-y-1/2 rounded-full" />
                                 <div
                                   className="absolute top-1/2 left-0 h-1 bg-brand-500 -translate-y-1/2 rounded-full transition-all duration-500"
                                   style={{ width: `${(stepIndex / (statusSteps.length - 1)) * 100}%` }}
@@ -180,12 +181,12 @@ export default function OrderPage() {
                                         className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${
                                           isActive
                                             ? "bg-brand-500 text-white shadow-md shadow-brand-500/30"
-                                            : "bg-gray-100 text-gray-400"
+                                            : "bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400"
                                         }`}
                                       >
                                         <span className="text-xs">{i + 1}</span>
                                       </div>
-                                      <span className={`text-[10px] mt-1.5 font-medium ${isActive ? "text-brand-600" : "text-gray-400"}`}>
+                                      <span className={`text-[10px] mt-1.5 font-medium ${isActive ? "text-brand-600 dark:text-brand-300" : "text-gray-500 dark:text-gray-400"}`}>
                                         {stepInfo.label.split(" ").pop()}
                                       </span>
                                     </div>
@@ -195,21 +196,21 @@ export default function OrderPage() {
                             </div>
 
                             {/* Order items */}
-                            <div className="space-y-2 border-t border-gray-100 pt-4">
+                            <div className="space-y-2 border-t border-gray-100 dark:border-gray-700 pt-4">
                               {order.items.map((item, i) => (
                                 <div key={i} className="flex justify-between text-sm py-1">
-                                  <span className="text-gray-600">
+                                  <span className="text-gray-700 dark:text-gray-200">
                                     {item.product.name}
-                                    <span className="text-gray-400 ml-1">(Size {item.size})</span>
+                                    <span className="text-gray-500 dark:text-gray-400 ml-1">(Size {item.size})</span>
                                   </span>
-                                  <span className="text-gray-500 font-medium">x{item.quantity}</span>
+                                  <span className="text-gray-600 dark:text-gray-300 font-medium">x{item.quantity}</span>
                                 </div>
                               ))}
                             </div>
 
-                            <div className="border-t border-gray-100 mt-4 pt-4 flex justify-between items-center">
-                              <span className="text-sm text-gray-500">Tổng cộng</span>
-                              <span className="text-lg font-bold text-brand-600">{formatPrice(order.total)}</span>
+                            <div className="border-t border-gray-100 dark:border-gray-700 mt-4 pt-4 flex justify-between items-center">
+                              <span className="text-sm text-gray-600 dark:text-gray-300">Tổng cộng</span>
+                              <span className="text-lg font-bold text-brand-600 dark:text-brand-400">{formatPrice(order.total)}</span>
                             </div>
                           </CardContent>
                         </Card>

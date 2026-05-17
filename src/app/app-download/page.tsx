@@ -17,7 +17,7 @@ export default function AppDownloadPage() {
     <>
       <Header />
       <CartDrawer />
-      <main className="pt-20 min-h-screen bg-cream-50 overflow-x-hidden">
+      <main className="pt-20 min-h-screen bg-cream-50 dark:bg-gray-950 overflow-x-hidden">
         <section className="py-20">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

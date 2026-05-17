@@ -1,13 +1,8 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
-import { useRef } from "react";
+import { motion } from "framer-motion";
+import SafeImage from "@/components/SafeImage";
 import { Leaf, Palette, Heart } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 
 const iconMap: Record<string, React.ReactNode> = {
   leaf: <Leaf className="w-8 h-8 text-green-600" />,
@@ -26,7 +21,7 @@ export default function AboutContent() {
   return (
     <>
       {/* Hero */}
-      <section className="relative py-24 bg-gradient-to-b from-cream-100 to-white overflow-hidden">
+      <section className="relative py-24 bg-gradient-to-b from-cream-100 dark:from-gray-800 to-white dark:to-gray-900 overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.span
             {...fadeInUp}
@@ -37,7 +32,7 @@ export default function AboutContent() {
           <motion.h1
             {...fadeInUp}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6"
+            className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-gray-50 mb-6"
           >
             Mỗi ly trà sữa là một{" "}
             <span className="text-brand-600">tác phẩm nghệ thuật</span>
@@ -45,7 +40,7 @@ export default function AboutContent() {
           <motion.p
             {...fadeInUp}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
           >
             Iku ra đời từ niềm đam mê tạo ra những ly trà sữa hoàn hảo nhất,
             nơi mỗi nguyên liệu được chọn lọc kỹ càng và mỗi công thức là kết
@@ -59,7 +54,7 @@ export default function AboutContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div {...fadeInUp}>
-              <Image
+              <SafeImage
                 src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&h=400&fit=crop"
                 alt="Iku story"
                 width={600}
@@ -68,10 +63,10 @@ export default function AboutContent() {
               />
             </motion.div>
             <motion.div {...fadeInUp} transition={{ duration: 0.6, delay: 0.2 }}>
-              <h2 className="text-3xl font-display font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-gray-50 mb-6">
                 Khởi nguồn từ đam mê
               </h2>
-              <div className="space-y-4 text-gray-600">
+              <div className="space-y-4 text-gray-600 dark:text-gray-300">
                 <p>
                   Năm 2020, giữa lòng Sài Gòn nhộn nhịp, Iku được sinh ra từ
                   một ý tưởng đơn giản: tạo ra trà sữa ngon nhất có thể với
@@ -94,10 +89,10 @@ export default function AboutContent() {
       </section>
 
       {/* Values */}
-      <section className="py-20 bg-cream-50">
+      <section className="py-20 bg-cream-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeInUp} className="text-center mb-16">
-            <h2 className="text-3xl font-display font-bold text-gray-900">
+            <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-gray-50">
               Giá trị cốt lõi
             </h2>
           </motion.div>
@@ -126,13 +121,13 @@ export default function AboutContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
-                className="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow"
+                className="bg-white dark:bg-gray-900 rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="mb-4 flex justify-center">{iconMap[value.icon]}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50 mb-3">
                   {value.title}
                 </h3>
-                <p className="text-gray-500">{value.desc}</p>
+                <p className="text-gray-600 dark:text-gray-400">{value.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -159,7 +154,7 @@ export default function AboutContent() {
                 <div className="text-3xl md:text-4xl font-bold text-brand-600">
                   {stat.value}
                 </div>
-                <div className="text-gray-500 mt-1">{stat.label}</div>
+                <div className="text-gray-500 dark:text-gray-400 mt-1">{stat.label}</div>
               </motion.div>
             ))}
           </div>

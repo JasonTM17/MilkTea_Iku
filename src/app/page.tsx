@@ -38,7 +38,7 @@ export default async function Home() {
       <Header />
       <CartDrawer />
 
-      <main>
+      <main className="overflow-x-clip">
         <Hero />
 
         {/* Categories Section */}
@@ -129,7 +129,7 @@ export default async function Home() {
             </p>
             <Link
               href="/menu"
-              className="inline-flex items-center px-8 py-4 bg-white text-brand-700 rounded-full font-semibold hover:bg-cream-100 transition-colors shadow-lg"
+              className="inline-flex items-center px-8 py-4 bg-white dark:bg-gray-800 text-brand-700 rounded-full font-semibold hover:bg-cream-100 transition-colors shadow-lg"
             >
               Đặt hàng ngay
             </Link>

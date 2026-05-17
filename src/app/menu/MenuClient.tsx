@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import ProductCard from "@/components/ProductCard";
 import { Search, X, ArrowUpDown } from "lucide-react";
@@ -41,15 +41,15 @@ const SORT_LABELS: Record<SortOption, string> = {
 // ── Skeleton card ──────────────────────────────────────────────────────────────
 function SkeletonCard() {
   return (
-    <div className="rounded-2xl overflow-hidden bg-white ring-1 ring-brand-100 animate-pulse">
-      <div className="aspect-square bg-cream-200" />
+    <div className="rounded-2xl overflow-hidden bg-white dark:bg-gray-800 ring-1 ring-brand-100 dark:ring-gray-700 animate-pulse">
+      <div className="aspect-square bg-cream-200 dark:bg-gray-700" />
       <div className="p-4 space-y-2">
-        <div className="h-4 bg-cream-200 rounded-full w-3/4" />
-        <div className="h-3 bg-cream-100 rounded-full w-full" />
-        <div className="h-3 bg-cream-100 rounded-full w-2/3" />
+        <div className="h-4 bg-cream-200 dark:bg-gray-700 rounded-full w-3/4" />
+        <div className="h-3 bg-cream-100 dark:bg-gray-700 rounded-full w-full" />
+        <div className="h-3 bg-cream-100 dark:bg-gray-700 rounded-full w-2/3" />
         <div className="flex justify-between items-center pt-2">
-          <div className="h-5 bg-brand-100 rounded-full w-20" />
-          <div className="h-3 bg-cream-100 rounded-full w-16" />
+          <div className="h-5 bg-brand-100 dark:bg-brand-900/40 rounded-full w-20" />
+          <div className="h-3 bg-cream-100 dark:bg-gray-700 rounded-full w-16" />
         </div>
       </div>
     </div>
@@ -110,10 +110,10 @@ function EmptyState({ query }: { query: string }) {
         <circle cx="106" cy="85" r="3" fill="#FCD34D" opacity="0.5" />
       </svg>
 
-      <h3 className="text-xl font-semibold text-gray-700 mb-2">
+      <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-2">
         Không tìm thấy sản phẩm
       </h3>
-      <p className="text-gray-400 text-sm max-w-xs leading-relaxed">
+      <p className="text-gray-500 dark:text-gray-400 text-sm max-w-xs leading-relaxed">
         {query
           ? `Không có kết quả nào cho "${query}". Thử tìm kiếm với từ khóa khác nhé!`
           : "Danh mục này chưa có sản phẩm. Hãy khám phá các danh mục khác!"}
@@ -131,7 +131,7 @@ export default function MenuClient({
   const [activeCategory, setActiveCategory] = useState(initialCategory);
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setSortBy] = useState<SortOption>("newest");
-  const [isLoading, setIsLoading] = useState(false);
+  const isLoading = false;
 
   const allCategories = [{ id: "all", name: "Tất cả", slug: "all" }, ...categories];
 
@@ -168,7 +168,7 @@ export default function MenuClient({
             placeholder="Tìm kiếm món yêu thích..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-11 pr-10 py-3 rounded-2xl border border-cream-200 bg-white/80 backdrop-blur-sm text-sm text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-400/30 focus:border-brand-400 transition-all shadow-sm"
+            className="w-full pl-11 pr-10 py-3 rounded-2xl border border-cream-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-sm text-gray-700 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-400/30 focus:border-brand-400 transition-all shadow-sm"
           />
           <AnimatePresence>
             {searchQuery && (
@@ -193,7 +193,7 @@ export default function MenuClient({
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as SortOption)}
-            className="appearance-none pl-10 pr-8 py-3 rounded-2xl border border-cream-200 bg-white/80 backdrop-blur-sm text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-400/30 focus:border-brand-400 transition-all shadow-sm cursor-pointer"
+            className="appearance-none pl-10 pr-8 py-3 rounded-2xl border border-cream-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-sm text-gray-700 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-brand-400/30 focus:border-brand-400 transition-all shadow-sm cursor-pointer"
           >
             {(Object.keys(SORT_LABELS) as SortOption[]).map((key) => (
               <option key={key} value={key}>
@@ -221,7 +221,7 @@ export default function MenuClient({
                 className={`relative flex-shrink-0 px-5 py-2.5 rounded-full text-sm font-medium transition-colors duration-200 ${
                   isActive
                     ? "text-white"
-                    : "text-gray-600 bg-white border border-cream-200 hover:border-brand-300 hover:text-brand-700 shadow-sm"
+                    : "text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 border border-cream-200 dark:border-gray-700 hover:border-brand-300 hover:text-brand-700 dark:hover:text-brand-300 shadow-sm"
                 }`}
               >
                 {isActive && (
@@ -247,10 +247,10 @@ export default function MenuClient({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="text-sm text-gray-500"
+            className="text-sm text-gray-600 dark:text-gray-300"
           >
             Hiển thị{" "}
-            <span className="font-semibold text-brand-600">
+            <span className="font-semibold text-brand-600 dark:text-brand-400">
               {filteredProducts.length}
             </span>{" "}
             sản phẩm

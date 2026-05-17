@@ -35,13 +35,13 @@ export default function TrackingPage() {
     <>
       <Header />
       <CartDrawer />
-      <main className="pt-20 min-h-screen bg-cream-50">
-        <section className="bg-gradient-to-b from-cream-100 to-cream-50 py-16">
+      <main className="pt-20 min-h-screen bg-cream-50 dark:bg-gray-900">
+        <section className="bg-gradient-to-b from-cream-100 to-cream-50 dark:from-gray-800 dark:to-gray-900 py-16">
           <div className="max-w-2xl mx-auto px-4 text-center">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4"
+              className="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-gray-50 mb-4"
             >
               Theo dõi đơn hàng
             </motion.h1>
@@ -49,7 +49,7 @@ export default function TrackingPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-gray-500 mb-8"
+              className="text-gray-500 dark:text-gray-400 mb-8"
             >
               Nhập mã đơn hàng để xem trạng thái giao hàng
             </motion.p>
@@ -66,7 +66,7 @@ export default function TrackingPage() {
                 value={orderId}
                 onChange={(e) => setOrderId(e.target.value)}
                 placeholder="VD: IKU-2024-001234"
-                className="flex-1 px-4 py-3 rounded-xl border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-sm"
+                className="flex-1 px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-50 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-sm placeholder-gray-400 dark:placeholder-gray-500"
               />
               <button
                 type="submit"
@@ -84,11 +84,11 @@ export default function TrackingPage() {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-2xl mx-auto px-4 py-12"
           >
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 md:p-8">
-              <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-100">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm p-6 md:p-8">
+              <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-100 dark:border-gray-700">
                 <div>
-                  <p className="text-sm text-gray-500">Mã đơn hàng</p>
-                  <p className="font-semibold text-gray-900">{orderId || "IKU-2024-001234"}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Mã đơn hàng</p>
+                  <p className="font-semibold text-gray-900 dark:text-gray-50">{orderId || "IKU-2024-001234"}</p>
                 </div>
                 <span className="px-3 py-1 bg-green-50 text-green-700 text-sm font-medium rounded-full border border-green-200">
                   Đang giao
@@ -103,7 +103,7 @@ export default function TrackingPage() {
                         className={`w-10 h-10 rounded-full flex items-center justify-center ${
                           step.completed
                             ? "bg-brand-100 text-brand-600"
-                            : "bg-gray-100 text-gray-400"
+                            : "bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
                         }`}
                       >
                         <step.icon className="w-5 h-5" />
@@ -111,7 +111,7 @@ export default function TrackingPage() {
                       {i < mockSteps.length - 1 && (
                         <div
                           className={`w-0.5 h-12 ${
-                            step.completed ? "bg-brand-200" : "bg-gray-200"
+                            step.completed ? "bg-brand-200" : "bg-gray-200 dark:bg-gray-700"
                           }`}
                         />
                       )}
@@ -119,23 +119,23 @@ export default function TrackingPage() {
                     <div className="pt-2 pb-6">
                       <p
                         className={`font-medium text-sm ${
-                          step.completed ? "text-gray-900" : "text-gray-400"
+                          step.completed ? "text-gray-900 dark:text-gray-50" : "text-gray-400 dark:text-gray-500"
                         }`}
                       >
                         {step.label}
                       </p>
-                      <p className="text-xs text-gray-400 mt-0.5">{step.time}</p>
+                      <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{step.time}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-6 pt-4 border-t border-gray-100 grid grid-cols-2 gap-4">
-                <div className="flex items-center gap-2 text-sm text-gray-600">
+              <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-700 grid grid-cols-2 gap-4">
+                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
                   <MapPin className="w-4 h-4 text-brand-500" />
                   <span>123 Nguyễn Huệ, Q.1</span>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
                   <Phone className="w-4 h-4 text-brand-500" />
                   <span>Shipper: 0901 234 567</span>
                 </div>

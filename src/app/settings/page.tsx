@@ -30,8 +30,8 @@ export default function SettingsPage() {
     <>
       <Header />
       <CartDrawer />
-      <main className="pt-20 min-h-screen bg-cream-50">
-        <section className="bg-gradient-to-b from-cream-100 to-cream-50 py-16">
+      <main className="pt-20 min-h-screen bg-cream-50 dark:bg-gray-900">
+        <section className="bg-gradient-to-b from-cream-100 to-cream-50 dark:from-gray-800 dark:to-gray-900 py-16">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -44,7 +44,7 @@ export default function SettingsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl font-display font-bold text-gray-900 mb-4"
+              className="text-4xl font-display font-bold text-gray-900 dark:text-gray-50 mb-4"
             >
               Cài đặt
             </motion.h1>
@@ -59,22 +59,22 @@ export default function SettingsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: gi * 0.1 }}
-                className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden"
+                className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm overflow-hidden"
               >
-                <div className="px-6 py-3 bg-cream-50 border-b border-gray-100">
-                  <h2 className="text-sm font-semibold text-gray-700">{group.title}</h2>
+                <div className="px-6 py-3 bg-cream-50 dark:bg-gray-700 border-b border-gray-100 dark:border-gray-600">
+                  <h2 className="text-sm font-semibold text-gray-700 dark:text-gray-200">{group.title}</h2>
                 </div>
-                <div className="divide-y divide-gray-50">
+                <div className="divide-y divide-gray-50 dark:divide-gray-700">
                   {group.items.map((item) => {
                     const content = (
-                      <div className="px-6 py-4 flex items-center justify-between hover:bg-cream-50/50 transition-colors">
+                      <div className="px-6 py-4 flex items-center justify-between hover:bg-cream-50/50 dark:hover:bg-gray-700/50 transition-colors">
                         <div className="flex items-center gap-3">
-                          <div className="w-9 h-9 rounded-lg bg-gray-50 flex items-center justify-center">
-                            <item.icon className="w-4 h-4 text-gray-600" />
+                          <div className="w-9 h-9 rounded-lg bg-gray-50 dark:bg-gray-700 flex items-center justify-center">
+                            <item.icon className="w-4 h-4 text-gray-600 dark:text-gray-300" />
                           </div>
                           <div>
-                            <p className="text-sm font-medium text-gray-900">{item.label}</p>
-                            <p className="text-xs text-gray-400">{item.description}</p>
+                            <p className="text-sm font-medium text-gray-900 dark:text-gray-50">{item.label}</p>
+                            <p className="text-xs text-gray-500 dark:text-gray-400">{item.description}</p>
                           </div>
                         </div>
                         {"active" in item && (

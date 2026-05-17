@@ -43,7 +43,9 @@ export default function ShareButton({ title, url }: ShareButtonProps) {
     <div className="relative">
       <button
         onClick={() => setShowMenu(!showMenu)}
-        className="flex items-center gap-1.5 px-3 py-2 text-sm text-gray-500 hover:text-brand-600 rounded-lg hover:bg-brand-50 transition-colors"
+        aria-label="Chia sẻ"
+        aria-expanded={showMenu}
+        className="flex items-center gap-1.5 px-3 py-2 min-h-11 text-sm text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-300 rounded-lg hover:bg-brand-50 dark:hover:bg-brand-900/30 transition-colors"
       >
         <Share2 className="w-4 h-4" />
         <span>Chia sẻ</span>
@@ -55,7 +57,7 @@ export default function ShareButton({ title, url }: ShareButtonProps) {
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 4 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            className="absolute right-0 top-full mt-1 z-50 bg-white rounded-xl border border-gray-100 shadow-lg p-2 min-w-[160px]"
+            className="absolute right-0 top-full mt-1 z-50 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 shadow-lg p-2 min-w-[160px]"
           >
             {shareOptions.map((option) => (
               <button
@@ -64,7 +66,7 @@ export default function ShareButton({ title, url }: ShareButtonProps) {
                   option.action();
                   if (option.name !== "Copy link" && option.name !== "Đã copy!") setShowMenu(false);
                 }}
-                className="w-full flex items-center gap-2.5 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                className="w-full flex items-center gap-2.5 px-3 py-2.5 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors"
               >
                 <option.icon className="w-4 h-4" />
                 {option.name}

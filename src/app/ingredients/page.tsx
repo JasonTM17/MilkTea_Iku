@@ -50,8 +50,8 @@ export default function IngredientsPage() {
     <>
       <Header />
       <CartDrawer />
-      <main className="pt-20 min-h-screen bg-cream-50">
-        <section className="bg-gradient-to-b from-cream-100 to-cream-50 py-16">
+      <main className="pt-20 min-h-screen bg-cream-50 dark:bg-gray-900">
+        <section className="bg-gradient-to-b from-cream-100 to-cream-50 dark:from-gray-800 dark:to-gray-900 py-16">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <motion.span
               initial={{ opacity: 0, y: 20 }}
@@ -64,7 +64,7 @@ export default function IngredientsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4"
+              className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-gray-50 mb-4"
             >
               Nguyên liệu <span className="text-brand-600">tươi sạch</span>
             </motion.h1>
@@ -72,7 +72,7 @@ export default function IngredientsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-gray-500 text-lg max-w-xl mx-auto"
+              className="text-gray-500 dark:text-gray-400 text-lg max-w-xl mx-auto"
             >
               Chúng tôi chỉ sử dụng nguyên liệu cao cấp nhập khẩu trực tiếp, không chất bảo quản
             </motion.p>
@@ -88,14 +88,14 @@ export default function IngredientsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 hover:shadow-md transition-shadow"
+                className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm p-6 hover:shadow-md transition-shadow"
               >
                 <div className="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center mb-4">
                   <item.icon className="w-6 h-6 text-green-600" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">{item.title}</h3>
-                <p className="text-xs text-brand-600 font-medium mb-3">{item.origin}</p>
-                <p className="text-sm text-gray-500 leading-relaxed">{item.description}</p>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-1">{item.title}</h3>
+                <p className="text-xs text-brand-600 dark:text-brand-400 font-medium mb-3">{item.origin}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{item.description}</p>
               </motion.div>
             ))}
           </div>

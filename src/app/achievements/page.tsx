@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, ChevronRight, PartyPopper, Trophy, Crown, Heart, Star, Gem, Coffee, Sparkles } from "lucide-react";
+import { Award, PartyPopper, Trophy, Crown, Heart, Star, Gem, Coffee, Sparkles } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
@@ -24,8 +24,8 @@ export default function AchievementsPage() {
     <>
       <Header />
       <CartDrawer />
-      <main className="pt-20 min-h-screen bg-cream-50">
-        <section className="bg-gradient-to-b from-cream-100 to-cream-50 py-16">
+      <main className="pt-20 min-h-screen bg-cream-50 dark:bg-gray-900">
+        <section className="bg-gradient-to-b from-cream-100 to-cream-50 dark:from-gray-800 dark:to-gray-900 py-16">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -38,7 +38,7 @@ export default function AchievementsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl font-display font-bold text-gray-900 mb-4"
+              className="text-4xl font-display font-bold text-gray-900 dark:text-gray-50 mb-4"
             >
               Thành tựu
             </motion.h1>
@@ -46,7 +46,7 @@ export default function AchievementsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-gray-500 text-lg"
+              className="text-gray-500 dark:text-gray-400 text-lg"
             >
               Đã mở khóa {unlockedCount}/{achievements.length} thành tựu
             </motion.p>
@@ -61,18 +61,18 @@ export default function AchievementsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.06 }}
-                className={`bg-white rounded-2xl border shadow-sm p-5 flex items-center gap-4 ${
-                  achievement.unlocked ? "border-brand-200" : "border-gray-100 opacity-60"
+                className={`bg-white dark:bg-gray-800 rounded-2xl border shadow-sm p-5 flex items-center gap-4 ${
+                  achievement.unlocked ? "border-brand-200 dark:border-brand-700" : "border-gray-100 dark:border-gray-700 opacity-60"
                 }`}
               >
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl ${
-                  achievement.unlocked ? "bg-brand-50" : "bg-gray-50 grayscale"
+                  achievement.unlocked ? "bg-brand-50 dark:bg-brand-900/30" : "bg-gray-50 dark:bg-gray-700 grayscale"
                 }`}>
                   {achievement.icon}
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-medium text-gray-900 text-sm">{achievement.title}</h3>
-                  <p className="text-xs text-gray-400 mt-0.5">{achievement.description}</p>
+                  <h3 className="font-medium text-gray-900 dark:text-gray-50 text-sm">{achievement.title}</h3>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{achievement.description}</p>
                 </div>
                 {achievement.unlocked && (
                   <span className="text-[10px] font-medium text-brand-600 bg-brand-50 px-2 py-1 rounded-full">

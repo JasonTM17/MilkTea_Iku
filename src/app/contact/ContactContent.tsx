@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -15,25 +15,25 @@ import {
 } from "lucide-react";
 
 const subjects = [
-  "Góp ý về sản phẩm",
-  "Vấn đề đặt hàng",
-  "Vấn đề giao hàng",
-  "Thanh toán & hoàn tiền",
-  "Hợp tác kinh doanh",
-  "Đặt hàng số lượng lớn",
-  "Khác",
+  "GÃ³p Ã½ vá» sáº£n pháº©m",
+  "Váº¥n Ä‘á» Ä‘áº·t hÃ ng",
+  "Váº¥n Ä‘á» giao hÃ ng",
+  "Thanh toÃ¡n & hoÃ n tiá»n",
+  "Há»£p tÃ¡c kinh doanh",
+  "Äáº·t hÃ ng sá»‘ lÆ°á»£ng lá»›n",
+  "KhÃ¡c",
 ];
 
 const contactInfo = [
   {
     icon: MapPin,
-    label: "Địa chỉ",
-    lines: ["123 Nguyễn Huệ, Quận 1", "TP. Hồ Chí Minh, Việt Nam"],
+    label: "Äá»‹a chá»‰",
+    lines: ["123 Nguyá»…n Huá»‡, Quáº­n 1", "TP. Há»“ ChÃ­ Minh, Viá»‡t Nam"],
   },
   {
     icon: Phone,
-    label: "Điện thoại",
-    lines: ["1800-IKU (miễn phí)", "028 3822 1234"],
+    label: "Äiá»‡n thoáº¡i",
+    lines: ["1800-IKU (miá»…n phÃ­)", "028 3822 1234"],
   },
   {
     icon: Mail,
@@ -42,8 +42,8 @@ const contactInfo = [
   },
   {
     icon: Clock,
-    label: "Giờ làm việc",
-    lines: ["Thứ 2 – Chủ nhật", "07:00 – 22:00"],
+    label: "Giá» lÃ m viá»‡c",
+    lines: ["Thá»© 2 â€“ Chá»§ nháº­t", "07:00 â€“ 22:00"],
   },
 ];
 
@@ -80,19 +80,19 @@ type Errors = Partial<Record<keyof FormState, string>>;
 
 function validate(form: FormState): Errors {
   const errors: Errors = {};
-  if (!form.name.trim()) errors.name = "Vui lòng nhập họ tên.";
+  if (!form.name.trim()) errors.name = "Vui lÃ²ng nháº­p há» tÃªn.";
   if (!form.email.trim()) {
-    errors.email = "Vui lòng nhập email.";
+    errors.email = "Vui lÃ²ng nháº­p email.";
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-    errors.email = "Email không hợp lệ.";
+    errors.email = "Email khÃ´ng há»£p lá»‡.";
   }
   if (form.phone && !/^[0-9+\s\-()]{7,15}$/.test(form.phone)) {
-    errors.phone = "Số điện thoại không hợp lệ.";
+    errors.phone = "Sá»‘ Ä‘iá»‡n thoáº¡i khÃ´ng há»£p lá»‡.";
   }
-  if (!form.subject) errors.subject = "Vui lòng chọn chủ đề.";
-  if (!form.message.trim()) errors.message = "Vui lòng nhập nội dung.";
+  if (!form.subject) errors.subject = "Vui lÃ²ng chá»n chá»§ Ä‘á».";
+  if (!form.message.trim()) errors.message = "Vui lÃ²ng nháº­p ná»™i dung.";
   else if (form.message.trim().length < 20)
-    errors.message = "Nội dung cần ít nhất 20 ký tự.";
+    errors.message = "Ná»™i dung cáº§n Ã­t nháº¥t 20 kÃ½ tá»±.";
   return errors;
 }
 
@@ -135,14 +135,14 @@ export default function ContactContent() {
   }
 
   const inputBase =
-    "w-full px-4 py-3 rounded-xl border bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 transition-all";
-  const inputNormal = `${inputBase} border-cream-200 focus:ring-brand-300 focus:border-brand-400`;
+    "w-full px-4 py-3 rounded-xl border bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 transition-all";
+  const inputNormal = `${inputBase} border-cream-200 dark:border-gray-600 focus:ring-brand-300 focus:border-brand-400`;
   const inputError = `${inputBase} border-red-300 focus:ring-red-200 focus:border-red-400`;
 
   return (
     <>
       {/* Hero */}
-      <section className="relative py-24 bg-gradient-to-b from-cream-100 to-cream-50 overflow-hidden">
+      <section className="relative py-24 bg-gradient-to-b from-cream-100 dark:from-gray-800 to-cream-50 dark:to-gray-900 overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.span
             initial={{ opacity: 0, y: 30 }}
@@ -150,25 +150,25 @@ export default function ContactContent() {
             transition={{ duration: 0.5 }}
             className="inline-block px-4 py-1.5 bg-brand-100 text-brand-700 rounded-full text-sm font-medium mb-6"
           >
-            Chúng tôi lắng nghe bạn
+            ChÃºng tÃ´i láº¯ng nghe báº¡n
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6"
+            className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-gray-50 mb-6"
           >
-            Liên hệ với{" "}
+            LiÃªn há»‡ vá»›i{" "}
             <span className="text-brand-600">MilkTea Iku</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
           >
-            Có câu hỏi, góp ý hay muốn hợp tác? Đội ngũ của chúng tôi luôn
-            sẵn sàng hỗ trợ bạn trong thời gian sớm nhất.
+            CÃ³ cÃ¢u há»i, gÃ³p Ã½ hay muá»‘n há»£p tÃ¡c? Äá»™i ngÅ© cá»§a chÃºng tÃ´i luÃ´n
+            sáºµn sÃ ng há»— trá»£ báº¡n trong thá»i gian sá»›m nháº¥t.
           </motion.p>
         </div>
       </section>
@@ -184,13 +184,13 @@ export default function ContactContent() {
               transition={{ duration: 0.6 }}
               className="lg:col-span-3"
             >
-              <div className="bg-white rounded-3xl shadow-sm border border-cream-100 p-8 md:p-10">
-                <h2 className="text-2xl font-display font-bold text-gray-900 mb-2">
-                  Gửi tin nhắn
+              <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-sm border border-cream-100 dark:border-gray-700 p-8 md:p-10">
+                <h2 className="text-2xl font-display font-bold text-gray-900 dark:text-gray-50 mb-2">
+                  Gá»­i tin nháº¯n
                 </h2>
-                <p className="text-gray-500 mb-8">
-                  Điền thông tin bên dưới, chúng tôi sẽ phản hồi trong vòng 24
-                  giờ.
+                <p className="text-gray-500 dark:text-gray-400 mb-8">
+                  Äiá»n thÃ´ng tin bÃªn dÆ°á»›i, chÃºng tÃ´i sáº½ pháº£n há»“i trong vÃ²ng 24
+                  giá».
                 </p>
 
                 <AnimatePresence mode="wait">
@@ -216,15 +216,15 @@ export default function ContactContent() {
                       >
                         <CheckCircle size={40} className="text-green-500" />
                       </motion.div>
-                      <h3 className="text-2xl font-display font-bold text-gray-900 mb-3">
-                        Gửi thành công!
+                      <h3 className="text-2xl font-display font-bold text-gray-900 dark:text-gray-50 mb-3">
+                        Gá»­i thÃ nh cÃ´ng!
                       </h3>
-                      <p className="text-gray-500 max-w-sm">
-                        Cảm ơn bạn đã liên hệ. Chúng tôi sẽ phản hồi qua email{" "}
+                      <p className="text-gray-500 dark:text-gray-400 max-w-sm">
+                        Cáº£m Æ¡n báº¡n Ä‘Ã£ liÃªn há»‡. ChÃºng tÃ´i sáº½ pháº£n há»“i qua email{" "}
                         <span className="font-medium text-brand-600">
                           {form.email}
                         </span>{" "}
-                        trong vòng 24 giờ.
+                        trong vÃ²ng 24 giá».
                       </p>
                       <button
                         onClick={() => {
@@ -239,7 +239,7 @@ export default function ContactContent() {
                         }}
                         className="mt-8 px-6 py-2.5 rounded-full border border-brand-300 text-brand-600 hover:bg-brand-50 transition-colors text-sm font-medium"
                       >
-                        Gửi tin nhắn khác
+                        Gá»­i tin nháº¯n khÃ¡c
                       </button>
                     </motion.div>
                   ) : (
@@ -255,15 +255,15 @@ export default function ContactContent() {
                       {/* Name + Email */}
                       <div className="grid sm:grid-cols-2 gap-5">
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                            Họ và tên <span className="text-red-400">*</span>
+                          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+                            Há» vÃ  tÃªn <span className="text-red-400">*</span>
                           </label>
                           <input
                             type="text"
                             name="name"
                             value={form.name}
                             onChange={handleChange}
-                            placeholder="Nguyễn Văn A"
+                            placeholder="Nguyá»…n VÄƒn A"
                             className={errors.name ? inputError : inputNormal}
                           />
                           {errors.name && (
@@ -273,7 +273,7 @@ export default function ContactContent() {
                           )}
                         </div>
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
                             Email <span className="text-red-400">*</span>
                           </label>
                           <input
@@ -295,8 +295,8 @@ export default function ContactContent() {
                       {/* Phone + Subject */}
                       <div className="grid sm:grid-cols-2 gap-5">
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                            Số điện thoại
+                          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+                            Sá»‘ Ä‘iá»‡n thoáº¡i
                           </label>
                           <input
                             type="tel"
@@ -313,8 +313,8 @@ export default function ContactContent() {
                           )}
                         </div>
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                            Chủ đề <span className="text-red-400">*</span>
+                          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+                            Chá»§ Ä‘á» <span className="text-red-400">*</span>
                           </label>
                           <select
                             name="subject"
@@ -322,7 +322,7 @@ export default function ContactContent() {
                             onChange={handleChange}
                             className={`${errors.subject ? inputError : inputNormal} appearance-none cursor-pointer`}
                           >
-                            <option value="">Chọn chủ đề...</option>
+                            <option value="">Chá»n chá»§ Ä‘á»...</option>
                             {subjects.map((s) => (
                               <option key={s} value={s}>
                                 {s}
@@ -339,15 +339,15 @@ export default function ContactContent() {
 
                       {/* Message */}
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                          Nội dung <span className="text-red-400">*</span>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+                          Ná»™i dung <span className="text-red-400">*</span>
                         </label>
                         <textarea
                           name="message"
                           value={form.message}
                           onChange={handleChange}
                           rows={5}
-                          placeholder="Mô tả chi tiết vấn đề hoặc câu hỏi của bạn..."
+                          placeholder="MÃ´ táº£ chi tiáº¿t váº¥n Ä‘á» hoáº·c cÃ¢u há»i cá»§a báº¡n..."
                           className={`${errors.message ? inputError : inputNormal} resize-none`}
                         />
                         <div className="flex justify-between mt-1">
@@ -358,8 +358,8 @@ export default function ContactContent() {
                           ) : (
                             <span />
                           )}
-                          <span className="text-xs text-gray-400">
-                            {form.message.length} ký tự
+                          <span className="text-xs text-gray-400 dark:text-gray-500">
+                            {form.message.length} kÃ½ tá»±
                           </span>
                         </div>
                       </div>
@@ -382,12 +382,12 @@ export default function ContactContent() {
                               }}
                               className="w-5 h-5 border-2 border-white border-t-transparent rounded-full inline-block"
                             />
-                            Đang gửi...
+                            Äang gá»­i...
                           </>
                         ) : (
                           <>
                             <Send size={18} />
-                            Gửi tin nhắn
+                            Gá»­i tin nháº¯n
                           </>
                         )}
                       </motion.button>
@@ -405,9 +405,9 @@ export default function ContactContent() {
               className="lg:col-span-2 space-y-6"
             >
               {/* Contact info cards */}
-              <div className="bg-white rounded-3xl shadow-sm border border-cream-100 p-8">
-                <h3 className="text-lg font-display font-bold text-gray-900 mb-6">
-                  Thông tin liên hệ
+              <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-sm border border-cream-100 dark:border-gray-700 p-8">
+                <h3 className="text-lg font-display font-bold text-gray-900 dark:text-gray-50 mb-6">
+                  ThÃ´ng tin liÃªn há»‡
                 </h3>
                 <div className="space-y-5">
                   {contactInfo.map((item, i) => (
@@ -422,11 +422,11 @@ export default function ContactContent() {
                         <item.icon size={18} className="text-brand-600" />
                       </div>
                       <div>
-                        <p className="text-xs font-medium text-gray-400 uppercase tracking-wide mb-0.5">
+                        <p className="text-xs font-medium text-gray-400 dark:text-gray-500 uppercase tracking-wide mb-0.5">
                           {item.label}
                         </p>
                         {item.lines.map((line) => (
-                          <p key={line} className="text-gray-700 text-sm">
+                          <p key={line} className="text-gray-700 dark:text-gray-200 text-sm">
                             {line}
                           </p>
                         ))}
@@ -436,9 +436,9 @@ export default function ContactContent() {
                 </div>
 
                 {/* Social links */}
-                <div className="mt-8 pt-6 border-t border-cream-100">
-                  <p className="text-xs font-medium text-gray-400 uppercase tracking-wide mb-4">
-                    Mạng xã hội
+                <div className="mt-8 pt-6 border-t border-cream-100 dark:border-gray-700">
+                  <p className="text-xs font-medium text-gray-400 dark:text-gray-500 uppercase tracking-wide mb-4">
+                    Máº¡ng xÃ£ há»™i
                   </p>
                   <div className="flex gap-3">
                     {socials.map((s) => (
@@ -448,7 +448,7 @@ export default function ContactContent() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={s.label}
-                        className={`w-10 h-10 bg-cream-50 rounded-xl flex items-center justify-center text-gray-500 ${s.color} hover:bg-cream-100 transition-all`}
+                        className={`w-10 h-10 bg-cream-50 dark:bg-gray-700 rounded-xl flex items-center justify-center text-gray-500 dark:text-gray-400 ${s.color} hover:bg-cream-100 dark:hover:bg-gray-600 transition-all`}
                       >
                         <s.icon size={18} />
                       </a>
@@ -462,7 +462,7 @@ export default function ContactContent() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="rounded-3xl overflow-hidden border border-cream-100 shadow-sm"
+                className="rounded-3xl overflow-hidden border border-cream-100 dark:border-gray-700 shadow-sm"
               >
                 <div className="relative h-56 bg-gradient-to-br from-cream-100 to-brand-50 flex flex-col items-center justify-center gap-3">
                   {/* Decorative grid */}
@@ -478,11 +478,11 @@ export default function ContactContent() {
                     <MapPin size={22} className="text-white" />
                   </div>
                   <div className="relative z-10 text-center">
-                    <p className="font-semibold text-gray-800 text-sm">
-                      123 Nguyễn Huệ, Quận 1
+                    <p className="font-semibold text-gray-800 dark:text-gray-100 text-sm">
+                      123 Nguyá»…n Huá»‡, Quáº­n 1
                     </p>
-                    <p className="text-gray-500 text-xs mt-0.5">
-                      TP. Hồ Chí Minh
+                    <p className="text-gray-500 dark:text-gray-400 text-xs mt-0.5">
+                      TP. Há»“ ChÃ­ Minh
                     </p>
                   </div>
                   <a
@@ -491,7 +491,7 @@ export default function ContactContent() {
                     rel="noopener noreferrer"
                     className="relative z-10 mt-1 px-4 py-1.5 bg-white rounded-full text-xs font-medium text-brand-600 shadow hover:shadow-md transition-shadow"
                   >
-                    Xem trên Google Maps
+                    Xem trÃªn Google Maps
                   </a>
                 </div>
               </motion.div>
@@ -501,19 +501,19 @@ export default function ContactContent() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.5 }}
-                className="bg-brand-50 rounded-2xl p-5 flex gap-4 items-start"
+                className="bg-brand-50 dark:bg-brand-900/20 rounded-2xl p-5 flex gap-4 items-start"
               >
                 <svg className="w-6 h-6 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                 <div>
-                  <p className="font-semibold text-gray-800 text-sm mb-1">
-                    Phản hồi nhanh
+                  <p className="font-semibold text-gray-800 dark:text-gray-100 text-sm mb-1">
+                    Pháº£n há»“i nhanh
                   </p>
-                  <p className="text-gray-500 text-sm">
-                    Thời gian phản hồi trung bình của chúng tôi là{" "}
+                  <p className="text-gray-500 dark:text-gray-400 text-sm">
+                    Thá»i gian pháº£n há»“i trung bÃ¬nh cá»§a chÃºng tÃ´i lÃ {" "}
                     <span className="font-medium text-brand-700">
-                      dưới 2 giờ
+                      dÆ°á»›i 2 giá»
                     </span>{" "}
-                    trong giờ làm việc.
+                    trong giá» lÃ m viá»‡c.
                   </p>
                 </div>
               </motion.div>
@@ -524,3 +524,4 @@ export default function ContactContent() {
     </>
   );
 }
+

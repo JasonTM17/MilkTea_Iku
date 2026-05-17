@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import { ShoppingCart, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useCartStore } from "@/store/cart";
+import SafeImage from "@/components/SafeImage";
 
 interface ProductCardProps {
   product: {
@@ -78,11 +78,8 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="absolute inset-0"
             >
-              <Image
-                src={
-                  product.image ||
-                  "https://images.unsplash.com/photo-1558857563-b371033873b8?w=400"
-                }
+              <SafeImage
+                src={product.image}
                 alt={product.name}
                 fill
                 className="object-cover"

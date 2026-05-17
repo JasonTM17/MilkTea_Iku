@@ -68,7 +68,7 @@ export default function CouponInput({ onApply }: CouponInputProps) {
             value={code}
             onChange={(e) => { setCode(e.target.value.toUpperCase()); setError(""); }}
             placeholder="Nhập mã giảm giá"
-            className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent uppercase"
+            className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-50 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent uppercase"
           />
         </div>
         <button

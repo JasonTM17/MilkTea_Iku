@@ -109,10 +109,10 @@ export default function PromotionsPage() {
               <Sparkles className="w-3 h-3 mr-1" />
               Ưu đãi đặc biệt
             </Badge>
-            <h1 className="text-3xl md:text-4xl font-display font-bold text-gray-900">
+            <h1 className="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-gray-50">
               Khuyến mãi & Mã giảm giá
             </h1>
-            <p className="text-gray-500 mt-3 max-w-md mx-auto">
+            <p className="text-gray-500 dark:text-gray-400 mt-3 max-w-md mx-auto">
               Sử dụng mã giảm giá khi thanh toán để nhận ưu đãi hấp dẫn
             </p>
           </motion.div>
@@ -137,19 +137,19 @@ export default function PromotionsPage() {
                       )}
                     </div>
 
-                    <h3 className="font-semibold text-gray-900 mb-1">{coupon.title}</h3>
-                    <p className="text-sm text-gray-500 mb-4 leading-relaxed">{coupon.description}</p>
+                    <h3 className="font-semibold text-gray-900 dark:text-gray-50 mb-1">{coupon.title}</h3>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 leading-relaxed">{coupon.description}</p>
 
                     <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center gap-1.5 text-xs text-gray-400">
+                      <div className="flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400">
                         <Clock className="w-3.5 h-3.5" />
                         <span>HSD: {coupon.expiry}</span>
                       </div>
                       <span className="text-lg font-bold text-brand-600">{coupon.discount}</span>
                     </div>
 
-                    <div className="flex items-center gap-2 p-2.5 bg-gray-50 rounded-xl">
-                      <code className="flex-1 text-sm font-mono font-semibold text-gray-700 tracking-wider">
+                    <div className="flex items-center gap-2 p-2.5 bg-gray-50 dark:bg-gray-900 rounded-xl">
+                      <code className="flex-1 text-sm font-mono font-semibold text-gray-700 dark:text-gray-200 tracking-wider">
                         {coupon.code}
                       </code>
                       <Button
@@ -183,10 +183,10 @@ export default function PromotionsPage() {
             transition={{ delay: 0.5 }}
             className="mt-16 text-center p-8 bg-brand-50 rounded-3xl border border-brand-100"
           >
-            <h3 className="text-xl font-display font-bold text-gray-900 mb-2">
+            <h3 className="text-xl font-display font-bold text-gray-900 dark:text-gray-50 mb-2">
               Nhận thêm ưu đãi?
             </h3>
-            <p className="text-gray-500 text-sm mb-4">
+            <p className="text-gray-500 dark:text-gray-400 text-sm mb-4">
               Đăng ký thành viên Iku để nhận mã giảm giá độc quyền mỗi tuần
             </p>
             <Button className="bg-brand-600 hover:bg-brand-700 text-white rounded-full px-8">

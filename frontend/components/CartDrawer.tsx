@@ -2,9 +2,9 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { Minus, Plus, ShoppingBag, Trash2, ArrowRight } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { useCartStore } from "@/store/cart";
+import SafeImage from "@/components/SafeImage";
 import {
   Sheet,
   SheetContent,
@@ -73,17 +73,17 @@ export default function CartDrawer() {
     <Sheet open={isOpen} onOpenChange={(open) => !open && closeCart()}>
       <SheetContent
         side="right"
-        className="w-full max-w-md p-0 flex flex-col gap-0 bg-cream-50 border-l border-brand-100"
+        className="w-full max-w-md p-0 flex flex-col gap-0 bg-cream-50 dark:bg-gray-900 border-l border-brand-100 dark:border-gray-800"
       >
         {/* Header */}
-        <SheetHeader className="px-5 py-4 border-b border-brand-100 bg-white shrink-0">
+        <SheetHeader className="px-5 py-4 border-b border-brand-100 dark:border-gray-800 bg-white dark:bg-gray-800 shrink-0">
           <SheetTitle className="flex items-center gap-2.5 text-left">
-            <div className="w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center shrink-0">
-              <ShoppingBag className="w-4 h-4 text-brand-600" />
+            <div className="w-8 h-8 rounded-full bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center shrink-0">
+              <ShoppingBag className="w-4 h-4 text-brand-600 dark:text-brand-300" />
             </div>
-            <span className="font-semibold text-gray-900">Giỏ hàng</span>
+            <span className="font-semibold text-gray-900 dark:text-gray-50">Giỏ hàng</span>
             {totalItems > 0 && (
-              <span className="ml-auto text-sm font-normal text-gray-400 pr-8">
+              <span className="ml-auto text-sm font-normal text-gray-500 dark:text-gray-400 pr-8">
                 {totalItems} món
               </span>
             )}
@@ -122,15 +122,12 @@ export default function CartDrawer() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, x: 60, scale: 0.94 }}
                     transition={{ duration: 0.22, ease: "easeOut" }}
-                    className="flex gap-3 bg-white rounded-2xl p-3 shadow-sm border border-brand-50"
+                    className="flex gap-3 bg-white dark:bg-gray-800 rounded-2xl p-3 shadow-sm border border-brand-50 dark:border-gray-700"
                   >
                     {/* Product image */}
-                    <div className="relative w-[68px] h-[68px] rounded-xl overflow-hidden shrink-0 bg-cream-100">
-                      <Image
-                        src={
-                          item.image ||
-                          "https://images.unsplash.com/photo-1558857563-b371033873b8?w=200"
-                        }
+                    <div className="relative w-[68px] h-[68px] rounded-xl overflow-hidden shrink-0 bg-cream-100 dark:bg-gray-700">
+                      <SafeImage
+                        src={item.image}
                         alt={item.name}
                         fill
                         className="object-cover"
@@ -140,20 +137,20 @@ export default function CartDrawer() {
 
                     {/* Details */}
                     <div className="flex-1 min-w-0">
-                      <h4 className="font-semibold text-sm text-gray-900 truncate">
+                      <h4 className="font-semibold text-sm text-gray-900 dark:text-gray-50 truncate">
                         {item.name}
                       </h4>
-                      <p className="text-xs text-gray-400 mt-0.5">
+                      <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
                         Size {item.size} · Đường {item.sugarLevel}% · Đá {item.iceLevel}%
                       </p>
                       {item.toppings.length > 0 && (
-                        <p className="text-xs text-brand-500 mt-0.5 truncate">
+                        <p className="text-xs text-brand-500 dark:text-brand-300 mt-0.5 truncate">
                           {item.toppings.join(", ")}
                         </p>
                       )}
 
                       <div className="flex items-center justify-between mt-2.5">
-                        <span className="font-bold text-sm text-brand-600">
+                        <span className="font-bold text-sm text-brand-600 dark:text-brand-400">
                           {formatPrice(item.subtotal)}
                         </span>
 
@@ -161,14 +158,14 @@ export default function CartDrawer() {
                         <div className="flex items-center gap-1.5">
                           <button
                             onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                            className="w-6 h-6 rounded-full bg-brand-50 border border-brand-200 flex items-center justify-center hover:bg-brand-100 transition-colors"
+                            className="min-w-11 min-h-11 sm:min-w-9 sm:min-h-9 w-9 h-9 sm:w-8 sm:h-8 rounded-full bg-brand-50 dark:bg-brand-900/30 border border-brand-200 dark:border-brand-800 flex items-center justify-center hover:bg-brand-100 dark:hover:bg-brand-800/50 transition-colors"
                             aria-label="Giảm số lượng"
                           >
-                            <Minus className="w-3 h-3 text-brand-600" />
+                            <Minus className="w-3.5 h-3.5 text-brand-600 dark:text-brand-300" />
                           </button>
 
                           {/* Animated quantity number */}
-                          <div className="w-6 h-6 flex items-center justify-center overflow-hidden">
+                          <div className="w-7 h-7 flex items-center justify-center overflow-hidden">
                             <AnimatePresence mode="popLayout" initial={false}>
                               <motion.span
                                 key={item.quantity}
@@ -176,7 +173,7 @@ export default function CartDrawer() {
                                 animate={{ y: 0, opacity: 1 }}
                                 exit={{ y: 10, opacity: 0 }}
                                 transition={{ duration: 0.14 }}
-                                className="text-sm font-semibold text-gray-800 block"
+                                className="text-sm font-semibold text-gray-800 dark:text-gray-100 block"
                               >
                                 {item.quantity}
                               </motion.span>
@@ -185,18 +182,18 @@ export default function CartDrawer() {
 
                           <button
                             onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                            className="w-6 h-6 rounded-full bg-brand-50 border border-brand-200 flex items-center justify-center hover:bg-brand-100 transition-colors"
+                            className="min-w-11 min-h-11 sm:min-w-9 sm:min-h-9 w-9 h-9 sm:w-8 sm:h-8 rounded-full bg-brand-50 dark:bg-brand-900/30 border border-brand-200 dark:border-brand-800 flex items-center justify-center hover:bg-brand-100 dark:hover:bg-brand-800/50 transition-colors"
                             aria-label="Tăng số lượng"
                           >
-                            <Plus className="w-3 h-3 text-brand-600" />
+                            <Plus className="w-3.5 h-3.5 text-brand-600 dark:text-brand-300" />
                           </button>
 
                           <button
                             onClick={() => removeItem(item.id)}
-                            className="w-6 h-6 rounded-full bg-red-50 border border-red-100 flex items-center justify-center hover:bg-red-100 transition-colors ml-0.5"
+                            className="min-w-11 min-h-11 sm:min-w-9 sm:min-h-9 w-9 h-9 sm:w-8 sm:h-8 rounded-full bg-red-50 dark:bg-red-900/30 border border-red-100 dark:border-red-800 flex items-center justify-center hover:bg-red-100 dark:hover:bg-red-800/50 transition-colors ml-0.5"
                             aria-label="Xóa sản phẩm"
                           >
-                            <Trash2 className="w-3 h-3 text-red-400" />
+                            <Trash2 className="w-3.5 h-3.5 text-red-500 dark:text-red-300" />
                           </button>
                         </div>
                       </div>
@@ -210,25 +207,25 @@ export default function CartDrawer() {
 
         {/* Footer — only shown when cart has items */}
         {items.length > 0 && (
-          <SheetFooter className="flex-col gap-0 p-0 border-t border-brand-100 bg-white shrink-0">
+          <SheetFooter className="flex-col gap-0 p-0 border-t border-brand-100 dark:border-gray-800 bg-white dark:bg-gray-800 shrink-0">
             {/* Price breakdown */}
             <div className="px-5 pt-4 pb-2 space-y-2">
               <div className="flex items-center justify-between text-sm">
-                <span className="text-gray-500">Tạm tính</span>
-                <span className="font-medium text-gray-800">{formatPrice(subtotal)}</span>
+                <span className="text-gray-600 dark:text-gray-400">Tạm tính</span>
+                <span className="font-medium text-gray-800 dark:text-gray-100">{formatPrice(subtotal)}</span>
               </div>
               <div className="flex items-center justify-between text-sm">
-                <span className="text-gray-500">Phí giao hàng</span>
+                <span className="text-gray-600 dark:text-gray-400">Phí giao hàng</span>
                 {deliveryFee === 0 ? (
-                  <span className="text-green-600 font-medium">Miễn phí</span>
+                  <span className="text-green-600 dark:text-green-400 font-medium">Miễn phí</span>
                 ) : (
-                  <span className="font-medium text-gray-800">{formatPrice(deliveryFee)}</span>
+                  <span className="font-medium text-gray-800 dark:text-gray-100">{formatPrice(deliveryFee)}</span>
                 )}
               </div>
               {deliveryFee > 0 && (
-                <p className="text-xs text-brand-400">
+                <p className="text-xs text-brand-500 dark:text-brand-300">
                   Mua thêm{" "}
-                  <span className="font-medium text-brand-600">
+                  <span className="font-medium text-brand-600 dark:text-brand-400">
                     {formatPrice(FREE_DELIVERY_THRESHOLD - subtotal)}
                   </span>{" "}
                   để được miễn phí giao hàng
@@ -236,17 +233,17 @@ export default function CartDrawer() {
               )}
             </div>
 
-            <Separator className="bg-brand-50" />
+            <Separator className="bg-brand-50 dark:bg-gray-700" />
 
             {/* Grand total */}
             <div className="px-5 py-3 flex items-center justify-between">
-              <span className="font-semibold text-gray-900">Tổng cộng</span>
+              <span className="font-semibold text-gray-900 dark:text-gray-50">Tổng cộng</span>
               <motion.span
                 key={grandTotal}
                 initial={{ scale: 0.92, opacity: 0.6 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.18 }}
-                className="text-xl font-bold text-brand-600"
+                className="text-xl font-bold text-brand-600 dark:text-brand-400"
               >
                 {formatPrice(grandTotal)}
               </motion.span>

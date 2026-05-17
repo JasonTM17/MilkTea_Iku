@@ -49,7 +49,7 @@ export default function LoyaltyTiers() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: i * 0.15, duration: 0.5 }}
-          className="relative bg-white rounded-2xl border border-gray-100 shadow-sm p-6 hover:shadow-md transition-shadow"
+          className="relative bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm p-6 hover:shadow-md transition-shadow"
         >
           {i === 2 && (
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-brand-600 text-white text-xs font-semibold rounded-full flex items-center gap-1">
@@ -60,11 +60,11 @@ export default function LoyaltyTiers() {
           <div className={`w-14 h-14 rounded-2xl ${tier.bgColor} flex items-center justify-center mb-4`}>
             <tier.icon className={`w-7 h-7 ${tier.color}`} />
           </div>
-          <h3 className="text-xl font-bold text-gray-900 mb-1">{tier.name}</h3>
-          <p className="text-sm text-gray-500 mb-4">Từ {tier.minStars} stars</p>
+          <h3 className="text-xl font-bold text-gray-900 dark:text-gray-50 mb-1">{tier.name}</h3>
+          <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Từ {tier.minStars} stars</p>
           <ul className="space-y-2">
             {tier.benefits.map((benefit) => (
-              <li key={benefit} className="flex items-center gap-2 text-sm text-gray-600">
+              <li key={benefit} className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-400 shrink-0" />
                 {benefit}
               </li>

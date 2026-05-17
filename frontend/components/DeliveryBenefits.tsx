@@ -28,7 +28,7 @@ const benefits = [
 
 export default function DeliveryBenefits() {
   return (
-    <section className="py-10 bg-white border-y border-gray-100">
+    <section className="py-10 bg-white dark:bg-gray-900 border-y border-gray-100 dark:border-gray-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {benefits.map((benefit, i) => (
@@ -40,14 +40,14 @@ export default function DeliveryBenefits() {
               transition={{ delay: i * 0.1, duration: 0.4 }}
               className="flex items-start gap-3"
             >
-              <div className="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-brand-50 dark:bg-brand-900/30 flex items-center justify-center shrink-0">
                 <benefit.icon className="w-5 h-5 text-brand-600" />
               </div>
               <div>
-                <h4 className="text-sm font-semibold text-gray-900">
+                <h4 className="text-sm font-semibold text-gray-900 dark:text-gray-50">
                   {benefit.title}
                 </h4>
-                <p className="text-xs text-gray-500 mt-0.5 leading-relaxed">
+                <p className="text-xs text-gray-600 dark:text-gray-400 mt-0.5 leading-relaxed">
                   {benefit.description}
                 </p>
               </div>

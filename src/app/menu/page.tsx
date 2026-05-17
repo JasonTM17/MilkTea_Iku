@@ -37,14 +37,14 @@ export default async function MenuPage({
       <Header />
       <CartDrawer />
 
-      <main className="pt-20 min-h-screen bg-cream-50">
+      <main className="pt-20 min-h-screen bg-cream-50 dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Page header */}
           <div className="text-center mb-10">
-            <h1 className="text-4xl font-display font-bold text-gray-900">
+            <h1 className="text-4xl font-display font-bold text-gray-900 dark:text-gray-50">
               Menu
             </h1>
-            <p className="text-gray-500 mt-2">
+            <p className="text-gray-600 dark:text-gray-300 mt-2">
               Chọn hương vị yêu thích của bạn
             </p>
           </div>

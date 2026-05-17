@@ -8,7 +8,6 @@ import {
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 
 interface OrderItem {
   product: { name: string };
@@ -73,14 +72,14 @@ export default function AdminDashboard({ stats, recentOrders }: AdminDashboardPr
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50/50">
+    <div className="min-h-screen bg-gray-50/50 dark:bg-gray-900">
       {/* Header */}
-      <div className="bg-white border-b sticky top-0 z-10">
+      <div className="bg-white dark:bg-gray-800 border-b dark:border-gray-700 sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
-              <p className="text-gray-500 text-sm mt-0.5">Quản lý đơn hàng MilkTea Iku</p>
+              <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-50">Admin Dashboard</h1>
+              <p className="text-gray-500 dark:text-gray-400 text-sm mt-0.5">Quản lý đơn hàng MilkTea Iku</p>
             </div>
             <Badge className="bg-green-100 text-green-700 border-0 gap-1.5">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
@@ -107,8 +106,8 @@ export default function AdminDashboard({ stats, recentOrders }: AdminDashboardPr
                       <stat.icon className={`w-5 h-5 ${stat.color}`} />
                     </div>
                   </div>
-                  <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
-                  <p className="text-sm text-gray-500 mt-0.5">{stat.label}</p>
+                  <p className="text-2xl font-bold text-gray-900 dark:text-gray-50">{stat.value}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">{stat.label}</p>
                   <p className="text-xs text-green-600 mt-2 font-medium">{stat.trend}</p>
                 </CardContent>
               </Card>
@@ -126,7 +125,7 @@ export default function AdminDashboard({ stats, recentOrders }: AdminDashboardPr
                 <select
                   value={filterStatus}
                   onChange={(e) => setFilterStatus(e.target.value)}
-                  className="text-sm border rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-brand-500/20 bg-white"
+                  className="text-sm border rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-brand-500/20 bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
                 >
                   <option value="all">Tất cả ({orders.length})</option>
                   {statusOptions.map((s) => (
@@ -140,7 +139,7 @@ export default function AdminDashboard({ stats, recentOrders }: AdminDashboardPr
           </CardHeader>
           <CardContent className="p-0">
             {filteredOrders.length === 0 ? (
-              <div className="p-12 text-center text-gray-500">
+              <div className="p-12 text-center text-gray-500 dark:text-gray-400">
                 <Package className="w-12 h-12 text-gray-200 mx-auto mb-3" />
                 <p>Không có đơn hàng nào</p>
               </div>
@@ -151,21 +150,21 @@ export default function AdminDashboard({ stats, recentOrders }: AdminDashboardPr
                   const isExpanded = expandedOrder === order.id;
 
                   return (
-                    <div key={order.id} className="px-6 py-4 hover:bg-gray-50/50 transition-colors">
+                    <div key={order.id} className="px-6 py-4 hover:bg-gray-50/50 dark:hover:bg-gray-700/50 transition-colors">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-4">
                           <button
                             onClick={() => setExpandedOrder(isExpanded ? null : order.id)}
-                            className="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors"
+                            className="w-8 h-8 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
                           >
                             <Eye className="w-4 h-4 text-gray-500" />
                           </button>
                           <div>
                             <div className="flex items-center gap-2">
-                              <span className="font-medium text-gray-900">{order.customerName}</span>
-                              <span className="text-sm text-gray-400">{order.phone}</span>
+                              <span className="font-medium text-gray-900 dark:text-gray-50">{order.customerName}</span>
+                              <span className="text-sm text-gray-500 dark:text-gray-400">{order.phone}</span>
                             </div>
-                            <p className="text-xs text-gray-400 mt-0.5">
+                            <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
                               {new Date(order.createdAt).toLocaleString("vi-VN")}
                               {order.address && ` • ${order.address}`}
                             </p>
@@ -192,16 +191,16 @@ export default function AdminDashboard({ stats, recentOrders }: AdminDashboardPr
                         <motion.div
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: "auto" }}
-                          className="mt-3 ml-12 p-4 bg-gray-50 rounded-xl"
+                          className="mt-3 ml-12 p-4 bg-gray-50 dark:bg-gray-700 rounded-xl"
                         >
-                          <p className="text-sm font-medium text-gray-700 mb-2">Chi tiết đơn hàng:</p>
+                          <p className="text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">Chi tiết đơn hàng:</p>
                           <div className="space-y-1.5">
                             {order.items.map((item, i) => (
                               <div key={i} className="flex justify-between text-sm">
-                                <span className="text-gray-600">
+                                <span className="text-gray-600 dark:text-gray-300">
                                   {item.product.name} (Size {item.size}) x{item.quantity}
                                 </span>
-                                <span className="text-gray-500">{formatPrice(item.subtotal)}</span>
+                                <span className="text-gray-500 dark:text-gray-400">{formatPrice(item.subtotal)}</span>
                               </div>
                             ))}
                           </div>

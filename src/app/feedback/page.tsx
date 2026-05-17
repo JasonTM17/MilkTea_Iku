@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Star, Camera, Send } from "lucide-react";
+import { Star, Send } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
@@ -25,7 +25,7 @@ export default function FeedbackPage() {
     <>
       <Header />
       <CartDrawer />
-      <main className="pt-20 min-h-screen bg-cream-50">
+      <main className="pt-20 min-h-screen bg-cream-50 dark:bg-gray-950">
         <section className="bg-gradient-to-b from-cream-100 to-cream-50 py-16">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <motion.h1

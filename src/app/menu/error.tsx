@@ -90,10 +90,10 @@ export default function MenuError({ error, reset }: ErrorProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.15, ease: "easeOut" }}
         >
-          <h2 className="text-xl font-bold text-gray-900 mb-2">
+          <h2 className="text-xl font-bold text-gray-900 dark:text-gray-50 mb-2">
             Không thể tải menu
           </h2>
-          <p className="text-gray-500 text-sm leading-relaxed mb-6">
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6">
             Có sự cố khi tải danh sách sản phẩm. Vui lòng thử lại hoặc quay về
             trang chủ nhé!
           </p>

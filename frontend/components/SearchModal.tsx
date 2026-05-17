@@ -182,10 +182,10 @@ export default function SearchModal() {
               aria-modal="true"
               aria-label="Tìm kiếm sản phẩm"
             >
-              <div className="rounded-2xl bg-white shadow-2xl shadow-brand-900/20 border border-brand-100 overflow-hidden">
+              <div className="rounded-2xl bg-white dark:bg-gray-800 shadow-2xl shadow-brand-900/20 border border-brand-100 dark:border-gray-700 overflow-hidden">
                 {/* Search input row */}
-                <div className="flex items-center gap-3 px-4 py-3.5 border-b border-brand-50">
-                  <Search className="w-5 h-5 text-brand-400 shrink-0" />
+                <div className="flex items-center gap-3 px-4 py-3.5 border-b border-brand-50 dark:border-gray-700">
+                  <Search className="w-5 h-5 text-brand-400 dark:text-brand-300 shrink-0" />
                   <input
                     ref={inputRef}
                     type="text"
@@ -193,20 +193,20 @@ export default function SearchModal() {
                     onChange={(e) => setQuery(e.target.value)}
                     onKeyDown={onKeyDown}
                     placeholder="Tìm kiếm trà sữa, topping..."
-                    className="flex-1 bg-transparent text-gray-900 placeholder:text-gray-400 text-base outline-none"
+                    className="flex-1 bg-transparent text-gray-900 dark:text-gray-50 placeholder:text-gray-400 dark:placeholder:text-gray-500 text-base outline-none"
                     autoComplete="off"
                     spellCheck={false}
                   />
                   {query && (
                     <button
                       onClick={() => setQuery("")}
-                      className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors shrink-0"
+                      className="min-w-9 min-h-9 w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors shrink-0"
                       aria-label="Xóa tìm kiếm"
                     >
-                      <X className="w-3.5 h-3.5 text-gray-500" />
+                      <X className="w-4 h-4 text-gray-500 dark:text-gray-300" />
                     </button>
                   )}
-                  <kbd className="hidden sm:flex items-center gap-0.5 text-xs text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded font-mono shrink-0">
+                  <kbd className="hidden sm:flex items-center gap-0.5 text-xs text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-1.5 py-0.5 rounded font-mono shrink-0">
                     Esc
                   </kbd>
                 </div>
@@ -221,10 +221,10 @@ export default function SearchModal() {
                           key={i}
                           className="flex items-center gap-3 animate-pulse"
                         >
-                          <div className="w-10 h-10 rounded-xl bg-brand-50 shrink-0" />
+                          <div className="w-10 h-10 rounded-xl bg-brand-50 dark:bg-gray-700 shrink-0" />
                           <div className="flex-1 space-y-1.5">
-                            <div className="h-3.5 bg-brand-50 rounded w-2/3" />
-                            <div className="h-3 bg-brand-50 rounded w-1/3" />
+                            <div className="h-3.5 bg-brand-50 dark:bg-gray-700 rounded w-2/3" />
+                            <div className="h-3 bg-brand-50 dark:bg-gray-700 rounded w-1/3" />
                           </div>
                         </div>
                       ))}
@@ -234,7 +234,7 @@ export default function SearchModal() {
                   {/* Search results */}
                   {!loading && showResults && results.length > 0 && (
                     <div className="py-2">
-                      <p className="px-4 py-1.5 text-xs font-medium text-gray-400 uppercase tracking-wide">
+                      <p className="px-4 py-1.5 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">
                         Kết quả tìm kiếm
                       </p>
                       {results.map((item, idx) => (
@@ -243,29 +243,29 @@ export default function SearchModal() {
                           onClick={() => navigate(item.slug, item.name)}
                           className={`w-full flex items-center gap-3 px-4 py-2.5 text-left transition-colors ${
                             activeIndex === idx
-                              ? "bg-brand-50"
-                              : "hover:bg-brand-50/60"
+                              ? "bg-brand-50 dark:bg-brand-900/30"
+                              : "hover:bg-brand-50/60 dark:hover:bg-brand-900/20"
                           }`}
                         >
                           {/* Image placeholder */}
-                          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-100 to-cream-200 flex items-center justify-center shrink-0">
-                            <svg className="w-5 h-5 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 8H7l1.5 12h7L17 8z"/><path d="M6 8h12l-.5-2H6.5L6 8z"/><circle cx="12" cy="14" r="1.5" fill="currentColor" stroke="none"/></svg>
+                          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-100 to-cream-200 dark:from-brand-900/40 dark:to-brand-800/40 flex items-center justify-center shrink-0">
+                            <svg className="w-5 h-5 text-brand-500 dark:text-brand-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 8H7l1.5 12h7L17 8z"/><path d="M6 8h12l-.5-2H6.5L6 8z"/><circle cx="12" cy="14" r="1.5" fill="currentColor" stroke="none"/></svg>
                           </div>
                           <div className="flex-1 min-w-0">
-                            <p className="text-sm font-medium text-gray-900 truncate">
+                            <p className="text-sm font-medium text-gray-900 dark:text-gray-50 truncate">
                               {item.name}
                             </p>
                             {item.category && (
-                              <p className="text-xs text-brand-400 flex items-center gap-1 mt-0.5">
+                              <p className="text-xs text-brand-500 dark:text-brand-300 flex items-center gap-1 mt-0.5">
                                 <Tag className="w-3 h-3" />
                                 {item.category}
                               </p>
                             )}
                           </div>
-                          <span className="text-sm font-semibold text-brand-600 shrink-0">
+                          <span className="text-sm font-semibold text-brand-600 dark:text-brand-400 shrink-0">
                             {formatPrice(item.price)}
                           </span>
-                          <ArrowRight className="w-4 h-4 text-gray-300 shrink-0" />
+                          <ArrowRight className="w-4 h-4 text-gray-300 dark:text-gray-500 shrink-0" />
                         </button>
                       ))}
                     </div>
@@ -274,13 +274,13 @@ export default function SearchModal() {
                   {/* No results */}
                   {noResults && (
                     <div className="px-4 py-8 text-center">
-                      <p className="text-gray-500 text-sm">
+                      <p className="text-gray-600 dark:text-gray-300 text-sm">
                         Không tìm thấy sản phẩm nào cho{" "}
-                        <span className="font-medium text-gray-700">
+                        <span className="font-medium text-gray-800 dark:text-gray-100">
                           &ldquo;{query}&rdquo;
                         </span>
                       </p>
-                      <p className="text-xs text-gray-400 mt-1">
+                      <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                         Thử tìm với từ khóa khác nhé
                       </p>
                     </div>
@@ -289,33 +289,27 @@ export default function SearchModal() {
                   {/* Recent searches */}
                   {showRecent && (
                     <div className="py-2">
-                      <p className="px-4 py-1.5 text-xs font-medium text-gray-400 uppercase tracking-wide">
+                      <p className="px-4 py-1.5 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">
                         Tìm kiếm gần đây
                       </p>
                       {recent.map((q) => (
                         <button
                           key={q}
                           onClick={() => runRecentSearch(q)}
-                          className="w-full flex items-center gap-3 px-4 py-2.5 hover:bg-brand-50/60 transition-colors text-left group"
+                          className="w-full flex items-center gap-3 px-4 py-2.5 hover:bg-brand-50/60 dark:hover:bg-brand-900/20 transition-colors text-left group"
                         >
-                          <Clock className="w-4 h-4 text-gray-300 shrink-0" />
-                          <span className="flex-1 text-sm text-gray-700 truncate">
+                          <Clock className="w-4 h-4 text-gray-400 dark:text-gray-500 shrink-0" />
+                          <span className="flex-1 text-sm text-gray-700 dark:text-gray-200 truncate">
                             {q}
                           </span>
-                          <span
-                            role="button"
-                            tabIndex={0}
+                          <button
+                            type="button"
                             onClick={(e) => deleteRecent(q, e)}
-                            onKeyDown={(e) => {
-                              if (e.key === "Enter" || e.key === " ") {
-                                deleteRecent(q, e as unknown as React.MouseEvent);
-                              }
-                            }}
-                            className="opacity-0 group-hover:opacity-100 w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-all shrink-0"
+                            className="opacity-0 group-hover:opacity-100 focus:opacity-100 min-w-9 min-h-9 w-9 h-9 sm:w-7 sm:h-7 sm:min-w-7 sm:min-h-7 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-600 transition-all shrink-0"
                             aria-label={`Xóa "${q}" khỏi lịch sử`}
                           >
-                            <X className="w-3 h-3 text-gray-400" />
-                          </span>
+                            <X className="w-3.5 h-3.5 text-gray-500 dark:text-gray-300" />
+                          </button>
                         </button>
                       ))}
                     </div>
@@ -324,7 +318,7 @@ export default function SearchModal() {
                   {/* Empty state — no query, no recent */}
                   {!query.trim() && recent.length === 0 && (
                     <div className="px-4 py-8 text-center">
-                      <p className="text-sm text-gray-400">
+                      <p className="text-sm text-gray-500 dark:text-gray-400">
                         Nhập tên sản phẩm để tìm kiếm
                       </p>
                     </div>
@@ -332,18 +326,18 @@ export default function SearchModal() {
                 </div>
 
                 {/* Footer hint */}
-                <div className="px-4 py-2.5 border-t border-brand-50 flex items-center gap-4 text-xs text-gray-400">
+                <div className="px-4 py-2.5 border-t border-brand-50 dark:border-gray-700 flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
                   <span className="flex items-center gap-1">
-                    <kbd className="bg-gray-100 px-1 py-0.5 rounded font-mono">↑</kbd>
-                    <kbd className="bg-gray-100 px-1 py-0.5 rounded font-mono">↓</kbd>
+                    <kbd className="bg-gray-100 dark:bg-gray-700 px-1 py-0.5 rounded font-mono">↑</kbd>
+                    <kbd className="bg-gray-100 dark:bg-gray-700 px-1 py-0.5 rounded font-mono">↓</kbd>
                     điều hướng
                   </span>
                   <span className="flex items-center gap-1">
-                    <kbd className="bg-gray-100 px-1 py-0.5 rounded font-mono">Enter</kbd>
+                    <kbd className="bg-gray-100 dark:bg-gray-700 px-1 py-0.5 rounded font-mono">Enter</kbd>
                     chọn
                   </span>
                   <span className="flex items-center gap-1">
-                    <kbd className="bg-gray-100 px-1 py-0.5 rounded font-mono">Esc</kbd>
+                    <kbd className="bg-gray-100 dark:bg-gray-700 px-1 py-0.5 rounded font-mono">Esc</kbd>
                     đóng
                   </span>
                 </div>
