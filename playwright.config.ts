@@ -1,5 +1,11 @@
 import { defineConfig, devices } from "@playwright/test";
 
+const adminUsername = process.env.ADMIN_USERNAME ?? "admin-test";
+const adminPassword = process.env.ADMIN_PASSWORD ?? "test-admin-password";
+const adminApiToken = process.env.ADMIN_API_TOKEN ?? "test-api-token-local";
+const databaseUrl =
+  process.env.DATABASE_URL ?? "file:./backend/prisma/dev.db";
+
 export default defineConfig({
   testDir: "./tests",
   fullyParallel: true,
@@ -8,7 +14,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: "html",
   use: {
-    baseURL: "http://localhost:3000",
+    baseURL: process.env.E2E_BASE_URL ?? "http://localhost:3000",
     trace: "on-first-retry",
     screenshot: "only-on-failure",
   },
@@ -36,14 +42,14 @@ export default defineConfig({
   ],
   webServer: {
     command: "npm run dev",
-    url: "http://localhost:3000",
+    url: process.env.E2E_BASE_URL ?? "http://localhost:3000",
     reuseExistingServer: !process.env.CI,
     timeout: 120000,
     env: {
-      ADMIN_USERNAME: "admin",
-      ADMIN_PASSWORD: "milktea-iku-2026",
-      ADMIN_API_TOKEN: "milktea-iku-admin-token-2026",
-      DATABASE_URL: "file:D:/MilkTea_Iku/backend/prisma/dev.db",
+      ADMIN_USERNAME: adminUsername,
+      ADMIN_PASSWORD: adminPassword,
+      ADMIN_API_TOKEN: adminApiToken,
+      DATABASE_URL: databaseUrl,
     },
   },
 });

@@ -11,7 +11,9 @@
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "X-Frame-Options", "value": "DENY" },
         { "key": "X-XSS-Protection", "value": "1; mode=block" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(self)" },
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" }
       ]
     },
     {
@@ -27,11 +29,4 @@
       ]
     }
   ],
-  "rewrites": [],
-  "env": {
-    "DATABASE_URL": "file:./dev.db",
-    "ADMIN_USERNAME": "admin",
-    "ADMIN_PASSWORD": "milktea-iku-2026",
-    "ADMIN_API_TOKEN": "milktea-iku-admin-token-2026"
-  }
 }

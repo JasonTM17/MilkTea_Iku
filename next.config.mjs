@@ -6,6 +6,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   ...(process.env.DOCKER_BUILD === '1' ? { output: 'standalone' } : {}),
+  poweredByHeader: false,
+  reactStrictMode: true,
+  compress: true,
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'images.unsplash.com' },
@@ -20,6 +23,9 @@ const nextConfig = {
       source: '/(.*)',
       headers: [
         { key: 'X-DNS-Prefetch-Control', value: 'on' },
+        { key: 'X-Frame-Options', value: 'DENY' },
+        { key: 'X-Content-Type-Options', value: 'nosniff' },
+        { key: 'Referrer-Policy', value: 'origin-when-cross-origin' },
       ],
     },
     {
