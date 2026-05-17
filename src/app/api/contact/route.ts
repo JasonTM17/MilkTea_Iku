@@ -7,7 +7,7 @@ const contactSchema = z.object({
   name: z.string().min(2, "Tên phải có ít nhất 2 ký tự"),
   email: z.string().email("Email không hợp lệ"),
   phone: z.string().optional(),
-  subject: z.string().min(1, "Vui lòng chọn chủ đề"),
+  subject: z.string().optional().default("general"),
   message: z.string().min(20, "Nội dung phải có ít nhất 20 ký tự"),
 });
 
