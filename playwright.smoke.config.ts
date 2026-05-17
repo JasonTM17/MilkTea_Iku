@@ -6,7 +6,8 @@ import { defineConfig, devices } from "@playwright/test";
  * Full cross-browser suite lives in playwright.config.ts.
  */
 export default defineConfig({
-  testDir: "./tests",
+  testDir: "./tests/e2e",
+  testMatch: /ui-smoke\.spec\.ts$/,
   fullyParallel: false,
   forbidOnly: true,
   retries: 1,
