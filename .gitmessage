@@ -1,0 +1,13 @@
+# <type>(<scope>): <subject>
+#
+# Types: feat, fix, docs, style, refactor, perf, test, chore, ci, build
+#
+# Examples:
+#   feat(cart): add coupon code validation
+#   fix(auth): resolve token expiry edge case
+#   docs(readme): update setup instructions
+#   chore(deps): bump next to 14.3.0
+#
+# Subject: imperative mood, no period, max 72 chars
+# Body (optional): explain WHY, not WHAT
+# Footer (optional): Closes #123, BREAKING CHANGE: ...
