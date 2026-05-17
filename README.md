@@ -51,51 +51,101 @@
 
 MilkTea Iku is a production-shaped e-commerce storefront for a premium milk tea brand. It covers the full customer journey — browsing, customising drinks, checkout, and order tracking — plus an admin dashboard for order and coupon management.
 
-| | |
-|---|---|
-| **Live URL** | [milktea-iku.vercel.app](https://milktea-iku.vercel.app) |
-| **Status** | Deployed on Vercel · portfolio / reference implementation |
-| **Stack** | Next.js 14 App Router, TypeScript, Prisma, SQLite (dev) / Postgres (prod) |
-| **Tests** | 35 Playwright spec files — e2e, API, accessibility, visual, performance, SEO |
-| **CI/CD** | 6 GitHub Actions workflows (ci, deploy, docker-publish, codeql, security, release) |
+|              |                                                                                    |
+| ------------ | ---------------------------------------------------------------------------------- |
+| **Live URL** | [milktea-iku.vercel.app](https://milktea-iku.vercel.app)                           |
+| **Status**   | Deployed on Vercel · portfolio / reference implementation                          |
+| **Stack**    | Next.js 14 App Router, TypeScript, Prisma, SQLite (dev) / Postgres (prod)          |
+| **Tests**    | 35 Playwright spec files — e2e, API, accessibility, visual, performance, SEO       |
+| **CI/CD**    | 6 GitHub Actions workflows (ci, deploy, docker-publish, codeql, security, release) |
 
 ---
 
-## Screenshots
+## Demo
 
 <p align="center">
-  <img src="docs/screenshots/homepage.png" alt="Homepage" width="900" />
+  <img src="docs/screenshots/demo-homepage.gif" alt="Homepage demo" width="900" />
+  <br />
+  <em>Live tour of the homepage — hero, featured products, and store locator.</em>
 </p>
+
+## Screenshots
+
+### Desktop
 
 <table>
   <tr>
-    <td><img src="docs/screenshots/homepage.png" alt="Homepage — light mode" width="430"/></td>
-    <td><img src="docs/screenshots/dark-mode.png" alt="Homepage — dark mode" width="430"/></td>
+    <td width="50%" align="center">
+      <img src="docs/screenshots/homepage.png" alt="Homepage — light mode" />
+      <br /><sub><b>Homepage</b> · Light mode</sub>
+    </td>
+    <td width="50%" align="center">
+      <img src="docs/screenshots/dark-mode.png" alt="Homepage — dark mode" />
+      <br /><sub><b>Homepage</b> · Dark mode</sub>
+    </td>
   </tr>
   <tr>
-    <td align="center"><em>Light mode</em></td>
-    <td align="center"><em>Dark mode (WCAG AA contrast)</em></td>
+    <td align="center">
+      <img src="docs/screenshots/menu.png" alt="Menu catalogue" />
+      <br /><sub><b>Menu</b> · Product browsing with filters</sub>
+    </td>
+    <td align="center">
+      <img src="docs/screenshots/stores.png" alt="Store locator" />
+      <br /><sub><b>Stores</b> · 6 locations across HCM and Hà Nội</sub>
+    </td>
   </tr>
   <tr>
-    <td><img src="docs/screenshots/menu.png" alt="Menu catalogue" width="430"/></td>
-    <td><img src="docs/screenshots/stores.png" alt="Store locator" width="430"/></td>
-  </tr>
-  <tr>
-    <td align="center"><em>Menu — search, filter, sort</em></td>
-    <td align="center"><em>Store locator</em></td>
+    <td align="center">
+      <img src="docs/screenshots/checkout.png" alt="Checkout flow" />
+      <br /><sub><b>Checkout</b> · Order placement and payment</sub>
+    </td>
+    <td align="center">
+      <img src="docs/screenshots/menu-dark.png" alt="Menu dark mode" />
+      <br /><sub><b>Menu</b> · Dark mode browsing</sub>
+    </td>
   </tr>
 </table>
 
-<p align="center">
-  <img src="docs/screenshots/mobile.png" alt="Mobile view" width="300"/>
-</p>
-<p align="center"><em>Mobile — no horizontal overflow, all touch targets ≥ 44 px</em></p>
+### Mobile
+
+<table>
+  <tr>
+    <td width="33%" align="center">
+      <img src="docs/screenshots/mobile.png" alt="Mobile light" width="280" />
+      <br /><sub><b>Light mode</b></sub>
+    </td>
+    <td width="33%" align="center">
+      <img src="docs/screenshots/mobile-dark.png" alt="Mobile dark" width="280" />
+      <br /><sub><b>Dark mode</b></sub>
+    </td>
+    <td width="33%" align="center">
+      <img src="docs/screenshots/demo-mobile.gif" alt="Mobile flow" width="280" />
+      <br /><sub><b>Interaction demo</b></sub>
+    </td>
+  </tr>
+</table>
+
+### Interactions
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="docs/screenshots/demo-menu.gif" alt="Menu browsing demo" />
+      <br /><sub><b>Menu browsing</b> · Filters, hover states, product cards</sub>
+    </td>
+    <td width="50%" align="center">
+      <img src="docs/screenshots/demo-dark-toggle.gif" alt="Dark mode toggle" />
+      <br /><sub><b>Theme toggle</b> · Smooth dark mode transition</sub>
+    </td>
+  </tr>
+</table>
 
 ---
 
 ## Features
 
 **Customer**
+
 - Menu browsing with category filter, full-text search, and sort
 - Drink customiser — size, sugar level, ice level, multi-topping selection
 - Cart with persistent state (Zustand + localStorage)
@@ -106,6 +156,7 @@ MilkTea Iku is a production-shaped e-commerce storefront for a premium milk tea 
 - Wishlist
 
 **Platform**
+
 - Admin dashboard — order management, status transitions, coupon CRUD, aggregate stats
 - Light / dark theme via `next-themes` (WCAG AA contrast)
 - Fully responsive, mobile-first design
@@ -117,22 +168,22 @@ MilkTea Iku is a production-shaped e-commerce storefront for a premium milk tea 
 
 ## Tech Stack
 
-| Layer | Choice |
-|---|---|
-| Framework | Next.js 14.2 (App Router, Server Components, streaming) |
-| Language | TypeScript 5.4 |
-| Styling | Tailwind CSS 3.4 + shadcn/ui |
-| Animations | Framer Motion 11 |
-| Theming | next-themes |
-| Validation | Zod 3.23 |
-| State | Zustand 4.5 |
-| ORM / DB | Prisma 5.14 — SQLite (dev) · Postgres (prod) |
-| Auth | HTTP Basic + Bearer token, scrypt-hashed passwords |
-| Rate limiting | Per-IP sliding window (in-memory) |
-| Icons | lucide-react |
-| Testing | Playwright 1.60 |
-| CI/CD | GitHub Actions |
-| Hosting | Vercel (primary) · Docker Hub |
+| Layer         | Choice                                                  |
+| ------------- | ------------------------------------------------------- |
+| Framework     | Next.js 14.2 (App Router, Server Components, streaming) |
+| Language      | TypeScript 5.4                                          |
+| Styling       | Tailwind CSS 3.4 + shadcn/ui                            |
+| Animations    | Framer Motion 11                                        |
+| Theming       | next-themes                                             |
+| Validation    | Zod 3.23                                                |
+| State         | Zustand 4.5                                             |
+| ORM / DB      | Prisma 5.14 — SQLite (dev) · Postgres (prod)            |
+| Auth          | HTTP Basic + Bearer token, scrypt-hashed passwords      |
+| Rate limiting | Per-IP sliding window (in-memory)                       |
+| Icons         | lucide-react                                            |
+| Testing       | Playwright 1.60                                         |
+| CI/CD         | GitHub Actions                                          |
+| Hosting       | Vercel (primary) · Docker Hub                           |
 
 ---
 
@@ -169,16 +220,16 @@ docker compose up -d
 
 ### Useful scripts
 
-| Command | Purpose |
-|---|---|
-| `npm run dev` | Start dev server |
-| `npm run build` | Production build |
-| `npm run lint` | ESLint + Next lint |
-| `npx tsc --noEmit` | Type check |
-| `npx playwright test` | Full test suite |
-| `npm run db:push` | Push schema to SQLite |
-| `npm run db:seed` | Seed reference data |
-| `npm run db:studio` | Open Prisma Studio |
+| Command                                | Purpose                        |
+| -------------------------------------- | ------------------------------ |
+| `npm run dev`                          | Start dev server               |
+| `npm run build`                        | Production build               |
+| `npm run lint`                         | ESLint + Next lint             |
+| `npx tsc --noEmit`                     | Type check                     |
+| `npx playwright test`                  | Full test suite                |
+| `npm run db:push`                      | Push schema to SQLite          |
+| `npm run db:seed`                      | Seed reference data            |
+| `npm run db:studio`                    | Open Prisma Studio             |
 | `node scripts/generate-admin-hash.mjs` | Generate `ADMIN_PASSWORD_HASH` |
 
 ---
@@ -187,18 +238,18 @@ docker compose up -d
 
 Copy `.env.example` to `.env.local` and fill in the values.
 
-| Variable | Required | Description |
-|---|---|---|
-| `DATABASE_URL` | Yes | SQLite path for dev; Postgres URL for prod |
-| `ADMIN_USERNAME` | Yes | Username for `/admin` HTTP Basic Auth |
-| `ADMIN_PASSWORD` | Dev only | Plaintext password (ignored when hash is set) |
-| `ADMIN_PASSWORD_HASH` | Prod | scrypt hash — generate with `generate-admin-hash.mjs` |
-| `ADMIN_API_TOKEN` | Yes | Bearer token for programmatic admin access |
-| `N8N_WEBHOOK_URL` | Optional | n8n chatbot webhook URL |
-| `N8N_HOSTNAMES` | Optional | SSRF allowlist for n8n hostnames |
-| `N8N_USER` | Optional | n8n basic auth user (docker-compose only) |
-| `N8N_PASSWORD` | Optional | n8n basic auth password (docker-compose only) |
-| `E2E_BASE_URL` | CI only | Base URL for Playwright (default: `http://localhost:3000`) |
+| Variable              | Required | Description                                                |
+| --------------------- | -------- | ---------------------------------------------------------- |
+| `DATABASE_URL`        | Yes      | SQLite path for dev; Postgres URL for prod                 |
+| `ADMIN_USERNAME`      | Yes      | Username for `/admin` HTTP Basic Auth                      |
+| `ADMIN_PASSWORD`      | Dev only | Plaintext password (ignored when hash is set)              |
+| `ADMIN_PASSWORD_HASH` | Prod     | scrypt hash — generate with `generate-admin-hash.mjs`      |
+| `ADMIN_API_TOKEN`     | Yes      | Bearer token for programmatic admin access                 |
+| `N8N_WEBHOOK_URL`     | Optional | n8n chatbot webhook URL                                    |
+| `N8N_HOSTNAMES`       | Optional | SSRF allowlist for n8n hostnames                           |
+| `N8N_USER`            | Optional | n8n basic auth user (docker-compose only)                  |
+| `N8N_PASSWORD`        | Optional | n8n basic auth password (docker-compose only)              |
+| `E2E_BASE_URL`        | CI only  | Base URL for Playwright (default: `http://localhost:3000`) |
 
 ---
 
@@ -208,14 +259,14 @@ Full architecture overview, project layout, and data-flow diagrams: [`docs/ARCHI
 
 Additional documentation:
 
-| Document | Link |
-|---|---|
-| API reference | [`docs/api.md`](docs/api.md) |
-| Deployment guide | [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) |
-| Testing strategy | [`docs/TESTING.md`](docs/TESTING.md) |
+| Document         | Link                                                   |
+| ---------------- | ------------------------------------------------------ |
+| API reference    | [`docs/api.md`](docs/api.md)                           |
+| Deployment guide | [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md)             |
+| Testing strategy | [`docs/TESTING.md`](docs/TESTING.md)                   |
 | UI/UX guidelines | [`docs/UI_UX_GUIDELINES.md`](docs/UI_UX_GUIDELINES.md) |
-| Security posture | [`SECURITY.md`](SECURITY.md) |
-| Honest scope | [`docs/HONEST_SCOPE.md`](docs/HONEST_SCOPE.md) |
+| Security posture | [`SECURITY.md`](SECURITY.md)                           |
+| Honest scope     | [`docs/HONEST_SCOPE.md`](docs/HONEST_SCOPE.md)         |
 
 ---
 

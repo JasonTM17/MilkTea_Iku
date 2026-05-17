@@ -94,6 +94,9 @@ CLAUDE.md.local
 *.old
 .history/
 
+# Temp video recordings (GIF generation)
+tmp-videos/
+
 # Backup / scratch
 TODO.md
 SCRATCH.md

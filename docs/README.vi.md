@@ -51,51 +51,101 @@
 
 MilkTea Iku là storefront thương mại điện tử cho thương hiệu trà sữa cao cấp, bao phủ toàn bộ hành trình khách hàng — từ duyệt menu, tùy chỉnh đồ uống, thanh toán đến theo dõi đơn hàng — cùng bảng điều khiển admin để quản lý đơn hàng và mã giảm giá.
 
-| | |
-|---|---|
-| **URL trực tiếp** | [milktea-iku.vercel.app](https://milktea-iku.vercel.app) |
-| **Trạng thái** | Đã deploy trên Vercel · dự án portfolio / tham khảo |
-| **Stack** | Next.js 14 App Router, TypeScript, Prisma, SQLite (dev) / Postgres (prod) |
-| **Tests** | 35 file Playwright spec — e2e, API, accessibility, visual, performance, SEO |
-| **CI/CD** | 6 GitHub Actions workflows (ci, deploy, docker-publish, codeql, security, release) |
+|                   |                                                                                    |
+| ----------------- | ---------------------------------------------------------------------------------- |
+| **URL trực tiếp** | [milktea-iku.vercel.app](https://milktea-iku.vercel.app)                           |
+| **Trạng thái**    | Đã deploy trên Vercel · dự án portfolio / tham khảo                                |
+| **Stack**         | Next.js 14 App Router, TypeScript, Prisma, SQLite (dev) / Postgres (prod)          |
+| **Tests**         | 35 file Playwright spec — e2e, API, accessibility, visual, performance, SEO        |
+| **CI/CD**         | 6 GitHub Actions workflows (ci, deploy, docker-publish, codeql, security, release) |
 
 ---
 
-## Ảnh chụp màn hình
+## Demo
 
 <p align="center">
-  <img src="screenshots/homepage.png" alt="Trang chủ" width="900" />
+  <img src="screenshots/demo-homepage.gif" alt="Homepage demo" width="900" />
+  <br />
+  <em>Khám phá trang chủ — hero, sản phẩm nổi bật và tìm cửa hàng.</em>
 </p>
+
+## Ảnh chụp màn hình
+
+### Desktop
 
 <table>
   <tr>
-    <td><img src="screenshots/homepage.png" alt="Trang chủ — giao diện sáng" width="430"/></td>
-    <td><img src="screenshots/dark-mode.png" alt="Trang chủ — giao diện tối" width="430"/></td>
+    <td width="50%" align="center">
+      <img src="screenshots/homepage.png" alt="Homepage — light mode" />
+      <br /><sub><b>Trang chủ</b> · Giao diện sáng</sub>
+    </td>
+    <td width="50%" align="center">
+      <img src="screenshots/dark-mode.png" alt="Homepage — dark mode" />
+      <br /><sub><b>Trang chủ</b> · Giao diện tối</sub>
+    </td>
   </tr>
   <tr>
-    <td align="center"><em>Giao diện sáng</em></td>
-    <td align="center"><em>Giao diện tối (độ tương phản WCAG AA)</em></td>
+    <td align="center">
+      <img src="screenshots/menu.png" alt="Menu catalogue" />
+      <br /><sub><b>Menu</b> · Duyệt sản phẩm với bộ lọc</sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/stores.png" alt="Store locator" />
+      <br /><sub><b>Cửa hàng</b> · 6 địa điểm tại TP.HCM và Hà Nội</sub>
+    </td>
   </tr>
   <tr>
-    <td><img src="screenshots/menu.png" alt="Danh mục menu" width="430"/></td>
-    <td><img src="screenshots/stores.png" alt="Tìm cửa hàng" width="430"/></td>
-  </tr>
-  <tr>
-    <td align="center"><em>Menu — tìm kiếm, lọc, sắp xếp</em></td>
-    <td align="center"><em>Tìm cửa hàng</em></td>
+    <td align="center">
+      <img src="screenshots/checkout.png" alt="Checkout flow" />
+      <br /><sub><b>Thanh toán</b> · Đặt hàng và thanh toán</sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/menu-dark.png" alt="Menu dark mode" />
+      <br /><sub><b>Menu</b> · Duyệt giao diện tối</sub>
+    </td>
   </tr>
 </table>
 
-<p align="center">
-  <img src="screenshots/mobile.png" alt="Giao diện mobile" width="300"/>
-</p>
-<p align="center"><em>Mobile — không tràn ngang, tất cả vùng chạm ≥ 44 px</em></p>
+### Mobile
+
+<table>
+  <tr>
+    <td width="33%" align="center">
+      <img src="screenshots/mobile.png" alt="Mobile light" width="280" />
+      <br /><sub><b>Giao diện sáng</b></sub>
+    </td>
+    <td width="33%" align="center">
+      <img src="screenshots/mobile-dark.png" alt="Mobile dark" width="280" />
+      <br /><sub><b>Giao diện tối</b></sub>
+    </td>
+    <td width="33%" align="center">
+      <img src="screenshots/demo-mobile.gif" alt="Mobile flow" width="280" />
+      <br /><sub><b>Demo tương tác</b></sub>
+    </td>
+  </tr>
+</table>
+
+### Tương tác
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="screenshots/demo-menu.gif" alt="Menu browsing demo" />
+      <br /><sub><b>Duyệt menu</b> · Bộ lọc, hover, thẻ sản phẩm</sub>
+    </td>
+    <td width="50%" align="center">
+      <img src="screenshots/demo-dark-toggle.gif" alt="Dark mode toggle" />
+      <br /><sub><b>Chuyển giao diện</b> · Chuyển đổi dark mode mượt mà</sub>
+    </td>
+  </tr>
+</table>
 
 ---
 
 ## Tính năng
 
 **Khách hàng**
+
 - Duyệt menu với bộ lọc danh mục, tìm kiếm toàn văn và sắp xếp
 - Tùy chỉnh đồ uống — size, mức đường, mức đá, chọn nhiều topping
 - Giỏ hàng với trạng thái lưu trữ (Zustand + localStorage)
@@ -106,6 +156,7 @@ MilkTea Iku là storefront thương mại điện tử cho thương hiệu trà 
 - Danh sách yêu thích
 
 **Nền tảng**
+
 - Bảng điều khiển admin — quản lý đơn hàng, chuyển trạng thái, CRUD mã giảm giá, thống kê tổng hợp
 - Giao diện sáng/tối qua `next-themes` (độ tương phản WCAG AA)
 - Thiết kế responsive hoàn toàn, ưu tiên mobile
@@ -117,22 +168,22 @@ MilkTea Iku là storefront thương mại điện tử cho thương hiệu trà 
 
 ## Công nghệ
 
-| Lớp | Lựa chọn |
-|---|---|
-| Framework | Next.js 14.2 (App Router, Server Components, streaming) |
-| Ngôn ngữ | TypeScript 5.4 |
-| Styling | Tailwind CSS 3.4 + shadcn/ui |
-| Animation | Framer Motion 11 |
-| Theming | next-themes |
-| Validation | Zod 3.23 |
-| State | Zustand 4.5 |
-| ORM / DB | Prisma 5.14 — SQLite (dev) · Postgres (prod) |
-| Auth | HTTP Basic + Bearer token, mật khẩu hash bằng scrypt |
-| Rate limiting | Sliding window theo IP (in-memory) |
-| Icons | lucide-react |
-| Testing | Playwright 1.60 |
-| CI/CD | GitHub Actions |
-| Hosting | Vercel (chính) · Docker Hub |
+| Lớp           | Lựa chọn                                                |
+| ------------- | ------------------------------------------------------- |
+| Framework     | Next.js 14.2 (App Router, Server Components, streaming) |
+| Ngôn ngữ      | TypeScript 5.4                                          |
+| Styling       | Tailwind CSS 3.4 + shadcn/ui                            |
+| Animation     | Framer Motion 11                                        |
+| Theming       | next-themes                                             |
+| Validation    | Zod 3.23                                                |
+| State         | Zustand 4.5                                             |
+| ORM / DB      | Prisma 5.14 — SQLite (dev) · Postgres (prod)            |
+| Auth          | HTTP Basic + Bearer token, mật khẩu hash bằng scrypt    |
+| Rate limiting | Sliding window theo IP (in-memory)                      |
+| Icons         | lucide-react                                            |
+| Testing       | Playwright 1.60                                         |
+| CI/CD         | GitHub Actions                                          |
+| Hosting       | Vercel (chính) · Docker Hub                             |
 
 ---
 
@@ -169,16 +220,16 @@ docker compose up -d
 
 ### Các lệnh hữu ích
 
-| Lệnh | Mục đích |
-|---|---|
-| `npm run dev` | Khởi động dev server |
-| `npm run build` | Build production |
-| `npm run lint` | ESLint + Next lint |
-| `npx tsc --noEmit` | Kiểm tra kiểu dữ liệu |
-| `npx playwright test` | Chạy toàn bộ test suite |
-| `npm run db:push` | Đẩy schema lên SQLite |
-| `npm run db:seed` | Seed dữ liệu mẫu |
-| `npm run db:studio` | Mở Prisma Studio |
+| Lệnh                                   | Mục đích                  |
+| -------------------------------------- | ------------------------- |
+| `npm run dev`                          | Khởi động dev server      |
+| `npm run build`                        | Build production          |
+| `npm run lint`                         | ESLint + Next lint        |
+| `npx tsc --noEmit`                     | Kiểm tra kiểu dữ liệu     |
+| `npx playwright test`                  | Chạy toàn bộ test suite   |
+| `npm run db:push`                      | Đẩy schema lên SQLite     |
+| `npm run db:seed`                      | Seed dữ liệu mẫu          |
+| `npm run db:studio`                    | Mở Prisma Studio          |
 | `node scripts/generate-admin-hash.mjs` | Tạo `ADMIN_PASSWORD_HASH` |
 
 ---
@@ -187,18 +238,18 @@ docker compose up -d
 
 Sao chép `.env.example` thành `.env.local` và điền các giá trị.
 
-| Biến | Bắt buộc | Mô tả |
-|---|---|---|
-| `DATABASE_URL` | Có | Đường dẫn SQLite cho dev; URL Postgres cho prod |
-| `ADMIN_USERNAME` | Có | Tên đăng nhập cho HTTP Basic Auth tại `/admin` |
-| `ADMIN_PASSWORD` | Chỉ dev | Mật khẩu plaintext (bỏ qua khi đã có hash) |
-| `ADMIN_PASSWORD_HASH` | Prod | Hash scrypt — tạo bằng `generate-admin-hash.mjs` |
-| `ADMIN_API_TOKEN` | Có | Bearer token cho truy cập admin qua API |
-| `N8N_WEBHOOK_URL` | Tùy chọn | URL webhook n8n cho chatbot |
-| `N8N_HOSTNAMES` | Tùy chọn | Danh sách hostname được phép cho n8n (chống SSRF) |
-| `N8N_USER` | Tùy chọn | Tên đăng nhập basic auth n8n (chỉ docker-compose) |
-| `N8N_PASSWORD` | Tùy chọn | Mật khẩu basic auth n8n (chỉ docker-compose) |
-| `E2E_BASE_URL` | Chỉ CI | Base URL cho Playwright (mặc định: `http://localhost:3000`) |
+| Biến                  | Bắt buộc | Mô tả                                                       |
+| --------------------- | -------- | ----------------------------------------------------------- |
+| `DATABASE_URL`        | Có       | Đường dẫn SQLite cho dev; URL Postgres cho prod             |
+| `ADMIN_USERNAME`      | Có       | Tên đăng nhập cho HTTP Basic Auth tại `/admin`              |
+| `ADMIN_PASSWORD`      | Chỉ dev  | Mật khẩu plaintext (bỏ qua khi đã có hash)                  |
+| `ADMIN_PASSWORD_HASH` | Prod     | Hash scrypt — tạo bằng `generate-admin-hash.mjs`            |
+| `ADMIN_API_TOKEN`     | Có       | Bearer token cho truy cập admin qua API                     |
+| `N8N_WEBHOOK_URL`     | Tùy chọn | URL webhook n8n cho chatbot                                 |
+| `N8N_HOSTNAMES`       | Tùy chọn | Danh sách hostname được phép cho n8n (chống SSRF)           |
+| `N8N_USER`            | Tùy chọn | Tên đăng nhập basic auth n8n (chỉ docker-compose)           |
+| `N8N_PASSWORD`        | Tùy chọn | Mật khẩu basic auth n8n (chỉ docker-compose)                |
+| `E2E_BASE_URL`        | Chỉ CI   | Base URL cho Playwright (mặc định: `http://localhost:3000`) |
 
 ---
 
@@ -208,14 +259,14 @@ Tổng quan kiến trúc đầy đủ, cấu trúc dự án và sơ đồ luồn
 
 Tài liệu bổ sung:
 
-| Tài liệu | Liên kết |
-|---|---|
-| Tham chiếu API | [`docs/api.md`](api.md) |
-| Hướng dẫn triển khai | [`docs/DEPLOYMENT.md`](DEPLOYMENT.md) |
-| Chiến lược testing | [`docs/TESTING.md`](TESTING.md) |
-| Hướng dẫn UI/UX | [`docs/UI_UX_GUIDELINES.md`](UI_UX_GUIDELINES.md) |
-| Bảo mật | [`SECURITY.md`](../SECURITY.md) |
-| Phạm vi thực tế | [`docs/HONEST_SCOPE.md`](HONEST_SCOPE.md) |
+| Tài liệu             | Liên kết                                          |
+| -------------------- | ------------------------------------------------- |
+| Tham chiếu API       | [`docs/api.md`](api.md)                           |
+| Hướng dẫn triển khai | [`docs/DEPLOYMENT.md`](DEPLOYMENT.md)             |
+| Chiến lược testing   | [`docs/TESTING.md`](TESTING.md)                   |
+| Hướng dẫn UI/UX      | [`docs/UI_UX_GUIDELINES.md`](UI_UX_GUIDELINES.md) |
+| Bảo mật              | [`SECURITY.md`](../SECURITY.md)                   |
+| Phạm vi thực tế      | [`docs/HONEST_SCOPE.md`](HONEST_SCOPE.md)         |
 
 ---
 

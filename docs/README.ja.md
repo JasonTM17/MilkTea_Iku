@@ -51,51 +51,101 @@
 
 MilkTea Ikuは、プレミアムミルクティーブランド向けのECストアフロントです。メニュー閲覧、ドリンクカスタマイズ、チェックアウト、注文追跡まで顧客の全体験をカバーし、注文・クーポン管理のための管理ダッシュボードも備えています。
 
-| | |
-|---|---|
-| **ライブURL** | [milktea-iku.vercel.app](https://milktea-iku.vercel.app) |
-| **ステータス** | Vercelにデプロイ済み · ポートフォリオ / リファレンス実装 |
-| **スタック** | Next.js 14 App Router, TypeScript, Prisma, SQLite (dev) / Postgres (prod) |
-| **テスト** | 35件のPlaywright specファイル — e2e, API, アクセシビリティ, ビジュアル, パフォーマンス, SEO |
-| **CI/CD** | 6つのGitHub Actionsワークフロー (ci, deploy, docker-publish, codeql, security, release) |
+|                |                                                                                             |
+| -------------- | ------------------------------------------------------------------------------------------- |
+| **ライブURL**  | [milktea-iku.vercel.app](https://milktea-iku.vercel.app)                                    |
+| **ステータス** | Vercelにデプロイ済み · ポートフォリオ / リファレンス実装                                    |
+| **スタック**   | Next.js 14 App Router, TypeScript, Prisma, SQLite (dev) / Postgres (prod)                   |
+| **テスト**     | 35件のPlaywright specファイル — e2e, API, アクセシビリティ, ビジュアル, パフォーマンス, SEO |
+| **CI/CD**      | 6つのGitHub Actionsワークフロー (ci, deploy, docker-publish, codeql, security, release)     |
 
 ---
 
-## スクリーンショット
+## デモ
 
 <p align="center">
-  <img src="screenshots/homepage.png" alt="ホームページ" width="900" />
+  <img src="screenshots/demo-homepage.gif" alt="Homepage demo" width="900" />
+  <br />
+  <em>ホームページのライブツアー — ヒーロー、注目商品、店舗検索。</em>
 </p>
+
+## スクリーンショット
+
+### デスクトップ
 
 <table>
   <tr>
-    <td><img src="screenshots/homepage.png" alt="ホームページ — ライトモード" width="430"/></td>
-    <td><img src="screenshots/dark-mode.png" alt="ホームページ — ダークモード" width="430"/></td>
+    <td width="50%" align="center">
+      <img src="screenshots/homepage.png" alt="Homepage — light mode" />
+      <br /><sub><b>ホームページ</b> · ライトモード</sub>
+    </td>
+    <td width="50%" align="center">
+      <img src="screenshots/dark-mode.png" alt="Homepage — dark mode" />
+      <br /><sub><b>ホームページ</b> · ダークモード</sub>
+    </td>
   </tr>
   <tr>
-    <td align="center"><em>ライトモード</em></td>
-    <td align="center"><em>ダークモード (WCAG AAコントラスト)</em></td>
+    <td align="center">
+      <img src="screenshots/menu.png" alt="Menu catalogue" />
+      <br /><sub><b>メニュー</b> · フィルター付き商品閲覧</sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/stores.png" alt="Store locator" />
+      <br /><sub><b>店舗</b> · ホーチミンとハノイの6拠点</sub>
+    </td>
   </tr>
   <tr>
-    <td><img src="screenshots/menu.png" alt="メニューカタログ" width="430"/></td>
-    <td><img src="screenshots/stores.png" alt="店舗検索" width="430"/></td>
-  </tr>
-  <tr>
-    <td align="center"><em>メニュー — 検索・フィルター・並び替え</em></td>
-    <td align="center"><em>店舗検索</em></td>
+    <td align="center">
+      <img src="screenshots/checkout.png" alt="Checkout flow" />
+      <br /><sub><b>チェックアウト</b> · 注文と支払い</sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/menu-dark.png" alt="Menu dark mode" />
+      <br /><sub><b>メニュー</b> · ダークモード閲覧</sub>
+    </td>
   </tr>
 </table>
 
-<p align="center">
-  <img src="screenshots/mobile.png" alt="モバイル表示" width="300"/>
-</p>
-<p align="center"><em>モバイル — 横スクロールなし、全タッチターゲット ≥ 44 px</em></p>
+### モバイル
+
+<table>
+  <tr>
+    <td width="33%" align="center">
+      <img src="screenshots/mobile.png" alt="Mobile light" width="280" />
+      <br /><sub><b>ライトモード</b></sub>
+    </td>
+    <td width="33%" align="center">
+      <img src="screenshots/mobile-dark.png" alt="Mobile dark" width="280" />
+      <br /><sub><b>ダークモード</b></sub>
+    </td>
+    <td width="33%" align="center">
+      <img src="screenshots/demo-mobile.gif" alt="Mobile flow" width="280" />
+      <br /><sub><b>インタラクションデモ</b></sub>
+    </td>
+  </tr>
+</table>
+
+### インタラクション
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="screenshots/demo-menu.gif" alt="Menu browsing demo" />
+      <br /><sub><b>メニュー閲覧</b> · フィルター、ホバー、商品カード</sub>
+    </td>
+    <td width="50%" align="center">
+      <img src="screenshots/demo-dark-toggle.gif" alt="Dark mode toggle" />
+      <br /><sub><b>テーマ切替</b> · スムーズなダークモード遷移</sub>
+    </td>
+  </tr>
+</table>
 
 ---
 
 ## 機能
 
 **カスタマー向け**
+
 - カテゴリフィルター・全文検索・並び替えによるメニュー閲覧
 - ドリンクカスタマイザー — サイズ、甘さ、氷、複数トッピング選択
 - 永続的な状態管理のカート (Zustand + localStorage)
@@ -106,6 +156,7 @@ MilkTea Ikuは、プレミアムミルクティーブランド向けのECスト�
 - ウィッシュリスト
 
 **プラットフォーム**
+
 - 管理ダッシュボード — 注文管理、ステータス遷移、クーポンCRUD、集計統計
 - `next-themes`によるライト/ダークテーマ (WCAG AAコントラスト)
 - 完全レスポンシブ、モバイルファーストデザイン
@@ -117,22 +168,22 @@ MilkTea Ikuは、プレミアムミルクティーブランド向けのECスト�
 
 ## 技術スタック
 
-| レイヤー | 選択 |
-|---|---|
+| レイヤー       | 選択                                                         |
+| -------------- | ------------------------------------------------------------ |
 | フレームワーク | Next.js 14.2 (App Router, Server Components, ストリーミング) |
-| 言語 | TypeScript 5.4 |
-| スタイリング | Tailwind CSS 3.4 + shadcn/ui |
-| アニメーション | Framer Motion 11 |
-| テーマ | next-themes |
-| バリデーション | Zod 3.23 |
-| 状態管理 | Zustand 4.5 |
-| ORM / DB | Prisma 5.14 — SQLite (dev) · Postgres (prod) |
-| 認証 | HTTP Basic + Bearerトークン、scryptハッシュパスワード |
-| レート制限 | IP別スライディングウィンドウ (インメモリ) |
-| アイコン | lucide-react |
-| テスト | Playwright 1.60 |
-| CI/CD | GitHub Actions |
-| ホスティング | Vercel (メイン) · Docker Hub |
+| 言語           | TypeScript 5.4                                               |
+| スタイリング   | Tailwind CSS 3.4 + shadcn/ui                                 |
+| アニメーション | Framer Motion 11                                             |
+| テーマ         | next-themes                                                  |
+| バリデーション | Zod 3.23                                                     |
+| 状態管理       | Zustand 4.5                                                  |
+| ORM / DB       | Prisma 5.14 — SQLite (dev) · Postgres (prod)                 |
+| 認証           | HTTP Basic + Bearerトークン、scryptハッシュパスワード        |
+| レート制限     | IP別スライディングウィンドウ (インメモリ)                    |
+| アイコン       | lucide-react                                                 |
+| テスト         | Playwright 1.60                                              |
+| CI/CD          | GitHub Actions                                               |
+| ホスティング   | Vercel (メイン) · Docker Hub                                 |
 
 ---
 
@@ -169,16 +220,16 @@ docker compose up -d
 
 ### 便利なスクリプト
 
-| コマンド | 用途 |
-|---|---|
-| `npm run dev` | 開発サーバー起動 |
-| `npm run build` | プロダクションビルド |
-| `npm run lint` | ESLint + Next lint |
-| `npx tsc --noEmit` | 型チェック |
-| `npx playwright test` | 全テストスイート実行 |
-| `npm run db:push` | スキーマをSQLiteに反映 |
-| `npm run db:seed` | 参照データのシード |
-| `npm run db:studio` | Prisma Studio起動 |
+| コマンド                               | 用途                        |
+| -------------------------------------- | --------------------------- |
+| `npm run dev`                          | 開発サーバー起動            |
+| `npm run build`                        | プロダクションビルド        |
+| `npm run lint`                         | ESLint + Next lint          |
+| `npx tsc --noEmit`                     | 型チェック                  |
+| `npx playwright test`                  | 全テストスイート実行        |
+| `npm run db:push`                      | スキーマをSQLiteに反映      |
+| `npm run db:seed`                      | 参照データのシード          |
+| `npm run db:studio`                    | Prisma Studio起動           |
 | `node scripts/generate-admin-hash.mjs` | `ADMIN_PASSWORD_HASH`を生成 |
 
 ---
@@ -187,18 +238,18 @@ docker compose up -d
 
 `.env.example`を`.env.local`にコピーして値を入力してください。
 
-| 変数 | 必須 | 説明 |
-|---|---|---|
-| `DATABASE_URL` | 必須 | dev用SQLiteパス; prod用PostgresURL |
-| `ADMIN_USERNAME` | 必須 | `/admin` HTTP Basic Auth用ユーザー名 |
-| `ADMIN_PASSWORD` | devのみ | 平文パスワード (ハッシュ設定時は無視) |
-| `ADMIN_PASSWORD_HASH` | prod | scryptハッシュ — `generate-admin-hash.mjs`で生成 |
-| `ADMIN_API_TOKEN` | 必須 | プログラムによる管理アクセス用Bearerトークン |
-| `N8N_WEBHOOK_URL` | 任意 | チャットボット用n8n webhook URL |
-| `N8N_HOSTNAMES` | 任意 | n8n用SSRFホワイトリスト |
-| `N8N_USER` | 任意 | n8n basic authユーザー (docker-composeのみ) |
-| `N8N_PASSWORD` | 任意 | n8n basic authパスワード (docker-composeのみ) |
-| `E2E_BASE_URL` | CIのみ | Playwright用ベースURL (デフォルト: `http://localhost:3000`) |
+| 変数                  | 必須    | 説明                                                        |
+| --------------------- | ------- | ----------------------------------------------------------- |
+| `DATABASE_URL`        | 必須    | dev用SQLiteパス; prod用PostgresURL                          |
+| `ADMIN_USERNAME`      | 必須    | `/admin` HTTP Basic Auth用ユーザー名                        |
+| `ADMIN_PASSWORD`      | devのみ | 平文パスワード (ハッシュ設定時は無視)                       |
+| `ADMIN_PASSWORD_HASH` | prod    | scryptハッシュ — `generate-admin-hash.mjs`で生成            |
+| `ADMIN_API_TOKEN`     | 必須    | プログラムによる管理アクセス用Bearerトークン                |
+| `N8N_WEBHOOK_URL`     | 任意    | チャットボット用n8n webhook URL                             |
+| `N8N_HOSTNAMES`       | 任意    | n8n用SSRFホワイトリスト                                     |
+| `N8N_USER`            | 任意    | n8n basic authユーザー (docker-composeのみ)                 |
+| `N8N_PASSWORD`        | 任意    | n8n basic authパスワード (docker-composeのみ)               |
+| `E2E_BASE_URL`        | CIのみ  | Playwright用ベースURL (デフォルト: `http://localhost:3000`) |
 
 ---
 
@@ -208,14 +259,14 @@ docker compose up -d
 
 追加ドキュメント:
 
-| ドキュメント | リンク |
-|---|---|
-| APIリファレンス | [`docs/api.md`](api.md) |
-| デプロイガイド | [`docs/DEPLOYMENT.md`](DEPLOYMENT.md) |
-| テスト戦略 | [`docs/TESTING.md`](TESTING.md) |
+| ドキュメント      | リンク                                            |
+| ----------------- | ------------------------------------------------- |
+| APIリファレンス   | [`docs/api.md`](api.md)                           |
+| デプロイガイド    | [`docs/DEPLOYMENT.md`](DEPLOYMENT.md)             |
+| テスト戦略        | [`docs/TESTING.md`](TESTING.md)                   |
 | UI/UXガイドライン | [`docs/UI_UX_GUIDELINES.md`](UI_UX_GUIDELINES.md) |
-| セキュリティ | [`SECURITY.md`](../SECURITY.md) |
-| 実際のスコープ | [`docs/HONEST_SCOPE.md`](HONEST_SCOPE.md) |
+| セキュリティ      | [`SECURITY.md`](../SECURITY.md)                   |
+| 実際のスコープ    | [`docs/HONEST_SCOPE.md`](HONEST_SCOPE.md)         |
 
 ---
 
