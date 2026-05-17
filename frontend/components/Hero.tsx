@@ -114,7 +114,7 @@ export default function Hero() {
             >
               {/* Badge */}
               <motion.div variants={itemVariants}>
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-100 dark:bg-brand-900/40 border border-brand-200 dark:border-brand-700 text-brand-700 dark:text-brand-300 rounded-full text-sm font-medium mb-6 shadow-sm">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-100 dark:bg-brand-900/50 border border-brand-200 dark:border-brand-600 text-brand-700 dark:text-brand-200 rounded-full text-sm font-medium mb-6 shadow-sm">
                   <span className="w-2 h-2 rounded-full bg-brand-500 animate-pulse" />
                   Thương hiệu trà sữa premium
                 </span>
@@ -155,7 +155,7 @@ export default function Hero() {
               {/* Subheadline */}
               <motion.p
                 variants={itemVariants}
-                className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-10 max-w-md"
+                className="text-lg sm:text-xl text-gray-600 dark:text-gray-200 leading-relaxed mb-10 max-w-md"
               >
                 Được pha chế từ nguyên liệu tươi ngon nhất, mỗi ly trà sữa Iku
                 là một hành trình hương vị — đậm đà, thơm ngát, và luôn mới mẻ
@@ -190,10 +190,10 @@ export default function Hero() {
                       {item.icon}
                     </div>
                     <div>
-                      <div className="text-sm font-bold text-brand-700 dark:text-brand-300 leading-tight">
+                      <div className="text-sm font-bold text-brand-700 dark:text-brand-200 leading-tight">
                         {item.value}
                       </div>
-                      <div className="text-xs text-gray-500 dark:text-gray-400 leading-tight">
+                      <div className="text-xs text-gray-500 dark:text-gray-300 leading-tight">
                         {item.label}
                       </div>
                     </div>
