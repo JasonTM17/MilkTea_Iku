@@ -64,7 +64,7 @@ export default function Hero() {
       />
 
       {/* Soft radial glow blobs */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none dark:opacity-20">
         <div className="absolute top-[-10%] left-[-5%] w-[50vw] h-[50vw] rounded-full bg-brand-200/30 blur-[120px]" />
         <div className="absolute bottom-[-10%] right-[-5%] w-[45vw] h-[45vw] rounded-full bg-cream-400/40 blur-[100px]" />
         <div className="absolute top-[30%] left-[40%] w-[30vw] h-[30vw] rounded-full bg-brand-300/20 blur-[80px]" />
@@ -114,7 +114,7 @@ export default function Hero() {
             >
               {/* Badge */}
               <motion.div variants={itemVariants}>
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-100 border border-brand-200 text-brand-700 rounded-full text-sm font-medium mb-6 shadow-sm">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-100 dark:bg-brand-900/40 border border-brand-200 dark:border-brand-700 text-brand-700 dark:text-brand-300 rounded-full text-sm font-medium mb-6 shadow-sm">
                   <span className="w-2 h-2 rounded-full bg-brand-500 animate-pulse" />
                   Thương hiệu trà sữa premium
                 </span>
@@ -173,7 +173,7 @@ export default function Hero() {
 
                 <Link
                   href="/checkout"
-                  className={buttonVariants({ variant: "outline", size: "lg", className: "rounded-full px-8 border-2 border-brand-300 text-brand-700 hover:bg-brand-50 hover:border-brand-400 hover:-translate-y-0.5 transition-all duration-200 text-base font-semibold bg-white/60 backdrop-blur-sm" })}
+                  className={buttonVariants({ variant: "outline", size: "lg", className: "rounded-full px-8 border-2 border-brand-300 dark:border-brand-600 text-brand-700 dark:text-brand-300 hover:bg-brand-50 dark:hover:bg-brand-900/40 hover:border-brand-400 hover:-translate-y-0.5 transition-all duration-200 text-base font-semibold bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm" })}
                 >
                   Đặt Hàng Ngay
                 </Link>
@@ -182,15 +182,15 @@ export default function Hero() {
               {/* Trust indicators */}
               <motion.div
                 variants={itemVariants}
-                className="flex flex-wrap gap-6 pt-8 border-t border-brand-100"
+                className="flex flex-wrap gap-6 pt-8 border-t border-brand-100 dark:border-gray-700"
               >
                 {trustItems.map((item) => (
                   <div key={item.label} className="flex items-center gap-2.5">
-                    <div className="w-10 h-10 rounded-xl bg-brand-100 flex items-center justify-center text-lg shadow-sm flex-shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-lg shadow-sm flex-shrink-0">
                       {item.icon}
                     </div>
                     <div>
-                      <div className="text-sm font-bold text-brand-700 leading-tight">
+                      <div className="text-sm font-bold text-brand-700 dark:text-brand-300 leading-tight">
                         {item.value}
                       </div>
                       <div className="text-xs text-gray-500 dark:text-gray-400 leading-tight">
