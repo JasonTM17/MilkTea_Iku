@@ -1,6 +1,7 @@
-import { test, expect, devices } from "@playwright/test";
+import { test, expect } from "@playwright/test";
 
 const BASE = process.env.E2E_BASE_URL || "http://localhost:3003";
+const MOBILE_VIEWPORT = { width: 390, height: 844 };
 
 test.describe("MilkTea Iku — UI smoke", () => {
   test("home renders and core sections visible", async ({ page }) => {
@@ -47,12 +48,11 @@ test.describe("MilkTea Iku — UI smoke", () => {
 });
 
 test.describe("MilkTea Iku — mobile", () => {
-  test.use({ ...devices["iPhone 13"] });
-
   test("mobile home overflow check", async ({ page }) => {
+    await page.setViewportSize(MOBILE_VIEWPORT);
     await page.goto(BASE);
     const html = page.locator("html");
-    const widths = await html.evaluate((el) => ({
+    const widths = await html.evaluate(() => ({
       doc: document.documentElement.scrollWidth,
       win: window.innerWidth,
     }));
@@ -60,6 +60,7 @@ test.describe("MilkTea Iku — mobile", () => {
   });
 
   test("mobile sheet menu opens", async ({ page }) => {
+    await page.setViewportSize(MOBILE_VIEWPORT);
     await page.goto(BASE);
     await page.getByRole("button", { name: /Mở menu/i }).click();
     await expect(page.getByRole("link", { name: "Menu", exact: true })).toBeVisible();
