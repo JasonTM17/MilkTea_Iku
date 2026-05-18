@@ -2,7 +2,7 @@
   "name": "milktea-iku",
   "version": "1.0.0",
   "private": true,
-  "description": "Premium Milk Tea E-Commerce Platform — Personal learning portfolio by Nguyễn Sơn. Production-shaped Next.js 14 + TypeScript + Prisma reference implementation.",
+  "description": "Premium Milk Tea E-Commerce Platform — Trà Sữa Cao Cấp — プレミアムミルクティー · Personal learning portfolio by Nguyễn Sơn (Next.js 14 + TypeScript + Prisma reference implementation).",
   "author": {
     "name": "Nguyễn Sơn",
     "email": "jasonbmt06@gmail.com",
