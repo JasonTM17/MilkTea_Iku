@@ -51,6 +51,8 @@
 
 MilkTea Iku là storefront thương mại điện tử cho thương hiệu trà sữa cao cấp, bao phủ toàn bộ hành trình khách hàng — từ duyệt menu, tùy chỉnh đồ uống, thanh toán đến theo dõi đơn hàng — cùng bảng điều khiển admin để quản lý đơn hàng và mã giảm giá.
 
+> **📚 Đây là dự án học tập** — Đây là dự án portfolio cá nhân của Nguyễn Sơn. Codebase được làm theo chuẩn production (auth thật, validation thật, CI/CD thật, docs thật) để có thể dùng làm tài liệu tham khảo cho các pattern full-stack, nhưng đây không phải là deployment thương mại. Xem [`HONEST_SCOPE.md`](HONEST_SCOPE.md) để biết phạm vi chính xác.
+
 |                   |                                                                                    |
 | ----------------- | ---------------------------------------------------------------------------------- |
 | **URL trực tiếp** | [milktea-iku.vercel.app](https://milktea-iku.vercel.app)                           |

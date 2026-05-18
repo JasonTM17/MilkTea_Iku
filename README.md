@@ -51,6 +51,8 @@
 
 MilkTea Iku is a production-shaped e-commerce storefront for a premium milk tea brand. It covers the full customer journey — browsing, customising drinks, checkout, and order tracking — plus an admin dashboard for order and coupon management.
 
+> **📚 Learning project** — This is a personal learning portfolio by Nguyễn Sơn. The codebase is intentionally production-shaped (real auth, real validation, real CI/CD, real docs) so it can serve as a reference for full-stack patterns, but it is not a commercial deployment. See [`docs/HONEST_SCOPE.md`](docs/HONEST_SCOPE.md) for what is and isn't covered.
+
 |              |                                                                                    |
 | ------------ | ---------------------------------------------------------------------------------- |
 | **Live URL** | [milktea-iku.vercel.app](https://milktea-iku.vercel.app)                           |
